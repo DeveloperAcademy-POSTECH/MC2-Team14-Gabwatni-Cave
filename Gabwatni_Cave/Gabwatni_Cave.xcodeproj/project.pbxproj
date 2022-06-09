@@ -15,6 +15,10 @@
 		321CF1C62850882A00F3B920 /* Gabwatni_CaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1C52850882A00F3B920 /* Gabwatni_CaveUITests.swift */; };
 		321CF1C82850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1C72850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift */; };
 		32B8EB6A285206A9009C1DC4 /* DeepDarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B8EB69285206A9009C1DC4 /* DeepDarkView.swift */; };
+		6E01FB3E2852081000B98789 /* ShimmeringItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E01FB3D2852081000B98789 /* ShimmeringItemView.swift */; };
+		6E01FB412852082100B98789 /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 6E01FB402852082100B98789 /* Shimmer */; };
+		6E01FB442852083400B98789 /* TwilightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E01FB432852083400B98789 /* TwilightView.swift */; };
+		6E01FB472852084300B98789 /* DeathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E01FB462852084300B98789 /* DeathView.swift */; };
 		7B9E61B1285204AB00C931F4 /* Abyss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E61B0285204AB00C931F4 /* Abyss.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +51,9 @@
 		321CF1C52850882A00F3B920 /* Gabwatni_CaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveUITests.swift; sourceTree = "<group>"; };
 		321CF1C72850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		32B8EB69285206A9009C1DC4 /* DeepDarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDarkView.swift; sourceTree = "<group>"; };
+		6E01FB3D2852081000B98789 /* ShimmeringItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmeringItemView.swift; sourceTree = "<group>"; };
+		6E01FB432852083400B98789 /* TwilightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilightView.swift; sourceTree = "<group>"; };
+		6E01FB462852084300B98789 /* DeathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathView.swift; sourceTree = "<group>"; };
 		7B9E61B0285204AB00C931F4 /* Abyss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Abyss.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E01FB412852082100B98789 /* Shimmer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +108,9 @@
 			children = (
 				321CF1AA2850882800F3B920 /* Gabwatni_CaveApp.swift */,
 				321CF1AC2850882800F3B920 /* ContentView.swift */,
+				6E01FB3D2852081000B98789 /* ShimmeringItemView.swift */,
+				6E01FB452852083900B98789 /* DeathView */,
+				6E01FB422852082800B98789 /* TwilightZone */,
 				7B9E61AF2852043200C931F4 /* DarkZone */,
 				321CF1AE2850882A00F3B920 /* Assets.xcassets */,
 				321CF1B02850882A00F3B920 /* Preview Content */,
@@ -148,6 +159,22 @@
 			path = DeepDark;
 			sourceTree = "<group>";
 		};
+		6E01FB422852082800B98789 /* TwilightZone */ = {
+			isa = PBXGroup;
+			children = (
+				6E01FB432852083400B98789 /* TwilightView.swift */,
+			);
+			path = TwilightZone;
+			sourceTree = "<group>";
+		};
+		6E01FB452852083900B98789 /* DeathView */ = {
+			isa = PBXGroup;
+			children = (
+				6E01FB462852084300B98789 /* DeathView.swift */,
+			);
+			path = DeathView;
+			sourceTree = "<group>";
+		};
 		7B9E61AF2852043200C931F4 /* DarkZone */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +200,9 @@
 			dependencies = (
 			);
 			name = Gabwatni_Cave;
+			packageProductDependencies = (
+				6E01FB402852082100B98789 /* Shimmer */,
+			);
 			productName = Gabwatni_Cave;
 			productReference = 321CF1A72850882800F3B920 /* Gabwatni_Cave.app */;
 			productType = "com.apple.product-type.application";
@@ -245,6 +275,9 @@
 				Base,
 			);
 			mainGroup = 321CF19E2850882800F3B920;
+			packageReferences = (
+				6E01FB3F2852082100B98789 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */,
+			);
 			productRefGroup = 321CF1A82850882800F3B920 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -287,9 +320,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E01FB472852084300B98789 /* DeathView.swift in Sources */,
+				6E01FB442852083400B98789 /* TwilightView.swift in Sources */,
 				32B8EB6A285206A9009C1DC4 /* DeepDarkView.swift in Sources */,
 				321CF1AD2850882800F3B920 /* ContentView.swift in Sources */,
 				7B9E61B1285204AB00C931F4 /* Abyss.swift in Sources */,
+				6E01FB3E2852081000B98789 /* ShimmeringItemView.swift in Sources */,
 				321CF1AB2850882800F3B920 /* Gabwatni_CaveApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -615,6 +651,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6E01FB3F2852082100B98789 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/markiv/SwiftUI-Shimmer";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6E01FB402852082100B98789 /* Shimmer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E01FB3F2852082100B98789 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */;
+			productName = Shimmer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 321CF19F2850882800F3B920 /* Project object */;
 }
