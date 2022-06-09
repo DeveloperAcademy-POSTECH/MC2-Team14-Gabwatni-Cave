@@ -17,6 +17,7 @@
 		32B8EB6A285206A9009C1DC4 /* DeepDarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B8EB69285206A9009C1DC4 /* DeepDarkView.swift */; };
 		7810DA3A2852081200069CFB /* EntranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810DA392852081200069CFB /* EntranceView.swift */; };
 		7B9E61B1285204AB00C931F4 /* Abyss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E61B0285204AB00C931F4 /* Abyss.swift */; };
+		CCF6C24B2852092D00C48E22 /* AncestorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF6C24A2852092D00C48E22 /* AncestorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		32B8EB69285206A9009C1DC4 /* DeepDarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDarkView.swift; sourceTree = "<group>"; };
 		7810DA392852081200069CFB /* EntranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceView.swift; sourceTree = "<group>"; };
 		7B9E61B0285204AB00C931F4 /* Abyss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Abyss.swift; sourceTree = "<group>"; };
+		CCF6C24A2852092D00C48E22 /* AncestorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AncestorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		321CF1A92850882800F3B920 /* Gabwatni_Cave */ = {
 			isa = PBXGroup;
 			children = (
+				CCF6C2492852092000C48E22 /* StartZone */,
 				7810DA38285207F600069CFB /* EntranceZone */,
 				321CF1AA2850882800F3B920 /* Gabwatni_CaveApp.swift */,
 				321CF1AC2850882800F3B920 /* ContentView.swift */,
@@ -166,6 +169,14 @@
 				32B8EB6728520652009C1DC4 /* Abyss */,
 			);
 			path = DarkZone;
+			sourceTree = "<group>";
+		};
+		CCF6C2492852092000C48E22 /* StartZone */ = {
+			isa = PBXGroup;
+			children = (
+				CCF6C24A2852092D00C48E22 /* AncestorView.swift */,
+			);
+			path = StartZone;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +312,7 @@
 				7810DA3A2852081200069CFB /* EntranceView.swift in Sources */,
 				32B8EB6A285206A9009C1DC4 /* DeepDarkView.swift in Sources */,
 				321CF1AD2850882800F3B920 /* ContentView.swift in Sources */,
+				CCF6C24B2852092D00C48E22 /* AncestorView.swift in Sources */,
 				7B9E61B1285204AB00C931F4 /* Abyss.swift in Sources */,
 				321CF1AB2850882800F3B920 /* Gabwatni_CaveApp.swift in Sources */,
 			);
