@@ -14,7 +14,6 @@
 		321CF1BC2850882A00F3B920 /* Gabwatni_CaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1BB2850882A00F3B920 /* Gabwatni_CaveTests.swift */; };
 		321CF1C62850882A00F3B920 /* Gabwatni_CaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1C52850882A00F3B920 /* Gabwatni_CaveUITests.swift */; };
 		321CF1C82850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1C72850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift */; };
-		32E159622851DF13009A6AEF /* pageChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E159612851DF13009A6AEF /* pageChangeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +44,6 @@
 		321CF1C12850882A00F3B920 /* Gabwatni_CaveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Gabwatni_CaveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		321CF1C52850882A00F3B920 /* Gabwatni_CaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveUITests.swift; sourceTree = "<group>"; };
 		321CF1C72850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		32E159612851DF13009A6AEF /* pageChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pageChangeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +95,19 @@
 			isa = PBXGroup;
 			children = (
 				321CF1AA2850882800F3B920 /* Gabwatni_CaveApp.swift */,
+				32E159682851E64D009A6AEF /* Model */,
+				32E159672851E644009A6AEF /* ViewModel */,
+				32E1596A2851E674009A6AEF /* StartView */,
+				32E159632851E5B7009A6AEF /* EntranceZone */,
+				32E159652851E60F009A6AEF /* TwilightZone */,
+				32E159662851E625009A6AEF /* DarkZone */,
+				32E1596B2851E68E009A6AEF /* EndView */,
+				32E1596F2851E6EA009A6AEF /* CardView */,
+				32E1596E2851E6BE009A6AEF /* MiniMapView */,
+				32E1596D2851E6A6009A6AEF /* InventoryView */,
+				32E1596C2851E696009A6AEF /* DieView */,
+				32E159692851E663009A6AEF /* Resources */,
 				321CF1AC2850882800F3B920 /* ContentView.swift */,
-				32E159612851DF13009A6AEF /* pageChangeView.swift */,
 				321CF1AE2850882A00F3B920 /* Assets.xcassets */,
 				321CF1B02850882A00F3B920 /* Preview Content */,
 			);
@@ -128,6 +137,90 @@
 				321CF1C72850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift */,
 			);
 			path = Gabwatni_CaveUITests;
+			sourceTree = "<group>";
+		};
+		32E159632851E5B7009A6AEF /* EntranceZone */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EntranceZone;
+			sourceTree = "<group>";
+		};
+		32E159652851E60F009A6AEF /* TwilightZone */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TwilightZone;
+			sourceTree = "<group>";
+		};
+		32E159662851E625009A6AEF /* DarkZone */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DarkZone;
+			sourceTree = "<group>";
+		};
+		32E159672851E644009A6AEF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		32E159682851E64D009A6AEF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		32E159692851E663009A6AEF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		32E1596A2851E674009A6AEF /* StartView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StartView;
+			sourceTree = "<group>";
+		};
+		32E1596B2851E68E009A6AEF /* EndView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EndView;
+			sourceTree = "<group>";
+		};
+		32E1596C2851E696009A6AEF /* DieView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DieView;
+			sourceTree = "<group>";
+		};
+		32E1596D2851E6A6009A6AEF /* InventoryView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InventoryView;
+			sourceTree = "<group>";
+		};
+		32E1596E2851E6BE009A6AEF /* MiniMapView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MiniMapView;
+			sourceTree = "<group>";
+		};
+		32E1596F2851E6EA009A6AEF /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CardView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +353,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32E159622851DF13009A6AEF /* pageChangeView.swift in Sources */,
 				321CF1AD2850882800F3B920 /* ContentView.swift in Sources */,
 				321CF1AB2850882800F3B920 /* Gabwatni_CaveApp.swift in Sources */,
 			);
