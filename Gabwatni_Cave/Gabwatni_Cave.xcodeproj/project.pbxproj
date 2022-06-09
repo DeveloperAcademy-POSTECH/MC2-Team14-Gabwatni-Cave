@@ -14,6 +14,9 @@
 		321CF1BC2850882A00F3B920 /* Gabwatni_CaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1BB2850882A00F3B920 /* Gabwatni_CaveTests.swift */; };
 		321CF1C62850882A00F3B920 /* Gabwatni_CaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1C52850882A00F3B920 /* Gabwatni_CaveUITests.swift */; };
 		321CF1C82850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1C72850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift */; };
+		6E01FB242851D83500B98789 /* ShimmeringItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E01FB232851D83500B98789 /* ShimmeringItemView.swift */; };
+		6E01FB272851D86500B98789 /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 6E01FB262851D86500B98789 /* Shimmer */; };
+		6E01FB292851D89700B98789 /* DeathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E01FB282851D89700B98789 /* DeathView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,8 @@
 		321CF1C12850882A00F3B920 /* Gabwatni_CaveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Gabwatni_CaveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		321CF1C52850882A00F3B920 /* Gabwatni_CaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveUITests.swift; sourceTree = "<group>"; };
 		321CF1C72850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6E01FB232851D83500B98789 /* ShimmeringItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmeringItemView.swift; sourceTree = "<group>"; };
+		6E01FB282851D89700B98789 /* DeathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E01FB272851D86500B98789 /* Shimmer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +100,7 @@
 		321CF1A92850882800F3B920 /* Gabwatni_Cave */ = {
 			isa = PBXGroup;
 			children = (
+				6E01FB222851D82600B98789 /* Niber */,
 				321CF1AA2850882800F3B920 /* Gabwatni_CaveApp.swift */,
 				321CF1AC2850882800F3B920 /* ContentView.swift */,
 				321CF1AE2850882A00F3B920 /* Assets.xcassets */,
@@ -127,6 +134,15 @@
 			path = Gabwatni_CaveUITests;
 			sourceTree = "<group>";
 		};
+		6E01FB222851D82600B98789 /* Niber */ = {
+			isa = PBXGroup;
+			children = (
+				6E01FB232851D83500B98789 /* ShimmeringItemView.swift */,
+				6E01FB282851D89700B98789 /* DeathView.swift */,
+			);
+			path = Niber;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +159,9 @@
 			dependencies = (
 			);
 			name = Gabwatni_Cave;
+			packageProductDependencies = (
+				6E01FB262851D86500B98789 /* Shimmer */,
+			);
 			productName = Gabwatni_Cave;
 			productReference = 321CF1A72850882800F3B920 /* Gabwatni_Cave.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +234,9 @@
 				Base,
 			);
 			mainGroup = 321CF19E2850882800F3B920;
+			packageReferences = (
+				6E01FB252851D86500B98789 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */,
+			);
 			productRefGroup = 321CF1A82850882800F3B920 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,6 +281,8 @@
 			files = (
 				321CF1AD2850882800F3B920 /* ContentView.swift in Sources */,
 				321CF1AB2850882800F3B920 /* Gabwatni_CaveApp.swift in Sources */,
+				6E01FB242851D83500B98789 /* ShimmeringItemView.swift in Sources */,
+				6E01FB292851D89700B98789 /* DeathView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +607,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6E01FB252851D86500B98789 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/markiv/SwiftUI-Shimmer";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6E01FB262851D86500B98789 /* Shimmer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E01FB252851D86500B98789 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */;
+			productName = Shimmer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 321CF19F2850882800F3B920 /* Project object */;
 }
