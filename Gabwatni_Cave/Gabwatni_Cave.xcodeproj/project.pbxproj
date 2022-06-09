@@ -14,6 +14,7 @@
 		321CF1BC2850882A00F3B920 /* Gabwatni_CaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1BB2850882A00F3B920 /* Gabwatni_CaveTests.swift */; };
 		321CF1C62850882A00F3B920 /* Gabwatni_CaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1C52850882A00F3B920 /* Gabwatni_CaveUITests.swift */; };
 		321CF1C82850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1C72850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift */; };
+		CCF6C248285206DD00C48E22 /* AncestorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF6C247285206DD00C48E22 /* AncestorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		321CF1C12850882A00F3B920 /* Gabwatni_CaveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Gabwatni_CaveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		321CF1C52850882A00F3B920 /* Gabwatni_CaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveUITests.swift; sourceTree = "<group>"; };
 		321CF1C72850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CCF6C247285206DD00C48E22 /* AncestorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AncestorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		321CF1A92850882800F3B920 /* Gabwatni_Cave */ = {
 			isa = PBXGroup;
 			children = (
+				CC2E26A5285204FC002E43C5 /* StartZone */,
 				321CF1AA2850882800F3B920 /* Gabwatni_CaveApp.swift */,
 				321CF1AC2850882800F3B920 /* ContentView.swift */,
 				321CF1AE2850882A00F3B920 /* Assets.xcassets */,
@@ -125,6 +128,14 @@
 				321CF1C72850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift */,
 			);
 			path = Gabwatni_CaveUITests;
+			sourceTree = "<group>";
+		};
+		CC2E26A5285204FC002E43C5 /* StartZone */ = {
+			isa = PBXGroup;
+			children = (
+				CCF6C247285206DD00C48E22 /* AncestorView.swift */,
+			);
+			path = StartZone;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCF6C248285206DD00C48E22 /* AncestorView.swift in Sources */,
 				321CF1AD2850882800F3B920 /* ContentView.swift in Sources */,
 				321CF1AB2850882800F3B920 /* Gabwatni_CaveApp.swift in Sources */,
 			);
