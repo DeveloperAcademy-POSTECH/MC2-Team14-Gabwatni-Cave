@@ -15,6 +15,7 @@
 		321CF1C62850882A00F3B920 /* Gabwatni_CaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1C52850882A00F3B920 /* Gabwatni_CaveUITests.swift */; };
 		321CF1C82850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1C72850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift */; };
 		32B8EB6A285206A9009C1DC4 /* DeepDarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B8EB69285206A9009C1DC4 /* DeepDarkView.swift */; };
+		7810DA3A2852081200069CFB /* EntranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810DA392852081200069CFB /* EntranceView.swift */; };
 		7B9E61B1285204AB00C931F4 /* Abyss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E61B0285204AB00C931F4 /* Abyss.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		321CF1C52850882A00F3B920 /* Gabwatni_CaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveUITests.swift; sourceTree = "<group>"; };
 		321CF1C72850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		32B8EB69285206A9009C1DC4 /* DeepDarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDarkView.swift; sourceTree = "<group>"; };
+		7810DA392852081200069CFB /* EntranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceView.swift; sourceTree = "<group>"; };
 		7B9E61B0285204AB00C931F4 /* Abyss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Abyss.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 		321CF1A92850882800F3B920 /* Gabwatni_Cave */ = {
 			isa = PBXGroup;
 			children = (
+				7810DA38285207F600069CFB /* EntranceZone */,
 				321CF1AA2850882800F3B920 /* Gabwatni_CaveApp.swift */,
 				321CF1AC2850882800F3B920 /* ContentView.swift */,
 				7B9E61AF2852043200C931F4 /* DarkZone */,
@@ -146,6 +149,14 @@
 				32B8EB69285206A9009C1DC4 /* DeepDarkView.swift */,
 			);
 			path = DeepDark;
+			sourceTree = "<group>";
+		};
+		7810DA38285207F600069CFB /* EntranceZone */ = {
+			isa = PBXGroup;
+			children = (
+				7810DA392852081200069CFB /* EntranceView.swift */,
+			);
+			path = EntranceZone;
 			sourceTree = "<group>";
 		};
 		7B9E61AF2852043200C931F4 /* DarkZone */ = {
@@ -287,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7810DA3A2852081200069CFB /* EntranceView.swift in Sources */,
 				32B8EB6A285206A9009C1DC4 /* DeepDarkView.swift in Sources */,
 				321CF1AD2850882800F3B920 /* ContentView.swift in Sources */,
 				7B9E61B1285204AB00C931F4 /* Abyss.swift in Sources */,
