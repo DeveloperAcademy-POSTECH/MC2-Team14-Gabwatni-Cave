@@ -130,10 +130,26 @@
 			path = Gabwatni_CaveUITests;
 			sourceTree = "<group>";
 		};
-		7B9E61AF2852043200C931F4 /* DarkZone */ = {
+		32B8EB6728520652009C1DC4 /* Abyss */ = {
 			isa = PBXGroup;
 			children = (
 				7B9E61B0285204AB00C931F4 /* Abyss.swift */,
+			);
+			path = Abyss;
+			sourceTree = "<group>";
+		};
+		32B8EB682852067D009C1DC4 /* DeepDark */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DeepDark;
+			sourceTree = "<group>";
+		};
+		7B9E61AF2852043200C931F4 /* DarkZone */ = {
+			isa = PBXGroup;
+			children = (
+				32B8EB682852067D009C1DC4 /* DeepDark */,
+				32B8EB6728520652009C1DC4 /* Abyss */,
 			);
 			path = DarkZone;
 			sourceTree = "<group>";
