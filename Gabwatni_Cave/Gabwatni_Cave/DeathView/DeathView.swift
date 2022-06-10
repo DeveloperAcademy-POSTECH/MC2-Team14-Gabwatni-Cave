@@ -41,7 +41,7 @@ struct DeathView: View {
                     .padding(.bottom)
                 
                 NavigationLink {
-                    EntranceView()
+//                    EntranceView()
                 } label: {
                     Text(restartText)
                         .foregroundColor(.red)

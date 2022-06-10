@@ -15,6 +15,7 @@ struct AncestorView: View {
     @State private var textboxState: Bool = false
     @State private var ancestorState: Bool = true
     @State var flow = 0
+    @State var count = 0
     
     var body: some View {
         if flow == 0 {
@@ -68,7 +69,7 @@ struct AncestorView: View {
                             }
                             .edgesIgnoringSafeArea(.all)
                         
-                        ShimmeringItemView(imageName: "flashlight", count: 1, degreeNum: 50)
+                        ShimmeringItemView(count: $count, imageName: "flashlight", degreeNum: 50)
                             .frame(width: 30)
                             .position(lightLocation)
                             .onAppear{
