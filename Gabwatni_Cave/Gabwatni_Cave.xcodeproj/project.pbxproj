@@ -30,12 +30,15 @@
 		7810DA4228521F2900069CFB /* EntranceView-stone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810DA4128521F2900069CFB /* EntranceView-stone.swift */; };
 		7810DA4428522C4D00069CFB /* EntranceView-info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810DA4328522C4D00069CFB /* EntranceView-info.swift */; };
 		7B9E61B1285204AB00C931F4 /* Abyss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E61B0285204AB00C931F4 /* Abyss.swift */; };
+		CCF625682852FC3C006C245D /* CardData.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF625672852FC3C006C245D /* CardData.json */; };
 		7B9E61B328520E1000C931F4 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E61B228520E1000C931F4 /* QuizView.swift */; };
 		7B9E61B728520E4900C931F4 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E61B628520E4900C931F4 /* Quiz.swift */; };
 		7B9E61B928520E5A00C931F4 /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E61B828520E5A00C931F4 /* QuizModel.swift */; };
 		7B9E61BB28520E6E00C931F4 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B9E61BA28520E6E00C931F4 /* data.json */; };
 		7B9E61BE28520E9A00C931F4 /* RectangleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E61BD28520E9A00C931F4 /* RectangleShape.swift */; };
 		CCF6C24B2852092D00C48E22 /* AncestorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF6C24A2852092D00C48E22 /* AncestorView.swift */; };
+		CCF6C24E28522CA200C48E22 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF6C24D28522CA200C48E22 /* CardModel.swift */; };
+		CCF6C25028522CB000C48E22 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF6C24F28522CB000C48E22 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,12 +85,15 @@
 		7810DA4128521F2900069CFB /* EntranceView-stone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntranceView-stone.swift"; sourceTree = "<group>"; };
 		7810DA4328522C4D00069CFB /* EntranceView-info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntranceView-info.swift"; sourceTree = "<group>"; };
 		7B9E61B0285204AB00C931F4 /* Abyss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Abyss.swift; sourceTree = "<group>"; };
+		CCF625672852FC3C006C245D /* CardData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CardData.json; sourceTree = "<group>"; };
 		7B9E61B228520E1000C931F4 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		7B9E61B628520E4900C931F4 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		7B9E61B828520E5A00C931F4 /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
 		7B9E61BA28520E6E00C931F4 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		7B9E61BD28520E9A00C931F4 /* RectangleShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleShape.swift; sourceTree = "<group>"; };
 		CCF6C24A2852092D00C48E22 /* AncestorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AncestorView.swift; sourceTree = "<group>"; };
+		CCF6C24D28522CA200C48E22 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		CCF6C24F28522CB000C48E22 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +162,7 @@
 		321CF1A92850882800F3B920 /* Gabwatni_Cave */ = {
 			isa = PBXGroup;
 			children = (
+				CCF6C24C28522C6300C48E22 /* Card */,
 
 				7810DA3E285218AF00069CFB /* Gabwatni-Cave-Info.plist */,
 
@@ -301,6 +308,16 @@
 			path = StartZone;
 			sourceTree = "<group>";
 		};
+		CCF6C24C28522C6300C48E22 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				CCF6C24D28522CA200C48E22 /* CardModel.swift */,
+				CCF6C24F28522CB000C48E22 /* CardView.swift */,
+				CCF625672852FC3C006C245D /* CardData.json */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -411,6 +428,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCF625682852FC3C006C245D /* CardData.json in Resources */,
 				321CF1B22850882A00F3B920 /* Preview Assets.xcassets in Resources */,
 
 				7810DA3D2852189800069CFB /* Sam3KRFont.ttf in Resources */,
@@ -466,6 +484,8 @@
 				6E01FB542852128200B98789 /* NextStageButtonView.swift in Sources */,
 
 				321CF1AB2850882800F3B920 /* Gabwatni_CaveApp.swift in Sources */,
+				CCF6C25028522CB000C48E22 /* CardView.swift in Sources */,
+				CCF6C24E28522CA200C48E22 /* CardModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
