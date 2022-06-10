@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DeepDarkView: View {
+    @State var count = 0
     var body: some View {
         GeometryReader { geometry in
             ZStack{
@@ -21,8 +22,12 @@ struct DeepDarkView: View {
                             .edgesIgnoringSafeArea(.all)
                         
                     )
-                InventoryView(image: "minimap")
+                ShimmeringItemView(count: $count, imageName: "treasure chest", degreeNum: 50)
+                    .frame(width: 50, height: 50)
+                    .position(x: 100, y: 100)
+                    
                 
+                InventoryView(image: "minimap")
                 
                 
             }

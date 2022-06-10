@@ -12,6 +12,7 @@ struct InventoryView: View {
     @State var showSheet2: Bool = false
     @State var transitionView: Bool = false
     var image: String
+    
     var body: some View {
         GeometryReader { geometry in
         Button{
