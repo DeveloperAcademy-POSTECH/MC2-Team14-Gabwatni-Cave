@@ -62,7 +62,7 @@ struct QuizView: View {
                 }
             }
         } else {
-//            DeathView()
+//            DeathView(reasonText: <#String#>, tipText: <#String#>)
         }
  
        
