@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		321C5A2A28522B430092C4E4 /* MiniMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C5A2928522B430092C4E4 /* MiniMapView.swift */; };
+		321C5A2D285302B40092C4E4 /* worldMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C5A2C285302B40092C4E4 /* worldMapView.swift */; };
 		321CF1AB2850882800F3B920 /* Gabwatni_CaveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1AA2850882800F3B920 /* Gabwatni_CaveApp.swift */; };
 		321CF1AD2850882800F3B920 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1AC2850882800F3B920 /* ContentView.swift */; };
 		321CF1AF2850882A00F3B920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 321CF1AE2850882A00F3B920 /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		321C5A2928522B430092C4E4 /* MiniMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniMapView.swift; sourceTree = "<group>"; };
+		321C5A2C285302B40092C4E4 /* worldMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = worldMapView.swift; sourceTree = "<group>"; };
 		321CF1A72850882800F3B920 /* Gabwatni_Cave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gabwatni_Cave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		321CF1AA2850882800F3B920 /* Gabwatni_CaveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveApp.swift; sourceTree = "<group>"; };
 		321CF1AC2850882800F3B920 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,6 +95,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		321C5A2828522B200092C4E4 /* MiniMap */ = {
+			isa = PBXGroup;
+			children = (
+				321C5A2928522B430092C4E4 /* MiniMapView.swift */,
+			);
+			path = MiniMap;
+			sourceTree = "<group>";
+		};
+		321C5A2B285302A20092C4E4 /* WorldMap */ = {
+			isa = PBXGroup;
+			children = (
+				321C5A2C285302B40092C4E4 /* worldMapView.swift */,
+			);
+			path = WorldMap;
+			sourceTree = "<group>";
+		};
 		321CF19E2850882800F3B920 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +134,8 @@
 		321CF1A92850882800F3B920 /* Gabwatni_Cave */ = {
 			isa = PBXGroup;
 			children = (
+				321C5A2B285302A20092C4E4 /* WorldMap */,
+				321C5A2828522B200092C4E4 /* MiniMap */,
 				6E01FB4B28520B6200B98789 /* TwilightZone */,
 				6E01FB4828520B2C00B98789 /* DeathView */,
 				CCF6C2492852092000C48E22 /* StartZone */,
@@ -349,9 +371,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E01FB4A28520B4A00B98789 /* DeathView.swift in Sources */,
+				321C5A2D285302B40092C4E4 /* worldMapView.swift in Sources */,
 				7810DA3A2852081200069CFB /* EntranceView.swift in Sources */,
 				32B8EB6A285206A9009C1DC4 /* DeepDarkView.swift in Sources */,
 				321CF1AD2850882800F3B920 /* ContentView.swift in Sources */,
+				321C5A2A28522B430092C4E4 /* MiniMapView.swift in Sources */,
 				6E01FB4D28520B6E00B98789 /* TwilightView.swift in Sources */,
 				6E01FB4F28520B7800B98789 /* ShimmeringItemView.swift in Sources */,
 				6E01FB562852245000B98789 /* TestLightView.swift in Sources */,
