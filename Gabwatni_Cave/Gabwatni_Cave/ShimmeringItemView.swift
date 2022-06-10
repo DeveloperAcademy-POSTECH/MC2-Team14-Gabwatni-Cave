@@ -18,18 +18,30 @@ struct ShimmeringItemView: View {
     private(set) var degreeNum: Double
     
     var body: some View {
-        Button {
-            isViewing.toggle()
-            count += 1
-            print(count)
-            
-            // 해당 요소에 맞는 View 보여주면 될 듯 ?
-            
-        } label: {
-            Image(imageName)
-                .shimmered(degreeNum: degreeNum)
-        }
-        .opacity(isViewing ? 1 : 0)
+        // 1번 방식 : Button으로 만든 방식
+//        Button {
+//            isViewing.toggle()
+//            count += 1
+//            print(count)
+//
+//            // 해당 요소에 맞는 View 보여주면 될 듯 ?
+//
+//        } label: {
+//            Image(imageName)
+//                .shimmered(degreeNum: degreeNum)
+//        }
+//        .opacity(isViewing ? 1 : 0)
+        
+        // 2번 방식 : Image에 클릭하는 제스쳐로 만든 방식
+        Image(imageName)
+            .shimmered(degreeNum: degreeNum)
+            .onTapGesture {
+                isViewing.toggle()
+                count += 1
+                print(count)
+            }
+            .opacity(isViewing ? 1 : 0)
+        
     }
 }
 

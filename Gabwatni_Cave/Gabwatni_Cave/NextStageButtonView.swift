@@ -14,7 +14,6 @@ struct NextStageButtonView<Content: View>: View {
     @Binding var nextCount: Int
     
     var body: some View {
-        
         NavigationLink(destination: destinationView) {
             Image("treasure chest")
         }
