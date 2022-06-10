@@ -12,7 +12,7 @@ struct EntranceView: View {
     @State var str = ""
     @State var str2 = "어떻게 잡았지"
     @State var StrArr : [String] = ["헉! 최가문의 후예...","드디어 나를 구하러 왔구나 소년이여...", "300년 동안 기다렸다...","난 동달(동굴달팽이라는 뜻, 동굴의 달인도 가능 ㅋㅋ)이라고 해","저희 할아버지의 할아버지의 할아버지의 할아버지를 어떻게 아시는 거죠?","나랑 같이 동굴을 탈출하려던 파트너 였지..(아련..)","너가 달수씨 대신 날 여기서 꺼내주지 않겠어?","좋습니다. 가문의 이름을 걸고 구해드리겠습니다.","출발하기전에 간단한 설명을 해주지..."," 이 동굴은 석회동굴이고, 저런 종유석들이 있는게 특징이지."," 한번 살펴보지 않겠어?"," " ]
-    @State var charArr : [String] = ["달팽이","달팽이", "달팽이","달팽이","최병호","달팽이","달팽이","최병호","달팽이","달팽이","달팽이"," " ]
+    @State var charArr : [String] = ["동달","동달", "동달","동달","최병호","동달","동달","최병호","동달","동달","동달"," " ]
     @State var stringNumber = 0
     @State var toggle  = false
     @State var isClicked = false
@@ -25,7 +25,7 @@ struct EntranceView: View {
             Image("entrancecave")
                 .resizable()
                 .ignoresSafeArea()
-            Color.black.opacity(0.7)
+            Color.black.opacity(0.5)
             .ignoresSafeArea()
             VStack{
                 GeometryReader{geo in
@@ -41,19 +41,19 @@ struct EntranceView: View {
                             print(1323)
                         }
                     } label: {
-                        Image(!isClicked ? "달팽이" : charArr[stringNumber-1])
+                        Image(!isClicked ? "동달" : charArr[stringNumber-1])
                             .resizable()
                             .scaleEffect(1.0)
-                            .frame(width: UIScreen.main.bounds.height/3, height: (!isClicked ? "달팽이" : charArr[stringNumber-1]) == "달팽이" ? UIScreen.main.bounds.height/3: UIScreen.main.bounds.height/2, alignment: .center)
+                            .frame(width: UIScreen.main.bounds.height/3, height: (!isClicked ? "동달" : charArr[stringNumber-1]) == "동달" ? UIScreen.main.bounds.height/3: UIScreen.main.bounds.height/2, alignment: .center)
                             
                     }
                     .position(x: xPosition
                               , y: yPosition)
                    
-                    Text(!isClicked ? "달팽이" : charArr[stringNumber-1])
+                    Text(!isClicked ? "동달" : charArr[stringNumber-1])
                             .font(.custom("Sam3KRFont", size: 20))
                             .foregroundColor(.white)
-                            .position(x: UIScreen.main.bounds.width/4
+                            .position(x: UIScreen.main.bounds.width/5
                                       , y: UIScreen.main.bounds.height/10 * 7)
                     
                     Text(str)
