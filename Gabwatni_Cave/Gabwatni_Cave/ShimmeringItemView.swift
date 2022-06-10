@@ -10,34 +10,47 @@ import Shimmer
 
 struct ShimmeringItemView: View {
     // @EnvironmentObject var data : dataModel
-    @State var imageName: String
-    @State var count: Int
-    @State var degreeNum: Double
-    
+
     @State private var isViewing: Bool = true
+    @Binding var count: Int
+    
+    private(set) var imageName: String
+    private(set) var degreeNum: Double
     
     var body: some View {
-        Button {
-            isViewing.toggle()
-            count += 1
-            print(count)
-            // 해당 요소에 맞는 View 보여주면 될 듯 ?
-        } label: {
-            Image(imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .rotationEffect(.degrees(degreeNum))
-                .frame(width: 50, height: 50)
-                .shimmering()
-        }
-        .opacity(isViewing ? 1 : 0)
+        // 1번 방식 : Button으로 만든 방식
+//        Button {
+//            isViewing.toggle()
+//            count += 1
+//            print(count)
+//
+//            // 해당 요소에 맞는 View 보여주면 될 듯 ?
+//
+//        } label: {
+//            Image(imageName)
+//                .shimmered(degreeNum: degreeNum)
+//        }
+//        .opacity(isViewing ? 1 : 0)
+        
+        // 2번 방식 : Image에 클릭하는 제스쳐로 만든 방식
+        Image(imageName)
+            .shimmered(degreeNum: degreeNum)
+            .onTapGesture {
+                isViewing.toggle()
+                count += 1
+                print(count)
+            }
+            .opacity(isViewing ? 1 : 0)
+        
     }
 }
 
-
-
-struct ShimmeringItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        ShimmeringItemView(imageName: "arrow", count: 1, degreeNum: 50)
+extension Image {
+    func shimmered(degreeNum: Double) -> some View {
+        self
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .rotationEffect(.degrees(degreeNum))
+            .shimmering()
     }
 }
