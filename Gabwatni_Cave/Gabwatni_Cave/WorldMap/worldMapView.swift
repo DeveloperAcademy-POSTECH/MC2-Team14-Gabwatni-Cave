@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct worldMapView: View {
+    @Environment(\.dismiss) private var dismiss
     var body: some View {
         ZStack{
             Rectangle()
@@ -15,15 +16,21 @@ struct worldMapView: View {
                 .foregroundColor(.black)
             
             VStack{
-                Text("뒤로가기")
-                    .foregroundColor(.white)
-                    .onTapGesture {
-                        print("안녕")
-                    }
+//                Text("뒤로가기")
+//                    .foregroundColor(.white)
+//                    .onTapGesture {
+//                        dismiss()
+//                    }
+                Button{
+                    dismiss()
+                }label: {
+                    Text("뒤로가기")
+                }
                 ScrollView(.horizontal){
-                Image("worldmap")
+                Image("worldmap2")
                     .resizable()
                     .scaledToFit()
+                    
             
                 
                 }

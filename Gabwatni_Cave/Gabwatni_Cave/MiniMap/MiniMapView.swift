@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct MiniMapView: View {
-    
+    @Environment(\.dismiss) private var dismiss
     //    @Binding var showSheet: Bool
+    var image: String
     var body: some View {
         ZStack{
             Rectangle()
@@ -17,8 +18,13 @@ struct MiniMapView: View {
                 .foregroundColor(.black)
             
             VStack{
+                Text("뒤로가기")
+                    .foregroundColor(.white)
+                    .onTapGesture {
+                        dismiss()
+                    }
                 ScrollView(.horizontal){
-                Image("minimap")
+                Image(image)
                     .resizable()
                     .scaledToFit()
             
@@ -38,6 +44,6 @@ struct MiniMapView: View {
 
 struct MiniMapView_Previews: PreviewProvider {
     static var previews: some View {
-        MiniMapView()
+        MiniMapView(image: "minimap")
     }
 }
