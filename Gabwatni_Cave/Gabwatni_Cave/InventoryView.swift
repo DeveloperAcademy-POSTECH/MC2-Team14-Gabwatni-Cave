@@ -12,17 +12,18 @@ struct InventoryView: View {
     @State var showSheet2: Bool = false
     @State var transitionView: Bool = false
     var image: String
+    
     var body: some View {
         GeometryReader { geometry in
         Button{
             withAnimation{
                 transitionView.toggle()}
         }label: {
-            Text("가방")
-                .foregroundColor(.black)
-                
+            Image("choi byung-ho")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 50, height: 50)
         }
-        .padding()
         .frame(maxWidth:.infinity, maxHeight: .infinity, alignment:.topTrailing)
         
         if transitionView {
