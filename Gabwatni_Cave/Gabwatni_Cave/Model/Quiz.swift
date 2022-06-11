@@ -7,9 +7,13 @@
 
 import Foundation
 
-struct Quiz: Identifiable, Decodable {
+struct Quiz: Identifiable {
     var id: Int
     var question: String
-    var correctIndex: Int
-    var answers: [String]
+    var options: [Option]
+}
+
+struct Option: Identifiable {
+    var id: Int
+    var option: String
 }
