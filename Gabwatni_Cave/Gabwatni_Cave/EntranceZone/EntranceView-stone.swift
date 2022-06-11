@@ -45,9 +45,18 @@ struct ShimmeringItemView_entran: View {
             print(count)
             // 해당 요소에 맞는 View 보여주면 될 듯 ?
         } label: {
-            Image(imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+//            Image(imageName)
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                .rotationEffect(.degrees(degreeNum))
+//                .frame(width: 50, height: 50)
+//                .shimmering()
+           
+                Circle()
+                .foregroundColor(.clear)
+                .clipShape(Circle())
+                .shadow(radius: 10)
+                .overlay(Circle().stroke(Color.white, lineWidth: 5))
                 .rotationEffect(.degrees(degreeNum))
                 .frame(width: 50, height: 50)
                 .shimmering()
