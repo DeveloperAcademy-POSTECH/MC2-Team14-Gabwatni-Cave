@@ -13,10 +13,8 @@ struct Gabwatni_CaveApp: App {
     
     var body: some Scene {
         WindowGroup {
-                EntranceControl()
-//            QuizView()
-//                .environmentObject(viewModel)
-
+            ContentView()
+            
         }
     }
 }

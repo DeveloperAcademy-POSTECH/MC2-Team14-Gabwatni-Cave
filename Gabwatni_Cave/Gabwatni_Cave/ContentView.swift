@@ -12,7 +12,6 @@ struct ContentView: View {
 //        Text("Hello test")
 //            .padding()
         DeepDarkView()
-   
     }
 }
 
