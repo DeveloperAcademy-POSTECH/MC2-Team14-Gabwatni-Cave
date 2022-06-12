@@ -25,6 +25,9 @@
 		6E01FB542852128200B98789 /* NextStageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E01FB532852128200B98789 /* NextStageButtonView.swift */; };
 		6E01FB562852245000B98789 /* TestLightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E01FB552852245000B98789 /* TestLightView.swift */; };
 		6EB990C82852DC4900D3CD55 /* TwilightZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB990C72852DC4900D3CD55 /* TwilightZone.swift */; };
+		6EB990E828545BE500D3CD55 /* TwiilightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB990E728545BE500D3CD55 /* TwiilightModel.swift */; };
+		6EB990ED285464EE00D3CD55 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB990EC285464EE00D3CD55 /* ItemDetailView.swift */; };
+		6EB990EE285468AF00D3CD55 /* TwilightData.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EB990EB28545C5000D3CD55 /* TwilightData.json */; };
 		7810DA3A2852081200069CFB /* EntranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810DA392852081200069CFB /* EntranceView.swift */; };
 		7810DA3D2852189800069CFB /* Sam3KRFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7810DA3C2852189800069CFB /* Sam3KRFont.ttf */; };
 		7810DA4028521C8000069CFB /* EntranceControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810DA3F28521C8000069CFB /* EntranceControl.swift */; };
@@ -81,6 +84,9 @@
 		6E01FB532852128200B98789 /* NextStageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStageButtonView.swift; sourceTree = "<group>"; };
 		6E01FB552852245000B98789 /* TestLightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLightView.swift; sourceTree = "<group>"; };
 		6EB990C72852DC4900D3CD55 /* TwilightZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilightZone.swift; sourceTree = "<group>"; };
+		6EB990E728545BE500D3CD55 /* TwiilightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwiilightModel.swift; sourceTree = "<group>"; };
+		6EB990EB28545C5000D3CD55 /* TwilightData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TwilightData.json; sourceTree = "<group>"; };
+		6EB990EC285464EE00D3CD55 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		7810DA392852081200069CFB /* EntranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceView.swift; sourceTree = "<group>"; };
 		7810DA3C2852189800069CFB /* Sam3KRFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sam3KRFont.ttf; sourceTree = "<group>"; };
 		7810DA3E285218AF00069CFB /* Gabwatni-Cave-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Gabwatni-Cave-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -184,6 +190,7 @@
 				321CF1B02850882A00F3B920 /* Preview Content */,
 				6E01FB4E28520B7800B98789 /* ShimmeringItemView.swift */,
 				321C5A2E285323580092C4E4 /* InventoryView.swift */,
+				6EB990EC285464EE00D3CD55 /* ItemDetailView.swift */,
 				6E01FB552852245000B98789 /* TestLightView.swift */,
 				6E01FB532852128200B98789 /* NextStageButtonView.swift */,
 				787554AE285327B500CF7F61 /* textBox.swift */,
@@ -247,6 +254,8 @@
 			children = (
 				6E01FB4C28520B6E00B98789 /* TwilightView.swift */,
 				6EB990C72852DC4900D3CD55 /* TwilightZone.swift */,
+				6EB990E728545BE500D3CD55 /* TwiilightModel.swift */,
+				6EB990EB28545C5000D3CD55 /* TwilightData.json */,
 			);
 			path = TwilightZone;
 			sourceTree = "<group>";
@@ -432,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCF625682852FC3C006C245D /* CardData.json in Resources */,
+				6EB990EE285468AF00D3CD55 /* TwilightData.json in Resources */,
 				321CF1B22850882A00F3B920 /* Preview Assets.xcassets in Resources */,
 				7810DA3D2852189800069CFB /* Sam3KRFont.ttf in Resources */,
 				7B9E61BB28520E6E00C931F4 /* data.json in Resources */,
@@ -472,11 +482,13 @@
 				6E01FB4D28520B6E00B98789 /* TwilightView.swift in Sources */,
 				7810DA4028521C8000069CFB /* EntranceControl.swift in Sources */,
 				6E01FB4F28520B7800B98789 /* ShimmeringItemView.swift in Sources */,
+				6EB990ED285464EE00D3CD55 /* ItemDetailView.swift in Sources */,
 				6E01FB562852245000B98789 /* TestLightView.swift in Sources */,
 				CCF6C24B2852092D00C48E22 /* AncestorView.swift in Sources */,
 				787554AF285327B500CF7F61 /* textBox.swift in Sources */,
 				7B9E61BE28520E9A00C931F4 /* RectangleShape.swift in Sources */,
 				321C5A2F285323580092C4E4 /* InventoryView.swift in Sources */,
+				6EB990E828545BE500D3CD55 /* TwiilightModel.swift in Sources */,
 				7B9E61B728520E4900C931F4 /* Quiz.swift in Sources */,
 				7B9E61B328520E1000C931F4 /* QuizView.swift in Sources */,
 				7B9E61B1285204AB00C931F4 /* Abyss.swift in Sources */,

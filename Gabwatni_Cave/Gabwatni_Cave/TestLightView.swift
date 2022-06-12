@@ -13,16 +13,23 @@ struct TestLightView: View {
     
     @State var count: Int = 0
     
+    @State private var presentView: Bool = false
+    @State private var showingImage: String = ""
+    
+    let size = UIScreen.main.bounds
+    
     var body: some View {
-        let distance = sqrt((dragOffset.width) * (dragOffset.width) + (dragOffset.height) * (dragOffset.height))
+      let distance = sqrt((dragOffset.width) * (dragOffset.width) + (dragOffset.height) * (dragOffset.height))
+       
+//        let distance = sqrt((pow(dragOffset.width - 200, 2)) + pow(dragOffset.height - 200, 2))
         
         ZStack{
-//            Image("Twilight")
-//                .resizable()
-//                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
-//                .scaledToFit()
-//                .ignoresSafeArea()
-//
+            Image("Twilight")
+                .resizable()
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
+                .scaledToFit()
+                .ignoresSafeArea()
+
             RadialGradient(
                 gradient: Gradient(colors: [Color(0xFFFFFF, alpha: 0.1), Color(0x000000, alpha: 1)]),
                 center: .center,
@@ -44,29 +51,27 @@ struct TestLightView: View {
                     print(distance)
                 })
             
-            // stem 씨 살려줘용
-            if distance > 0 {
-                ShimmeringItemView(count: $count, imageName: "treasure chest", degreeNum: 40)
+            if presentView {
+                ZStack{
+                    Rectangle()
+                        .foregroundColor(.black)
+                    ItemDetailView(imageName: showingImage, isShowing: $presentView)
+                        .frame(width: size.width, height: size.height)
+                        //.position(x: size.width / 2, y: size.height / 2)
+                }
+                
+            }
+
+//            ShimmeringItemView(count: $count, isShowing: $presentView, imageName: "dongdal", degreeNum: 50, showingImage: $showingImage)
+//                .position(x: 200, y: 200)
+//                .frame(width: 50, height: 50)
+
+            if distance <= sqrt(2) * 100 + 50 {
+                ShimmeringItemView(count: $count, isShowing: $presentView, imageName: "dongdal", degreeNum: 50, showingImage: $showingImage)
+                    .position(x: 200, y: 200)
                     .frame(width: 50, height: 50)
             }
-            
-//            Button {
-//                print(distance)
-//                print("aa")
-//            } label: {
-//                // distance에 맞게 요소 위치를 주면 어느정도 해결 가능할지도
-//                //                if distance <= sqrt(2) * 50 {
-//                //                    ShimmeringItemView(count: $count, imageName: "treasure chest", degreeNum: 50)
-//                //                        .frame(width: 50, height: 50)
-//                //                }
-//                //
-//                if distance < 220 || distance > 150 {
-//                    ShimmeringItemView(count: $count, imageName: "treasure chest", degreeNum: 40)
-//                        //.position(x: 200, y: 100)
-//                        .frame(width: 50, height: 50)
-//
-//                }
-//            } .position(x: 200, y: 100)
+
         }
     }
 }
