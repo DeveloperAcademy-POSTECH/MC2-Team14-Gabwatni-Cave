@@ -18,43 +18,40 @@ struct DeathView: View {
     
     var body: some View {
         ZStack{
-            // image 넣으면 될듯
-            // font도 넣어야 함
-            Color.gray
+            Image("DeathView")
                 .ignoresSafeArea()
-            VStack{
+            
+            VStack(alignment: .center) {
                 Spacer()
+                Spacer()
+                
                 Text(reasonText)
-                    .fontWeight(.bold)
+                    .font(.custom("Sam3KRFont", size: 24))
                     .foregroundColor(.red)
-                    .font(.title3)
                     
                 Text(deathText)
-                    .fontWeight(.heavy)
+                    .font(.custom("Sam3KRFont", size: 42))
                     .foregroundColor(.red)
-                    .font(.title)
                     .padding(.bottom)
                 
                 Text(tipText)
+                    .font(.custom("Sam3KRFont", size: 24))
+                    .multilineTextAlignment(.center)
                     .foregroundColor(.white)
-                    .fontWeight(.medium)
                     .padding(.bottom)
                 
+                Spacer()
+                
+                // 어떤식으로 뷰를 넘어가게 할지 ?
                 NavigationLink {
 //                    EntranceView()
                 } label: {
                     Text(restartText)
+                        .font(.custom("Sam3KRFont", size: 24))
                         .foregroundColor(.red)
-                        .fontWeight(.semibold)
                 }
                 Spacer()
             }
         }
     }
 }
-//
-//struct DeathView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DeathView(reasonText: "가스 중독으로 인한", tipText: "동굴에서는 이런 이유로 \n 죽을 수 있습니다.")
-//    }
-//}
