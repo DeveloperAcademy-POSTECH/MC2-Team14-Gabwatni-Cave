@@ -8,32 +8,83 @@
 import SwiftUI
 
 struct CardView: View {
-    @ObservedObject var cardVM = CardViewModel()
+    let imageName: String
+    @State private var shineTirgger = false
+    @Binding var cardState: Bool
     
     var body: some View {
+        if cardState {
         ZStack {
-            RoundedRectangle(cornerRadius: 10)
-            VStack {
-                Text(cardVM.cards[0].title)
+            Color.black
+                .opacity(0.7)
+                .ignoresSafeArea()
+
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .frame(width: 345, height: 470, alignment: .center)
+                        .shadow(color: .gray, radius: 2, x: 0, y: 0)
+                        .foregroundColor(Color(0xDFDFDF))
+
+                    VStack {
+                        Text((CardData[imageName] ?? ["no title", "no text"])[0])
+                        //Text(vm.cards[index].title)
+                            .font(.custom("Sam3KRFont", size: 30))
+                            .foregroundColor(.black)
+                        
+                        Image(imageName)
+                        //Image("\(vm.cards[index].imageName)")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 300, height: 356, alignment: .center)
+
+                    }
+                }
+                .onTapGesture {
+                    shineTirgger.toggle()
+                }
+                .shineEffect(animationTrigger: $shineTirgger)
+                .position(x: UIScreen.main.bounds.width/2
+                          , y: UIScreen.main.bounds.height/2.7)
+            
+
+            ZStack{
+                Image("textbox")
+                    .resizable()
+                    .frame(width: 330, height: 150)
+                
+                //ScrollView {
+                Text((CardData[imageName] ?? ["no title", "no text"])[1])
+                //Text("\(vm.cards[index].text)")
+                    .font(.custom("Sam3KRFont", size: 20))
                     .foregroundColor(.white)
-                Text(cardVM.cards[0].imageName)
-                    .foregroundColor(.white)
-                Text(cardVM.cards[0].text)
-                    .foregroundColor(.white)
+                    .frame(width: 300, height: 250, alignment: .center)
+                    
+                //}
+                
+//                Text("동달이")
+//                        .font(.custom("Sam3KRFont", size: 25))
+//                        .foregroundColor(.white)
+//                        .position(x: UIScreen.main.bounds.width/4
+//                                  , y: UIScreen.main.bounds.height/15 * 10.3)
             }
+            .position(x: UIScreen.main.bounds.width/2
+                      , y: UIScreen.main.bounds.height/10 * 7.7)
             
             Button {
-                print(cardVM.cards[0].title)
+                cardState.toggle()
             } label: {
-                Text("Button")
-            }
-            
-        }
-    }
-}
+                Image(systemName: "xmark.circle")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50, height: 50, alignment: .center)
+                    .foregroundColor(.white)
+                    .padding()
+                    
+            } .position(x: UIScreen.main.bounds.width/2
+                        , y: UIScreen.main.bounds.height/40)
 
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardView()
+        }
+        }
+
     }
 }
