@@ -16,7 +16,7 @@ struct CardView: View {
         if cardState {
         ZStack {
             Color.black
-                .opacity(0.7)
+                .opacity(0.8)
                 .ignoresSafeArea()
 
                 ZStack {
@@ -58,14 +58,6 @@ struct CardView: View {
                     .font(.custom("Sam3KRFont", size: 20))
                     .foregroundColor(.white)
                     .frame(width: 300, height: 250, alignment: .center)
-                    
-                //}
-                
-//                Text("동달이")
-//                        .font(.custom("Sam3KRFont", size: 25))
-//                        .foregroundColor(.white)
-//                        .position(x: UIScreen.main.bounds.width/4
-//                                  , y: UIScreen.main.bounds.height/15 * 10.3)
             }
             .position(x: UIScreen.main.bounds.width/2
                       , y: UIScreen.main.bounds.height/10 * 7.7)
