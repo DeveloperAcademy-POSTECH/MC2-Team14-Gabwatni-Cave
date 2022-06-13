@@ -51,3 +51,6 @@ class CardViewModel: ObservableObject {
     }
 
 }
+
+public var CardData : [String : Array<String>] =
+["dongdal" : ["동달이", "동달이 텍스트"]]

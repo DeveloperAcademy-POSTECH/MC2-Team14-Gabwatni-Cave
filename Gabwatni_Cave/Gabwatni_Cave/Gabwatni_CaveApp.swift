@@ -9,12 +9,11 @@ import SwiftUI
 
 @main
 struct Gabwatni_CaveApp: App {
-    @StateObject var viewModel = QuizModel()
-    
     var body: some Scene {
         WindowGroup {
             ContentView()
             
+            // QuizView(quizModel: QuizModel())
         }
     }
 }

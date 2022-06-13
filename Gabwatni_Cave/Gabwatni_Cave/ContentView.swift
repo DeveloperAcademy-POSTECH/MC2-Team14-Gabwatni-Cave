@@ -9,10 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+
 //        Text("Hello test")
 //            .padding()
        // DeepDarkView()
-        EntranceControl()
+       
+
+        Text("Hello test")
+            .padding()
+
+
     }
 }
 
