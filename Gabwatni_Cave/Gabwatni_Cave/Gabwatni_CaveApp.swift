@@ -12,8 +12,7 @@ struct Gabwatni_CaveApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-            
-            // QuizView(quizModel: QuizModel())
+            // Abyss()
         }
     }
 }
