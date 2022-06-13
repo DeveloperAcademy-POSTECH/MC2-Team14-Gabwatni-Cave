@@ -20,9 +20,7 @@ struct newTextBox: View {
     @State var yPosition : CGFloat = UIScreen.main.bounds.height/3
 
     var body: some View {
-        ZStack{
-            Color.black.opacity(0.5)
-            .ignoresSafeArea()
+        
             VStack{
                 GeometryReader{geo in
                     //이미지 넣고싶으면  사용할 코드 --수정 필요함!!---------------------
@@ -115,7 +113,7 @@ struct newTextBox: View {
             }
             
             
-        }
+        
     }
     
     
