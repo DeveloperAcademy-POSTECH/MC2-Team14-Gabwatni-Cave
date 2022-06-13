@@ -19,8 +19,5 @@ struct IntroControl: View {
     }
 }
 
-struct IntroControl_Previews: PreviewProvider {
-    static var previews: some View {
-        IntroControl()
-    }
-}
+
+
