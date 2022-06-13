@@ -16,7 +16,8 @@ struct NextStageButtonView<Content: View>: View {
     
     var body: some View {
         NavigationLink(destination: destinationView) {
-            Image("treasure chest")
+            Image("nextStage")
+                .resizable()
         }
         .opacity(count >= nextCount && isShowing == false ? 1 : 0)
         //        Button {

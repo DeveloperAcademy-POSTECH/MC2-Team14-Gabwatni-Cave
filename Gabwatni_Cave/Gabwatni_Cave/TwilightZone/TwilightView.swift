@@ -21,12 +21,29 @@ struct TwilightView: View {
     @State private var presentView: Bool = false
     @State private var showingImage: String = ""
 
+    @State private var testRender: Bool = false
+    
     var body: some View {
         ZStack{
-            Image("Twilight")
+            Image("twillight-edit")
                 .ignoresSafeArea()
+                .onTapGesture{
+                    testRender.toggle()
+                }
             
            // TestLightView()
+           
+            NextStageButtonView(destinationView: Abyss(), count: $count, nextCount: $maxCount, isShowing: $presentView)
+                .position(x: UIScreen.main.bounds.width * 0.8, y: UIScreen.main.bounds.height / 2)
+                
+            
+            ShimmeringItemView(count: $count, isShowing: $presentView, imageName: "salamander", degreeNum: 50, showingImage: $showingImage)
+                .frame(width: 500, height: 500)
+                .position(x: 100, y: 100)
+            
+            ShimmeringItemView(count: $count, isShowing: $presentView, imageName: "minigame dragon", degreeNum: 180, showingImage: $showingImage)
+                .frame(width: 50, height: 50)
+                .position(x: 200, y: 200)
             
             if presentView {
                 ZStack{
@@ -37,20 +54,9 @@ struct TwilightView: View {
                 }
             }
             
-            NextStageButtonView(destinationView: Abyss(), count: $count, nextCount: $maxCount, isShowing: $presentView)
-                .position(x: UIScreen.main.bounds.width * 0.8, y: UIScreen.main.bounds.height / 2)
-            
-            ShimmeringItemView(count: $count, isShowing: $presentView, imageName: "treasure chest", degreeNum: 50, showingImage: $showingImage)
-                .frame(width: 500, height: 500)
-                .position(x: 100, y: 100)
-            
-            ShimmeringItemView(count: $count, isShowing: $presentView, imageName: "dongdal", degreeNum: 50, showingImage: $showingImage)
-                .frame(width: 50, height: 50)
-                .position(x: 200, y: 200)
-            
            // 진입하면 나오는 view
             ZStack{
-                Image("FirstTwilight")
+                Image("light and darkness meet")
                     .ignoresSafeArea()
                 VStack{
                     Text(zoneText)
