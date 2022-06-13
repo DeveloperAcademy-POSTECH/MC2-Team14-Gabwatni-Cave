@@ -11,6 +11,7 @@ struct MiniMapView: View {
     @Environment(\.dismiss) private var dismiss
     //    @Binding var showSheet: Bool
     var image: String
+    var myPosition: String
     var body: some View {
         ZStack{
             Rectangle()
@@ -31,7 +32,7 @@ struct MiniMapView: View {
                 
                 }
                 
-                Text("안녕하세요")
+                Text(myPosition)
                     .foregroundColor(.white)
                 
                 
@@ -44,6 +45,6 @@ struct MiniMapView: View {
 
 struct MiniMapView_Previews: PreviewProvider {
     static var previews: some View {
-        MiniMapView(image: "minimap")
+        MiniMapView(image: "minimap", myPosition: "d아")
     }
 }

@@ -18,6 +18,8 @@
 		321CF1C62850882A00F3B920 /* Gabwatni_CaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1C52850882A00F3B920 /* Gabwatni_CaveUITests.swift */; };
 		321CF1C82850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1C72850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift */; };
 		32B8EB6A285206A9009C1DC4 /* DeepDarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B8EB69285206A9009C1DC4 /* DeepDarkView.swift */; };
+		32C476942857194F003D0BB4 /* DeepDarkView-start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C476932857194F003D0BB4 /* DeepDarkView-start.swift */; };
+		32C4769628571A8B003D0BB4 /* DeepDarkControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C4769528571A8B003D0BB4 /* DeepDarkControl.swift */; };
 		32D522932854B93800344DC0 /* NextStageImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D522922854B93800344DC0 /* NextStageImageView.swift */; };
 		6E01FB4A28520B4A00B98789 /* DeathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E01FB4928520B4A00B98789 /* DeathView.swift */; };
 		6E01FB4D28520B6E00B98789 /* TwilightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E01FB4C28520B6E00B98789 /* TwilightView.swift */; };
@@ -85,6 +87,8 @@
 		321CF1C52850882A00F3B920 /* Gabwatni_CaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveUITests.swift; sourceTree = "<group>"; };
 		321CF1C72850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		32B8EB69285206A9009C1DC4 /* DeepDarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDarkView.swift; sourceTree = "<group>"; };
+		32C476932857194F003D0BB4 /* DeepDarkView-start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeepDarkView-start.swift"; sourceTree = "<group>"; };
+		32C4769528571A8B003D0BB4 /* DeepDarkControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDarkControl.swift; sourceTree = "<group>"; };
 		32D522922854B93800344DC0 /* NextStageImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStageImageView.swift; sourceTree = "<group>"; };
 		6E01FB4928520B4A00B98789 /* DeathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathView.swift; sourceTree = "<group>"; };
 		6E01FB4C28520B6E00B98789 /* TwilightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilightView.swift; sourceTree = "<group>"; };
@@ -253,6 +257,8 @@
 		32B8EB682852067D009C1DC4 /* DeepDark */ = {
 			isa = PBXGroup;
 			children = (
+				32C4769528571A8B003D0BB4 /* DeepDarkControl.swift */,
+				32C476932857194F003D0BB4 /* DeepDarkView-start.swift */,
 				32B8EB69285206A9009C1DC4 /* DeepDarkView.swift */,
 				32D522922854B93800344DC0 /* NextStageImageView.swift */,
 			);
@@ -483,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7810DA4228521F2900069CFB /* EntranceView-stone.swift in Sources */,
+				32C476942857194F003D0BB4 /* DeepDarkView-start.swift in Sources */,
 				6E01FB4A28520B4A00B98789 /* DeathView.swift in Sources */,
 				321C5A2D285302B40092C4E4 /* worldMapView.swift in Sources */,
 				78259A442855998D0096AB51 /* EntranceView-start.swift in Sources */,
@@ -503,6 +510,7 @@
 				6E01FB4F28520B7800B98789 /* ShimmeringItemView.swift in Sources */,
 				6EB990ED285464EE00D3CD55 /* ItemDetailView.swift in Sources */,
 				6E01FB562852245000B98789 /* TestLightView.swift in Sources */,
+				32C4769628571A8B003D0BB4 /* DeepDarkControl.swift in Sources */,
 				CCF6C24B2852092D00C48E22 /* AncestorView.swift in Sources */,
 				787554AF285327B500CF7F61 /* textBox.swift in Sources */,
 				321C5A2F285323580092C4E4 /* InventoryView.swift in Sources */,

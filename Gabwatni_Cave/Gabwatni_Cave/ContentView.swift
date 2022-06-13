@@ -12,11 +12,11 @@ struct ContentView: View {
 
 //        Text("Hello test")
 //            .padding()
-       // DeepDarkView()
+        DeepDarkControl()
        
 
-        Text("Hello test")
-            .padding()
+//        Text("Hello test")
+//            .padding()
 
 
     }
