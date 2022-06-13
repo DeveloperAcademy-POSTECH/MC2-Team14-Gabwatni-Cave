@@ -17,6 +17,9 @@ struct AncestorView: View {
     @State var flow = 0
     @State var count = 0
     
+    @State private var presentView: Bool = false
+    @State private var showingImage: String =  ""
+    
     var body: some View {
         if flow == 0 {
             StartZoneStartView
@@ -69,7 +72,7 @@ struct AncestorView: View {
                             }
                             .edgesIgnoringSafeArea(.all)
                         
-                        ShimmeringItemView(count: $count, imageName: "flashlight", degreeNum: 50)
+                        ShimmeringItemView(count: $count, isShowing: $presentView, imageName: "flashlight", degreeNum: 50, showingImage: $showingImage)
                             .frame(width: 30)
                             .position(lightLocation)
                             .onAppear{
