@@ -9,9 +9,12 @@ import SwiftUI
 
 
 struct EntranceControl: View {
-    @State var entranceControl = 0
+    @State var entranceControl = -1
     var body: some View {
-        if entranceControl == 0{
+        if entranceControl == -1{
+            EntranceView_start(flow: $entranceControl)
+        }
+        else if entranceControl == 0{
             EntranceView(flow: $entranceControl)
         }
         else if entranceControl == 1{
@@ -19,6 +22,9 @@ struct EntranceControl: View {
         }
         else if entranceControl == 2{
             EntranceView_info(flow: $entranceControl)
+        }
+        else if entranceControl == 3{
+            EntranceView_end(flow: $entranceControl)
         }
     }
 }

@@ -1,26 +1,26 @@
 //
-//  EntranceView.swift
+//  EntranceView-end.swift
 //  Gabwatni_Cave
 //
-//  Created by dohankim on 2022/06/09.
+//  Created by dohankim on 2022/06/12.
 //
 
 import SwiftUI
 import AVFoundation
-
-struct EntranceView: View {
+struct EntranceView_end: View {
+    @Binding var flow : Int
     @State var str = ""
     @State var str2 = "어떻게 잡았지"
-    @State var StrArr : [String] = ["헉! 최가문의 후예...","드디어 나를 구하러 왔구나 소년이여...", "300년 동안 기다렸다...","난 동달(동굴달팽이라는 뜻, 동굴의 달인도 가능 ㅋㅋ)이라고 해","저희 할아버지의 할아버지의 할아버지의 할아버지를 어떻게 아시는 거죠?","나랑 같이 동굴을 탈출하려던 파트너 였지..(아련..)","너가 달수씨 대신 날 여기서 꺼내주지 않겠어?","좋습니다. 가문의 이름을 걸고 구해드리겠습니다.","출발하기전에 간단한 설명을 해주지..."," 이 동굴은 석회동굴이고, 저런 종유석들이 있는게 특징이지."," 한번 살펴보지 않겠어?"," " ]
-    @State var charArr : [String] = ["동달","동달", "동달","동달","최병호","동달","동달","최병호","동달","동달","동달"," " ]
+    @State var StrArr : [String] = ["잘했어~~","이렇게 동굴의 정보를 파악해야 탈출이 가능하다는 점 알아둬!","이제 어느정도 준비가 된거 같으니 앞으로 가자."," " ]
+    @State var charArr : [String] = ["동달","동달", "동달"," " ]
     @State var stringNumber = 0
     @State var toggle  = false
     @State var isClicked = false
     @State var isFinished = false
+    @State var isEnd = false
     @State var xPosition : CGFloat = UIScreen.main.bounds.width/2
     @State var yPosition : CGFloat = UIScreen.main.bounds.height/3
     
-    @Binding var flow : Int
     var body: some View {
         ZStack{
             Image("entrancecave")
@@ -31,20 +31,19 @@ struct EntranceView: View {
             VStack{
                 GeometryReader{geo in
                     Button {
-                        print(isClicked)
-                        if !isClicked{
-                            ges(strnum: stringNumber)
-                            isClicked = true
-                            AudioServicesPlaySystemSound(1311)
-                            if stringNumber < 11{
-                                stringNumber+=1
-                                print(stringNumber)
-                            }
-                            else if stringNumber == 11{
-                                flow = 1
-                                print(1323)
-                            }
-                        }
+//                        if !isClicked{
+//                            ges(strnum: stringNumber)
+//                            isClicked = true
+//                            AudioServicesPlaySystemSound(1311)
+//                            if stringNumber < 3{
+//                                stringNumber+=1
+//                                print(stringNumber)
+//                            }
+//                            else if stringNumber == 3{
+//
+//                                print("다음스테이지로 넘어가는 함수")
+//                            }
+//                        }
                         
                     } label: {
                         Image(!isClicked ? "동달" : charArr[stringNumber-1])
@@ -76,13 +75,14 @@ struct EntranceView: View {
                             Button{
                                 ges(strnum: stringNumber)
                                 isClicked = true
-                                if stringNumber < 11{
+                                if stringNumber < 3{
                                     stringNumber+=1
                                     print(stringNumber)
                                 }
-                                else if stringNumber == 11{
-                                    flow = 1
-                                    print(1323)
+                                else if stringNumber == 3{
+                                    isEnd = true
+                                    isClicked = false
+                                    print("다음스테이지로 넘어가는 함수")
                                 }
                                 isFinished.toggle()
                             }
@@ -95,18 +95,42 @@ struct EntranceView: View {
                         .position(x: UIScreen.main.bounds.width/8 * 6
                                   , y: UIScreen.main.bounds.height/13 * 11)
                         }
-                       
+                        
                         
                     }
-                    
+                    if isEnd{
+                        Button{
+                            print("go to nextlevel")
+                        }label: {
+                            Image("treasure chest")
+                                .resizable()
+                                .frame(width: UIScreen.main.bounds.width / 5, height: UIScreen.main.bounds.width / 5, alignment: .center)
+                        }
+                        .position(x: UIScreen.main.bounds.width/2
+                                  , y: UIScreen.main.bounds.height/5 * 3)
+                        
+                    }
                 }
                 
+            }.onAppear(){
+                if !isClicked{
+                    ges(strnum: stringNumber)
+                    isClicked = true
+                    AudioServicesPlaySystemSound(1311)
+                    if stringNumber < 3{
+                        stringNumber+=1
+                        print(stringNumber)
+                    }
+                    else if stringNumber == 3{
+                       
+                        print("다음스테이지로 넘어가는 함수")
+                    }
+                }
             }
             
             
         }
     }
-    
     
     func ges(strnum : Int){
         str = ""
@@ -135,27 +159,3 @@ struct EntranceView: View {
 }
 
 
-
-struct TextBox: View {
-    var body: some View{
-        ZStack{
-            Image("textbox")
-        }
-    }
-
-}
-
-extension String {
-    func substring(from: Int, to: Int) -> String {
-        guard from < count, to >= 0, to - from >= 0 else {
-            return ""
-        }
-        
-        // Index 값 획득
-        let startIndex = index(self.startIndex, offsetBy: from)
-        let endIndex = index(self.startIndex, offsetBy: to + 1) // '+1'이 있는 이유: endIndex는 문자열의 마지막 그 다음을 가리키기 때문
-        
-        // 파싱
-        return String(self[startIndex ..< endIndex])
-    }
-}

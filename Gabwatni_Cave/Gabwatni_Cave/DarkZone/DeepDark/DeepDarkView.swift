@@ -21,7 +21,6 @@ struct DeepDarkView: View {
     
     func ges(){
         str = ""
-        let startTime = Date().timeIntervalSince1970
         let length = transparentSnailText.count
         var index = 0
         Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
@@ -36,7 +35,6 @@ struct DeepDarkView: View {
     
     func ges2(){
         str = ""
-        let startTime = Date().timeIntervalSince1970
         let length = caveSalamanderText.count
         var index = 0
         Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
@@ -59,11 +57,12 @@ struct DeepDarkView: View {
                         .position(x: 100, y: 100)
                         .onTapGesture {
                             ges()
+                            caveSalamander = false
                             transparentSnail.toggle()
                             count = count + 1
                         }.opacity(transparentSnail ? 0 : 1)
                     if transparentSnail{
-                        textBox(name: "투명 달팽이", text: str)
+                        textBox(name: transparentSnail ? "투명 달팽이" : "", text: str)
                     }
                     
                     ShimmeringItemView3(imageName: "minimap", degreeNum: 50,toggle: $caveSalamander)
@@ -71,11 +70,12 @@ struct DeepDarkView: View {
                         .position(x: 200, y: 200)
                         .onTapGesture {
                             ges2()
+                            transparentSnail = false
                             caveSalamander.toggle()
                             count = count + 1
                         }.opacity(caveSalamander ? 0 : 1)
                     if caveSalamander{
-                        textBox(name: "동굴 도롱뇽", text: str)
+                        textBox(name: caveSalamander ? "동굴 도롱뇽" : "", text: str)
                     }
                     if count == 2 {
                         Button{
