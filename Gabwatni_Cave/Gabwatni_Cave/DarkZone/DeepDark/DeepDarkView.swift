@@ -16,6 +16,10 @@ struct DeepDarkView: View {
     @State var transparentSnail = false
     @State var caveSalamander = false
     @State var num = 0
+    @State var transitionView = false
+    @State var showSheet = false
+    
+    @Binding var flow: Int
     //    @State var transparentSnailText = false
     
     
@@ -49,78 +53,55 @@ struct DeepDarkView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            if num == 0 {
-                ZStack{
-                    NextStageImageView(image: "deepDark")
-                    ShimmeringItemView2(imageName: "transparent snail", degreeNum: 50,toggle: $transparentSnail)
-                        .frame(width: 100, height: 100)
-                        .position(x: 100, y: 100)
-                        .onTapGesture {
-                            ges()
-                            caveSalamander = false
-                            transparentSnail.toggle()
-                            count = count + 1
-                        }.opacity(transparentSnail ? 0 : 1)
-                    if transparentSnail{
-                        textBox(name: transparentSnail ? "투명 달팽이" : "", text: str)
-                    }
-                    
-                    ShimmeringItemView3(imageName: "minimap", degreeNum: 50,toggle: $caveSalamander)
-                        .frame(width: 100, height: 100)
-                        .position(x: 200, y: 200)
-                        .onTapGesture {
-                            ges2()
-                            transparentSnail = false
-                            caveSalamander.toggle()
-                            count = count + 1
-                        }.opacity(caveSalamander ? 0 : 1)
-                    if caveSalamander{
-                        textBox(name: caveSalamander ? "동굴 도롱뇽" : "", text: str)
-                    }
-                    if count == 2 {
-                        Button{
-                            num = num + 1
-                        }label: {
-                            Text("다음 스테이지로")
-                        }
-                    }
-                    InventoryView(image: "minimap")
-                }
-            }
-            else if num == 1{
-                NextStageImageView(image: "Twilight")
-                VStack{
-                    Button{
-                        num = num - 1
-                    }label: {
-                        Text("이전 스테이지로")
-                    }
-                    Button{
-                        num = num + 1
-                    }label: {
-                        Text("다음 스테이지로")
-                    }
-                    InventoryView(image: "minimap")
+            ZStack{
+                NextStageImageView(image: "deepDark")
+                ShimmeringItemView2(imageName: "transparent snail", degreeNum: 50,toggle: $transparentSnail)
+                    .frame(width: 100, height: 100)
+                    .position(x: 100, y: 100)
+                    .onTapGesture {
+                        ges()
+                        transparentSnail.toggle()
+                        count = count + 1
+                    }.opacity(transparentSnail ? 0 : 1)
+                if transparentSnail{
+                    textBox(name: transparentSnail ? "투명 달팽이" : "", text: str)
                 }
                 
-            }
-            else if num == 2{
-                NextStageImageView(image: "startzone")
-                Button{
-                    num = num - 1
-                }label: {
-                    Text("이전 스테이지로")
+                ShimmeringItemView3(imageName: "minimap", degreeNum: 50,toggle: $caveSalamander)
+                    .frame(width: 100, height: 100)
+                    .position(x: 200, y: 200)
+                    .onTapGesture {
+                        ges2()
+                        caveSalamander.toggle()
+                        count = count + 1
+                    }.opacity(caveSalamander ? 0 : 1)
+                if caveSalamander{
+                    textBox(name: caveSalamander ? "동굴 도롱뇽" : "", text: str)
                 }
+                
+                Button{
+                    showSheet.toggle()
+                } label: {
+                    Image("minimap")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50, height: 50)
+                        .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap", myPosition: "현재위치: 칠흑의 방")})
+                }
+                .frame(maxWidth:.infinity, maxHeight: .infinity, alignment:.topTrailing)
+                .padding()
+                
+                
+                    
+
             }
+            
+            
+            
         }
     }
 }
 
-struct DeepDarkView_Previews: PreviewProvider {
-    static var previews: some View {
-        DeepDarkView()
-    }
-}
 
 struct ShimmeringItemView2: View {
     // @EnvironmentObject var data : dataModel
