@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+// MARK: - 사용 설명
+// 1. dragOffset과 dragOffset2 프로퍼티를 가져가세요.
+// 2. distance 프로퍼티를 가져가서 body 프로퍼티 내부로 가져가세요.
+// 3. body 프로퍼티 내부의 ZStack을 원하는 뷰 내부의 ZStack 내부로 넣으면 알맞게 작동합니다.
+
 struct TestLightView: View {
     @State var dragOffset = CGSize.zero
     @State var dragOffset2 = CGSize.zero
@@ -19,17 +24,16 @@ struct TestLightView: View {
     let size = UIScreen.main.bounds
     
     var body: some View {
-      let distance = sqrt((dragOffset.width) * (dragOffset.width) + (dragOffset.height) * (dragOffset.height))
-       
-//        let distance = sqrt((pow(dragOffset.width - 200, 2)) + pow(dragOffset.height - 200, 2))
+        // 상호작용 물체와의 거리 계산
+        let distance = sqrt((pow(dragOffset.width - 200, 2)) + pow(dragOffset.height - 300, 2))
         
-        ZStack{
-            Image("Twilight")
+        ZStack {
+            Image("horror of the abyss")
                 .resizable()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
                 .scaledToFit()
                 .ignoresSafeArea()
-
+            
             RadialGradient(
                 gradient: Gradient(colors: [Color(0xFFFFFF, alpha: 0.1), Color(0x000000, alpha: 1)]),
                 center: .center,
@@ -42,7 +46,8 @@ struct TestLightView: View {
                 .onChanged { gesture in
                     dragOffset = CGSize(width: gesture.translation.width + dragOffset2.width, height: gesture .translation.height + dragOffset2.height)
                     
-                }    //함수
+                }
+                     //함수
                      //온체인지가 함수를 입력값으로 받는 메소드
                 .onEnded { gesture in
                     dragOffset = CGSize(width: gesture.translation.width + dragOffset2.width, height: gesture .translation.height + dragOffset2.height)
@@ -51,30 +56,18 @@ struct TestLightView: View {
                     print(distance)
                 })
             
-            if presentView {
-                ZStack{
-                    Rectangle()
-                        .foregroundColor(.black)
-                    ItemDetailView(imageName: showingImage, isShowing: $presentView)
-                        .frame(width: size.width, height: size.height)
-                        //.position(x: size.width / 2, y: size.height / 2)
-                }
-                
+            // 거리 <= 루트(상호작용 물체의 프레임/2) + 손전등 반지름(100)
+            if distance <= sqrt(2) * 75 + 100 {
+                Image("minigame dragon")
+                    .resizable()
+                    .position(x: 200, y: 300)
+                    .frame(width: 150, height: 300)
             }
-
-//            ShimmeringItemView(count: $count, isShowing: $presentView, imageName: "dongdal", degreeNum: 50, showingImage: $showingImage)
-//                .position(x: 200, y: 200)
-//                .frame(width: 50, height: 50)
-
-            if distance <= sqrt(2) * 100 + 50 {
-                ShimmeringItemView(count: $count, isShowing: $presentView, imageName: "dongdal", degreeNum: 50, showingImage: $showingImage)
-                    .position(x: 200, y: 200)
-                    .frame(width: 50, height: 50)
-            }
-
         }
+        
     }
 }
+
 extension Color {
     init(_ hex: UInt, alpha: Double = 1) {
         self.init(

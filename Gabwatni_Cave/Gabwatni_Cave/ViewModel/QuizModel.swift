@@ -47,7 +47,7 @@ extension QuizModel {
                  ]
                 ),
             Quiz(id: 5,
-                 question: "4번째 질문",
+                 question: "5번째 질문",
                  options: [
                     Option(id: 1, option: "답변 5-1"),
                     Option(id: 2, option: "답변 5-2"),

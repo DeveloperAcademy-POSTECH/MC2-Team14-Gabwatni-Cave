@@ -8,6 +8,8 @@
 import SwiftUI
 import AVFoundation
 struct EntranceView_end: View {
+    @Binding var mainflow : Int
+    
     @Binding var flow : Int
     @State var str = ""
     @State var str2 = "어떻게 잡았지"
@@ -100,9 +102,9 @@ struct EntranceView_end: View {
                     }
                     if isEnd{
                         Button{
-                            print("go to nextlevel")
+                            mainflow = 2
                         }label: {
-                            Image("treasure chest")
+                            Image("footprint")
                                 .resizable()
                                 .frame(width: UIScreen.main.bounds.width / 5, height: UIScreen.main.bounds.width / 5, alignment: .center)
                         }

@@ -11,9 +11,12 @@ import SwiftUI
 struct Gabwatni_CaveApp: App {
     var body: some Scene {
         WindowGroup {
+
             ContentView()
-            
-            // QuizView(quizModel: QuizModel())
+<<<<<<< HEAD
+
+=======
+>>>>>>> 603031b5578308c6d7ae000743f4ef217baed11e
         }
     }
 }
