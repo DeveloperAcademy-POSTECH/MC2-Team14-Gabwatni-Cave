@@ -42,6 +42,7 @@
 		7BE8736328538182006AEE89 /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8736228538182006AEE89 /* QuizModel.swift */; };
 		7BE8736528538916006AEE89 /* TempDeathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8736428538916006AEE89 /* TempDeathView.swift */; };
 		7BE8736728538F8E006AEE89 /* RandomGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8736628538F8E006AEE89 /* RandomGameView.swift */; };
+		7BF24D55285855A200227E2E /* ClearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF24D54285855A200227E2E /* ClearView.swift */; };
 		8EF731AA28570EB500D9A61A /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF731A928570EB500D9A61A /* StartView.swift */; };
 		8EF731AC28570F1800D9A61A /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF731AB28570F1800D9A61A /* CharacterView.swift */; };
 		CCF62576285703C9006C245D /* ShineViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF62575285703C9006C245D /* ShineViewModifier.swift */; };
@@ -106,6 +107,7 @@
 		7BE8736228538182006AEE89 /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
 		7BE8736428538916006AEE89 /* TempDeathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempDeathView.swift; sourceTree = "<group>"; };
 		7BE8736628538F8E006AEE89 /* RandomGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGameView.swift; sourceTree = "<group>"; };
+		7BF24D54285855A200227E2E /* ClearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearView.swift; sourceTree = "<group>"; };
 		8EF731A928570EB500D9A61A /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		8EF731AB28570F1800D9A61A /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 		CCF62575285703C9006C245D /* ShineViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShineViewModifier.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				7810DA38285207F600069CFB /* EntranceZone */,
 				6E01FB4B28520B6200B98789 /* TwilightZone */,
 				7B9E61AF2852043200C931F4 /* DarkZone */,
+				7BF24D54285855A200227E2E /* ClearView.swift */,
 				6E01FB4E28520B7800B98789 /* ShimmeringItemView.swift */,
 				321C5A2E285323580092C4E4 /* InventoryView.swift */,
 				8EF731AB28570F1800D9A61A /* CharacterView.swift */,
@@ -493,6 +496,7 @@
 				6E01FB562852245000B98789 /* TestLightView.swift in Sources */,
 				32C4769628571A8B003D0BB4 /* DeepDarkControl.swift in Sources */,
 				CCF6C24B2852092D00C48E22 /* AncestorView.swift in Sources */,
+				7BF24D55285855A200227E2E /* ClearView.swift in Sources */,
 				787554AF285327B500CF7F61 /* textBox.swift in Sources */,
 				321C5A2F285323580092C4E4 /* InventoryView.swift in Sources */,
 				7B9E61B728520E4900C931F4 /* Quiz.swift in Sources */,

@@ -29,7 +29,7 @@ struct Abyss: View {
             ZStack {
                 Image("horror of the abyss")
                     .resizable()
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
+                    .frame(width: size.width, height: size.height, alignment: .center)
                     .scaledToFit()
                     .ignoresSafeArea()
                 

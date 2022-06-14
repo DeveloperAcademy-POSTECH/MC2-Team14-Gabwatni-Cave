@@ -12,8 +12,6 @@ struct Gabwatni_CaveApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-           //EntranceControl()
-            // Abyss()
         }
     }
 }
