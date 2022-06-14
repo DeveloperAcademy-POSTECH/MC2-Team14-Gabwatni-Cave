@@ -10,12 +10,12 @@ import Shimmer
 import AVFoundation
 
 struct AncestorView: View {
+    @Binding var mainflow : Int
+    
     // 각 Object의 초기 위치, 화면이 이동하면서 위치도 함께 이동
     @State private var imageScrollLocation: CGPoint = CGPoint(x: 500, y: 400)
     @State private var lightLocation: CGPoint = CGPoint(x: 400, y: 400)
     @State private var ancestorLocation: CGPoint = CGPoint(x: 650, y: 500)
-    
-    @State private var cardViewState: Bool = false
     
     // Object 관련
     @State private var ancestorState: Bool = true
@@ -49,10 +49,6 @@ struct AncestorView: View {
                     }
             } else if flow == 1 {
                 AncestorPageView
-            }
-            
-            if cardViewState {
-                CardView(imageName: "salamander", cardState: $cardViewState)
             }
         }
     }
@@ -184,10 +180,11 @@ struct AncestorView: View {
                             HStack{
                                 Button{
                                     withAnimation(.easeIn) {
-                                    cardViewState.toggle()
+                                        mainflow = 1
                                     }
                                 }label: {
-                                    Image("salamander")
+                                    //Image("salamander")
+                                    Image("footprint")
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: 80, height: 80, alignment: .center)
@@ -314,8 +311,3 @@ struct AncestorView: View {
     }
 }
 
-struct AncestorView_Previews: PreviewProvider {
-    static var previews: some View {
-        AncestorView()
-    }
-}

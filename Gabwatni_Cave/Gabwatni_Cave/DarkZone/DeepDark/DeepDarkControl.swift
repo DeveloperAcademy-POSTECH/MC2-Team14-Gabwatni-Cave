@@ -9,20 +9,22 @@ import SwiftUI
 
 
 struct DeepDarkControl: View {
+    @Binding var mainflow : Int
     @State var deepDarkControl = -1
+    
     var body: some View {
         if deepDarkControl == -1{
             DeepDarkView_start(flow: $deepDarkControl)
         }
         else if deepDarkControl == 0{
-            DeepDarkView(flow: $deepDarkControl)
+            DeepDarkView(mainflow: $mainflow, flow: $deepDarkControl)
         }
         
     }
 }
 
-struct DeepDarkControl_Previews: PreviewProvider {
-    static var previews: some View {
-        DeepDarkControl()
-    }
-}
+//struct DeepDarkControl_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DeepDarkControl()
+//    }
+//}
