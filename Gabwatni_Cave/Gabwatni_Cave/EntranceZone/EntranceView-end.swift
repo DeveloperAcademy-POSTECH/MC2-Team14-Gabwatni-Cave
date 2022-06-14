@@ -105,7 +105,10 @@ struct EntranceView_end: View {
                     }
                     if isEnd{
                         Button{
-                            vm.flow = 2
+                            playSoundEffect(sound: "walk", type: ".mp3")
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                                vm.flow = 2
+                                                        }
                         }label: {
                             Image("footprint")
                                 .resizable()

@@ -162,6 +162,7 @@ struct RandomGameView: View {
                 .foregroundColor(.white)
             }
             .onAppear {
+                playSound(sound: "end", type: ".mp3")
                 withAnimation(.easeIn(duration: 2).delay(1)) {
                     clearRandomGame = true
                 }
@@ -188,6 +189,7 @@ struct RandomGameView: View {
                     
                 }
                 .onAppear {
+                    playSound(sound: "end", type: ".mp3")
                     withAnimation(.easeIn(duration: 2).delay(1)) {
                         clearRandomGame = true
                     }
@@ -212,6 +214,7 @@ struct RandomGameView: View {
                         .frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*0.5)
                 }
                 .onAppear {
+                    playSound(sound: "end", type: ".mp3")
                     withAnimation(.easeIn(duration: 2).delay(1)) {
                         clearRandomGame = true
                     }
