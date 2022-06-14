@@ -11,7 +11,8 @@ import SwiftUI
 struct Gabwatni_CaveApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            QuizView(quizModel: QuizModel())
         }
     }
 }
