@@ -213,7 +213,6 @@
 		321CF1A92850882800F3B920 /* Gabwatni_Cave */ = {
 			isa = PBXGroup;
 			children = (
-				3234D74B285878E0001654D4 /* Sound */,
 				7BF24D56285862CF00227E2E /* Gabwatni_CaveApp.swift */,
 				321CF1AC2850882800F3B920 /* ContentView.swift */,
 				7810DA3E285218AF00069CFB /* Gabwatni-Cave-Info.plist */,
@@ -239,6 +238,7 @@
 				321C5A2B285302A20092C4E4 /* WorldMap */,
 				321C5A2828522B200092C4E4 /* MiniMap */,
 				CCF6C24C28522C6300C48E22 /* Card */,
+				3234D74B285878E0001654D4 /* Sound */,
 				7810DA3B2852188200069CFB /* fonts */,
 				321CF1AE2850882A00F3B920 /* Assets.xcassets */,
 				321CF1B02850882A00F3B920 /* Preview Content */,
