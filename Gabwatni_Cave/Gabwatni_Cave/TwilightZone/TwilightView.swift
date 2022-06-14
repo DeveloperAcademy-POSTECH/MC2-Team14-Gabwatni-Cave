@@ -41,17 +41,13 @@ struct TwilightView: View {
                 .frame(width: 500, height: 500)
                 .position(x: 100, y: 100)
             
-            ShimmeringItemView(count: $count, isShowing: $presentView, imageName: "minigame dragon", degreeNum: 180, showingImage: $showingImage)
+            ShimmeringItemView(count: $count, isShowing: $presentView, imageName: "bat", degreeNum: 180, showingImage: $showingImage)
                 .frame(width: 50, height: 50)
                 .position(x: 200, y: 200)
             
             if presentView {
-                ZStack{
-                    Rectangle()
-                        .foregroundColor(.black)
-                    ItemDetailView(imageName: showingImage, isShowing: $presentView)
-                        .frame(width: size.width, height: size.height)
-                }
+                CardView(imageName: showingImage, cardState: $presentView)
+                    .padding(.top, 40)
             }
             
            // 진입하면 나오는 view
