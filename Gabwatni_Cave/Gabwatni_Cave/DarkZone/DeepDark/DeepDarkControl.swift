@@ -16,11 +16,11 @@ struct DeepDarkControl: View {
     @State var deepDarkControl = -1
     
     var body: some View {
-        if deepDarkControl == -1{
+        if deepDarkControl == -1 {
             DeepDarkView_start(flow: $deepDarkControl)
         }
-        else if deepDarkControl == 0{
-            DeepDarkView(mainflow: vm.flow, flow: $deepDarkControl)
+        else if deepDarkControl == 0 {
+            DeepDarkView(mainflow: vm.flow)
         }
         
     }
