@@ -11,9 +11,10 @@ import SwiftUI
 struct Gabwatni_CaveApp: App {
     var body: some Scene {
         WindowGroup {
-            //ContentView()
-           EntranceControl()
+            // ContentView()
+            // EntranceControl()
             // Abyss()
+            ClearView()
         }
     }
 }
