@@ -28,6 +28,7 @@ struct EntranceView_start: View {
                 }.transition(.opacity)            }
                     }
         .onAppear(){
+            playSound(sound: "Enter_TwilightZoneBGM", type: "mp3")
             Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false){(timer) in
                 withAnimation {
                     isVisible.toggle()
