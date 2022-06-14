@@ -9,18 +9,29 @@ import SwiftUI
 
 struct EntranceView_stone: View {
    @Binding var flow : Int
+    @State var isViewing: Bool = false
     var body: some View {
         ZStack{
             Image("entrancecave")
                 .resizable()
                 .ignoresSafeArea()
-            Color.black.opacity(0.7)
+            Color.black.opacity(0.4)
             .ignoresSafeArea()
             VStack{
                 HStack{
-                    Spacer()
-                    ShimmeringItemView_entran(imageName: "최병호", count: 1, degreeNum: 10,flow: $flow)
-                    .padding()
+                    
+                    Button{
+                        flow = 2
+                        isViewing.toggle()
+                    }label: {
+                        Circle()
+                            .inset(by: 0)
+                            .stroke(Color.white.opacity(0.7), lineWidth: 2)
+                            .frame(width: 20, height: 20, alignment: .center)
+                            .position(x: UIScreen.main.bounds.size.width * 6 / 7 + 8, y: UIScreen.main.bounds.size.height / 2 - 10)
+                            .opacity(isViewing ? 0 : 1)
+                    }
+                    
                     
                 }
                 Spacer()
