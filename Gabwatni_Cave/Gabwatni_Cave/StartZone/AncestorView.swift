@@ -190,7 +190,10 @@ struct AncestorView: View {
                                 Button{
                                     withAnimation(.easeIn) {
                                         //mainflow = 1
-                                        vm.flow = 1
+                                        playSound(sound: "walk", type: ".mp3")
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                                            vm.flow = 1
+                                                                    }
                                     }
                                 }label: {
                                     //Image("salamander")
