@@ -14,8 +14,8 @@ struct AncestorView: View {
     
     // 각 Object의 초기 위치, 화면이 이동하면서 위치도 함께 이동
     @State private var imageScrollLocation: CGPoint = CGPoint(x: 500, y: 400)
-    @State private var lightLocation: CGPoint = CGPoint(x: 400, y: 400)
-    @State private var ancestorLocation: CGPoint = CGPoint(x: 650, y: 500)
+    @State private var lightLocation: CGPoint = CGPoint(x: 400, y: 370)
+    @State private var ancestorLocation: CGPoint = CGPoint(x: 625, y: 450)
     
     // Object 관련
     @State private var ancestorState: Bool = true
@@ -62,6 +62,7 @@ struct AncestorView: View {
                     Image("startzone")
                         .resizable()
                         .scaledToFill()
+                        .frame(width: 450)
                 )
             
             Button{
@@ -123,8 +124,8 @@ struct AncestorView: View {
                                     .foregroundColor(.white)
                                 
                             }
-                            .position(x: UIScreen.main.bounds.width/8 * 6
-                                      , y: UIScreen.main.bounds.height/13 * 11)
+                            .position(x: UIScreen.main.bounds.width/16 * 13
+                                      , y: UIScreen.main.bounds.height/15 * 13)
                                 
                             }
                         }
@@ -146,8 +147,8 @@ struct AncestorView: View {
                                     .foregroundColor(.white)
                                 
                             }
-                            .position(x: UIScreen.main.bounds.width/8 * 6
-                                      , y: UIScreen.main.bounds.height/13 * 11)
+                            .position(x: UIScreen.main.bounds.width/16 * 13
+                                      , y: UIScreen.main.bounds.height/15 * 13)
                                 
                             }
                         }
@@ -169,8 +170,8 @@ struct AncestorView: View {
                                     .foregroundColor(.white)
                                 
                             }
-                            .position(x: UIScreen.main.bounds.width/8 * 6
-                                      , y: UIScreen.main.bounds.height/13 * 11)
+                            .position(x: UIScreen.main.bounds.width/16 * 13
+                                      , y: UIScreen.main.bounds.height/15 * 13)
                                 
                             }
                         }
@@ -198,7 +199,7 @@ struct AncestorView: View {
                 .onDisappear { // 다른 뷰에서 넘어올 때 위치 초기화
                     lightLocation.x = 400
                     imageScrollLocation.x = 500
-                    ancestorLocation.x = 650
+                    ancestorLocation.x = 625
                 }
         }
     }
@@ -240,7 +241,7 @@ struct AncestorView: View {
         .position(ancestorLocation)
         .onAppear{
             withAnimation(.easeIn(duration: 3)) {
-                ancestorLocation.x = 300
+                ancestorLocation.x = 275
             }
         }
         .disabled(!ancestorState || textboxState[0] == true)
@@ -258,7 +259,7 @@ struct AncestorView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 15)
-                        .rotationEffect(.degrees(50))
+                        .rotationEffect(.degrees(80))
                         .opacity(lightState ? 0.7 : 0)
                         .shimmering(active: lightState, duration: 2.0)
         }
@@ -268,6 +269,7 @@ struct AncestorView: View {
                 lightLocation.x = 50
             }
         }
+        .disabled(!lightState || textboxState[1] == true)
     }
     
     
