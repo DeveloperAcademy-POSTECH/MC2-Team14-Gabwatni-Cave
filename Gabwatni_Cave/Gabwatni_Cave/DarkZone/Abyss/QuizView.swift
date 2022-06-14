@@ -26,11 +26,6 @@ struct QuizView: View {
             ZStack {
                 // 배경사진
                 Rectangle()
-                    .overlay(
-                        Image("minigame dragon")
-                            .resizable()
-                    )
-                    .foregroundColor(.black)
                     .ignoresSafeArea()
                 
                 VStack {
@@ -38,24 +33,26 @@ struct QuizView: View {
                         // 첫 번째 질문일때의 보스 대사
                         Text("동굴에 관한 퀴즈를 맞춰봐라!")
                             .font(.custom("Sam3KRFont", size: 36))
-                            .padding()
+                            
                     } else if currentQuizIndex == 1 {
                         // 두 번째 질문일때의 보스 대사
                         Text("헉! 그렇다면 이건 어떠냐!")
                             .font(.custom("Sam3KRFont", size: 36))
-                            .padding()
+                           
                     } else if currentQuizIndex == 2 {
                         // 세 번째(마지막) 질문일때의 보스 대사
                         Text("이럴수가... 마지막이다!")
                             .font(.custom("Sam3KRFont", size: 36))
-                            .padding()
+                        
                     }
                     
                     // 질문
                     Text(quizModel.shuffledQuizzes[currentQuizIndex].question)
                         .font(.custom("Sam3KRFont", size: 28))
+                        .padding(.top)
                     
-                    Spacer()
+                    LottieView("boss")
+                .frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*0.5)
                     
                     // 선택지
                     ForEach(quizModel.shuffledQuizzes[currentQuizIndex].options.shuffled()) { option in
