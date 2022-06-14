@@ -9,6 +9,8 @@ import SwiftUI
 import AVFoundation
 
 struct DeepDarkView: View {
+    @EnvironmentObject var vm: CardViewModel2
+    
     @State var str = "" //문장이 실제로 들어가야되는 곳
     @State var transparentSnailText = "어두운 곳에 생육하는 특성때문에 다른 달팽이보다 눈이 짧고 투명한 등껍질을 가지고 있다. 움직임이 거의 없고, 이동시에는 흐르는 물을 타고 이동한다." //넣고 싶은 문장
     @State var caveSalamanderText = "눈이 퇴화하여 피부 밑에 파붙혀 있고, 색소가 없는 피부가 특징이다. 자신의 신체를 분해하여 양분을 공급받고 불로불사할 수 있다."
@@ -19,7 +21,8 @@ struct DeepDarkView: View {
     @State var transitionView = false
     @State var showSheet = false
     
-    @Binding var mainflow: Int
+    //@Binding var mainflow: Int
+    var mainflow: Int
     @Binding var flow: Int
     //    @State var transparentSnailText = false
     
@@ -104,7 +107,7 @@ struct DeepDarkView: View {
                 if count == 2 {
                     Button{
                         withAnimation(.easeIn) {
-                            mainflow = 4
+                            vm.flow = 4
                         }
                     }label: {
                         Image("footprint")

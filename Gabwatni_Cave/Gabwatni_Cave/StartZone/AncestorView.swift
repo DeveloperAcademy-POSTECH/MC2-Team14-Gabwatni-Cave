@@ -10,7 +10,10 @@ import Shimmer
 import AVFoundation
 
 struct AncestorView: View {
-    @Binding var mainflow : Int
+    @EnvironmentObject var vm: CardViewModel2
+    
+    var mainflow : Int
+    //@Binding var mainflow : Int
     
     // 각 Object의 초기 위치, 화면이 이동하면서 위치도 함께 이동
     @State private var imageScrollLocation: CGPoint = CGPoint(x: 500, y: 400)
@@ -181,7 +184,8 @@ struct AncestorView: View {
                             HStack{
                                 Button{
                                     withAnimation(.easeIn) {
-                                        mainflow = 1
+                                        //mainflow = 1
+                                        vm.flow = 1
                                     }
                                 }label: {
                                     //Image("salamander")

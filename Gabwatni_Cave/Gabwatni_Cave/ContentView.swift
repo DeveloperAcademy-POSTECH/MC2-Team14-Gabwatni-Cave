@@ -8,25 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var mainflow = 0
+    @EnvironmentObject var vm : CardViewModel2
     
     var body: some View {
-
-        if mainflow == 0 {
-            AncestorView(mainflow: $mainflow)
+        if vm.flow == 0 {
+            AncestorView(mainflow: vm.flow)
         }
-        else if mainflow == 1 {
-            EntranceControl(mainflow: $mainflow)
-        } else if mainflow == 2 {
-            TwilightView(mainflow: $mainflow)
-        } else if mainflow == 3 {
-            DeepDarkControl(mainflow: $mainflow)
-        } else if mainflow == 4 {
+        else if vm.flow == 1 {
+            EntranceControl()
+        }
+        else if vm.flow == 2 {
+            TwilightView(mainflow: vm.flow)
+        }
+        else if vm.flow == 3 {
+            DeepDarkControl(mainflow: vm.flow)
+        }
+        else if vm.flow == 4 {
             Abyss()
         }
-        
-       
-
     }
 }
 
