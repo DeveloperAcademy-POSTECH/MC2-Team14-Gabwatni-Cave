@@ -19,6 +19,7 @@ struct DeepDarkView: View {
     @State var transitionView = false
     @State var showSheet = false
     
+    @Binding var mainflow: Int
     @Binding var flow: Int
     //    @State var transparentSnailText = false
     
@@ -59,25 +60,24 @@ struct DeepDarkView: View {
                     .frame(width: 100, height: 100)
                     .position(x: 100, y: 100)
                     .onTapGesture {
-                        ges()
+                        //ges()
                         transparentSnail.toggle()
-                        count = count + 1
                     }.opacity(transparentSnail ? 0 : 1)
-                if transparentSnail{
-                    textBox(name: transparentSnail ? "투명 달팽이" : "", text: str)
-                }
+                
+//                if transparentSnail{
+//                    textBox(name: transparentSnail ? "투명 달팽이" : "", text: str)
+//                }
+                
                 
                 ShimmeringItemView3(imageName: "minimap", degreeNum: 50,toggle: $caveSalamander)
                     .frame(width: 100, height: 100)
                     .position(x: 200, y: 200)
                     .onTapGesture {
-                        ges2()
+                        //ges2()
                         caveSalamander.toggle()
-                        count = count + 1
                     }.opacity(caveSalamander ? 0 : 1)
-                if caveSalamander{
-                    textBox(name: caveSalamander ? "동굴 도롱뇽" : "", text: str)
-                }
+                
+                
                 
                 Button{
                     showSheet.toggle()
@@ -91,9 +91,30 @@ struct DeepDarkView: View {
                 .frame(maxWidth:.infinity, maxHeight: .infinity, alignment:.topTrailing)
                 .padding()
                 
+                CardView(imageName: "salamander", cardState: $caveSalamander)
+                    .onDisappear {
+                        count += 1
+                    }
+                CardView(imageName: "transparent snail", cardState: $transparentSnail)
+                    .onDisappear {
+                        count += 1
+                    }
                 
-                    
-
+                
+                if count == 2 {
+                    Button{
+                        withAnimation(.easeIn) {
+                            mainflow = 4
+                        }
+                    }label: {
+                        Image("footprint")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80, height: 80, alignment: .center)
+                            .foregroundColor(.white)
+                    }
+                    .position(x: 300, y: 700)
+                }
             }
             
             
