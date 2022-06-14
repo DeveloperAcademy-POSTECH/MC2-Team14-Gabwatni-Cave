@@ -27,7 +27,7 @@ struct Abyss: View {
         // 심연의 공포 뷰
         if abyssView {
             ZStack {
-                Image("horror of the abyss")
+                Image("abyss")
                     .resizable()
                     .frame(width: size.width, height: size.height, alignment: .center)
                     .scaledToFit()

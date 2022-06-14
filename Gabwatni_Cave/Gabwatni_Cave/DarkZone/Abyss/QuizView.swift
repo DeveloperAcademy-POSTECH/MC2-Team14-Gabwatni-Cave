@@ -6,13 +6,6 @@
 //
 
 import SwiftUI
-// TODO: 문제 다 맞추면 보스 죽는 뷰(표정 다른 새로운 이미지 필요할듯) 나오고 엔딩 화면
-// TODO: 코드 정리 필요
-
-// 타이머 기능 넣고싶음 (문제당 5초 정도)
-// 보스 테두리 회색으로 하면 좋을것 같음 > 다 흰색이라 가독성이 떨어지는듯
-
-// Abyss에서 상호작용 요소 누르면 이 뷰가 나오게 해야함
 
 struct QuizView: View {
     @ObservedObject var quizModel: QuizModel
@@ -22,25 +15,29 @@ struct QuizView: View {
     @State private var currentQuizIndex = 0
     
     var body: some View {
+        // 퀴즈 - 살아있을 때
         if alive && !clearQuiz {
             ZStack {
-                // 배경사진
+                // 배경
                 Rectangle()
+                    .foregroundColor(.black)
                     .ignoresSafeArea()
                 
                 VStack {
+                    // 첫 번째 질문일때의 보스 대사
                     if currentQuizIndex == 0 {
-                        // 첫 번째 질문일때의 보스 대사
                         Text("동굴에 관한 퀴즈를 맞춰봐라!")
                             .font(.custom("Sam3KRFont", size: 36))
-                            
-                    } else if currentQuizIndex == 1 {
-                        // 두 번째 질문일때의 보스 대사
+                        
+                    }
+                    // 두 번째 질문일때의 보스 대사
+                    else if currentQuizIndex == 1 {
                         Text("헉! 그렇다면 이건 어떠냐!")
                             .font(.custom("Sam3KRFont", size: 36))
-                           
-                    } else if currentQuizIndex == 2 {
-                        // 세 번째(마지막) 질문일때의 보스 대사
+                        
+                    }
+                    // 세 번째(마지막) 질문일때의 보스 대사
+                    else if currentQuizIndex == 2 {
                         Text("이럴수가... 마지막이다!")
                             .font(.custom("Sam3KRFont", size: 36))
                         
@@ -51,8 +48,9 @@ struct QuizView: View {
                         .font(.custom("Sam3KRFont", size: 28))
                         .padding(.top)
                     
+                    // 보스
                     LottieView("boss")
-                .frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*0.5)
+                        .frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.5)
                     
                     // 선택지
                     ForEach(quizModel.shuffledQuizzes[currentQuizIndex].options.shuffled()) { option in
@@ -73,11 +71,11 @@ struct QuizView: View {
                         } label: {
                             // 선택지 레이블
                             ZStack {
-                               Image("textbox")
-                                   .resizable()
-                                   .frame(width: 310, height: 60)
-                               
-                               Text(option.option)
+                                Image("textbox")
+                                    .resizable()
+                                    .frame(width: 310, height: 60)
+                                
+                                Text(option.option)
                                     .font(.custom("Sam3KRFont", size: 24))
                             }
                         }
@@ -86,6 +84,7 @@ struct QuizView: View {
                 .foregroundColor(.white)
             }
         }
+        // 퀴즈 클리어 - 랜덤게임 뷰로 넘어감
         else if alive && clearQuiz {
             RandomGameView()
         }
