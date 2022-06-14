@@ -24,7 +24,7 @@ struct DeepDarkView: View {
     //@Binding var mainflow: Int
     var mainflow: Int
     @Binding var flow: Int
-    //    @State var transparentSnailText = false
+    //@State var transparentSnailText = false
     
     
     func ges(){
@@ -156,4 +156,3 @@ struct ShimmeringItemView3: View {
         
     }
 }
-

@@ -26,26 +26,27 @@ struct QuizView: View {
                 VStack {
                     // 첫 번째 질문일때의 보스 대사
                     if currentQuizIndex == 0 {
-                        Text("동굴에 관한 퀴즈를 맞춰봐라!")
+                        Text("퀴즈를 맞춰봐라!")
                             .font(.custom("Sam3KRFont", size: 36))
                         
                     }
                     // 두 번째 질문일때의 보스 대사
                     else if currentQuizIndex == 1 {
-                        Text("헉! 그렇다면 이건 어떠냐!")
+                        Text("이건 어떠냐!")
                             .font(.custom("Sam3KRFont", size: 36))
                         
                     }
                     // 세 번째(마지막) 질문일때의 보스 대사
                     else if currentQuizIndex == 2 {
-                        Text("이럴수가... 마지막이다!")
+                        Text("마지막이다!")
                             .font(.custom("Sam3KRFont", size: 36))
                         
                     }
                     
                     // 질문
                     Text(quizModel.shuffledQuizzes[currentQuizIndex].question)
-                        .font(.custom("Sam3KRFont", size: 28))
+                        .font(.custom("Sam3KRFont", size: 22))
+                        .minimumScaleFactor(0.6)
                         .padding(.top)
                     
                     // 보스
@@ -76,7 +77,7 @@ struct QuizView: View {
                                     .frame(width: 310, height: 60)
                                 
                                 Text(option.option)
-                                    .font(.custom("Sam3KRFont", size: 24))
+                                    .font(.custom("Sam3KRFont", size: 20))
                             }
                         }
                     }

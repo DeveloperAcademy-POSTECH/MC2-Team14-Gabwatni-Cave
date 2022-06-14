@@ -30,6 +30,7 @@ struct DeepDarkView_start: View {
                 }.transition(.opacity)            }
                     }
         .onAppear(){
+            playSound(sound: "darkZoneBGM", type: ".mp3")
             Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false){(timer) in
                 withAnimation {
                     isVisible.toggle()
