@@ -18,7 +18,7 @@ struct ContentView: View {
             EntranceControl()
         }
         else if vm.flow == 2 {
-            TwilightView(mainflow: vm.flow)
+            Dongdalsays()
         }
         else if vm.flow == 3 {
             DeepDarkControl(mainflow: vm.flow)

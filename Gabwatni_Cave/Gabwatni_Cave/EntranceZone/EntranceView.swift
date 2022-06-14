@@ -31,18 +31,18 @@ struct EntranceView: View {
             VStack{
                 GeometryReader{geo in
                     Button {
-                        print(isClicked)
+                        
                         if !isClicked{
                             ges(strnum: stringNumber)
                             isClicked = true
                             AudioServicesPlaySystemSound(1311)
                             if stringNumber < 11{
                                 stringNumber+=1
-                                print(stringNumber)
+                                
                             }
                             else if stringNumber == 11{
                                 flow = 1
-                                print(1323)
+                                
                             }
                         }
                         
@@ -78,11 +78,11 @@ struct EntranceView: View {
                                 isClicked = true
                                 if stringNumber < 11{
                                     stringNumber+=1
-                                    print(stringNumber)
+                                    
                                 }
                                 else if stringNumber == 11{
                                     flow = 1
-                                    print(1323)
+                                    
                                 }
                                 isFinished.toggle()
                             }

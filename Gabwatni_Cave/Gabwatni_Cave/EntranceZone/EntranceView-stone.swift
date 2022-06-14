@@ -53,7 +53,7 @@ struct ShimmeringItemView_entran: View {
             flow = 2
             isViewing.toggle()
             count += 1
-            print(count)
+            
             // 해당 요소에 맞는 View 보여주면 될 듯 ?
         } label: {
 //            Image(imageName)
