@@ -19,7 +19,9 @@ struct RandomGameView: View {
             // 배경
             ZStack{
                 Rectangle()
+                    .foregroundColor(.black)
                     .ignoresSafeArea()
+                
                 VStack{
                     // 보스 대사
                     Text("게임을 시작하지...\n가위 바위 보!")
@@ -79,6 +81,7 @@ struct RandomGameView: View {
             ZStack {
                 // 배경
                 Rectangle()
+                    .foregroundColor(.black)
                     .ignoresSafeArea()
                 
                 VStack {
@@ -142,6 +145,7 @@ struct RandomGameView: View {
             ZStack {
                 // 배경
                 Rectangle()
+                    .foregroundColor(.black)
                     .ignoresSafeArea()
                 
                 VStack {
@@ -169,6 +173,7 @@ struct RandomGameView: View {
             ZStack {
                 // 배경
                 Rectangle()
+                    .foregroundColor(.black)
                     .ignoresSafeArea()
                 
                 VStack {
@@ -194,6 +199,7 @@ struct RandomGameView: View {
             ZStack {
                 // 배경
                 Rectangle()
+                    .foregroundColor(.black)
                     .ignoresSafeArea()
                 
                 VStack {
@@ -216,7 +222,7 @@ struct RandomGameView: View {
         else if clearRandomGame == true {
             ClearView()
         }
-        // 졌을때 사망뷰로 이동
+        // 지면 사망뷰로 이동
         else { DeathView(reasonText: "가위, 바위, 보 게임 져서", tipText: "다음번엔 잘해보세요.") }
     }
 }
