@@ -52,7 +52,7 @@ class CardViewModel: ObservableObject {
 }
 
 class CardViewModel2: ObservableObject {
-    @Published var flow = 4
+    @Published var flow = 0
     
     @Published var imageName: String = ""
     @Published var imageTitle: String = ""

@@ -19,6 +19,9 @@ struct ClearView: View {
                 .frame(width: size.width, height: size.height, alignment: .center)
                 .scaledToFit()
                 .ignoresSafeArea()
+                .onAppear{
+                    playSound(sound: "end", type: ".mp3")
+                }
         }
     }
 }
