@@ -10,9 +10,6 @@ import Shimmer
 import AVFoundation
 
 struct ShimmeringItemView: View {
-    @EnvironmentObject var twilightData : TwilightModel
-    @ObservedObject var vm = CardViewModel2()
-    
     @State private var isViewing: Bool = true
     @Binding var count: Int
     @Binding var isShowing: Bool

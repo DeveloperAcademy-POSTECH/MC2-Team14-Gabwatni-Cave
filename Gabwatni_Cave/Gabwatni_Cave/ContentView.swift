@@ -12,7 +12,7 @@ struct ContentView: View {
 
 //        Text("Hello test")
 //            .padding()
-        DeepDarkControl()
+        AncestorView()
        
 
 //        Text("Hello test")
