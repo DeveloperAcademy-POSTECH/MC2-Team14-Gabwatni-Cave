@@ -24,6 +24,7 @@ struct Abyss: View {
     var body: some View {
         let distance = sqrt((pow(dragOffset.width - 200, 2)) + pow(dragOffset.height - 300, 2))
         
+        // 심연의 공포 뷰
         if abyssView {
             ZStack {
                 Image("horror of the abyss")
@@ -80,7 +81,7 @@ struct Abyss: View {
                     }
                 }
                 .onAppear{
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                         isFirst.toggle()
                     }
                 }
@@ -88,6 +89,7 @@ struct Abyss: View {
                 .animation(.easeIn, value: isFirst)
             }
         }
+        // 드래곤 밀리패드 누르면 퀴즈 뷰로 넘어감
         else { QuizView(quizModel: QuizModel()) }
     }
 }
