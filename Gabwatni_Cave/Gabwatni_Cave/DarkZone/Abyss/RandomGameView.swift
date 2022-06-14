@@ -217,7 +217,7 @@ struct RandomGameView: View {
             ClearView()
         }
         // 졌을때 사망뷰로 이동
-        else { TempDeathView() }
+        else { DeathView(reasonText: "가위, 바위, 보 게임 져서", tipText: "다음번엔 잘해보세요.") }
     }
 }
 
