@@ -10,6 +10,7 @@ import SwiftUI
 
 struct EntranceControl: View {
     @State var entranceControl = -1
+    @Binding var mainflow : Int
     var body: some View {
         if entranceControl == -1{
             EntranceView_start(flow: $entranceControl)
@@ -24,13 +25,9 @@ struct EntranceControl: View {
             EntranceView_info(flow: $entranceControl)
         }
         else if entranceControl == 3{
-            EntranceView_end(flow: $entranceControl)
+            EntranceView_end( mainflow: $mainflow, flow: $entranceControl)
         }
     }
 }
 
-struct EntranceControl_Previews: PreviewProvider {
-    static var previews: some View {
-        EntranceControl()
-    }
-}
+

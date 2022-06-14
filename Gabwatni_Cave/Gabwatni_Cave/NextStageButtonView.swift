@@ -7,24 +7,24 @@
 
 import SwiftUI
 
-struct NextStageButtonView<Content: View>: View {
-    var destinationView: Content
-    
+struct NextStageButtonView: View {
     @Binding var count: Int
     @Binding var nextCount: Int
     @Binding var isShowing: Bool
+    @Binding var mainflow: Int
     
     var body: some View {
-        NavigationLink(destination: destinationView) {
-            Image("nextStage")
+        Button {
+            // flow를 늘려서 해도 될거같고~
+            isShowing = false
+            mainflow = 3
+            
+        } label : {
+            Image("footprint")
                 .resizable()
-        }
-        .opacity(count >= nextCount && isShowing == false ? 1 : 0)
-        //        Button {
-        //            print("다음 방으로 가버렷~")
-        //        } label : {
-        //            Image("treasure chest")
-        //        }.opacity(count >= nextCount ? 1 : 0)
+                .frame(width: 300, height: 300)
+        }//.opacity(count >= nextCount && isShowing ? 1 : 0)
+        .opacity(count >= nextCount ? 1 : 0)
         
     }
 }
