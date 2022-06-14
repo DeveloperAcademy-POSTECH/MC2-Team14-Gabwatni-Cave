@@ -52,7 +52,9 @@ class CardViewModel: ObservableObject {
 }
 
 class CardViewModel2: ObservableObject {
-    @Published var flow = 0
+    @Published var flow = -1
+    
+    @Published var fakeDie: Bool = false
     
     @Published var imageName: String = ""
     @Published var imageTitle: String = ""
@@ -65,7 +67,7 @@ class CardViewModel2: ObservableObject {
     @Published var dragOffset2 = CGSize.zero
     
     var itemDict : [String : Bool] = [
-        "bat" : false, "salamander" : false]
+        "bat" : false, "salamander" : false, "dragonmillipede" : false, "arachnocampa" : false]
     
     let CardData : [String : Array<String>] = [
         "bat" : ["박쥐", "동굴 생태계에서 없어서는 안 될 존재.,밤에는 동굴 밖에서 먹이를 잡아먹고 동굴 내부에 배설하는데 ,이 배설물(구아노)은 동굴 생물에게 중요한 영양분을 제공한다."],

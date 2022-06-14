@@ -9,7 +9,9 @@ import SwiftUI
 import AVFoundation
 
 struct StartMap: View {
-    @Binding var flow : Int
+    
+    
+   // @Binding var flow : Int
     var body: some View {
         ZStack{
             Rectangle()
@@ -35,6 +37,8 @@ struct StartMap: View {
 
 
 struct newTextBox3: View {
+    @EnvironmentObject var vm: CardViewModel2
+    
     @State var str = ""
     @State var StrArr : [String]
     @State var charArr : [String]
@@ -103,6 +107,10 @@ struct newTextBox3: View {
                             }
                             else if stringNumber == StrArr.count-1{
                                 isClicked = false
+                                withAnimation(.easeIn(duration: 2)) {
+                                vm.flow += 1
+                                }
+                                print("chk")
                                 print(1323)
                             }
                             isFinished.toggle()
@@ -131,10 +139,11 @@ struct newTextBox3: View {
                 if stringNumber < StrArr.count-1{
                     stringNumber+=1
                     print(stringNumber)
+                    print("gd")
                 }
                 else if stringNumber == StrArr.count-1{
                     isClicked = false
-                    print(1323)
+                    print(1323234)
                 }
             }
         }

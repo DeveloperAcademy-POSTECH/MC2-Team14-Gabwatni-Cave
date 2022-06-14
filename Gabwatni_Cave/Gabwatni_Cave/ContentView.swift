@@ -11,7 +11,10 @@ struct ContentView: View {
     @EnvironmentObject var vm : CardViewModel2
     
     var body: some View {
-        if vm.flow == 0 {
+        if vm.flow == -1 {
+            IntroControl(flow: 0)
+        }
+        else if vm.flow == 0 {
             AncestorView(mainflow: vm.flow)
         }
         else if vm.flow == 1 {
@@ -22,9 +25,17 @@ struct ContentView: View {
         }
         else if vm.flow == 3 {
             DeepDarkControl(mainflow: vm.flow)
+                .onDisappear {
+                    vm.dragOffset = CGSize.zero
+                    vm.dragOffset2 = CGSize.zero
+                }
         }
         else if vm.flow == 4 {
             Abyss()
+                .onAppear{
+                    vm.dragOffset = CGSize.zero
+                    vm.dragOffset2 = CGSize.zero
+                }
         }
     }
 }

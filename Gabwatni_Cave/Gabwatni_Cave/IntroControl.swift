@@ -17,7 +17,7 @@ struct IntroControl: View {
             CharacterView(flow: $flow)
         }
         else if flow == 2 {
-            StartMap(flow: $flow)
+            StartMap()
         }
     }
 }
