@@ -13,10 +13,7 @@ struct Gabwatni_CaveApp: App {
         WindowGroup {
 
             ContentView()
-<<<<<<< HEAD
 
-=======
->>>>>>> 603031b5578308c6d7ae000743f4ef217baed11e
         }
     }
 }
