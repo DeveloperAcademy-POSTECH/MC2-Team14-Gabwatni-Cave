@@ -63,6 +63,7 @@
 		8EF731AC28570F1800D9A61A /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF731AB28570F1800D9A61A /* CharacterView.swift */; };
 		8EF731AE2857247D00D9A61A /* IntroControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF731AD2857247D00D9A61A /* IntroControl.swift */; };
 		8EF731B02857279B00D9A61A /* StartMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF731AF2857279B00D9A61A /* StartMapView.swift */; };
+		CCA571AC2858DE9C005ECA5D /* TadaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA571AB2858DE9C005ECA5D /* TadaView.swift */; };
 		CCF62576285703C9006C245D /* ShineViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF62575285703C9006C245D /* ShineViewModifier.swift */; };
 		CCF6C24B2852092D00C48E22 /* AncestorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF6C24A2852092D00C48E22 /* AncestorView.swift */; };
 		CCF6C24E28522CA200C48E22 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF6C24D28522CA200C48E22 /* CardModel.swift */; };
@@ -145,6 +146,7 @@
 		8EF731AB28570F1800D9A61A /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 		8EF731AD2857247D00D9A61A /* IntroControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroControl.swift; sourceTree = "<group>"; };
 		8EF731AF2857279B00D9A61A /* StartMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMapView.swift; sourceTree = "<group>"; };
+		CCA571AB2858DE9C005ECA5D /* TadaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TadaView.swift; sourceTree = "<group>"; };
 		CCF62575285703C9006C245D /* ShineViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShineViewModifier.swift; sourceTree = "<group>"; };
 		CCF6C24A2852092D00C48E22 /* AncestorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AncestorView.swift; sourceTree = "<group>"; };
 		CCF6C24D28522CA200C48E22 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 				3234D75328587E16001654D4 /* SpriteFiles */,
 				CCF6C24A2852092D00C48E22 /* AncestorView.swift */,
 				3234D75128587E07001654D4 /* RainEffect.swift */,
+				CCA571AB2858DE9C005ECA5D /* TadaView.swift */,
 			);
 			path = StartZone;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				7BE8736728538F8E006AEE89 /* RandomGameView.swift in Sources */,
 				32B8EB6A285206A9009C1DC4 /* DeepDarkView.swift in Sources */,
 				321CF1AD2850882800F3B920 /* ContentView.swift in Sources */,
+				CCA571AC2858DE9C005ECA5D /* TadaView.swift in Sources */,
 				321C5A2A28522B430092C4E4 /* MiniMapView.swift in Sources */,
 				6E01FB4D28520B6E00B98789 /* TwilightView.swift in Sources */,
 				78259A462855D5C90096AB51 /* EntranceView-end.swift in Sources */,
@@ -768,7 +772,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gabwatni_Cave/Preview Content\"";
-				DEVELOPMENT_TEAM = RLD2Z6D224;
+				DEVELOPMENT_TEAM = BQSHS2D2FB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Gabwatni-Cave-Info.plist";
@@ -801,7 +805,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gabwatni_Cave/Preview Content\"";
-				DEVELOPMENT_TEAM = RLD2Z6D224;
+				DEVELOPMENT_TEAM = BQSHS2D2FB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Gabwatni-Cave-Info.plist";
