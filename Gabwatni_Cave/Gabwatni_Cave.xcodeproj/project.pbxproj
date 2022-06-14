@@ -16,6 +16,7 @@
 		321CF1BC2850882A00F3B920 /* Gabwatni_CaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1BB2850882A00F3B920 /* Gabwatni_CaveTests.swift */; };
 		321CF1C62850882A00F3B920 /* Gabwatni_CaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1C52850882A00F3B920 /* Gabwatni_CaveUITests.swift */; };
 		321CF1C82850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1C72850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift */; };
+		3231169E2858E58A00C5160D /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3231169D2858E58A00C5160D /* start.mp3 */; };
 		3234D74D285878EE001654D4 /* BGM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234D74C285878EE001654D4 /* BGM.swift */; };
 		3234D75228587E07001654D4 /* RainEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234D75128587E07001654D4 /* RainEffect.swift */; };
 		3234D75628587E31001654D4 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3234D75428587E31001654D4 /* MyParticle.sks */; };
@@ -98,6 +99,7 @@
 		321CF1C12850882A00F3B920 /* Gabwatni_CaveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Gabwatni_CaveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		321CF1C52850882A00F3B920 /* Gabwatni_CaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveUITests.swift; sourceTree = "<group>"; };
 		321CF1C72850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3231169D2858E58A00C5160D /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
 		3234D74C285878EE001654D4 /* BGM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGM.swift; sourceTree = "<group>"; };
 		3234D75128587E07001654D4 /* RainEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainEffect.swift; sourceTree = "<group>"; };
 		3234D75428587E31001654D4 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				32E738C42858D2D300EE034F /* walk.mp3 */,
+				3231169D2858E58A00C5160D /* start.mp3 */,
 				3234D7692858B3EC001654D4 /* end.mp3 */,
 				3234D7672858B34E001654D4 /* Enter_TwilightZoneBGM.mp3 */,
 				3234D7652858AF99001654D4 /* darkZoneBGM.mp3 */,
@@ -524,6 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3234D75C28588706001654D4 /* rain.mp3 in Resources */,
+				3231169E2858E58A00C5160D /* start.mp3 in Resources */,
 				3234D7682858B34E001654D4 /* Enter_TwilightZoneBGM.mp3 in Resources */,
 				3234D76A2858B3EC001654D4 /* end.mp3 in Resources */,
 				3234D7662858AF99001654D4 /* darkZoneBGM.mp3 in Resources */,
