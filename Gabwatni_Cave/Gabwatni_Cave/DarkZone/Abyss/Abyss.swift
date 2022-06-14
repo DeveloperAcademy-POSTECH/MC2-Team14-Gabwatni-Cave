@@ -56,7 +56,7 @@ struct Abyss: View {
                     })
                 
                 if distance <= sqrt(2) * 30 + 100 {
-                    Image("dragon millipad")
+                    Image("dragonmillipede")
                         .resizable()
                         .position(x: 200, y: 300)
                         .frame(width: 75, height: 150)

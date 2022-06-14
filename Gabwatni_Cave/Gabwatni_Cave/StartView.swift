@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StartView: View {
     @Binding var flow : Int
+    @State var textAnimation = false
     var body: some View {
         
         ZStack{
@@ -16,6 +17,9 @@ struct StartView: View {
                 .resizable()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 .ignoresSafeArea()
+                .onTapGesture {
+                    flow = 1
+                }
                
             
             Text("가봤니?")
@@ -37,6 +41,14 @@ struct StartView: View {
                     .foregroundColor(Color("textcolor"))
                     .multilineTextAlignment(.center)
                     .padding(.top,30)
+                    .opacity(textAnimation ? 1 : 0)
+            }
+            
+        }
+        .onAppear {
+            playSound(sound: "start", type: ".mp3")
+            withAnimation(.spring().repeatForever()) {
+                textAnimation = true
             }
             
         }
