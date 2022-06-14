@@ -16,6 +16,11 @@
 		321CF1BC2850882A00F3B920 /* Gabwatni_CaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1BB2850882A00F3B920 /* Gabwatni_CaveTests.swift */; };
 		321CF1C62850882A00F3B920 /* Gabwatni_CaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1C52850882A00F3B920 /* Gabwatni_CaveUITests.swift */; };
 		321CF1C82850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1C72850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift */; };
+		3234D74D285878EE001654D4 /* BGM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234D74C285878EE001654D4 /* BGM.swift */; };
+		3234D75028587A9C001654D4 /* startZoneBGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3234D74F28587A9C001654D4 /* startZoneBGM.mp3 */; };
+		3234D75228587E07001654D4 /* RainEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234D75128587E07001654D4 /* RainEffect.swift */; };
+		3234D75628587E31001654D4 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3234D75428587E31001654D4 /* MyParticle.sks */; };
+		3234D75C28588706001654D4 /* rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3234D75B28588706001654D4 /* rain.mp3 */; };
 		323DD3CA285863FC005986EF /* boss.json in Resources */ = {isa = PBXBuildFile; fileRef = 323DD3C9285863FC005986EF /* boss.json */; };
 		323DD3CC28586422005986EF /* bossView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323DD3CB28586422005986EF /* bossView.swift */; };
 		323DD3CF28586462005986EF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 323DD3CE28586462005986EF /* Lottie */; };
@@ -87,6 +92,11 @@
 		321CF1C12850882A00F3B920 /* Gabwatni_CaveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Gabwatni_CaveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		321CF1C52850882A00F3B920 /* Gabwatni_CaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveUITests.swift; sourceTree = "<group>"; };
 		321CF1C72850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3234D74C285878EE001654D4 /* BGM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGM.swift; sourceTree = "<group>"; };
+		3234D74F28587A9C001654D4 /* startZoneBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = startZoneBGM.mp3; sourceTree = "<group>"; };
+		3234D75128587E07001654D4 /* RainEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainEffect.swift; sourceTree = "<group>"; };
+		3234D75428587E31001654D4 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
+		3234D75B28588706001654D4 /* rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain.mp3; sourceTree = "<group>"; };
 		323DD3C9285863FC005986EF /* boss.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = boss.json; sourceTree = "<group>"; };
 		323DD3CB28586422005986EF /* bossView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bossView.swift; sourceTree = "<group>"; };
 		32B8EB69285206A9009C1DC4 /* DeepDarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDarkView.swift; sourceTree = "<group>"; };
@@ -193,6 +203,7 @@
 		321CF1A92850882800F3B920 /* Gabwatni_Cave */ = {
 			isa = PBXGroup;
 			children = (
+				3234D74B285878E0001654D4 /* Sound */,
 				7BF24D56285862CF00227E2E /* Gabwatni_CaveApp.swift */,
 				321CF1AC2850882800F3B920 /* ContentView.swift */,
 				7810DA3E285218AF00069CFB /* Gabwatni-Cave-Info.plist */,
@@ -249,6 +260,32 @@
 				321CF1C72850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift */,
 			);
 			path = Gabwatni_CaveUITests;
+			sourceTree = "<group>";
+		};
+		3234D74B285878E0001654D4 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				3234D74E28587A73001654D4 /* Sounds */,
+				3234D74C285878EE001654D4 /* BGM.swift */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		3234D74E28587A73001654D4 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				3234D75B28588706001654D4 /* rain.mp3 */,
+				3234D74F28587A9C001654D4 /* startZoneBGM.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		3234D75328587E16001654D4 /* SpriteFiles */ = {
+			isa = PBXGroup;
+			children = (
+				3234D75428587E31001654D4 /* MyParticle.sks */,
+			);
+			path = SpriteFiles;
 			sourceTree = "<group>";
 		};
 		32B8EB6728520652009C1DC4 /* Abyss */ = {
@@ -339,7 +376,9 @@
 		CCF6C2492852092000C48E22 /* StartZone */ = {
 			isa = PBXGroup;
 			children = (
+				3234D75328587E16001654D4 /* SpriteFiles */,
 				CCF6C24A2852092D00C48E22 /* AncestorView.swift */,
+				3234D75128587E07001654D4 /* RainEffect.swift */,
 			);
 			path = StartZone;
 			sourceTree = "<group>";
@@ -466,9 +505,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3234D75C28588706001654D4 /* rain.mp3 in Resources */,
 				323DD3CA285863FC005986EF /* boss.json in Resources */,
+				3234D75628587E31001654D4 /* MyParticle.sks in Resources */,
 				321CF1B22850882A00F3B920 /* Preview Assets.xcassets in Resources */,
 				7810DA3D2852189800069CFB /* Sam3KRFont.ttf in Resources */,
+				3234D75028587A9C001654D4 /* startZoneBGM.mp3 in Resources */,
 				321CF1AF2850882A00F3B920 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,6 +537,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7810DA4228521F2900069CFB /* EntranceView-stone.swift in Sources */,
+				3234D74D285878EE001654D4 /* BGM.swift in Sources */,
 				6E23694E28585FDA002F19F3 /* LightView.swift in Sources */,
 				32C476942857194F003D0BB4 /* DeepDarkView-start.swift in Sources */,
 				6E01FB4A28520B4A00B98789 /* DeathView.swift in Sources */,
@@ -525,6 +568,7 @@
 				7BF24D57285862CF00227E2E /* Gabwatni_CaveApp.swift in Sources */,
 				7BF24D55285855A200227E2E /* ClearView.swift in Sources */,
 				787554AF285327B500CF7F61 /* textBox.swift in Sources */,
+				3234D75228587E07001654D4 /* RainEffect.swift in Sources */,
 				321C5A2F285323580092C4E4 /* InventoryView.swift in Sources */,
 				7B9E61B728520E4900C931F4 /* Quiz.swift in Sources */,
 				7B9E61B328520E1000C931F4 /* QuizView.swift in Sources */,
@@ -696,7 +740,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gabwatni_Cave/Preview Content\"";
-				DEVELOPMENT_TEAM = K9M6C75JFU;
+
+				DEVELOPMENT_TEAM = FRZRS5Y9L6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Gabwatni-Cave-Info.plist";
@@ -729,7 +774,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gabwatni_Cave/Preview Content\"";
-				DEVELOPMENT_TEAM = K9M6C75JFU;
+				DEVELOPMENT_TEAM = FRZRS5Y9L6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Gabwatni-Cave-Info.plist";
