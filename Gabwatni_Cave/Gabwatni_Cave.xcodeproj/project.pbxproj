@@ -29,6 +29,8 @@
 		6E01FB5228520B8A00B98789 /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 6E01FB5128520B8A00B98789 /* Shimmer */; };
 		6E01FB542852128200B98789 /* NextStageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E01FB532852128200B98789 /* NextStageButtonView.swift */; };
 		6E01FB562852245000B98789 /* TestLightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E01FB552852245000B98789 /* TestLightView.swift */; };
+		6E23694E28585FDA002F19F3 /* LightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E23694D28585FDA002F19F3 /* LightView.swift */; };
+		6E2369502858607F002F19F3 /* LightItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E23694F2858607F002F19F3 /* LightItemView.swift */; };
 		7810DA3A2852081200069CFB /* EntranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810DA392852081200069CFB /* EntranceView.swift */; };
 		7810DA3D2852189800069CFB /* Sam3KRFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7810DA3C2852189800069CFB /* Sam3KRFont.ttf */; };
 		7810DA4028521C8000069CFB /* EntranceControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810DA3F28521C8000069CFB /* EntranceControl.swift */; };
@@ -42,7 +44,6 @@
 		7B9E61B328520E1000C931F4 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E61B228520E1000C931F4 /* QuizView.swift */; };
 		7B9E61B728520E4900C931F4 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E61B628520E4900C931F4 /* Quiz.swift */; };
 		7BE8736328538182006AEE89 /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8736228538182006AEE89 /* QuizModel.swift */; };
-		7BE8736528538916006AEE89 /* TempDeathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8736428538916006AEE89 /* TempDeathView.swift */; };
 		7BE8736728538F8E006AEE89 /* RandomGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8736628538F8E006AEE89 /* RandomGameView.swift */; };
 		7BF24D55285855A200227E2E /* ClearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF24D54285855A200227E2E /* ClearView.swift */; };
 		7BF24D57285862CF00227E2E /* Gabwatni_CaveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF24D56285862CF00227E2E /* Gabwatni_CaveApp.swift */; };
@@ -100,6 +101,8 @@
 		6E01FB4E28520B7800B98789 /* ShimmeringItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmeringItemView.swift; sourceTree = "<group>"; };
 		6E01FB532852128200B98789 /* NextStageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStageButtonView.swift; sourceTree = "<group>"; };
 		6E01FB552852245000B98789 /* TestLightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLightView.swift; sourceTree = "<group>"; };
+		6E23694D28585FDA002F19F3 /* LightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightView.swift; sourceTree = "<group>"; };
+		6E23694F2858607F002F19F3 /* LightItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightItemView.swift; sourceTree = "<group>"; };
 		7810DA392852081200069CFB /* EntranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceView.swift; sourceTree = "<group>"; };
 		7810DA3C2852189800069CFB /* Sam3KRFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sam3KRFont.ttf; sourceTree = "<group>"; };
 		7810DA3E285218AF00069CFB /* Gabwatni-Cave-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Gabwatni-Cave-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -114,7 +117,6 @@
 		7B9E61B228520E1000C931F4 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		7B9E61B628520E4900C931F4 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		7BE8736228538182006AEE89 /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
-		7BE8736428538916006AEE89 /* TempDeathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempDeathView.swift; sourceTree = "<group>"; };
 		7BE8736628538F8E006AEE89 /* RandomGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGameView.swift; sourceTree = "<group>"; };
 		7BF24D54285855A200227E2E /* ClearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearView.swift; sourceTree = "<group>"; };
 		7BF24D56285862CF00227E2E /* Gabwatni_CaveApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveApp.swift; sourceTree = "<group>"; };
@@ -216,7 +218,8 @@
 				6EB990EC285464EE00D3CD55 /* ItemDetailView.swift */,
 				8EF731AB28570F1800D9A61A /* CharacterView.swift */,
 				8EF731A928570EB500D9A61A /* StartView.swift */,
-
+				6E23694F2858607F002F19F3 /* LightItemView.swift */,
+				6E23694D28585FDA002F19F3 /* LightView.swift */,
 				6E01FB552852245000B98789 /* TestLightView.swift */,
 				6E01FB532852128200B98789 /* NextStageButtonView.swift */,
 				78259A4B2856686F0096AB51 /* newTextBox.swift */,
@@ -266,7 +269,6 @@
 				7B9E61B0285204AB00C931F4 /* Abyss.swift */,
 				7B9E61B228520E1000C931F4 /* QuizView.swift */,
 				7BE8736628538F8E006AEE89 /* RandomGameView.swift */,
-				7BE8736428538916006AEE89 /* TempDeathView.swift */,
 			);
 			path = Abyss;
 			sourceTree = "<group>";
@@ -503,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7810DA4228521F2900069CFB /* EntranceView-stone.swift in Sources */,
+				6E23694E28585FDA002F19F3 /* LightView.swift in Sources */,
 				32C476942857194F003D0BB4 /* DeepDarkView-start.swift in Sources */,
 				6E01FB4A28520B4A00B98789 /* DeathView.swift in Sources */,
 				323DD3CC28586422005986EF /* bossView.swift in Sources */,
@@ -512,7 +515,6 @@
 				7810DA3A2852081200069CFB /* EntranceView.swift in Sources */,
 				7BE8736728538F8E006AEE89 /* RandomGameView.swift in Sources */,
 				32B8EB6A285206A9009C1DC4 /* DeepDarkView.swift in Sources */,
-				7BE8736528538916006AEE89 /* TempDeathView.swift in Sources */,
 				321CF1AD2850882800F3B920 /* ContentView.swift in Sources */,
 				321C5A2A28522B430092C4E4 /* MiniMapView.swift in Sources */,
 				6E01FB4D28520B6E00B98789 /* TwilightView.swift in Sources */,
@@ -547,6 +549,7 @@
 				7B9E61B1285204AB00C931F4 /* Abyss.swift in Sources */,
 				7810DA4428522C4D00069CFB /* EntranceView-info.swift in Sources */,
 				6E01FB542852128200B98789 /* NextStageButtonView.swift in Sources */,
+				6E2369502858607F002F19F3 /* LightItemView.swift in Sources */,
 				7BE8736328538182006AEE89 /* QuizModel.swift in Sources */,
 
 				321CF1AB2850882800F3B920 /* Gabwatni_CaveApp.swift in Sources */,
@@ -713,7 +716,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gabwatni_Cave/Preview Content\"";
-				DEVELOPMENT_TEAM = MSUF83HQ8R;
+				DEVELOPMENT_TEAM = BQSHS2D2FB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Gabwatni-Cave-Info.plist";
@@ -746,7 +749,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gabwatni_Cave/Preview Content\"";
-				DEVELOPMENT_TEAM = MSUF83HQ8R;
+				DEVELOPMENT_TEAM = BQSHS2D2FB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Gabwatni-Cave-Info.plist";

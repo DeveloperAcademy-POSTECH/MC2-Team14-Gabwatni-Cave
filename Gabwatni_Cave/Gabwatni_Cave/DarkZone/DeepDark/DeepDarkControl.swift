@@ -9,7 +9,10 @@ import SwiftUI
 
 
 struct DeepDarkControl: View {
-    @Binding var mainflow : Int
+    @EnvironmentObject var vm: CardViewModel2
+    
+    var mainflow: Int
+    //@Binding var mainflow : Int
     @State var deepDarkControl = -1
     
     var body: some View {
@@ -17,7 +20,7 @@ struct DeepDarkControl: View {
             DeepDarkView_start(flow: $deepDarkControl)
         }
         else if deepDarkControl == 0{
-            DeepDarkView(mainflow: $mainflow, flow: $deepDarkControl)
+            DeepDarkView(mainflow: vm.flow, flow: $deepDarkControl)
         }
         
     }

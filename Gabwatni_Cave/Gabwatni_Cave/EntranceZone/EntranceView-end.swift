@@ -8,7 +8,10 @@
 import SwiftUI
 import AVFoundation
 struct EntranceView_end: View {
-    @Binding var mainflow : Int
+    @EnvironmentObject var vm: CardViewModel2
+    
+    var mainflow: Int
+    //@Binding var mainflow : Int
     
     @Binding var flow : Int
     @State var str = ""
@@ -102,7 +105,7 @@ struct EntranceView_end: View {
                     }
                     if isEnd{
                         Button{
-                            mainflow = 2
+                            vm.flow = 2
                         }label: {
                             Image("footprint")
                                 .resizable()

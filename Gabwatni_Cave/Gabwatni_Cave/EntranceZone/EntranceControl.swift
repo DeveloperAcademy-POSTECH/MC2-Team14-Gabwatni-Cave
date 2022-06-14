@@ -9,8 +9,11 @@ import SwiftUI
 
 
 struct EntranceControl: View {
+    @EnvironmentObject var vm: CardViewModel2
+    
     @State var entranceControl = -1
-    @Binding var mainflow : Int
+    //@Binding var mainflow : Int
+    
     var body: some View {
         if entranceControl == -1{
             EntranceView_start(flow: $entranceControl)
@@ -25,7 +28,7 @@ struct EntranceControl: View {
             EntranceView_info(flow: $entranceControl)
         }
         else if entranceControl == 3{
-            EntranceView_end( mainflow: $mainflow, flow: $entranceControl)
+            EntranceView_end( mainflow: vm.flow, flow: $entranceControl)
         }
     }
 }
