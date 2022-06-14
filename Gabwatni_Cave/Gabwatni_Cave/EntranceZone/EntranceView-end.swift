@@ -82,12 +82,12 @@ struct EntranceView_end: View {
                                 isClicked = true
                                 if stringNumber < 3{
                                     stringNumber+=1
-                                    print(stringNumber)
+                                   
                                 }
                                 else if stringNumber == 3{
                                     isEnd = true
                                     isClicked = false
-                                    print("다음스테이지로 넘어가는 함수")
+                                    
                                 }
                                 isFinished.toggle()
                             }
@@ -124,7 +124,7 @@ struct EntranceView_end: View {
                     AudioServicesPlaySystemSound(1311)
                     if stringNumber < 3{
                         stringNumber+=1
-                        print(stringNumber)
+                        
                     }
                     else if stringNumber == 3{
                        

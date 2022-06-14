@@ -21,12 +21,7 @@ struct ContentView: View {
             EntranceControl()
         }
         else if vm.flow == 2 {
-            TwilightView(mainflow: vm.flow)
-                .onDisappear{
-                    vm.dragOffset = CGSize.zero
-                    vm.dragOffset2 = CGSize.zero
-                }
-            
+            Dongdalsays()
         }
         else if vm.flow == 3 {
             DeepDarkControl(mainflow: vm.flow)

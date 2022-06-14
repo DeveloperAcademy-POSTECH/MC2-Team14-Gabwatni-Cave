@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DeathView: View {
+    @EnvironmentObject var vm : CardViewModel2
+    
     private(set) var reasonText: String
     let deathText: String = "사망"
     
@@ -22,7 +24,6 @@ struct DeathView: View {
                 .ignoresSafeArea()
             
             VStack(alignment: .center) {
-                Spacer()
                 Spacer()
                 
                 Text(reasonText)
@@ -40,16 +41,15 @@ struct DeathView: View {
                     .foregroundColor(.white)
                     .padding(.bottom)
                 
-                Spacer()
-                
-                // 어떤식으로 뷰를 넘어가게 할지 ?
-                NavigationLink {
-//                    EntranceView()
+                // TODO: 일단 다시하기 누르면 맨 처음으로 돌아가는 걸로 설정해놨습니다.
+                Button {
+                    vm.flow = 0
                 } label: {
                     Text(restartText)
                         .font(.custom("Sam3KRFont", size: 24))
                         .foregroundColor(.red)
                 }
+                
                 Spacer()
             }
         }

@@ -44,6 +44,7 @@ struct AncestorView: View {
             if flow == 0 {
                 StartZoneStartView
                     .onAppear {
+                        playSound(sound: "rain", type: "mp3")
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                             withAnimation(.easeInOut(duration: 2)) {
                                 flow = 1
@@ -51,7 +52,11 @@ struct AncestorView: View {
                         }
                     }
             } else if flow == 1 {
-                AncestorPageView
+                ZStack{
+                    
+                    AncestorPageView
+                    
+                }
             }
         }
     }
@@ -105,7 +110,7 @@ struct AncestorView: View {
                                 }
                             }
                             .edgesIgnoringSafeArea(.all)
-                        
+                        RainEffect()
                         
                         AncestorShimmeringView
                         flashShimmeringView
@@ -185,7 +190,10 @@ struct AncestorView: View {
                                 Button{
                                     withAnimation(.easeIn) {
                                         //mainflow = 1
-                                        vm.flow = 1
+                                        playSound(sound: "walk", type: ".mp3")
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                                            vm.flow = 1
+                                                                    }
                                     }
                                 }label: {
                                     //Image("salamander")
@@ -221,14 +229,14 @@ struct AncestorView: View {
             if ancestorState {
                 ZStack {
                     // shimmering opacity가 너무 작은 것 같아서 이미지 하나 더 올림
-                Image("skeletonMapO")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .opacity(0.7)
-                Image("skeletonMapO")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .shimmering(active: ancestorState, duration: 2.0)
+                    Image("skeletonMapO")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .opacity(0.7)
+                    Image("skeletonMapO")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .shimmering(active: ancestorState, duration: 2.0)
                 }
             } else {
                 Image("skeletonMapX")
@@ -259,13 +267,13 @@ struct AncestorView: View {
                 textboxState[2] = true
             }
         } label: {
-                    Image("flashlight")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 15)
-                        .rotationEffect(.degrees(80))
-                        .opacity(lightState ? 0.7 : 0)
-                        .shimmering(active: lightState, duration: 2.0)
+            Image("flashlight")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 15)
+                .rotationEffect(.degrees(80))
+                .opacity(lightState ? 0.7 : 0)
+                .shimmering(active: lightState, duration: 2.0)
         }
         .position(lightLocation)
         .onAppear{
