@@ -35,9 +35,9 @@ struct AncestorView: View {
     @State private var textEnd: Bool = false
     @State private var inputString = ""
     @State private var stringArrayIndex = 0
-    let startStringArray : [String] = ["어지러워...여기가 어디지?", "혹시...할아버지의 할아버지의 할아버지 ?!","(묵념)", "손에 들고 계신건 뭐지 ?", " "]
-    let mapStringArray : [String] = ["엇...?", "이건 지도인가..?", "(지도 획득!)", "엇 저기 반짝이는건 뭐지??", " "]
-    let flashStringArray : [String] = ["오잉???", "이건 flashlight?", "(손전등 획득!)", " "]
+    let startStringArray : [String] = ["어지러워...여기가 어디지?", "혹시...할아버지의 할아버지의 할아버지 ?!","(묵념)", "손에 들고 계신건 뭐지 ?", "(조상님의 해골을 눌러보자)"," "]
+    let mapStringArray : [String] = ["엇...?", "이건 지도인가..?", "(지도를 획득했다.)", "엇 저기 반짝이는건 뭐지??", "(손전등을 눌러보자)"," "]
+    let flashStringArray : [String] = ["오잉???", "이건 Flashlight?", "(손전등을 획득했다.)", " "]
     
     var body: some View {
         ZStack {
@@ -110,6 +110,7 @@ struct AncestorView: View {
                                 }
                             }
                             .edgesIgnoringSafeArea(.all)
+                        
                         RainEffect()
                         
                         AncestorShimmeringView
@@ -190,10 +191,7 @@ struct AncestorView: View {
                                 Button{
                                     withAnimation(.easeIn) {
                                         //mainflow = 1
-                                        playSound(sound: "walk", type: ".mp3")
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                                            vm.flow = 1
-                                                                    }
+                                        vm.flow = 1
                                     }
                                 }label: {
                                     //Image("salamander")
@@ -205,6 +203,16 @@ struct AncestorView: View {
                                 }
                             }
                             .position(x: 300, y: 700)
+                        }
+                        
+                        // 오브젝트를 발견했을 때 띄워주는 뷰
+                        if (stringArrayIndex == 2 || stringArrayIndex == 3) {
+                            if textboxState[1] {
+                                TadaView(imageName: "minimap")
+                                
+                            } else if textboxState[2] {
+                                TadaView(imageName: "flashlight")
+                            }
                         }
                     }
                 )
@@ -311,7 +319,9 @@ struct AncestorView: View {
         }
         
         if stringArrayIndex < stringArray.count - 1 {
-            stringArrayIndex+=1
+            withAnimation(.easeIn(duration: 1)) {
+                stringArrayIndex+=1
+            }
         }
         else if stringArrayIndex == stringArray.count - 1 {
             // textEnd, 배열 인덱스, textbox 상태 초기화
