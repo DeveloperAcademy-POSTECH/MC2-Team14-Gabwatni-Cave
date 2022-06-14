@@ -90,7 +90,11 @@ struct Abyss: View {
             }
         }
         // 드래곤 밀리패드 누르면 퀴즈 뷰로 넘어감
-        else { QuizView(quizModel: QuizModel()) }
+        else { QuizView(quizModel: QuizModel())
+                .onAppear{
+                    playSound(sound: "Action_Hero", type: ".mp3")
+                }
+        }
     }
 }
 

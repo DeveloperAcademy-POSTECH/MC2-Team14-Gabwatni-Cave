@@ -17,10 +17,13 @@
 		321CF1C62850882A00F3B920 /* Gabwatni_CaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1C52850882A00F3B920 /* Gabwatni_CaveUITests.swift */; };
 		321CF1C82850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF1C72850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift */; };
 		3234D74D285878EE001654D4 /* BGM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234D74C285878EE001654D4 /* BGM.swift */; };
-		3234D75028587A9C001654D4 /* startZoneBGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3234D74F28587A9C001654D4 /* startZoneBGM.mp3 */; };
 		3234D75228587E07001654D4 /* RainEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234D75128587E07001654D4 /* RainEffect.swift */; };
 		3234D75628587E31001654D4 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3234D75428587E31001654D4 /* MyParticle.sks */; };
 		3234D75C28588706001654D4 /* rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3234D75B28588706001654D4 /* rain.mp3 */; };
+		3234D7642858A23C001654D4 /* Action_Hero.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3234D7632858A23C001654D4 /* Action_Hero.mp3 */; };
+		3234D7662858AF99001654D4 /* darkZoneBGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3234D7652858AF99001654D4 /* darkZoneBGM.mp3 */; };
+		3234D7682858B34E001654D4 /* Enter_TwilightZoneBGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3234D7672858B34E001654D4 /* Enter_TwilightZoneBGM.mp3 */; };
+		3234D76A2858B3EC001654D4 /* end.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3234D7692858B3EC001654D4 /* end.mp3 */; };
 		323DD3CA285863FC005986EF /* boss.json in Resources */ = {isa = PBXBuildFile; fileRef = 323DD3C9285863FC005986EF /* boss.json */; };
 		323DD3CC28586422005986EF /* bossView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323DD3CB28586422005986EF /* bossView.swift */; };
 		323DD3CF28586462005986EF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 323DD3CE28586462005986EF /* Lottie */; };
@@ -93,10 +96,13 @@
 		321CF1C52850882A00F3B920 /* Gabwatni_CaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveUITests.swift; sourceTree = "<group>"; };
 		321CF1C72850882A00F3B920 /* Gabwatni_CaveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3234D74C285878EE001654D4 /* BGM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGM.swift; sourceTree = "<group>"; };
-		3234D74F28587A9C001654D4 /* startZoneBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = startZoneBGM.mp3; sourceTree = "<group>"; };
 		3234D75128587E07001654D4 /* RainEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainEffect.swift; sourceTree = "<group>"; };
 		3234D75428587E31001654D4 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 		3234D75B28588706001654D4 /* rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain.mp3; sourceTree = "<group>"; };
+		3234D7632858A23C001654D4 /* Action_Hero.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Action_Hero.mp3; sourceTree = "<group>"; };
+		3234D7652858AF99001654D4 /* darkZoneBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = darkZoneBGM.mp3; sourceTree = "<group>"; };
+		3234D7672858B34E001654D4 /* Enter_TwilightZoneBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Enter_TwilightZoneBGM.mp3; sourceTree = "<group>"; };
+		3234D7692858B3EC001654D4 /* end.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = end.mp3; sourceTree = "<group>"; };
 		323DD3C9285863FC005986EF /* boss.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = boss.json; sourceTree = "<group>"; };
 		323DD3CB28586422005986EF /* bossView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bossView.swift; sourceTree = "<group>"; };
 		32B8EB69285206A9009C1DC4 /* DeepDarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDarkView.swift; sourceTree = "<group>"; };
@@ -274,8 +280,11 @@
 		3234D74E28587A73001654D4 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				3234D7692858B3EC001654D4 /* end.mp3 */,
+				3234D7672858B34E001654D4 /* Enter_TwilightZoneBGM.mp3 */,
+				3234D7652858AF99001654D4 /* darkZoneBGM.mp3 */,
+				3234D7632858A23C001654D4 /* Action_Hero.mp3 */,
 				3234D75B28588706001654D4 /* rain.mp3 */,
-				3234D74F28587A9C001654D4 /* startZoneBGM.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -506,11 +515,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3234D75C28588706001654D4 /* rain.mp3 in Resources */,
+				3234D7682858B34E001654D4 /* Enter_TwilightZoneBGM.mp3 in Resources */,
+				3234D76A2858B3EC001654D4 /* end.mp3 in Resources */,
+				3234D7662858AF99001654D4 /* darkZoneBGM.mp3 in Resources */,
 				323DD3CA285863FC005986EF /* boss.json in Resources */,
 				3234D75628587E31001654D4 /* MyParticle.sks in Resources */,
 				321CF1B22850882A00F3B920 /* Preview Assets.xcassets in Resources */,
+				3234D7642858A23C001654D4 /* Action_Hero.mp3 in Resources */,
 				7810DA3D2852189800069CFB /* Sam3KRFont.ttf in Resources */,
-				3234D75028587A9C001654D4 /* startZoneBGM.mp3 in Resources */,
 				321CF1AF2850882A00F3B920 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -740,7 +752,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gabwatni_Cave/Preview Content\"";
-
 				DEVELOPMENT_TEAM = FRZRS5Y9L6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

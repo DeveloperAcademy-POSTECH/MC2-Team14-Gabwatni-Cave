@@ -44,7 +44,7 @@ struct AncestorView: View {
             if flow == 0 {
                 StartZoneStartView
                     .onAppear {
-                        SoundSetting.instance.playStartZoneBGM()
+                        playSound(sound: "rain", type: "mp3")
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                             withAnimation(.easeInOut(duration: 2)) {
                                 flow = 1
