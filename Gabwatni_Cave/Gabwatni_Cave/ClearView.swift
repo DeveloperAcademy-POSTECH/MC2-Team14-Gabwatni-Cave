@@ -10,7 +10,7 @@ import SwiftUI
 struct ClearView: View {
     let size = UIScreen.main.bounds
     
-    @State private var isFirst: Bool = true
+    @State private var viewDidAppear: Bool = true
     
     var body: some View {
         Group {
@@ -22,11 +22,11 @@ struct ClearView: View {
         }
         .onAppear{
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                isFirst.toggle()
+                viewDidAppear.toggle()
             }
         }
-        .opacity(isFirst ? 0 : 1)
-        .animation(.easeIn, value: isFirst)
+        .opacity(viewDidAppear ? 0 : 1)
+        .animation(.easeIn, value: viewDidAppear)
     }
 }
 
