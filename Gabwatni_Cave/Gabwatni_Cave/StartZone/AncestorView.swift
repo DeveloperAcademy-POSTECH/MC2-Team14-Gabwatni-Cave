@@ -10,40 +10,49 @@ import Shimmer
 import AVFoundation
 
 struct AncestorView: View {
+    // 각 Object의 초기 위치, 화면이 이동하면서 위치도 함께 이동
     @State private var imageScrollLocation: CGPoint = CGPoint(x: 500, y: 400)
     @State private var lightLocation: CGPoint = CGPoint(x: 400, y: 400)
     @State private var ancestorLocation: CGPoint = CGPoint(x: 650, y: 500)
     
-    @State private var textboxState: Bool = false
-    @State private var ancestorState: Bool = true
     @State private var cardViewState: Bool = false
     
+    // Object 관련
+    @State private var ancestorState: Bool = true
+    @State private var lightState: Bool = false
+    
+    // @Binding var flow: Int
     @State private var flow = 0
+    
+    // TextBox가 모두 사라질 때 count 1 증가, count모두 채워지면 다음방 버튼 활성화
     @State private var count = 0
     
-    @State private var str = ""
-    @State private var str2 = "조상님의 지도 발견!"
-    
-    @State private var presentView: Bool = false
-    @State private var showingImage: String =  ""
+    // TextBox 관련
+    @State private var textboxState: [Bool] = [false, false, false] // [시작, 조상님, 손전등]
+    @State private var textEnd: Bool = false
+    @State private var inputString = ""
+    @State private var stringArrayIndex = 0
+    let startStringArray : [String] = ["어지러워...여기가 어디지?", "혹시...할아버지의 할아버지의 할아버지 ?!","(묵념)", "손에 들고 계신건 뭐지 ?", " "]
+    let mapStringArray : [String] = ["엇...?", "이건 지도인가..?", "(지도 획득!)", "엇 저기 반짝이는건 뭐지??", " "]
+    let flashStringArray : [String] = ["오잉???", "이건 flashlight?", "(손전등 획득!)", " "]
     
     var body: some View {
         ZStack {
-        if flow == 0 {
-            StartZoneStartView
-                .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                        withAnimation(.easeInOut(duration: 2)) {
-                            flow = 1
+            if flow == 0 {
+                StartZoneStartView
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                            withAnimation(.easeInOut(duration: 2)) {
+                                flow = 1
+                            }
                         }
-                             }
-                }
-        } else if flow == 1 {
-            AncestorPageView
-        }
-        
-        if cardViewState {
-            CardView(imageName: "dongdal", cardState: $cardViewState)
+                    }
+            } else if flow == 1 {
+                AncestorPageView
+            }
+            
+            if cardViewState {
+                CardView(imageName: "salamander", cardState: $cardViewState)
             }
         }
     }
@@ -89,68 +98,145 @@ struct AncestorView: View {
                                     imageScrollLocation.x = 150
                                 }
                                 
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                                    withAnimation(.easeInOut) {
+                                        textboxState[0] = true
+                                    }
+                                }
                             }
                             .edgesIgnoringSafeArea(.all)
                         
-                        ShimmeringItemView(count: $count, isShowing: $presentView, imageName: "flashlight", degreeNum: 50, showingImage: $showingImage)
-                            .frame(width: 30)
-                            .position(lightLocation)
-                            .onAppear{
-                                withAnimation(.easeIn(duration: 3)) {
-                                    lightLocation.x = 50
-                                }
-                            }
                         
                         AncestorShimmeringView
+                        flashShimmeringView
                         
-                        if textboxState == true {
-                            textBox(name: "최병호", text: str)
+                        // 시작 대화
+                        if textboxState[0] == true {
+                            textBox(name: "최병호", text: inputString)
                                 .onAppear {
-                                    ges()
+                                    talkOnTextBox(stringArray: startStringArray, inputIndex: stringArrayIndex)
                                 }
+                            if textEnd {
+                                Button{
+                                    talkOnTextBox(stringArray: startStringArray, inputIndex: stringArrayIndex)
+                                    textEnd.toggle()
+                                }
+                            label:{
+                                Text("다음")
+                                    .font(.custom("Sam3KRFont", size: 20))
+                                    .foregroundColor(.white)
+                                
+                            }
+                            .position(x: UIScreen.main.bounds.width/8 * 6
+                                      , y: UIScreen.main.bounds.height/13 * 11)
+                                
+                            }
+                        }
+                        
+                        // 지도 획득
+                        if textboxState[1] == true {
+                            textBox(name: "최병호", text: inputString)
+                                .onAppear {
+                                    talkOnTextBox(stringArray: mapStringArray, inputIndex: stringArrayIndex)
+                                }
+                            if textEnd {
+                                Button{
+                                    talkOnTextBox(stringArray: mapStringArray, inputIndex: stringArrayIndex)
+                                    textEnd.toggle()
+                                }
+                            label:{
+                                Text("다음")
+                                    .font(.custom("Sam3KRFont", size: 20))
+                                    .foregroundColor(.white)
+                                
+                            }
+                            .position(x: UIScreen.main.bounds.width/8 * 6
+                                      , y: UIScreen.main.bounds.height/13 * 11)
+                                
+                            }
+                        }
+                        
+                        // 손전등 발견
+                        if textboxState[2] == true {
+                            textBox(name: "최병호", text: inputString)
+                                .onAppear {
+                                    talkOnTextBox(stringArray: flashStringArray, inputIndex: stringArrayIndex)
+                                }
+                            if textEnd {
+                                Button{
+                                    talkOnTextBox(stringArray: flashStringArray, inputIndex: stringArrayIndex)
+                                    textEnd.toggle()
+                                }
+                            label:{
+                                Text("다음")
+                                    .font(.custom("Sam3KRFont", size: 20))
+                                    .foregroundColor(.white)
+                                
+                            }
+                            .position(x: UIScreen.main.bounds.width/8 * 6
+                                      , y: UIScreen.main.bounds.height/13 * 11)
+                                
+                            }
+                        }
+                        
+                        // 대화창 모두 종료 -> 다음 버튼 활성화 하기
+                        if count == 3 {
+                            HStack{
+                                Button{
+                                    withAnimation(.easeIn) {
+                                    cardViewState.toggle()
+                                    }
+                                }label: {
+                                    Image("salamander")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 80, height: 80, alignment: .center)
+                                        .foregroundColor(.white)
+                                }
+                            }
+                            .position(x: 300, y: 700)
                         }
                     }
                 )
-                .onDisappear {
+                .onDisappear { // 다른 뷰에서 넘어올 때 위치 초기화
                     lightLocation.x = 400
                     imageScrollLocation.x = 500
                     ancestorLocation.x = 650
                 }
-
-            HStack{
-                Button{
-                    withAnimation(.easeIn) {
-                    cardViewState.toggle()
-                    }
-                }label: {
-                    Image(systemName: "arrowtriangle.right.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 80, height: 80, alignment: .center)
-                        .foregroundColor(.white)
-                }
-            }
-            .position(x: 300, y: 700)
         }
     }
     
+    
     private var AncestorShimmeringView: some View {
         Button {
-            withAnimation(.easeInOut) {
-                textboxState = true
+            withAnimation(.easeOut(duration: 2)) {
                 ancestorState = false
             }
-            // count 증가
+            withAnimation(.easeInOut) {
+                textboxState[1] = true
+            }
         } label: {
             if ancestorState {
+                ZStack {
+                    // shimmering opacity가 너무 작은 것 같아서 이미지 하나 더 올림
                 Image("skeletonMapO")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    //.shimmering(active: ancestorState, duration: 2.0)
+                    .opacity(0.7)
+                Image("skeletonMapO")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .shimmering(active: ancestorState, duration: 2.0)
+                }
             } else {
                 Image("skeletonMapX")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
+                    .onAppear {
+                        withAnimation (.easeIn(duration: 2).delay(2)){
+                            lightState = true
+                        }
+                    }
             }
         }
         .frame(width: 200, height: 200)
@@ -160,18 +246,69 @@ struct AncestorView: View {
                 ancestorLocation.x = 300
             }
         }
+        .disabled(!ancestorState || textboxState[0] == true)
     }
     
-    func ges(){
-        str = ""
-        let length = str2.count
+    
+    private var flashShimmeringView: some View {
+        Button {
+            withAnimation(.easeInOut) {
+                lightState = false
+                textboxState[2] = true
+            }
+        } label: {
+                    Image("flashlight")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 15)
+                        .rotationEffect(.degrees(50))
+                        .opacity(lightState ? 0.7 : 0)
+                        .shimmering(active: lightState, duration: 2.0)
+        }
+        .position(lightLocation)
+        .onAppear{
+            withAnimation(.easeIn(duration: 3)) {
+                lightLocation.x = 50
+            }
+        }
+    }
+    
+    
+    func talkOnTextBox (stringArray: [String], inputIndex: Int){
+        inputString = ""
+        let length = stringArray[inputIndex].count
         var index = 0
+        var toggle = false
+        
         Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
+            if inputIndex >= stringArray.count - 1 {timer.invalidate()}
             AudioServicesPlaySystemSound(1306)
-            str += String(str2[str2.index(str2.startIndex, offsetBy: index)])
+            inputString += String(stringArray[inputIndex][stringArray[inputIndex].index(stringArray[inputIndex].startIndex, offsetBy: index)])
             index+=1
+            
             if index == length{
                 timer.invalidate()
+                textEnd.toggle()
+            }
+            
+            if toggle {
+                timer.invalidate()
+                inputString += stringArray[inputIndex].substring(from: index, to: length-1)
+                toggle.toggle()
+            }
+            
+        }
+        
+        if stringArrayIndex < stringArray.count - 1 {
+            stringArrayIndex+=1
+        }
+        else if stringArrayIndex == stringArray.count - 1 {
+            // textEnd, 배열 인덱스, textbox 상태 초기화
+            textEnd.toggle()
+            stringArrayIndex = 0
+            textboxState = [false, false, false]
+            withAnimation(.easeIn(duration: 2)) {
+                count += 1
             }
         }
     }
