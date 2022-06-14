@@ -40,7 +40,7 @@ struct entranCardView: View {
             }
             
             Button {
-                print(cardVM.cards[0].title)
+                
             } label: {
                 Text("다음")
             }

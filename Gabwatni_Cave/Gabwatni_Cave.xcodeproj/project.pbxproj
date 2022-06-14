@@ -48,6 +48,7 @@
 		78259A462855D5C90096AB51 /* EntranceView-end.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78259A452855D5C90096AB51 /* EntranceView-end.swift */; };
 		78259A4C2856686F0096AB51 /* newTextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78259A4B2856686F0096AB51 /* newTextBox.swift */; };
 		787554AF285327B500CF7F61 /* textBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787554AE285327B500CF7F61 /* textBox.swift */; };
+		78D62F072858BE7C001A3991 /* Dongdalsays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D62F062858BE7C001A3991 /* Dongdalsays.swift */; };
 		7B9E61B1285204AB00C931F4 /* Abyss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E61B0285204AB00C931F4 /* Abyss.swift */; };
 		7B9E61B328520E1000C931F4 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E61B228520E1000C931F4 /* QuizView.swift */; };
 		7B9E61B728520E4900C931F4 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E61B628520E4900C931F4 /* Quiz.swift */; };
@@ -126,6 +127,7 @@
 		78259A452855D5C90096AB51 /* EntranceView-end.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntranceView-end.swift"; sourceTree = "<group>"; };
 		78259A4B2856686F0096AB51 /* newTextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newTextBox.swift; sourceTree = "<group>"; };
 		787554AE285327B500CF7F61 /* textBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textBox.swift; sourceTree = "<group>"; };
+		78D62F062858BE7C001A3991 /* Dongdalsays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dongdalsays.swift; sourceTree = "<group>"; };
 		7B9E61B0285204AB00C931F4 /* Abyss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Abyss.swift; sourceTree = "<group>"; };
 		7B9E61B228520E1000C931F4 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		7B9E61B628520E4900C931F4 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				6E01FB4C28520B6E00B98789 /* TwilightView.swift */,
+				78D62F062858BE7C001A3991 /* Dongdalsays.swift */,
 			);
 			path = TwilightZone;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				7BF24D55285855A200227E2E /* ClearView.swift in Sources */,
 				7BF24D57285862CF00227E2E /* Gabwatni_CaveApp.swift in Sources */,
 				7BF24D55285855A200227E2E /* ClearView.swift in Sources */,
+				78D62F072858BE7C001A3991 /* Dongdalsays.swift in Sources */,
 				7BF24D57285862CF00227E2E /* Gabwatni_CaveApp.swift in Sources */,
 				7BF24D55285855A200227E2E /* ClearView.swift in Sources */,
 				787554AF285327B500CF7F61 /* textBox.swift in Sources */,
@@ -752,7 +756,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gabwatni_Cave/Preview Content\"";
-				DEVELOPMENT_TEAM = FRZRS5Y9L6;
+				DEVELOPMENT_TEAM = MSUF83HQ8R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Gabwatni-Cave-Info.plist";
@@ -855,7 +859,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FRZRS5Y9L6;
+				DEVELOPMENT_TEAM = MSUF83HQ8R;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.changBro.Gabwatni-CaveUITests";

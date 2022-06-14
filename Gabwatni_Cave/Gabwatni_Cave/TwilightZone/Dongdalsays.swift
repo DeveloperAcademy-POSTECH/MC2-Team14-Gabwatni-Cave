@@ -1,64 +1,85 @@
 //
-//  EntranceView-end.swift
+//  Dongdalsays.swift
 //  Gabwatni_Cave
 //
-//  Created by dohankim on 2022/06/12.
+//  Created by dohankim on 2022/06/14.
 //
 
 import SwiftUI
 import AVFoundation
-struct EntranceView_end: View {
-    @EnvironmentObject var vm: CardViewModel2
+struct Dongdalsays: View {
+    var xPosition : CGFloat = UIScreen.main.bounds.width/2
+    var yPosition : CGFloat = UIScreen.main.bounds.height/3
+    @State var state = false
     
-    var mainflow: Int
-    //@Binding var mainflow : Int
-    
-    @Binding var flow : Int
+    var body: some View {
+        if state {
+            TwilightView(mainflow: 1)
+        }else{
+            ZStack{
+                Color.black
+                    .ignoresSafeArea()
+                dongdalTextBox(StrArr: ["여기서 부터는 엄청 어두워 질거야!","아까 얻은 Flashlight를 사용하자!","진짜 어두워!!","잘 끌어다 써야돼!!"," "], charArr: ["동달","동달","동달","동달"," "],state: $state)
+                    
+                VStack{
+                    Image("dongdal")
+                        .resizable()
+                        .scaleEffect(1.0)
+                        .frame(width: UIScreen.main.bounds.height/3,height:   UIScreen.main.bounds.height/3,alignment: .center)
+                }
+                .position(x: xPosition
+                          , y: yPosition)
+            }
+        }
+        
+        
+    }
+}
+
+
+struct dongdalTextBox: View {
     @State var str = ""
-    @State var str2 = "어떻게 잡았지"
-    @State var StrArr : [String] = ["잘했어~~","이렇게 동굴의 정보를 파악해야 탈출이 가능하다는 점 알아둬!","이제 어느정도 준비가 된거 같으니 앞으로 가자."," " ]
-    @State var charArr : [String] = ["동달","동달", "동달"," " ]
+    @State var StrArr : [String]
+    @State var charArr : [String]
     @State var stringNumber = 0
     @State var toggle  = false
     @State var isClicked = false
     @State var isFinished = false
-    @State var isEnd = false
     @State var xPosition : CGFloat = UIScreen.main.bounds.width/2
     @State var yPosition : CGFloat = UIScreen.main.bounds.height/3
+
+    @Binding var state : Bool
     
     var body: some View {
-        ZStack{
-            Image("entrancecave")
-                .resizable()
-                .ignoresSafeArea()
-            Color.black.opacity(0.5)
-            .ignoresSafeArea()
+        
             VStack{
                 GeometryReader{geo in
-                    Button {
+                    //이미지 넣고싶으면  사용할 코드 --수정 필요함!!---------------------
+//                    Button {
+//                        print(isClicked)
 //                        if !isClicked{
 //                            ges(strnum: stringNumber)
 //                            isClicked = true
 //                            AudioServicesPlaySystemSound(1311)
-//                            if stringNumber < 3{
+//                            if stringNumber < 11{
 //                                stringNumber+=1
 //                                print(stringNumber)
 //                            }
-//                            else if stringNumber == 3{
-//
-//                                print("다음스테이지로 넘어가는 함수")
+//                            else if stringNumber == 11{
+//                                flow = 1
+//                                print(1323)
 //                            }
 //                        }
-                        
-                    } label: {
-                        Image(!isClicked ? "동달" : charArr[stringNumber-1])
-                            .resizable()
-                            .scaleEffect(1.0)
-                            .frame(width: (!isClicked ? "동달" : charArr[stringNumber-1]) == "동달" ? UIScreen.main.bounds.height/3: UIScreen.main.bounds.height/4, height: (!isClicked ? "동달" : charArr[stringNumber-1]) == "동달" ? UIScreen.main.bounds.height/3: UIScreen.main.bounds.height/4*2, alignment: .center)
-                            
-                    }
-                    .position(x: xPosition
-                              , y: yPosition)
+//
+//                    } label: {
+//                        Image(!isClicked ? "동달" : charArr[stringNumber-1])
+//                            .resizable()
+//                            .scaleEffect(1.0)
+//                            .frame(width: (!isClicked ? "동달" : charArr[stringNumber-1]) == "동달" ? UIScreen.main.bounds.height/3: UIScreen.main.bounds.height/4, height: (!isClicked ? "동달" : charArr[stringNumber-1]) == "동달" ? UIScreen.main.bounds.height/3: UIScreen.main.bounds.height/4*2, alignment: .center)
+//
+//                    }
+//                    .position(x: xPosition
+//                              , y: yPosition)     //이미지 넣고 싶으면 사용할 코드 --수정 필요함!!--------------------------------
                    
                     if isClicked{
                         Text(!isClicked ? "동달" : charArr[stringNumber-1])
@@ -80,14 +101,14 @@ struct EntranceView_end: View {
                             Button{
                                 ges(strnum: stringNumber)
                                 isClicked = true
-                                if stringNumber < 3{
+                                if stringNumber < StrArr.count-1{
                                     stringNumber+=1
-                                   
+                                    print(stringNumber)
                                 }
-                                else if stringNumber == 3{
-                                    isEnd = true
+                                else if stringNumber == StrArr.count-1{
                                     isClicked = false
-                                    
+                                    state.toggle()
+                                    print(1323)
                                 }
                                 isFinished.toggle()
                             }
@@ -97,45 +118,36 @@ struct EntranceView_end: View {
                                     .foregroundColor(.white)
                                     
                         }
-                        .position(x: UIScreen.main.bounds.width/8 * 6
-                                  , y: UIScreen.main.bounds.height/13 * 11)
+                        .position(x: UIScreen.main.bounds.width/16 * 13
+                                  , y: UIScreen.main.bounds.height/15 * 13)
                         }
-                        
+                       
                         
                     }
-                    if isEnd{
-                        Button{
-                            vm.flow = 2
-                        }label: {
-                            Image("footprint")
-                                .resizable()
-                                .frame(width: UIScreen.main.bounds.width / 5, height: UIScreen.main.bounds.width / 5, alignment: .center)
-                        }
-                        .position(x: UIScreen.main.bounds.width/2
-                                  , y: UIScreen.main.bounds.height/5 * 3)
-                        
-                    }
+                    
                 }
                 
-            }.onAppear(){
+            }
+            .onAppear(){
                 if !isClicked{
                     ges(strnum: stringNumber)
                     isClicked = true
                     AudioServicesPlaySystemSound(1311)
-                    if stringNumber < 3{
+                    if stringNumber < StrArr.count-1{
                         stringNumber+=1
-                        
+                        print(stringNumber)
                     }
-                    else if stringNumber == 3{
-                       
-                        print("다음스테이지로 넘어가는 함수")
+                    else if stringNumber == StrArr.count-1{
+                       isClicked = false
+                        print(1323)
                     }
                 }
             }
             
             
-        }
+        
     }
+    
     
     func ges(strnum : Int){
         str = ""
@@ -164,3 +176,8 @@ struct EntranceView_end: View {
 }
 
 
+struct Dongdalsays_Previews: PreviewProvider {
+    static var previews: some View {
+        Dongdalsays()
+    }
+}
