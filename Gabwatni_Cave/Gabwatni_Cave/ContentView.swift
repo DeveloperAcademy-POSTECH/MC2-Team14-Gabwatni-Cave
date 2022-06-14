@@ -12,6 +12,24 @@ struct ContentView: View {
         Text("Hello test")
             .padding()
 
+//        오류났던 부분
+//        if vm.flow == 0 {
+//            AncestorView(mainflow: vm.flow)
+//        }
+//        #12    0x000000010065d498 in main ()
+//        else if vm.flow == 1 {
+//            EntranceControl()
+//        }
+//        else if vm.flow == 2 {
+//            TwilightView(mainflow: vm.flow)
+//        }
+//        else if vm.flow == 3 {
+//            DeepDarkControl(mainflow: vm.flow)
+//        }
+//        else if vm.flow == 4 {
+//            Abyss()
+//        }
+
     }
 }
 
