@@ -32,12 +32,12 @@ struct ShimmeringItemView: View {
     }
 }
 
-extension Image {
-    func shimmered(degreeNum: Double) -> some View {
-        self
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .rotationEffect(.degrees(degreeNum))
-            .shimmering()
-    }
-}
+//extension Image {
+//    func shimmered(degreeNum: Double) -> some View {
+//        self
+//            .resizable()
+//            .aspectRatio(contentMode: .fit)
+//            .rotationEffect(.degrees(degreeNum))
+//            .shimmering()
+//    }
+//}
