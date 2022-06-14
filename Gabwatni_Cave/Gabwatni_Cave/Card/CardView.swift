@@ -40,16 +40,17 @@ struct CardView: View {
                         .shadow(color: .gray, radius: 2, x: 0, y: 0)
                         .foregroundColor(Color(0xDFDFDF))
 
-                    VStack(spacing: 10) {
+                    VStack(spacing: 5) {
                         HStack {
                             Spacer(minLength: UIScreen.main.bounds.width/10 * 8.5)
                         Button {
                             cardState.toggle()
                         } label: {
-                            Image(systemName: "xmark.circle")
+                            Image("xicon")
                                 .resizable()
-                                .frame(width: 20, height: 20, alignment: .trailing)
-                                .foregroundColor(.black)
+                                .frame(width: 25, height: 25, alignment: .trailing)
+                                .shadow(color: .black.opacity(0.25), radius: 1, y: 4)
+                                
 
                         }
                             Spacer()
