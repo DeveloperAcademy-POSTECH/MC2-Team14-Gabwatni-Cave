@@ -20,13 +20,6 @@ struct ClearView: View {
                 .scaledToFit()
                 .ignoresSafeArea()
         }
-        .onAppear{
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                viewDidAppear.toggle()
-            }
-        }
-        .opacity(viewDidAppear ? 0 : 1)
-        .animation(.easeIn, value: viewDidAppear)
     }
 }
 

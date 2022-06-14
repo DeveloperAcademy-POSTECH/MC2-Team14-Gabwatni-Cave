@@ -15,7 +15,7 @@ struct RandomGameView: View {
     
     var body: some View {
         // 기본 뷰
-        if myChoice == 0 {
+        if myChoice == 0 && clearRandomGame == false {
             ZStack {
                 // 배경
                 Rectangle()
@@ -78,7 +78,7 @@ struct RandomGameView: View {
             }
         }
         // 가위바위보 비겼을때 뷰
-        else if myChoice == bossChoice {
+        else if myChoice == bossChoice && clearRandomGame == false {
         ZStack {
             // 배경
             Rectangle()
@@ -144,7 +144,7 @@ struct RandomGameView: View {
         }
     }
         // 가위로 이겼을때 뷰
-        else if myChoice == 1 && bossChoice == 3 {
+        else if myChoice == 1 && bossChoice == 3 && clearRandomGame == false {
             ZStack {
                 // 배경
                 Rectangle()
@@ -165,9 +165,15 @@ struct RandomGameView: View {
                 }
                 .foregroundColor(.white)
             }
+            .onAppear {
+                withAnimation(.easeIn(duration: 2).delay(1)) {
+                    clearRandomGame = true
+                }
+            }
+            
         }
         // 바위로 이겼을때 뷰
-        else if myChoice == 2 && bossChoice == 1 {
+        else if myChoice == 2 && bossChoice == 1 && clearRandomGame == false {
             ZStack {
                 // 배경
                 Rectangle()
@@ -188,9 +194,14 @@ struct RandomGameView: View {
                 }
                 .foregroundColor(.white)
             }
+            .onAppear {
+                withAnimation(.easeIn(duration: 2).delay(1)) {
+                    clearRandomGame = true
+                }
+            }
         }
         // 보로 이겼을때 뷰
-        else if myChoice == 3 && bossChoice == 2 {
+        else if myChoice == 3 && bossChoice == 2 && clearRandomGame == false{
             ZStack {
                 // 배경
                 Rectangle()
@@ -211,6 +222,15 @@ struct RandomGameView: View {
                 }
                 .foregroundColor(.white)
             }
+            .onAppear {
+                withAnimation(.easeIn(duration: 2).delay(1)) {
+                    clearRandomGame = true
+                }
+            }
+        }
+        // 이기고 나면 클리어 뷰로 이동
+        else if clearRandomGame == true {
+            ClearView()
         }
         // 졌을때 사망뷰로 이동
         else { TempDeathView() }
