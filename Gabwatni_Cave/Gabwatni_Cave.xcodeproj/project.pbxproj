@@ -31,6 +31,7 @@
 		32C476942857194F003D0BB4 /* DeepDarkView-start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C476932857194F003D0BB4 /* DeepDarkView-start.swift */; };
 		32C4769628571A8B003D0BB4 /* DeepDarkControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C4769528571A8B003D0BB4 /* DeepDarkControl.swift */; };
 		32D522932854B93800344DC0 /* NextStageImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D522922854B93800344DC0 /* NextStageImageView.swift */; };
+		32E738C52858D2D300EE034F /* walk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32E738C42858D2D300EE034F /* walk.mp3 */; };
 		6E01FB4A28520B4A00B98789 /* DeathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E01FB4928520B4A00B98789 /* DeathView.swift */; };
 		6E01FB4D28520B6E00B98789 /* TwilightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E01FB4C28520B6E00B98789 /* TwilightView.swift */; };
 		6E01FB4F28520B7800B98789 /* ShimmeringItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E01FB4E28520B7800B98789 /* ShimmeringItemView.swift */; };
@@ -110,6 +111,7 @@
 		32C476932857194F003D0BB4 /* DeepDarkView-start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeepDarkView-start.swift"; sourceTree = "<group>"; };
 		32C4769528571A8B003D0BB4 /* DeepDarkControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDarkControl.swift; sourceTree = "<group>"; };
 		32D522922854B93800344DC0 /* NextStageImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStageImageView.swift; sourceTree = "<group>"; };
+		32E738C42858D2D300EE034F /* walk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = walk.mp3; sourceTree = "<group>"; };
 		6E01FB4928520B4A00B98789 /* DeathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathView.swift; sourceTree = "<group>"; };
 		6E01FB4C28520B6E00B98789 /* TwilightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilightView.swift; sourceTree = "<group>"; };
 		6E01FB4E28520B7800B98789 /* ShimmeringItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmeringItemView.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 		3234D74E28587A73001654D4 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				32E738C42858D2D300EE034F /* walk.mp3 */,
 				3234D7692858B3EC001654D4 /* end.mp3 */,
 				3234D7672858B34E001654D4 /* Enter_TwilightZoneBGM.mp3 */,
 				3234D7652858AF99001654D4 /* darkZoneBGM.mp3 */,
@@ -521,6 +524,7 @@
 				3234D7682858B34E001654D4 /* Enter_TwilightZoneBGM.mp3 in Resources */,
 				3234D76A2858B3EC001654D4 /* end.mp3 in Resources */,
 				3234D7662858AF99001654D4 /* darkZoneBGM.mp3 in Resources */,
+				32E738C52858D2D300EE034F /* walk.mp3 in Resources */,
 				323DD3CA285863FC005986EF /* boss.json in Resources */,
 				3234D75628587E31001654D4 /* MyParticle.sks in Resources */,
 				321CF1B22850882A00F3B920 /* Preview Assets.xcassets in Resources */,
