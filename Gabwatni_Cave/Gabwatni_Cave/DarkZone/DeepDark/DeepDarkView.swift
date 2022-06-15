@@ -49,13 +49,15 @@ struct DeepDarkView: View {
                 
                 LightItemView(thisPositionX: 0, thisPositionY: 0, thisFrameWidth: 100, thisFrameHeight: 100, isShowing: $presentView, imageName: "fakefootprint", showingImage: showingImage)
                 
-                LightItemView(thisPositionX: -50, thisPositionY: 300, thisFrameWidth: 100, thisFrameHeight: 150, isShowing: $presentView, imageName: "arachnocampa", showingImage: showingImage)
+                LightItemView(thisPositionX: -50, thisPositionY: 300, thisFrameWidth: 100, thisFrameHeight: 150, isShowing: $presentView, imageName: "dragonmillipede", showingImage: showingImage)
                 
-                LightItemView(thisPositionX: 200, thisPositionY: -200, thisFrameWidth: 150, thisFrameHeight: 150, isShowing: $presentView, imageName: "dragonmillipede", degreeNum: 20.0, showingImage: showingImage)
+                LightItemView(thisPositionX: 200, thisPositionY: -200, thisFrameWidth: 150, thisFrameHeight: 150, isShowing: $presentView, imageName: "arachnocampa", degreeNum: 20.0, showingImage: showingImage)
                 
                 if presentView {
                     CardView(imageName: vm.imageName, cardState: $presentView)
                         .onDisappear {
+                            vm.itemDict[vm.imageName] = true
+                            
                             if vm.itemDict["arachnocampa"]! && vm.itemDict["dragonmillipede"]! {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) {
                                     darkTalk = true

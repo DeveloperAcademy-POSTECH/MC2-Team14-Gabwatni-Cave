@@ -69,6 +69,9 @@ struct Abyss: View {
                 
                 if presentView {
                     CardView(imageName: "bat", cardState: $presentView)
+                        .onDisappear {
+                            vm.itemDict[vm.imageName] = true
+                        }
                 }
                 
                 

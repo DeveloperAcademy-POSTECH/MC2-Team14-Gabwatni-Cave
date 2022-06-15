@@ -91,7 +91,7 @@ struct QuizView: View {
         }
         // 사망 뷰로 넘어감
         else {
-            DeathView(reasonText: "동굴 퀴즈 틀려서", tipText: "다음번엔 좀 더 꼼꼼히 설명을 읽어보세요.")
+            DeathView(reasonText: "동굴 퀴즈 틀려서", tipText: "다음번엔 좀 더 꼼꼼히\n 설명을 읽어보세요.")
         }
     }
 }
