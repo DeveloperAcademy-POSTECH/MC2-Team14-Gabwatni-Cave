@@ -20,7 +20,7 @@ struct LightItemView: View {
     private(set) var imageName: String
     private(set) var degreeNum: Double = 0.0
     
-    @Binding var showingImage: String
+    @State var showingImage: String
     
     let size = UIScreen.main.bounds
     
@@ -70,7 +70,10 @@ struct LightItemView: View {
                                 playSoundEffect(sound: "bat", type: ".mp3")
                             }
                             isShowing.toggle()
-                            showingImage = imageName
+                            if imageName == "" {
+                                vm.imageName = imageName
+                                // showingImage = imageName
+                            }
                             vm.itemDict[imageName] = true
                         }
                 }

@@ -15,6 +15,9 @@ struct Abyss: View {
     private var zoneText: String = "Dark Zone"
     private var zoneDescribe: String = "심연의 공포"
     
+    @State var presentView: Bool = false
+    @State var showingImage: String = ""
+    
     @State private var isFirst: Bool = true
     
     // 손전등 관련 변수들
@@ -22,7 +25,7 @@ struct Abyss: View {
     @State var dragOffset2 = CGSize.zero
     
     var body: some View {
-        let distance = sqrt((pow(dragOffset.width - 200, 2)) + pow(dragOffset.height - 300, 2))
+//        let distance = sqrt((pow(dragOffset.width - 200, 2)) + pow(dragOffset.height - 300, 2))
         
         // 심연의 공포 뷰
         if abyssView {
@@ -33,37 +36,52 @@ struct Abyss: View {
                     .scaledToFit()
                     .ignoresSafeArea()
                 
-                RadialGradient(
-                    gradient: Gradient(colors: [Color(0xFFFFFF, alpha: 0.1), Color(0x000000, alpha: 1)]),
-                    center: .center,
-                    startRadius: -50,
-                    endRadius: 150
-                )
-                .frame(width: 10000, height: 10000)
-                .offset(x: dragOffset.width , y: dragOffset.height)
-                .gesture(DragGesture()
-                    .onChanged { gesture in
-                        dragOffset = CGSize(width: gesture.translation.width + dragOffset2.width, height: gesture .translation.height + dragOffset2.height)
-                        
-                    }
-                         //함수
-                         //온체인지가 함수를 입력값으로 받는 메소드
-                    .onEnded { gesture in
-                        dragOffset = CGSize(width: gesture.translation.width + dragOffset2.width, height: gesture .translation.height + dragOffset2.height)
-                        dragOffset2 = dragOffset
-                        
-                        print(distance)
-                    })
+                LightView()
                 
-                if distance <= sqrt(2) * 30 + 100 {
-                    Image("dragonmillipede")
-                        .resizable()
-                        .position(x: 200, y: 300)
-                        .frame(width: 75, height: 150)
-                        .onTapGesture {
-                            abyssView = false
+                LightItemView(thisPositionX: -50, thisPositionY: 300, thisFrameWidth: 30, thisFrameHeight: 30, isShowing: $presentView, imageName: "circle", showingImage: "water")
+                
+//                LightItemView(thisPositionX: -50, thisPositionY: 300, thisFrameWidth: 100, thisFrameHeight: 150, isShowing: $presentView, imageName: "circle", showingImage: "cavecoral")
+                
+                
+//                RadialGradient(
+//                    gradient: Gradient(colors: [Color(0xFFFFFF, alpha: 0.1), Color(0x000000, alpha: 1)]),
+//                    center: .center,
+//                    startRadius: -50,
+//                    endRadius: 150
+//                )
+//                .frame(width: 10000, height: 10000)
+//                .offset(x: dragOffset.width , y: dragOffset.height)
+//                .gesture(DragGesture()
+//                    .onChanged { gesture in
+//                        dragOffset = CGSize(width: gesture.translation.width + dragOffset2.width, height: gesture .translation.height + dragOffset2.height)
+//
+//                    }
+//                         //함수
+//                         //온체인지가 함수를 입력값으로 받는 메소드
+//                    .onEnded { gesture in
+//                        dragOffset = CGSize(width: gesture.translation.width + dragOffset2.width, height: gesture .translation.height + dragOffset2.height)
+//                        dragOffset2 = dragOffset
+//
+//                        print(distance)
+//                    })
+//
+//                if distance <= sqrt(2) * 30 + 100 {
+//                    Image("dragonmillipede")
+//                        .resizable()
+//                        .position(x: 200, y: 300)
+//                        .frame(width: 75, height: 150)
+//                        .onTapGesture {
+//                            abyssView = false
+//                        }
+//                }
+//
+                QuizView(quizModel: QuizModel())
+                        .onAppear{
+                            playSound(sound: "Action_Hero", type: ".mp3")
                         }
-                }
+                        .opacity(abyssView ? 0 : 1 )
+                
+                
                 
                 // 진입하면 나오는 view
                 ZStack {
@@ -88,13 +106,15 @@ struct Abyss: View {
                 .opacity(isFirst ? 1 : 0)
                 .animation(.easeIn, value: isFirst)
             }
+            
+         
         }
         // 드래곤 밀리패드 누르면 퀴즈 뷰로 넘어감
-        else { QuizView(quizModel: QuizModel())
-                .onAppear{
-                    playSound(sound: "Action_Hero", type: ".mp3")
-                }
-        }
+//        else { QuizView(quizModel: QuizModel())
+//                .onAppear{
+//                    playSound(sound: "Action_Hero", type: ".mp3")
+//                }
+//        }
     }
 }
 
