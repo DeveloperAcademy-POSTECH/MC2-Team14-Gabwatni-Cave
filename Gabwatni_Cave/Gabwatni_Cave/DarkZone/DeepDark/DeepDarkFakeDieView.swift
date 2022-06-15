@@ -22,11 +22,15 @@ struct DeepDarkFakeDieView: View {
     
     @State private var realDie: Bool = false
     
+    @State var isEnd = true
     var body: some View {
         if realDie {
-            
-            
-            DeathView(reasonText: "동달의 말을 듣지 않아서", tipText: "말을 잘 들읍시다.")
+            if isEnd{
+                CaveDeathView(isEnd: $isEnd)
+            }
+            else{
+                DeathView(reasonText: "동달의 말을 듣지 않아서", tipText: "말을 잘 들읍시다.")
+            }
         }
         else {
             ZStack{
