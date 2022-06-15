@@ -219,10 +219,10 @@ struct AncestorView: View {
                         // 오브젝트를 발견했을 때 띄워주는 뷰
                         if (stringArrayIndex == 2 || stringArrayIndex == 3) {
                             if textboxState[1] {
-                                TadaView(imageName: "minimap")
+                                TadaView(imageName: "mapIcon", rotate: 0)
                                 
                             } else if textboxState[2] {
-                                TadaView(imageName: "flashlight")
+                                TadaView(imageName: "flashlight", rotate: 30)
                             }
                         }
                     }
