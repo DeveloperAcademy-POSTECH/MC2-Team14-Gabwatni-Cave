@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct IntroControl: View {
-    @State var flow = 0
+    @State var flow = -1
     var body: some View {
-        if flow == 0 {
+        if flow == -1{
+            SoundCautionView(flow: $flow)
+        }
+        else if flow == 0 {
             StartView(flow: $flow)
         }
         else if flow == 1 {
