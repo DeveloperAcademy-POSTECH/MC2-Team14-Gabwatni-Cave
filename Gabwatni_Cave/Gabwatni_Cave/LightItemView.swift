@@ -38,6 +38,7 @@ struct LightItemView: View {
                         withAnimation(.easeIn) {
                             if !vm.isSound {
                                 playSoundEffect(sound: "walk", type: ".mp3")
+                                vm.isSound = true
                             }
                            
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
@@ -56,8 +57,9 @@ struct LightItemView: View {
                     .frame(width: thisFrameWidth, height: thisFrameHeight)
                     .onTapGesture {
                         withAnimation(.easeIn) {
-                            if vm.isSound {
+                            if !vm.isSound {
                                 playSoundEffect(sound: "walk", type: ".mp3")
+                                vm.isSound = true
                             }
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                                 vm.fakeDie = true

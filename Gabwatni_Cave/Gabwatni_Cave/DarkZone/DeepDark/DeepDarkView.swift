@@ -67,6 +67,9 @@ struct DeepDarkView: View {
                 
                 if vm.fakeDie {
                     DeepDarkFakeDieView(darkTalk: $darkTalk)
+                        .onDisappear {
+                            vm.isSound = false
+                        }
                 }
                 
                 if !vm.fakeDie && darkTalk {
