@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RandomGameView: View {
+    @EnvironmentObject var vm: CardViewModel2
+    
     @State var bossChoice = Int.random(in: 1...3)
     
     @State private var clearRandomGame = false
@@ -223,10 +225,14 @@ struct RandomGameView: View {
         }
         // 이기고 나면 클리어 뷰로 이동
         else if clearRandomGame == true {
-            ClearView()
+            var ler = sddf()
         }
         // 지면 사망뷰로 이동
         else { DeathView(reasonText: "가위 바위 보 져서", tipText: "다음엔 더 잘해보시길") }
+    }
+    
+    func sddf(){
+        vm.flow = 5
     }
 }
 
