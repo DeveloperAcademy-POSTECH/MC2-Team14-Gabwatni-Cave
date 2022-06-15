@@ -11,7 +11,7 @@ import AVFoundation
 struct DeepDarkFakeDieView: View {
     @EnvironmentObject var vm: CardViewModel2
     
-    let textArray: [String] = ["아직 다 살펴보지 않았는데, 벌써 갈건가? 여기 그리고 좁아보이지 않나?", " "]
+    let textArray: [String] = ["아직 내부를 다 살펴보지 않았는데 벌써 갈건가?", "게다가 그곳은 좀 좁아보이지 않나?", " "]
     let textArray2: [String] = ["병호군 여기로 들어갈 수 있을거라 생각하시나?", " "]
     
     @State private var inputString: String = ""
@@ -19,6 +19,7 @@ struct DeepDarkFakeDieView: View {
     
     @State private var isViewing: Bool = true
     @Binding var darkTalk: Bool
+    @State private var textIndex: Int = 0
     
     @State private var realDie: Bool = false
     
@@ -40,33 +41,51 @@ struct DeepDarkFakeDieView: View {
                 
                 Image("dongdal")
                     .resizable()
+                    .scaledToFit()
                     .frame(width: 300, height: 300)
+                    .offset(y: -80)
                   
                 if vm.itemDict["arachnocampa"]! && vm.itemDict["dragonmillipede"]! {
                     textBox(name: "동달", text: inputString)
                         .onAppear {
                             talkOnTextBox(stringArray: textArray2, inputIndex: 0)
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                                isViewing = false
-                            }
+//                            DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+//                                isViewing = false
+//                            }
                         }
                         .opacity(isViewing ? 1 : 0)
+                    if textEnd {
+                        Button{
+                            //talkOnTextBox(stringArray: textArray2, inputIndex: 1)
+                            textEnd.toggle()
+                            isViewing = false
+                        }
+                    label:{
+                        Text("다음")
+                            .font(.custom("Sam3KRFont", size: 20))
+                            .foregroundColor(.white)
+                        
+                    }
+                    .position(x: UIScreen.main.bounds.width/16 * 13
+                              , y: UIScreen.main.bounds.height/15 * 13)
+                        
+                    }
                     
                     Group {
-                        VStack(spacing: 30){
+                        VStack(spacing: 20){
                             Spacer()
                             Button {
                                 realDie = true
                             } label: {
-                                RoundedRectangle(cornerRadius: 10)
-                                    .frame(width: 300, height: 50)
-                                    .foregroundColor(.gray)
-                                    .opacity(0.5)
-                                    .overlay{
-                                        Text("그래도 저는 갑니다.")
-                                            .font(.custom("Sam3KRFont", size: 16))
-                                            .foregroundColor(.white)
-                                    }
+                                ZStack {
+                                    Image("textbox")
+                                        .resizable()
+                                        .frame(width: 310, height: 60)
+                                    
+                                    Text("그래도 저는 갑니다!")
+                                        .font(.custom("Sam3KRFont", size: 20))
+                                        .foregroundColor(.white)
+                                }
                                 
                             }
                             
@@ -74,16 +93,15 @@ struct DeepDarkFakeDieView: View {
                                 darkTalk = false
                                 vm.fakeDie = false
                             } label: {
-                                RoundedRectangle(cornerRadius: 10)
-                                    .frame(width: 300, height: 50)
-                                    .foregroundColor(.gray)
-                                    .opacity(0.5)
-                                    .overlay{
-                                        Text("너무 좁아보이긴 하네요... 다른 곳을 찾아 볼게요!")
-                                            .font(.custom("Sam3KRFont", size: 16))
-                                            .foregroundColor(.white)
-                                    }
-                                
+                                ZStack {
+                                    Image("textbox")
+                                        .resizable()
+                                        .frame(width: 310, height: 60)
+                                    
+                                    Text("너무 좁아보이긴 하네요... 다른 곳을 찾아 볼게요!")
+                                        .font(.custom("Sam3KRFont", size: 20))
+                                        .foregroundColor(.white)
+                                }
                             }
                             .padding(.bottom, 80)
                         }
@@ -95,29 +113,49 @@ struct DeepDarkFakeDieView: View {
                 else {
                     textBox(name: "동달", text: inputString)
                         .onAppear {
-                            talkOnTextBox(stringArray: textArray, inputIndex: 0)
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                                isViewing = false
-                            }
-                            
+                            talkOnTextBox(stringArray: textArray, inputIndex: textIndex)
+                            textIndex += 1
+//                            DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+//                                isViewing = false
+//                            }
                         }
                         .opacity(isViewing ? 1 : 0)
-                    
+                    if textEnd {
+                        Button{
+                            talkOnTextBox(stringArray: textArray, inputIndex: textIndex)
+                            
+                            
+                            if textIndex == 2 {
+                                textEnd.toggle()
+                                isViewing = false
+                            }
+                            textIndex += 1
+                        }
+                    label:{
+                        Text("다음")
+                            .font(.custom("Sam3KRFont", size: 20))
+                            .foregroundColor(.white)
+                        
+                    }
+                    .position(x: UIScreen.main.bounds.width/16 * 13
+                              , y: UIScreen.main.bounds.height/15 * 13)
+                        
+                    }
                     Group {
-                        VStack(spacing: 30){
+                        VStack(spacing: 20){
                             Spacer()
                             Button {
                                 realDie = true
                             } label: {
-                                RoundedRectangle(cornerRadius: 10)
-                                    .frame(width: 300, height: 50)
-                                    .foregroundColor(.gray)
-                                    .opacity(0.5)
-                                    .overlay{
-                                        Text("그래도 저는 갑니다.")
-                                            .font(.custom("Sam3KRFont", size: 16))
-                                            .foregroundColor(.white)
-                                    }
+                                ZStack {
+                                    Image("textbox")
+                                        .resizable()
+                                        .frame(width: 310, height: 60)
+                                    
+                                    Text("그래도 저는 갑니다!")
+                                        .font(.custom("Sam3KRFont", size: 20))
+                                        .foregroundColor(.white)
+                                }
                                 
                             }
                             
@@ -125,16 +163,15 @@ struct DeepDarkFakeDieView: View {
                                 darkTalk = false
                                 vm.fakeDie = false
                             } label: {
-                                RoundedRectangle(cornerRadius: 10)
-                                    .frame(width: 300, height: 50)
-                                    .foregroundColor(.gray)
-                                    .opacity(0.5)
-                                    .overlay{
-                                        Text("너무 좁아보이긴 하네요... 다른 곳을 찾아 볼게요!")
-                                            .font(.custom("Sam3KRFont", size: 16))
-                                            .foregroundColor(.white)
-                                    }
-                                
+                                ZStack {
+                                    Image("textbox")
+                                        .resizable()
+                                        .frame(width: 310, height: 60)
+                                    
+                                    Text("다른 곳을 찾아 볼게요!")
+                                        .font(.custom("Sam3KRFont", size: 20))
+                                        .foregroundColor(.white)
+                                }
                             }
                             .padding(.bottom, 80)
                         }
