@@ -53,7 +53,6 @@ class CardViewModel: ObservableObject {
 
 final class CardViewModel2: ObservableObject {
 
-
     @Published var flow: Int = 3
     
     @Published var isSound: Bool = false

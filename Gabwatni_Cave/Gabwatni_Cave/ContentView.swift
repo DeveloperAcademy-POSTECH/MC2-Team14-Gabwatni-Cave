@@ -16,19 +16,29 @@ struct ContentView: View {
         }
         else if vm.flow == 0 {
             AncestorView(mainflow: vm.flow)
+                .onDisappear {
+                    vm.isSound = false
+                }
         }
         else if vm.flow == 1 {
             EntranceControl()
+                .onDisappear {
+                    vm.isSound = false
+                }
         }
         else if vm.flow == 2 {
             Dongdalsays()
                 .onAppear {
+                    vm.isSound = false
                     vm.itemDict["bat"] = false
                     vm.itemDict["salamander"] = false
                 }
         }
         else if vm.flow == 3 {
             DeepDarkControl(mainflow: vm.flow)
+                .onAppear {
+                    vm.isSound = false
+                }
                 .onDisappear {
                     vm.dragOffset = CGSize.zero
                     vm.dragOffset2 = CGSize.zero
