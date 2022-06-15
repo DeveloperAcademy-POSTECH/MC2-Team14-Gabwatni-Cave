@@ -72,7 +72,7 @@ struct CardView: View {
             // 카드 프레임 (Card Frame)
             RoundedRectangle(cornerRadius: 10)
                 .frame(width: 310, height: 450, alignment: .center)
-                .shadow(color: .black.opacity(0.5), radius: 4, x: 10, y: 10)
+                .shadow(color: .gray.opacity(0.5), radius: 4, x: 4, y: 4)
                 .foregroundColor(Color(0xDFDFDF))
                 .padding()
             
@@ -118,7 +118,7 @@ struct CardView: View {
             // 카드 프레임 (Card Frame)
             RoundedRectangle(cornerRadius: 10)
                 .frame(width: 310, height: 450, alignment: .center)
-                .shadow(color: .black.opacity(0.5), radius: 4, x: 10, y: 10)
+                .shadow(color: .gray.opacity(0.5), radius: 4, x: 4, y: 4)
                 .foregroundColor(Color(0xDFDFDF))
                 .padding()
             
