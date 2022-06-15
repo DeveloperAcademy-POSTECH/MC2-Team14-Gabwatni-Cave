@@ -62,7 +62,7 @@ struct TwilightView: View {
             LightItemView(thisPositionX: -80, thisPositionY: 350, thisFrameWidth: 150, thisFrameHeight: 150, isShowing: $presentView, imageName: "salamander", degreeNum: 30.0, showingImage: showingImage)
             
             if presentView {
-                CardView(imageName: showingImage, cardState: $presentView)
+                CardView(imageName: vm.imageName, cardState: $presentView)
                     .padding(.top, 40)
             }
             

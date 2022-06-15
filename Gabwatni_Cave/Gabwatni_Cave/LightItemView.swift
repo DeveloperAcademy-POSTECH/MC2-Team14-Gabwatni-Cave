@@ -73,6 +73,9 @@ struct LightItemView: View {
                             showingImage = imageName
                         }
                         vm.imageName = imageName
+                        //vm.itemDict[showingImage] = true
+                    }
+                    .onDisappear {
                         vm.itemDict[showingImage] = true
                     }
             }
