@@ -54,7 +54,7 @@ struct EntranceView_end: View {
                         Image(!isClicked ? "동달" : charArr[stringNumber-1])
                             .resizable()
                             .scaleEffect(1.0)
-                            .frame(width: (!isClicked ? "동달" : charArr[stringNumber-1]) == "동달" ? UIScreen.main.bounds.height/3: UIScreen.main.bounds.height/4, height: (!isClicked ? "동달" : charArr[stringNumber-1]) == "동달" ? UIScreen.main.bounds.height/3: UIScreen.main.bounds.height/4*2, alignment: .center)
+                            .frame(width: (!isClicked ? "동달" : charArr[stringNumber-1]) == "동달" ? UIScreen.main.bounds.height/20 * 9: UIScreen.main.bounds.height/4, height: (!isClicked ? "동달" : charArr[stringNumber-1]) == "동달" ? UIScreen.main.bounds.height/20 * 6: UIScreen.main.bounds.height/4*2, alignment: .center)
                             
                     }
                     .position(x: xPosition

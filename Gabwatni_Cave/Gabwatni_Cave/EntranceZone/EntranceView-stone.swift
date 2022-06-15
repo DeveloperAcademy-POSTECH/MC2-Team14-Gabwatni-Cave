@@ -10,6 +10,7 @@ import SwiftUI
 struct EntranceView_stone: View {
    @Binding var flow : Int
     @State var isViewing: Bool = false
+    @State private var animationAmount: CGFloat = 1
     var body: some View {
         ZStack{
             Image("entrancecave")
@@ -30,12 +31,25 @@ struct EntranceView_stone: View {
                             .frame(width: 20, height: 20, alignment: .center)
                             .opacity(isViewing ? 0 : 1)
                     }
+                    .overlay(
+                               Circle()
+                                   .stroke(Color.white, lineWidth: 2)
+                                   .scaleEffect(animationAmount)
+                                   //animationAmount가 1이면 불트명이 1이고, 2이면 불투명도가 0이다
+                                   .opacity(Double(2 - animationAmount))
+                                   .animation(Animation.easeInOut(duration: 1.3)
+                                               .repeatForever(autoreverses: false)))
+
                     .position(x: UIScreen.main.bounds.size.width * 6 / 7 + 8, y: UIScreen.main.bounds.size.height / 2 - 10)
+
                     
                 }
                 Spacer()
             }
+        }.onAppear(){
+            self.animationAmount = 2
         }
+        
     }
 }
 
