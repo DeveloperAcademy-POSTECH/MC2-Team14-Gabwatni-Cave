@@ -35,8 +35,13 @@ struct LightItemView: View {
                         .position(x: thisPositionX, y: thisPositionY)
                         .frame(width: thisFrameWidth, height: thisFrameHeight)
                         .onTapGesture {
-                            withAnimation(.easeIn(duration: 1.3)) {
-                                vm.flow += 1
+                            withAnimation(.easeIn) {
+                                //mainflow = 1
+
+                                playSoundEffect(sound: "walk", type: ".mp3")
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                                    vm.flow += 1
+                                                            }
                             }
                         }
                 } else if imageName == "fakefootprint" {
@@ -45,10 +50,14 @@ struct LightItemView: View {
                         .position(x: thisPositionX, y: thisPositionY)
                         .frame(width: thisFrameWidth, height: thisFrameHeight)
                         .onTapGesture {
-                            withAnimation(.easeIn(duration: 1.3)) {
-                                vm.fakeDie = true
+                            withAnimation(.easeIn) {
+                                //mainflow = 1
+                                playSoundEffect(sound: "walk", type: ".mp3")
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                                    vm.fakeDie = true
+                                                            }
                             }
-                        }
+                                                    }
                 }
                 
                 else {
