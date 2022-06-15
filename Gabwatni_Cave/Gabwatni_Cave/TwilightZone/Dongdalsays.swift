@@ -29,9 +29,6 @@ struct Dongdalsays: View {
                 }
                 .position(x: xPosition
                           , y: yPosition)
-                .onAppear{
-                    playSound(sound: "Enter_TwilightZoneBGM", type: ".mp3")
-                }
             }
         }
         
