@@ -25,11 +25,11 @@ struct MiniMapView: View {
                         dismiss()
                     }
                 ScrollView(.horizontal){
-                Image(image)
-                    .resizable()
-                    .scaledToFit()
-            
-                
+                    Image(image)
+                        .resizable()
+                        .scaledToFit()
+                    
+                    
                 }
                 
                 Text(myPosition)
@@ -37,7 +37,7 @@ struct MiniMapView: View {
                 
                 
             }
-            }
+        }
     }
 }
 
