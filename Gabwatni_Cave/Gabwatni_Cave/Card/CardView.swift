@@ -15,7 +15,7 @@ struct CardView: View {
     @State var frontDegree = 0.0
     @Binding var cardState: Bool
     let durationAndDelay : CGFloat = 0.3
-    var alpha: Double = 0.8
+    var alpha: Double = 1.0
     
     var body: some View {
         if cardState {
@@ -24,6 +24,7 @@ struct CardView: View {
                 Color.black
                     .opacity(alpha)
                     .ignoresSafeArea()
+                    .offset(y: -40)
                 
                 ZStack {
                     CardFront
@@ -34,7 +35,7 @@ struct CardView: View {
                 }
                 
                 .position(x: UIScreen.main.bounds.width/2
-                          , y: UIScreen.main.bounds.height/2.7)
+                          , y: UIScreen.main.bounds.height/10 * 4)
                 
                 
                 // 카드 외부 텍스트 박스
@@ -54,12 +55,15 @@ struct CardView: View {
                             .foregroundColor(.white)
                         
                     }
+//                    .position(x: UIScreen.main.bounds.width/16 * 13
+//                              , y: UIScreen.main.bounds.height/15 * 13)
                     .position(x: UIScreen.main.bounds.width/16 * 13
                               , y: UIScreen.main.bounds.height/15 * 13)
                     
                 }
                 
             }
+            .offset(y: 40)
         }
     }
     
@@ -100,7 +104,8 @@ struct CardView: View {
                     .padding(.bottom, 10)
                 
             }
-            .position(x: 330, y: 180)
+            .position(x: UIScreen.main.bounds.width/20 * 16.7
+                      , y: UIScreen.main.bounds.height/20 * 4.3 + 45)
         }
         .rotation3DEffect(Angle(degrees: frontDegree), axis: (x: 0, y: 1, z: 0))
     }
@@ -126,7 +131,7 @@ struct CardView: View {
                 ZStack {
                     Rectangle()
                         .frame(width: 270, height: 352)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                     Image("real " + "\(vm.imageName)")
                         .resizable()
                         .opacity(0.9)
@@ -143,7 +148,8 @@ struct CardView: View {
                     .padding(.bottom, 10)
                 
             }
-            .position(x: 330, y: 180)
+            .position(x: UIScreen.main.bounds.width/20 * 16.7
+                      , y: UIScreen.main.bounds.height/20 * 4.3 + 45)
         }
         .rotation3DEffect(Angle(degrees: backDegree), axis: (x: 0, y: 1, z: 0))
     }

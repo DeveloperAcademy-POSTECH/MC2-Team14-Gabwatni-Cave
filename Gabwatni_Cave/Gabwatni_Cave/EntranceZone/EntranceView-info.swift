@@ -13,6 +13,7 @@ struct EntranceView_info: View {
     @State var state = true
     var body: some View {
         ZStack {
+            Image("deepDark-edit")
             CardView(imageName: "stalactite", cardState: $state)
                 .onDisappear(){
                     flow = 3

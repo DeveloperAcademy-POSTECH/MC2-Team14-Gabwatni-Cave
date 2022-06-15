@@ -55,7 +55,6 @@ struct DeepDarkView: View {
                 
                 if presentView {
                     CardView(imageName: vm.imageName, cardState: $presentView)
-                        .padding(.top, 40)
                         .onDisappear {
                             if vm.itemDict["arachnocampa"]! && vm.itemDict["dragonmillipede"]! {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) {
