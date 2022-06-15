@@ -29,7 +29,7 @@ struct StartMap: View {
                 }
             }
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.8, alignment: .top)
-            newTextBox3(StrArr: ["세계 각지에 흩어진 보물의 조각들을 모으면 원하는 소원을 들어주겠다..."," "],charArr: [" "," "])
+            newTextBox3(StrArr: ["(세계 각지에 흩어진 보물의 조각들을 모으면 원하는 소원을 들어주겠다...)"," "],charArr: [" "," "])
             
         }
     }
