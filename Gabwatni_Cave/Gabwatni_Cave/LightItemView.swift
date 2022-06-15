@@ -36,11 +36,13 @@ struct LightItemView: View {
                     .frame(width: thisFrameWidth, height: thisFrameHeight)
                     .onTapGesture {
                         withAnimation(.easeIn) {
-                            //mainflow = 1
-                            
                             playSoundEffect(sound: "walk", type: ".mp3")
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                                vm.flow += 1
+                                if vm.flow == 2 {
+                                    vm.flow = 3
+                                } else if vm.flow == 3 && vm.itemDict["water"]! {
+                                    vm.flow = 4
+                                }
                             }
                         }
                     }
@@ -69,13 +71,13 @@ struct LightItemView: View {
                             playSoundEffect(sound: "bat", type: ".mp3")
                         }
                         isShowing.toggle()
-                        if showingImage == "" {
+                        if showingImage != imageName {
                             showingImage = imageName
                         }
                         vm.imageName = imageName
                         //vm.itemDict[showingImage] = true
                     }
-                    .onDisappear {
+                    .onAppear {
                         vm.itemDict[showingImage] = true
                     }
             }
