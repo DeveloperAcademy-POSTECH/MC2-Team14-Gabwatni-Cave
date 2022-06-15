@@ -32,7 +32,7 @@ struct StartView: View {
             Button(action: {
                 //버튼을 클릭했을 때 실행되는 코드
                 flow = 1
-                print("")
+               
             }){
                 //버튼의 보여지는 UI 코드
                 Text("터치해서 시작하기")

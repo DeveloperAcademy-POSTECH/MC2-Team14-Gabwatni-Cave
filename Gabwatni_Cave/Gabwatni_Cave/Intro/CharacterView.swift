@@ -79,32 +79,7 @@ struct newTextBox2: View {
            
             VStack{
                 GeometryReader{geo in
-                    //이미지 넣고싶으면  사용할 코드 --수정 필요함!!---------------------
-                    //                    Button {
-                    //                        print(isClicked)
-                    //                        if !isClicked{
-                    //                            ges(strnum: stringNumber)
-                    //                            isClicked = true
-                    //                            AudioServicesPlaySystemSound(1311)
-                    //                            if stringNumber < 11{
-                    //                                stringNumber+=1
-                    //                                print(stringNumber)
-                    //                            }
-                    //                            else if stringNumber == 11{
-                    //                                flow = 1
-                    //                                print(1323)
-                    //                            }
-                    //                        }
-                    //
-                    //                    } label: {
-                    //                        Image(!isClicked ? "동달" : charArr[stringNumber-1])
-                    //                            .resizable()
-                    //                            .scaleEffect(1.0)
-                    //                            .frame(width: (!isClicked ? "동달" : charArr[stringNumber-1]) == "동달" ? UIScreen.main.bounds.height/3: UIScreen.main.bounds.height/4, height: (!isClicked ? "동달" : charArr[stringNumber-1]) == "동달" ? UIScreen.main.bounds.height/3: UIScreen.main.bounds.height/4*2, alignment: .center)
-                    //
-                    //                    }
-                    //                    .position(x: xPosition
-                    //                              , y: yPosition)     //이미지 넣고 싶으면 사용할 코드 --수정 필요함!!--------------------------------
+                    
                     
                     if isClicked{
                         Text(!isClicked ? "동달" : charArr[stringNumber-1])
@@ -128,12 +103,12 @@ struct newTextBox2: View {
                                 isClicked = true
                                 if stringNumber < StrArr.count-1{
                                     stringNumber+=1
-                                    print(stringNumber)
+                                    
                                 }
                                 else if stringNumber == StrArr.count-1{
                                     isClicked = false
                                     control = 2
-                                    print(1323)
+                                    
                                 }
                                 isFinished.toggle()
                             }
@@ -160,11 +135,11 @@ struct newTextBox2: View {
                     AudioServicesPlaySystemSound(1311)
                     if stringNumber < StrArr.count-1{
                         stringNumber+=1
-                        print(stringNumber)
+                        
                     }
                     else if stringNumber == StrArr.count-1{
                         isClicked = false
-                        print(1323)
+                       
                     }
                 }
             }
