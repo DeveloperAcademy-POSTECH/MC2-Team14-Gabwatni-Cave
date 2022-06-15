@@ -35,9 +35,9 @@ struct AncestorView: View {
     @State private var textEnd: Bool = false
     @State private var inputString = ""
     @State private var stringArrayIndex = 0
-    let startStringArray : [String] = ["어지러워...여긴 어디지?", "혹시 저 해골은 할아버지의 할아버지의 할아버지?!","(잠시 묵념을 한다.)", "손에 들고 계신건 뭐지?", "(해골을 한 번 눌러보자)"," "]
-    let mapStringArray : [String] = ["어라?", "이건 지도인가..?", "(지도를 획득했다.)", "저기 왼쪽에 반짝이는건 뭐지?", "(왼쪽의 손전등을 눌러보자)"," "]
-    let flashStringArray : [String] = ["오잉??", "이건 후레시!?", "(손전등을 획득했다.)","(발자국 버튼을 눌러 다음 장소로 이동하자)", " "]
+    let startStringArray : [String] = ["어지러워...여긴 어디지?", "혹시 저 해골은 할아버지의 할아버지의 할아버지?!","(잠시 묵념을 한다.)", "손에 들고 계신건 뭐지?", "(해골을 눌러보세요.)"," "]
+    let mapStringArray : [String] = ["어라?", "이건 지도인가..?", "(지도를 획득했다.)", "저기 왼쪽에 반짝이는건 뭐지?", "(왼쪽의 손전등을 눌러보세요.)"," "]
+    let flashStringArray : [String] = ["오잉??", "이건 후레시!?", "(손전등을 획득했다.)","(발자국 버튼을 눌러 다음 장소로 이동하세요.)", " "]
     
     var body: some View {
         ZStack {
