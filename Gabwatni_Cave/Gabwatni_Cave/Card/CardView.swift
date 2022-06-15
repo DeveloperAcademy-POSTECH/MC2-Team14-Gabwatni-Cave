@@ -90,6 +90,7 @@ struct CardView: View {
                         .foregroundColor(.black)
                     Image("\(vm.imageName)")
                         .resizable()
+                        .scaledToFit()
                         .opacity(0.9)
                         .frame(width: 260, height: 342)
                 }
