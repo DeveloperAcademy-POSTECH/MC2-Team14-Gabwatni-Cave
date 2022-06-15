@@ -53,7 +53,7 @@ class CardViewModel: ObservableObject {
 
 class CardViewModel2: ObservableObject {
 
-    @Published var flow = 4
+    @Published var flow = -1
     
     @Published var fakeDie: Bool = false
     

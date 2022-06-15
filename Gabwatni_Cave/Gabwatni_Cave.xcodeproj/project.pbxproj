@@ -19,6 +19,8 @@
 		32258CD42859B29E004EC422 /* mapGain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32258CD32859B29E004EC422 /* mapGain.wav */; };
 		32258CD62859B3A6004EC422 /* flashGain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32258CD52859B3A6004EC422 /* flashGain.wav */; };
 		32258CD82859BA0F004EC422 /* bat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32258CD72859BA0F004EC422 /* bat.mp3 */; };
+		32258CDC285A086C004EC422 /* bossSound1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32258CDB285A086C004EC422 /* bossSound1.mp3 */; };
+		32258CDE285A0C80004EC422 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32258CDD285A0C80004EC422 /* start.mp3 */; };
 		3234D74D285878EE001654D4 /* BGM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234D74C285878EE001654D4 /* BGM.swift */; };
 		3234D75228587E07001654D4 /* RainEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234D75128587E07001654D4 /* RainEffect.swift */; };
 		3234D75628587E31001654D4 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3234D75428587E31001654D4 /* MyParticle.sks */; };
@@ -69,7 +71,6 @@
 		8EF731AE2857247D00D9A61A /* IntroControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF731AD2857247D00D9A61A /* IntroControl.swift */; };
 		8EF731B02857279B00D9A61A /* StartMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF731AF2857279B00D9A61A /* StartMapView.swift */; };
 		CCA571AC2858DE9C005ECA5D /* TadaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA571AB2858DE9C005ECA5D /* TadaView.swift */; };
-		CCF62576285703C9006C245D /* ShineViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF62575285703C9006C245D /* ShineViewModifier.swift */; };
 		CCF6C24B2852092D00C48E22 /* AncestorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF6C24A2852092D00C48E22 /* AncestorView.swift */; };
 		CCF6C24E28522CA200C48E22 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF6C24D28522CA200C48E22 /* CardModel.swift */; };
 		CCF6C25028522CB000C48E22 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF6C24F28522CB000C48E22 /* CardView.swift */; };
@@ -108,6 +109,8 @@
 		32258CD32859B29E004EC422 /* mapGain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mapGain.wav; sourceTree = "<group>"; };
 		32258CD52859B3A6004EC422 /* flashGain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = flashGain.wav; sourceTree = "<group>"; };
 		32258CD72859BA0F004EC422 /* bat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bat.mp3; sourceTree = "<group>"; };
+		32258CDB285A086C004EC422 /* bossSound1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bossSound1.mp3; sourceTree = "<group>"; };
+		32258CDD285A0C80004EC422 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = start.mp3; path = "../../../../../../../Music/Music/Media.localized/Music/Unknown Artist/Unknown Album/start.mp3"; sourceTree = "<group>"; };
 		3234D74C285878EE001654D4 /* BGM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGM.swift; sourceTree = "<group>"; };
 		3234D75128587E07001654D4 /* RainEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainEffect.swift; sourceTree = "<group>"; };
 		3234D75428587E31001654D4 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
@@ -157,7 +160,6 @@
 		8EF731AD2857247D00D9A61A /* IntroControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroControl.swift; sourceTree = "<group>"; };
 		8EF731AF2857279B00D9A61A /* StartMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMapView.swift; sourceTree = "<group>"; };
 		CCA571AB2858DE9C005ECA5D /* TadaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TadaView.swift; sourceTree = "<group>"; };
-		CCF62575285703C9006C245D /* ShineViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShineViewModifier.swift; sourceTree = "<group>"; };
 		CCF6C24A2852092D00C48E22 /* AncestorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AncestorView.swift; sourceTree = "<group>"; };
 		CCF6C24D28522CA200C48E22 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		CCF6C24F28522CB000C48E22 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -299,10 +301,11 @@
 		3234D74E28587A73001654D4 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				32258CDD285A0C80004EC422 /* start.mp3 */,
 				32258CD72859BA0F004EC422 /* bat.mp3 */,
 				32258CD52859B3A6004EC422 /* flashGain.wav */,
-				CCF62575285703C9006C245D /* ShineViewModifier.swift */,
 				32258CD32859B29E004EC422 /* mapGain.wav */,
+				32258CDB285A086C004EC422 /* bossSound1.mp3 */,
 				32E738C42858D2D300EE034F /* walk.mp3 */,
 				3234D7692858B3EC001654D4 /* end.mp3 */,
 				3234D7672858B34E001654D4 /* Enter_TwilightZoneBGM.mp3 */,
@@ -565,12 +568,14 @@
 				3234D7682858B34E001654D4 /* Enter_TwilightZoneBGM.mp3 in Resources */,
 				3234D76A2858B3EC001654D4 /* end.mp3 in Resources */,
 				3234D7662858AF99001654D4 /* darkZoneBGM.mp3 in Resources */,
+				32258CDE285A0C80004EC422 /* start.mp3 in Resources */,
 				32E738C52858D2D300EE034F /* walk.mp3 in Resources */,
 				323DD3CA285863FC005986EF /* boss.json in Resources */,
 				3234D75628587E31001654D4 /* MyParticle.sks in Resources */,
 				32258CD82859BA0F004EC422 /* bat.mp3 in Resources */,
 				321CF1B22850882A00F3B920 /* Preview Assets.xcassets in Resources */,
 				3234D7642858A23C001654D4 /* Action_Hero.mp3 in Resources */,
+				32258CDC285A086C004EC422 /* bossSound1.mp3 in Resources */,
 				32258CD42859B29E004EC422 /* mapGain.wav in Resources */,
 				7810DA3D2852189800069CFB /* Sam3KRFont.ttf in Resources */,
 				321CF1AF2850882A00F3B920 /* Assets.xcassets in Resources */,
@@ -618,7 +623,6 @@
 				78259A462855D5C90096AB51 /* EntranceView-end.swift in Sources */,
 				78259A4C2856686F0096AB51 /* newTextBox.swift in Sources */,
 				7810DA4028521C8000069CFB /* EntranceControl.swift in Sources */,
-				CCF62576285703C9006C245D /* ShineViewModifier.swift in Sources */,
 				8EF731AA28570EB500D9A61A /* StartView.swift in Sources */,
 				6E01FB4F28520B7800B98789 /* ShimmeringItemView.swift in Sources */,
 				6E01FB562852245000B98789 /* TestLightView.swift in Sources */,

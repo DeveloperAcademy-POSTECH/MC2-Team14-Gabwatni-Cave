@@ -43,8 +43,8 @@ struct DeathView: View {
                 
                 // TODO: 일단 다시하기 누르면 맨 처음으로 돌아가는 걸로 설정해놨습니다.
                 Button {
-                    vm.flow = 0
-                } label: {
+                    vm.flow = 3
+            } label: {
                     Text(restartText)
                         .font(.custom("Sam3KRFont", size: 24))
                         .foregroundColor(.red)
@@ -52,6 +52,9 @@ struct DeathView: View {
                 
                 Spacer()
             }
+        }
+        .onAppear{
+            playSound(sound: "start", type: ".mp3")
         }
     }
 }
