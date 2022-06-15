@@ -305,7 +305,7 @@ struct AncestorView: View {
         
         Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
             if inputIndex >= stringArray.count - 1 {timer.invalidate()}
-            AudioServicesPlaySystemSound(1306)
+            AudioServicesPlaySystemSound(1104)
             inputString += String(stringArray[inputIndex][stringArray[inputIndex].index(stringArray[inputIndex].startIndex, offsetBy: index)])
             index+=1
             
