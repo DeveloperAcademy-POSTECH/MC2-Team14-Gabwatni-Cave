@@ -16,7 +16,7 @@ struct EntranceView_end: View {
     @Binding var flow : Int
     @State var str = ""
     @State var str2 = "어떻게 잡았지"
-    @State var StrArr : [String] = ["잘했어~~","이렇게 동굴의 정보를 파악해야 탈출이 가능하다는 점 알아둬!","이제 어느정도 준비가 된거 같으니 앞으로 가자."," " ]
+    @State var StrArr : [String] = ["잘했네!","이렇게 상호작용을 통해 동굴의 정보를 파악해야 탈출이 가능하다는 점 알아두시게!","이제 어느정도 준비가 된거 같으니 발자국 버튼을 눌러 다음 장소로 이동해봅세..."," " ]
     @State var charArr : [String] = ["동달","동달", "동달"," " ]
     @State var stringNumber = 0
     @State var toggle  = false

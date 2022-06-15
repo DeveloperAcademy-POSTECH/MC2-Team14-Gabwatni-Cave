@@ -25,7 +25,7 @@ struct CharacterView: View {
                 .frame(width: 200, height: 300)
             
             
-            newTextBox2(control : $flow, StrArr: ["최병호(29, 무직백수)","가문의 비밀이 담긴 보물지도를 발견하고 소원을 이루기 위해 모험을 떠나게 된다..."," "], charArr: [" "," "," "])
+            newTextBox2(control : $flow, StrArr: ["최병호(29, 무직백수)","가문의 비밀이 담긴 보물지도를 우연히 발견하고 모험을 떠나게 되는데..."," "], charArr: [" "," "," "])
             
             
             //            ZStack{

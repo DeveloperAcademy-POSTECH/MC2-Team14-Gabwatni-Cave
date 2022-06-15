@@ -230,7 +230,7 @@
 				7810DA3E285218AF00069CFB /* Gabwatni-Cave-Info.plist */,
 				7B9E61B428520E2B00C931F4 /* Model */,
 				7B9E61B528520E3300C931F4 /* ViewModel */,
-				8EF731AF2857279B00D9A61A /* StartMapView.swift */,
+				7B1A320E2859F8D2004873A7 /* Intro */,
 				CCF6C2492852092000C48E22 /* StartZone */,
 				7810DA38285207F600069CFB /* EntranceZone */,
 				6E01FB4B28520B6200B98789 /* TwilightZone */,
@@ -238,8 +238,6 @@
 				7BF24D54285855A200227E2E /* ClearView.swift */,
 				6E01FB4E28520B7800B98789 /* ShimmeringItemView.swift */,
 				321C5A2E285323580092C4E4 /* InventoryView.swift */,
-				8EF731AB28570F1800D9A61A /* CharacterView.swift */,
-				8EF731A928570EB500D9A61A /* StartView.swift */,
 				6E23694F2858607F002F19F3 /* LightItemView.swift */,
 				6E23694D28585FDA002F19F3 /* LightView.swift */,
 				6E01FB552852245000B98789 /* TestLightView.swift */,
@@ -254,7 +252,6 @@
 				7810DA3B2852188200069CFB /* fonts */,
 				321CF1AE2850882A00F3B920 /* Assets.xcassets */,
 				321CF1B02850882A00F3B920 /* Preview Content */,
-				8EF731AD2857247D00D9A61A /* IntroControl.swift */,
 			);
 			path = Gabwatni_Cave;
 			sourceTree = "<group>";
@@ -386,6 +383,17 @@
 				781E4D432859CBD800296745 /* CaveDeathView.swift */,
 			);
 			path = CaveDeath;
+			sourceTree = "<group>";
+		};
+		7B1A320E2859F8D2004873A7 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				8EF731AD2857247D00D9A61A /* IntroControl.swift */,
+				8EF731A928570EB500D9A61A /* StartView.swift */,
+				8EF731AB28570F1800D9A61A /* CharacterView.swift */,
+				8EF731AF2857279B00D9A61A /* StartMapView.swift */,
+			);
+			path = Intro;
 			sourceTree = "<group>";
 		};
 		7B9E61AF2852043200C931F4 /* DarkZone */ = {
