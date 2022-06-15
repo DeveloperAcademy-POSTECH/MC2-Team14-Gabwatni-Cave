@@ -1,8 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Image.png",
-      "idiom" : "universal"
+      "filename" : "real stalactite.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

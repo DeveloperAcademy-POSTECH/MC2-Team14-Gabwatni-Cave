@@ -42,7 +42,7 @@ struct DeepDarkView: View {
                 }
                 
                 if vm.itemDict["arachnocampa"]! && vm.itemDict["dragonmillipede"]!  {
-                    LightItemView(thisPositionX: 200, thisPositionY: 400, thisFrameWidth: 100, thisFrameHeight: 100, isShowing: $presentView, imageName: "footprint", degreeNum: 55.0, showingImage: showingImage)
+                    LightItemView(thisPositionX: 180, thisPositionY: 380, thisFrameWidth: 100, thisFrameHeight: 100, isShowing: $presentView, imageName: "footprint", degreeNum: 55.0, showingImage: showingImage)
                 }
                 
                 

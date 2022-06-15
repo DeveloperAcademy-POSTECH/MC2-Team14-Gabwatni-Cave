@@ -99,10 +99,12 @@ struct CardView: View {
             Button {
                 cardState.toggle()
             } label: {
-                Text("x")
-                    .font(.custom("Sam3KRFont", size: 28))
+                Image("xicon")
+//                Text("x")
+//                    .font(.custom("Sam3KRFont", size: 28))
                     .foregroundColor(.black)
                     .padding(.bottom, 10)
+                    .shadow(color: .black, radius: 2, x: 2, y: 2)
                 
             }
             .position(x: UIScreen.main.bounds.width/20 * 16.7
@@ -143,10 +145,13 @@ struct CardView: View {
             Button {
                 cardState.toggle()
             } label: {
-                Text("x")
-                    .font(.custom("Sam3KRFont", size: 28))
+                Image("xicon")
+//                Text("x")
+//                    .font(.custom("Sam3KRFont", size: 28))
                     .foregroundColor(.black)
                     .padding(.bottom, 10)
+                    .shadow(color: .black, radius: 2, x: 2, y: 2)
+                
                 
             }
             .position(x: UIScreen.main.bounds.width/20 * 16.7
