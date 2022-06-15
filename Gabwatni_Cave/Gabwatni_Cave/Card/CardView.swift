@@ -72,7 +72,7 @@ struct CardView: View {
             // 카드 프레임 (Card Frame)
             RoundedRectangle(cornerRadius: 10)
                 .frame(width: 310, height: 450, alignment: .center)
-                .shadow(color: .black.opacity(0.5), radius: 4, x: 10, y: 10)
+                .shadow(color: .gray.opacity(0.5), radius: 6, x: 6, y: 6)
                 .foregroundColor(Color(0xDFDFDF))
                 .padding()
             
@@ -86,8 +86,8 @@ struct CardView: View {
                 
                 ZStack {
                     Rectangle()
-                        .frame(width: 270, height: 352)
-                        .foregroundColor(.black)
+                        .frame(width: 280, height: 362)
+                        .foregroundColor(.gray)
                     Image("\(vm.imageName)")
                         .resizable()
                         .scaledToFit()
@@ -99,10 +99,12 @@ struct CardView: View {
             Button {
                 cardState.toggle()
             } label: {
-                Text("x")
-                    .font(.custom("Sam3KRFont", size: 28))
+                Image("xicon")
+//                Text("x")
+//                    .font(.custom("Sam3KRFont", size: 28))
                     .foregroundColor(.black)
                     .padding(.bottom, 10)
+                    .shadow(color: .black, radius: 2, x: 2, y: 2)
                 
             }
             .position(x: UIScreen.main.bounds.width/20 * 16.7
@@ -116,7 +118,7 @@ struct CardView: View {
             // 카드 프레임 (Card Frame)
             RoundedRectangle(cornerRadius: 10)
                 .frame(width: 310, height: 450, alignment: .center)
-                .shadow(color: .black.opacity(0.5), radius: 4, x: 10, y: 10)
+                .shadow(color: .gray.opacity(0.5), radius: 6, x: 6, y: 6)
                 .foregroundColor(Color(0xDFDFDF))
                 .padding()
             
@@ -131,8 +133,8 @@ struct CardView: View {
                 // 카드 이미지
                 ZStack {
                     Rectangle()
-                        .frame(width: 270, height: 352)
-                        .foregroundColor(.white)
+                        .frame(width: 280, height: 362)
+                        .foregroundColor(.gray)
                     Image("real " + "\(vm.imageName)")
                         .resizable()
                         .opacity(0.9)
@@ -143,10 +145,13 @@ struct CardView: View {
             Button {
                 cardState.toggle()
             } label: {
-                Text("x")
-                    .font(.custom("Sam3KRFont", size: 28))
+                Image("xicon")
+//                Text("x")
+//                    .font(.custom("Sam3KRFont", size: 28))
                     .foregroundColor(.black)
                     .padding(.bottom, 10)
+                    .shadow(color: .black, radius: 2, x: 2, y: 2)
+                
                 
             }
             .position(x: UIScreen.main.bounds.width/20 * 16.7
