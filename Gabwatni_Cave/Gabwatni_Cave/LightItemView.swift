@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LightItemView: View {
     @EnvironmentObject var vm: CardViewModel2
- 
+    
     let thisPositionX: CGFloat
     let thisPositionY: CGFloat
     let thisFrameWidth: CGFloat
@@ -27,7 +27,7 @@ struct LightItemView: View {
     var body: some View {
         let distance = sqrt((pow(vm.dragOffset.width - thisPositionX, 2)) + pow(vm.dragOffset.height - thisPositionY, 2))
         
-            // 거리 <= 루트(상호작용 물체의 프레임/2) + 손전등 반지름(100)
+        // 거리 <= 루트(상호작용 물체의 프레임/2) + 손전등 반지름(100)
         if distance <= sqrt(2) * (thisFrameWidth / 2.3) + 80 {
                 if imageName == "footprint"{
                     Image(imageName)

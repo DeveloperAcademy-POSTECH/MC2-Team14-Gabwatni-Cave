@@ -12,12 +12,13 @@ struct CardView: View {
     @ObservedObject var vm = CardViewModel2()
     @State private var shineTirgger = false
     @Binding var cardState: Bool
+    var alpha: Double = 0.8
     
     var body: some View {
         if cardState {
         ZStack {
             Color.black
-                .opacity(0.8)
+                .opacity(alpha)
                 .ignoresSafeArea()
 
 //            Button {
@@ -33,40 +34,39 @@ struct CardView: View {
 //            }
 //            .position(x: UIScreen.main.bounds.width/2
 //                        , y: UIScreen.main.bounds.height/40)
-            
                 ZStack {
                     RoundedRectangle(cornerRadius: 10)
-                        .frame(width: UIScreen.main.bounds.width - 40, height: UIScreen.main.bounds.height - 350, alignment: .center)
-                        .shadow(color: .gray, radius: 2, x: 0, y: 0)
+                    //Rectangle()
+                        .frame(width: 310, height: 450, alignment: .center)
+                        .shadow(color: .black.opacity(0.5), radius: 4, x: 10, y: 10)
                         .foregroundColor(Color(0xDFDFDF))
+                        .padding()
+                        
 
                     VStack(spacing: 5) {
-                        HStack {
-                            Spacer(minLength: UIScreen.main.bounds.width/10 * 8.5)
-                        Button {
-                            cardState.toggle()
-                        } label: {
-                            Image("xicon")
-                                .resizable()
-                                .frame(width: 25, height: 25, alignment: .trailing)
-                                .shadow(color: .black.opacity(0.25), radius: 1, y: 4)
-                                
-
+                        HStack{
+                            Text(vm.imageTitle)
+                                .font(.custom("Sam3KRFont", size: 28))
+                                .foregroundColor(.black)
+                            //Spacer(minLength: UIScreen.main.bounds.width/10 * 8.5)
+                            
                         }
-                            Spacer()
-                        }
+                        .padding()
 
-                        Text(vm.imageTitle)
-                            .font(.custom("Sam3KRFont", size: 30))
-                            .foregroundColor(.black)
-                            .padding(.bottom)
+//                        Text(vm.imageTitle)
+//                            .font(.custom("Sam3KRFont", size: 30))
+//                            .foregroundColor(.black)
+//                            .padding(.bottom)
                         
+                        ZStack {
+                        Rectangle()
+                            .frame(width: 270, height: 352)
+                            .foregroundColor(.white)
                         Image("real " + "\(vm.imageName)")
                             .resizable()
-                            .cornerRadius(10)
                             .opacity(0.9)
-                            .frame(width: UIScreen.main.bounds.width - 80, height: UIScreen.main.bounds.height - 465, alignment: .center)
-
+                            .frame(width: 260, height: 342)
+                        }
                     }
                 }
                 .onTapGesture {
@@ -77,11 +77,24 @@ struct CardView: View {
                           , y: UIScreen.main.bounds.height/2.7)
             
 
-            textBox(name: vm.imageTitle, text: vm.inputString)
+            textBox(name: "", text: vm.inputString)
                 .onAppear {
                     vm.loadCardData(imageName: imageName)
                     vm.talkOnTextBox(stringArray: vm.imageText, inputIndex: vm.stringArrayIndex)
                 }
+            
+            Button {
+                cardState.toggle()
+            } label: {
+                Text("x")
+                    .font(.custom("Sam3KRFont", size: 28))
+                    .foregroundColor(.black)
+                    .padding(.bottom, 10)
+                    //
+                    //.frame(width: 25, height: 25, alignment: .trailing)
+                    //.shadow(color: .black.opacity(0.25), radius: 1, y: 4)
+            }
+            .position(x: 330, y: 110)
             
             if vm.textEnd {
                 Button{

@@ -105,7 +105,11 @@ struct TwilightView: View {
                 }
             }
             .opacity(isFirst ? 1 : 0)
-            .animation(.easeIn, value: isFirst)
+            .animation(.easeIn(duration: 0.8), value: isFirst)
+        }
+        .onDisappear{
+            vm.dragOffset = CGSize.zero
+            vm.dragOffset2 = CGSize.zero
         }
     }
     
@@ -117,7 +121,7 @@ struct TwilightView: View {
         
         Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
             if inputIndex >= stringArray.count - 1 {timer.invalidate()}
-            AudioServicesPlaySystemSound(1306)
+            AudioServicesPlaySystemSound(1104)
             inputString += String(stringArray[inputIndex][stringArray[inputIndex].index(stringArray[inputIndex].startIndex, offsetBy: index)])
             index+=1
             

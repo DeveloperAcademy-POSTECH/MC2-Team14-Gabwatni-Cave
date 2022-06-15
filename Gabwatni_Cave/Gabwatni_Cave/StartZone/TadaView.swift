@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct TadaView: View {
     let imageName : String
@@ -46,5 +47,9 @@ struct TadaView: View {
             
             
         }
+        .onAppear {
+            AudioServicesPlaySystemSound(1311)
+        }
     }
+        
 }

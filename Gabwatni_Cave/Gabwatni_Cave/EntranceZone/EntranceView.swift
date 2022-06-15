@@ -20,6 +20,8 @@ struct EntranceView: View {
     @State var xPosition : CGFloat = UIScreen.main.bounds.width/2
     @State var yPosition : CGFloat = UIScreen.main.bounds.height/3
     
+    @State var degree : Double = 0
+    
     @Binding var flow : Int
     var body: some View {
         ZStack{
@@ -33,6 +35,15 @@ struct EntranceView: View {
                     Button {
                         
                         if !isClicked{
+                            Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true){(timer) in
+                                if degree == 360 {
+                                    timer.invalidate()
+                                }else{
+                                    degree += 20
+                                }
+                                
+                            }
+                            
                             ges(strnum: stringNumber)
                             isClicked = true
                             AudioServicesPlaySystemSound(1311)
@@ -49,9 +60,9 @@ struct EntranceView: View {
                     } label: {
                         Image(!isClicked ? "동달" : charArr[stringNumber-1])
                             .resizable()
-                            .scaleEffect(1.0)
-                            .frame(width: (!isClicked ? "동달" : charArr[stringNumber-1]) == "동달" ? UIScreen.main.bounds.height/3: UIScreen.main.bounds.height/4, height: (!isClicked ? "동달" : charArr[stringNumber-1]) == "동달" ? UIScreen.main.bounds.height/3: UIScreen.main.bounds.height/4*2, alignment: .center)
-                            
+//                            .scaleEffect(1.0)
+                            .frame(width: (!isClicked ? "동달" : charArr[stringNumber-1]) == "동달" ? UIScreen.main.bounds.height/20 * 9 : UIScreen.main.bounds.height/4, height: (!isClicked ? "동달" : charArr[stringNumber-1]) == "동달" ? UIScreen.main.bounds.height/20 * 6 : UIScreen.main.bounds.height/4*2, alignment: .center)
+                            .rotationEffect(.degrees(degree))
                     }
                     .position(x: xPosition
                               , y: yPosition)
@@ -92,8 +103,8 @@ struct EntranceView: View {
                                     .foregroundColor(.white)
                                     
                         }
-                        .position(x: UIScreen.main.bounds.width/8 * 6
-                                  , y: UIScreen.main.bounds.height/13 * 11)
+                        .position(x: UIScreen.main.bounds.width/16 * 13
+                                  , y: UIScreen.main.bounds.height/15 * 13)
                         }
                        
                         
@@ -115,7 +126,7 @@ struct EntranceView: View {
         
         Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
             if strnum >= StrArr.count - 1 {timer.invalidate()}
-            AudioServicesPlaySystemSound(1306)
+            AudioServicesPlaySystemSound(1104)
             str += String(StrArr[strnum][StrArr[strnum].index(StrArr[strnum].startIndex, offsetBy: index)])
             index+=1
             if index == length{
@@ -159,3 +170,5 @@ extension String {
         return String(self[startIndex ..< endIndex])
     }
 }
+
+

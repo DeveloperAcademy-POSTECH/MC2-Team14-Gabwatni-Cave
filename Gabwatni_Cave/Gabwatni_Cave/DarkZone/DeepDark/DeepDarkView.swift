@@ -24,7 +24,7 @@ struct DeepDarkView: View {
     @State var firstTalk: Bool = true
     
     let textArray: [String] = ["이제 다음은 마지막 존이야, 조심해야해 !", " "]
-    let textArray2: [String] = ["다 살펴보지 않았는데, 벌써 갈거야?", " "]
+    
     
     @State private var inputString = ""
     @State private var textEnd: Bool = false
@@ -37,16 +37,9 @@ struct DeepDarkView: View {
                         testRender.toggle()
                     }
                 
-                if !presentView && !darkTalk {
+                if !vm.fakeDie && !presentView && !darkTalk {
                     LightView()
-                        .onAppear {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                                if vm.itemDict["arachnocampa"]! && vm.itemDict["dragonmillipede"]! && firstTalk {
-                                    darkTalk = true
-                                    firstTalk = false
-                                }
-                            }
-                        }
+
                 }
                 
                 if vm.itemDict["arachnocampa"]! && vm.itemDict["dragonmillipede"]!  {
@@ -63,13 +56,20 @@ struct DeepDarkView: View {
                 if presentView {
                     CardView(imageName: showingImage, cardState: $presentView)
                         .padding(.top, 40)
+                        .onDisappear {
+                            if vm.itemDict["arachnocampa"]! && vm.itemDict["dragonmillipede"]! {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) {
+                                    darkTalk = true
+                                }
+                            }
+                        }
                 }
                 
                 if vm.fakeDie {
                     DeepDarkFakeDieView(darkTalk: $darkTalk)
                 }
                 
-                if darkTalk && !vm.fakeDie {
+                if !vm.fakeDie && darkTalk {
                     Rectangle()
                         .foregroundColor(.black)
                         .ignoresSafeArea()
@@ -98,7 +98,7 @@ struct DeepDarkView: View {
         
         Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
             if inputIndex >= stringArray.count - 1 {timer.invalidate()}
-            AudioServicesPlaySystemSound(1306)
+            AudioServicesPlaySystemSound(1104)
             inputString += String(stringArray[inputIndex][stringArray[inputIndex].index(stringArray[inputIndex].startIndex, offsetBy: index)])
             index+=1
             
