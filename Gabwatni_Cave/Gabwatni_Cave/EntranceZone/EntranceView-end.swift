@@ -99,8 +99,8 @@ struct EntranceView_end: View {
                                     .foregroundColor(.white)
                                     
                         }
-                        .position(x: UIScreen.main.bounds.width/8 * 6
-                                  , y: UIScreen.main.bounds.height/13 * 11)
+                        .position(x: UIScreen.main.bounds.width/16 * 13
+                                  , y: UIScreen.main.bounds.height/15 * 13)
                         }
                         
                         
