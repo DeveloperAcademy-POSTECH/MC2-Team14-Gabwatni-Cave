@@ -26,12 +26,11 @@ struct EntranceView_stone: View {
                     }label: {
                         Circle()
                             .inset(by: 0)
-                            .stroke(Color.white.opacity(0.7), lineWidth: 2)
+                            .stroke(Color("bright"), lineWidth: 2)
                             .frame(width: 20, height: 20, alignment: .center)
-                            .position(x: UIScreen.main.bounds.size.width * 6 / 7 + 8, y: UIScreen.main.bounds.size.height / 2 - 10)
                             .opacity(isViewing ? 0 : 1)
                     }
-                    
+                    .position(x: UIScreen.main.bounds.size.width * 6 / 7 + 8, y: UIScreen.main.bounds.size.height / 2 - 10)
                     
                 }
                 Spacer()
