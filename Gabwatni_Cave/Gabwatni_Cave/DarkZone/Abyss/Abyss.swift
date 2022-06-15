@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct Abyss: View {
+    @EnvironmentObject var vm: CardViewModel2
+    
     @State var abyssView = true
+    
+    @State var isBoss: Bool = false
     
     let size = UIScreen.main.bounds
     
@@ -21,8 +25,8 @@ struct Abyss: View {
     @State private var isFirst: Bool = true
     
     // 손전등 관련 변수들
-    @State var dragOffset = CGSize.zero
-    @State var dragOffset2 = CGSize.zero
+//    @State var dragOffset = CGSize.zero
+//    @State var dragOffset2 = CGSize.zero
     
     var body: some View {
 //        let distance = sqrt((pow(dragOffset.width - 200, 2)) + pow(dragOffset.height - 300, 2))
@@ -36,13 +40,38 @@ struct Abyss: View {
                     .scaledToFit()
                     .ignoresSafeArea()
                 
-                LightView()
+                if !presentView || !abyssView {
+                    LightView()
+                        .onAppear{
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                if vm.itemDict["water"]! && vm.itemDict["cavecoral"]! {
+                                    //
+                                    
+                                    withAnimation(.easeIn(duration: 1.5)){
+                                        
+                                        isBoss = true
+                                    }
+                                }
+                            }
+                        }
+                }
                 
-                LightItemView(thisPositionX: -50, thisPositionY: 300, thisFrameWidth: 30, thisFrameHeight: 30, isShowing: $presentView, imageName: "circle", showingImage: "water")
                 
+                LightItemView(thisPositionX: 50, thisPositionY: 300, thisFrameWidth: 30, thisFrameHeight: 30, isShowing: $presentView, imageName: "circle", showingImage: "water")
+                
+                LightItemView(thisPositionX: -75, thisPositionY: -200, thisFrameWidth: 30, thisFrameHeight: 30, isShowing: $presentView, imageName: "circle", showingImage: "cavecoral")
+                
+                
+                if presentView {
+                    CardView(imageName: "bat", cardState: $presentView)
+                        .padding(.top, 40)
+                    
+                }
+           
+                    
+//  Group{
 //                LightItemView(thisPositionX: -50, thisPositionY: 300, thisFrameWidth: 100, thisFrameHeight: 150, isShowing: $presentView, imageName: "circle", showingImage: "cavecoral")
-                
-                
 //                RadialGradient(
 //                    gradient: Gradient(colors: [Color(0xFFFFFF, alpha: 0.1), Color(0x000000, alpha: 1)]),
 //                    center: .center,
@@ -74,12 +103,12 @@ struct Abyss: View {
 //                            abyssView = false
 //                        }
 //                }
-//
+//   }
                 QuizView(quizModel: QuizModel())
                         .onAppear{
                             playSound(sound: "Action_Hero", type: ".mp3")
                         }
-                        .opacity(abyssView ? 0 : 1 )
+                        .opacity(isBoss ? 1 : 0)
                 
                 
                 
