@@ -182,7 +182,7 @@ struct newTextBox2: View {
         
         Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
             if strnum >= StrArr.count - 1 {timer.invalidate()}
-            AudioServicesPlaySystemSound(1306)
+            AudioServicesPlaySystemSound(1104)
             str += String(StrArr[strnum][StrArr[strnum].index(StrArr[strnum].startIndex, offsetBy: index)])
             index+=1
             if index == length{
