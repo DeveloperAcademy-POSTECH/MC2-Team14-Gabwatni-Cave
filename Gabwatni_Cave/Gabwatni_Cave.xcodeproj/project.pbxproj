@@ -63,6 +63,7 @@
 		7BE8736728538F8E006AEE89 /* RandomGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8736628538F8E006AEE89 /* RandomGameView.swift */; };
 		7BF24D55285855A200227E2E /* ClearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF24D54285855A200227E2E /* ClearView.swift */; };
 		7BF24D57285862CF00227E2E /* Gabwatni_CaveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF24D56285862CF00227E2E /* Gabwatni_CaveApp.swift */; };
+		8ECECAC42859F27900BAF8E0 /* worldMapView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECECAC32859F27800BAF8E0 /* worldMapView2.swift */; };
 		8EF731AA28570EB500D9A61A /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF731A928570EB500D9A61A /* StartView.swift */; };
 		8EF731AC28570F1800D9A61A /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF731AB28570F1800D9A61A /* CharacterView.swift */; };
 		8EF731AE2857247D00D9A61A /* IntroControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF731AD2857247D00D9A61A /* IntroControl.swift */; };
@@ -150,6 +151,7 @@
 		7BE8736628538F8E006AEE89 /* RandomGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGameView.swift; sourceTree = "<group>"; };
 		7BF24D54285855A200227E2E /* ClearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearView.swift; sourceTree = "<group>"; };
 		7BF24D56285862CF00227E2E /* Gabwatni_CaveApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveApp.swift; sourceTree = "<group>"; };
+		8ECECAC32859F27800BAF8E0 /* worldMapView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = worldMapView2.swift; sourceTree = "<group>"; };
 		8EF731A928570EB500D9A61A /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		8EF731AB28570F1800D9A61A /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 		8EF731AD2857247D00D9A61A /* IntroControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroControl.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				321C5A2C285302B40092C4E4 /* worldMapView.swift */,
+				8ECECAC32859F27800BAF8E0 /* worldMapView2.swift */,
 			);
 			path = WorldMap;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				78D62F072858BE7C001A3991 /* Dongdalsays.swift in Sources */,
 				7BF24D57285862CF00227E2E /* Gabwatni_CaveApp.swift in Sources */,
 				7BF24D55285855A200227E2E /* ClearView.swift in Sources */,
+				8ECECAC42859F27900BAF8E0 /* worldMapView2.swift in Sources */,
 				787554AF285327B500CF7F61 /* textBox.swift in Sources */,
 				3234D75228587E07001654D4 /* RainEffect.swift in Sources */,
 				321C5A2F285323580092C4E4 /* InventoryView.swift in Sources */,
