@@ -1,5 +1,5 @@
 //
-//  worldMapView.swift
+//  WorldMapView.swift
 //  Gabwatni_Cave
 //
 //  Created by 이창형 on 2022/06/10.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct worldMapView: View {
+struct WorldMapView: View {
     @Environment(\.dismiss) private var dismiss
     var body: some View {
         ZStack{
@@ -44,8 +44,8 @@ struct worldMapView: View {
     }
 }
 
-struct worldMapView_Previews: PreviewProvider {
+struct WorldMapView_Previews: PreviewProvider {
     static var previews: some View {
-        worldMapView()
+        WorldMapView()
     }
 }
