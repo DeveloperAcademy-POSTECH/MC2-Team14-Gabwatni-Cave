@@ -12,6 +12,7 @@ struct TadaView: View {
     let imageName : String
     @State var angle: Double = 0.0
     @State var isAnimating = false
+    let rotate: Double
     
     var body: some View {
         ZStack {
@@ -43,7 +44,7 @@ struct TadaView: View {
                 .scaledToFit()
                 .opacity(0.9)
                 .frame(width: 250, height: 250)
-                .rotationEffect(.degrees(30))
+                .rotationEffect(.degrees(rotate))
             
             
         }
