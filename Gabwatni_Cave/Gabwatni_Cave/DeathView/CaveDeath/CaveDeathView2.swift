@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DeathView: View {
+struct CaveDeathView2: View {
     @State var textAnimation = false
     @EnvironmentObject var vm : CardViewModel2
     
@@ -19,12 +19,16 @@ struct DeathView: View {
     
     @State var count: Int = 0
     
+    @Binding var realDie: Bool
+    
     var body: some View {
         ZStack{
             Image("DeathView")
                 .ignoresSafeArea()
                 .onTapGesture {
-                    vm.flow = 3
+                    realDie = false
+                    vm.fakeDie = false
+                    vm.flow = 2
                 }
             
             VStack(alignment: .center) {

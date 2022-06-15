@@ -20,8 +20,13 @@ struct CaveDeathView: View {
     @State var isFinished = false
     @State var xPosition : CGFloat = UIScreen.main.bounds.width/2
     @State var yPosition : CGFloat = UIScreen.main.bounds.height/3
-    var body: some View {
+    @Binding var realDie: Bool
     
+    var body: some View {
+        if !isEnd {
+            CaveDeathView2(reasonText: "동달의 말을 듣지 않아서", tipText: "말을 잘 들읍시다.", realDie: $realDie)
+        }
+        else {
         ZStack{
             
             Color.black.opacity(1)
@@ -53,7 +58,6 @@ struct CaveDeathView: View {
                                     
                                 }
                                 else if stringNumber == 15{
-//
                                     isClicked.toggle()
                                     isEnd.toggle()
                                 }
@@ -97,6 +101,7 @@ struct CaveDeathView: View {
                     
                 }
             }
+        }
         }
     }
     
