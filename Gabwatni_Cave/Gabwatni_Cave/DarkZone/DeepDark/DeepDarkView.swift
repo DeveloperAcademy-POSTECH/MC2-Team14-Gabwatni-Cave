@@ -54,7 +54,7 @@ struct DeepDarkView: View {
                 LightItemView(thisPositionX: 200, thisPositionY: -200, thisFrameWidth: 150, thisFrameHeight: 150, isShowing: $presentView, imageName: "dragonmillipede", degreeNum: 20.0, showingImage: showingImage)
                 
                 if presentView {
-                    CardView(imageName: showingImage, cardState: $presentView)
+                    CardView(imageName: vm.imageName, cardState: $presentView)
                         .padding(.top, 40)
                         .onDisappear {
                             if vm.itemDict["arachnocampa"]! && vm.itemDict["dragonmillipede"]! {
