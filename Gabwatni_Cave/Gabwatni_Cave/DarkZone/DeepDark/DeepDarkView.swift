@@ -78,6 +78,7 @@ struct DeepDarkView: View {
                     Image("dongdal")
                         .resizable()
                         .frame(width: 300, height: 300)
+                        .offset(y: -80)
                     
                     textBox(name: "동달", text: inputString)
                         .onAppear {
