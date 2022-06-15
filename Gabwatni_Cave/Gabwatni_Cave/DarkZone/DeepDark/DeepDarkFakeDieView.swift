@@ -24,14 +24,22 @@ struct DeepDarkFakeDieView: View {
     @State private var realDie: Bool = false
     
     @State var isEnd = true
+    
     var body: some View {
         if realDie {
-            if isEnd{
-                CaveDeathView(isEnd: $isEnd)
-            }
-            else{
-                DeathView(reasonText: "동달의 말을 듣지 않아서", tipText: "말을 잘 들읍시다.")
-            }
+          
+            CaveDeathView(isEnd: $isEnd, realDie: $realDie)
+            
+//            else{
+//                DeathView(reasonText: "동달의 말을 듣지 않아서", tipText: "말을 잘 들읍시다.")
+//                    .onAppear {
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+//                            print(realDie)
+//                            print("hihi")
+//                            vm.flow = 3
+//                        }
+//                    }
+//            }
         }
         else {
             ZStack{
@@ -98,7 +106,7 @@ struct DeepDarkFakeDieView: View {
                                         .resizable()
                                         .frame(width: 310, height: 60)
                                     
-                                    Text("너무 좁아보이긴 하네요... 다른 곳을 찾아 볼게요!")
+                                    Text("다른 곳을 찾아 볼게요!")
                                         .font(.custom("Sam3KRFont", size: 20))
                                         .foregroundColor(.white)
                                 }

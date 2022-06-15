@@ -51,18 +51,21 @@ class CardViewModel: ObservableObject {
 
 }
 
-class CardViewModel2: ObservableObject {
+final class CardViewModel2: ObservableObject {
 
-    @Published var flow = 1
+
+    @Published var flow: Int = 3
+    
+    @Published var isSound: Bool = false
     
     @Published var fakeDie: Bool = false
     
     @Published var imageName: String = ""
     @Published var imageTitle: String = ""
     @Published var imageText: [String] = []
-    @Published var inputString = ""
-    @Published var textEnd = true
-    @Published var stringArrayIndex = 0
+    @Published var inputString: String = ""
+    @Published var textEnd: Bool = true
+    @Published var stringArrayIndex: Int = 0
     
     @Published var dragOffset = CGSize.zero
     @Published var dragOffset2 = CGSize.zero
