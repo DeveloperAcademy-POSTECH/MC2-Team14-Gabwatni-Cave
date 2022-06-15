@@ -53,7 +53,9 @@ class CardViewModel: ObservableObject {
 
 class CardViewModel2: ObservableObject {
 
+
     @Published var flow = -1
+
     
     @Published var fakeDie: Bool = false
     
@@ -72,7 +74,7 @@ class CardViewModel2: ObservableObject {
     
     let CardData : [String : Array<String>] = [
         "bat" : ["박쥐", "동굴 생태계에서 필수적인 존재|밤에는 동굴 밖에서 먹이를 잡아먹고 동굴 내부에 배설|이 배설물이 동굴 생물에게 중요한 영양분이 됨"],
-        "arachnocampa" : ["아라크노캄파", "몸에서 밝은 빛을 발하여 동굴 반딧불이라고도 불림|천장에 끈적이는 실로 둥지를 만듦|빛으로 먹이를 유인한 뒤 실로 잡아당겨 사냥"],
+        "arachnocampa" : ["아라크로캄파", "몸에서 밝은 빛을 발하여 동굴 반딧불이라고도 불림|천장에 끈적이는 실로 둥지를 만듦|빛으로 먹이를 유인한 뒤 실로 잡아당겨 사냥"],
         "dragonmillipede" : ["드래곤 밀리패드", "주로 낙엽 사이에 사는 최대 길이 3cm의 절지동물|몇몇 종은 동굴에서도 살며 자신을 보호하기 위해 시안화수소를 내뿜음"],
         "baconsheet" : ["커튼 종유석","물이 넓게 퍼져 흘러내리면서 동굴 천장 혹은 벽에 커튼 모양으로 형성된 종유석"],
         "sodastraw" : ["종유관","지하수가 석회동굴의 천장에 맺혀 생김|이때 생긴 석회질이 천장에 수직으로 매달린 빨대 모양을 형성한 것"],
