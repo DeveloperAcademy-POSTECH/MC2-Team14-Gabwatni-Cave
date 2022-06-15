@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         if vm.flow == -1 {
-            IntroControl(flow: 0)
+            IntroControl()
         }
         else if vm.flow == 0 {
             AncestorView(mainflow: vm.flow)
