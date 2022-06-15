@@ -25,7 +25,6 @@ struct DeepDarkView: View {
     
     let textArray: [String] = ["이제 다음은 마지막 존이니 조심하시게!", " "]
     
-    
     @State private var inputString = ""
     @State private var textEnd: Bool = false
     

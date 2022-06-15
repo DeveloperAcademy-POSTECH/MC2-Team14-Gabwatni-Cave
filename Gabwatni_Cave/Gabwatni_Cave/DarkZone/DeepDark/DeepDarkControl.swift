@@ -21,6 +21,13 @@ struct DeepDarkControl: View {
         }
         else if deepDarkControl == 0 {
             DeepDarkView(mainflow: vm.flow)
+                .onAppear {
+                    vm.itemDict["dragonmillipede"] = false
+                    vm.itemDict["arachnocampa"] = false
+                }
+        }
+        else {
+            
         }
         
     }
