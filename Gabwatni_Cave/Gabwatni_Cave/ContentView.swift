@@ -29,7 +29,7 @@ struct ContentView: View {
                     vm.dragOffset = CGSize.zero
                     vm.dragOffset2 = CGSize.zero
                 }
-        }
+        }   
         else if vm.flow == 4 {
             Abyss()
         }
