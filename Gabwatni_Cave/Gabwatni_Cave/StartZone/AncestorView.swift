@@ -37,7 +37,7 @@ struct AncestorView: View {
     @State private var stringArrayIndex = 0
     let startStringArray : [String] = ["어지러워...여긴 어디지?", "혹시 저 해골은 할아버지의 할아버지의 할아버지?!","(잠시 묵념을 한다.)", "손에 들고 계신건 뭐지?", "(해골을 한 번 눌러보자)"," "]
     let mapStringArray : [String] = ["어라?", "이건 지도인가..?", "(지도를 획득했다.)", "저기 왼쪽에 반짝이는건 뭐지?", "(왼쪽의 손전등을 눌러보자)"," "]
-    let flashStringArray : [String] = ["오잉??", "이건 후레시!?", "(손전등을 획득했다.)","(아래의 발자국 버튼을 눌러 다음 장소로 이동하자)", " "]
+    let flashStringArray : [String] = ["오잉??", "이건 후레시!?", "(손전등을 획득했다.)","(발자국 버튼을 눌러 다음 장소로 이동하자)", " "]
     
     var body: some View {
         ZStack {
@@ -210,9 +210,10 @@ struct AncestorView: View {
                                         .scaledToFit()
                                         .frame(width: 80, height: 80, alignment: .center)
                                         .foregroundColor(.white)
+                                        .opacity(0.8)
                                 }
                             }
-                            .position(x: 300, y: 700)
+                            .position(x: 200, y: 330)
                         }
                         
                         // 오브젝트를 발견했을 때 띄워주는 뷰

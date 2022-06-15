@@ -17,11 +17,11 @@ struct SoundCautionView: View {
                 Image("soundsnail")
                 .position(x: UIScreen.main.bounds.width/6*4, y:UIScreen.main.bounds.height/3 )
             if(toggle1){
-                Text("*       원할한 플레이를 위해      *").foregroundColor(.white).font(.title)
+                Text("*  원할한 플레이를 위해  *").foregroundColor(.white).font(.custom("Sam3KRFont", size: 24))
                         .position(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/20*12)
             }
             if toggle2{
-                Text("*   이어폰 착용을 권장합니다  *").foregroundColor(.white).font(.title)
+                Text("*  이어폰 착용을 권장합니다. *").foregroundColor(.white).font(.custom("Sam3KRFont", size: 24))
                     .position(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/20*13)
                   
             }

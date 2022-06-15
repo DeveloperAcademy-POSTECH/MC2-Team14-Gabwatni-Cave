@@ -63,7 +63,6 @@ struct TwilightView: View {
             
             if presentView {
                 CardView(imageName: vm.imageName, cardState: $presentView)
-                    .padding(.top, 40)
             }
             
             if twilightTalk {
