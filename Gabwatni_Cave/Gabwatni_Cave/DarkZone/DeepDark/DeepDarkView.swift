@@ -23,7 +23,7 @@ struct DeepDarkView: View {
     @State var darkTalk: Bool = false
     @State var firstTalk: Bool = true
     
-    let textArray: [String] = ["이제 다음은 마지막 존이야, 조심해야해 !", " "]
+    let textArray: [String] = ["이제 다음은 마지막 존이니 조심하시게!", " "]
     
     
     @State private var inputString = ""

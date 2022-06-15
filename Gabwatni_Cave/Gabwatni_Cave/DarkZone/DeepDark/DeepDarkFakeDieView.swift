@@ -11,8 +11,8 @@ import AVFoundation
 struct DeepDarkFakeDieView: View {
     @EnvironmentObject var vm: CardViewModel2
     
-    let textArray: [String] = ["다 살펴보지 않았는데, 벌써 갈거야? 여기 그리고 좁아보이는데 ??", " "]
-    let textArray2: [String] = ["병호 쿤 여기로 들어갈 수 있을거라, 생각해?", " "]
+    let textArray: [String] = ["아직 다 살펴보지 않았는데, 벌써 갈건가? 여기 그리고 좁아보이지 않나?", " "]
+    let textArray2: [String] = ["병호군 여기로 들어갈 수 있을거라 생각하시나?", " "]
     
     @State private var inputString: String = ""
     @State private var textEnd: Bool = false
@@ -63,7 +63,7 @@ struct DeepDarkFakeDieView: View {
                                     .foregroundColor(.gray)
                                     .opacity(0.5)
                                     .overlay{
-                                        Text("니가 뭔데 이래라 저래라야 난 간다.")
+                                        Text("그래도 저는 갑니다.")
                                             .font(.custom("Sam3KRFont", size: 16))
                                             .foregroundColor(.white)
                                     }
@@ -79,7 +79,7 @@ struct DeepDarkFakeDieView: View {
                                     .foregroundColor(.gray)
                                     .opacity(0.5)
                                     .overlay{
-                                        Text("너무 좁아보이긴 하네, 다른 곳을 찾아 볼게")
+                                        Text("너무 좁아보이긴 하네요... 다른 곳을 찾아 볼게요!")
                                             .font(.custom("Sam3KRFont", size: 16))
                                             .foregroundColor(.white)
                                     }
@@ -114,7 +114,7 @@ struct DeepDarkFakeDieView: View {
                                     .foregroundColor(.gray)
                                     .opacity(0.5)
                                     .overlay{
-                                        Text("니가 뭔데 이래라 저래라야 난 간다.")
+                                        Text("그래도 저는 갑니다.")
                                             .font(.custom("Sam3KRFont", size: 16))
                                             .foregroundColor(.white)
                                     }
@@ -130,7 +130,7 @@ struct DeepDarkFakeDieView: View {
                                     .foregroundColor(.gray)
                                     .opacity(0.5)
                                     .overlay{
-                                        Text("너무 좁아보이긴 하네, 다른 곳을 찾아 볼게")
+                                        Text("너무 좁아보이긴 하네요... 다른 곳을 찾아 볼게요!")
                                             .font(.custom("Sam3KRFont", size: 16))
                                             .foregroundColor(.white)
                                     }
