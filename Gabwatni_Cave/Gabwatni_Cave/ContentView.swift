@@ -22,6 +22,10 @@ struct ContentView: View {
         }
         else if vm.flow == 2 {
             Dongdalsays()
+                .onAppear {
+                    vm.itemDict["bat"] = false
+                    vm.itemDict["salamander"] = false
+                }
         }
         else if vm.flow == 3 {
             DeepDarkControl(mainflow: vm.flow)
@@ -32,6 +36,10 @@ struct ContentView: View {
         }   
         else if vm.flow == 4 {
             Abyss()
+                .onAppear {
+                    vm.itemDict["water"] = false
+                    vm.itemDict["cavecoral"] = false
+                }
         }
         else if vm.flow == 5 {
             ClearView()

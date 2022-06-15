@@ -12,7 +12,7 @@ struct CaveDeathView: View {
     @Binding var isEnd : Bool
     
     @State var str = ""
-    @State var StrArr : [String] = ["엄청 좁은 길이니까 조심하시게.","알아서 할게..요~ 따라 오기나해요", "억! 저 손전등을 놓쳤어요!","(쿠당탕탕)","빨리 안 줍지않고 뭐하는것이오! 아무것도 보이지않소!","근데 저 틈에 몸이 낀 것 같아요...","몸이 움직여지지 않는가??","네 힘을 더 줬다간 다리가 부러질거같아요...","내가 가지말라 하지 않았소...","저 좀 구해주면 안될까요?(눈물)","미안하네 내가 뭘 해 줄수가 없구먼...","정말 미안하네.","피는 못속이는구먼... 다시 후손을 기다려야겠어.","동달!! 어디갔어요 저 두고 가는거에요...?","(동굴에는 고요한 적막만이 흘렀다...)"," "]
+    @State var StrArr : [String] = ["엄청 좁은 길이니까 조심하시게.","알아서 할게..요~ 따라 오기나해요", "억! 저 손전등을 놓쳤어요!","(쿠당탕탕)","빨리 줍지않고 뭐하는것이오! 아무것도 보이지않소!","근데 저 틈에 몸이 낀 것 같아요...","몸이 움직여지지 않는가??","네 힘을 더 줬다간 다리가 부러질거같아요...","내가 가지말라 하지 않았소...","저 좀 구해주면 안될까요?(눈물)","미안하네 내가 뭘 해 줄수가 없구먼...","정말 미안하네.","피는 못속이는구먼... 다시 후손을 기다려야겠어.","동달!! 어디갔어요 저 두고 가는거에요...?","(동굴에는 고요한 적막만이 흘렀다...)"," "]
     @State var charArr : [String] = ["동달","최병호", "최병호"," " ,"동달","최병호","동달","최병호","동달","최병호","동달","동달","동달","최병호"," "," " ]
     @State var stringNumber = 0
     @State var toggle  = false
@@ -20,8 +20,13 @@ struct CaveDeathView: View {
     @State var isFinished = false
     @State var xPosition : CGFloat = UIScreen.main.bounds.width/2
     @State var yPosition : CGFloat = UIScreen.main.bounds.height/3
-    var body: some View {
+    @Binding var realDie: Bool
     
+    var body: some View {
+        if !isEnd {
+            CaveDeathView2(reasonText: "동달의 말을 듣지 않아서", tipText: "말을 잘 들읍시다.", realDie: $realDie)
+        }
+        else {
         ZStack{
             
             Color.black.opacity(1)
@@ -53,7 +58,6 @@ struct CaveDeathView: View {
                                     
                                 }
                                 else if stringNumber == 15{
-//
                                     isClicked.toggle()
                                     isEnd.toggle()
                                 }
@@ -97,6 +101,7 @@ struct CaveDeathView: View {
                     
                 }
             }
+        }
         }
     }
     

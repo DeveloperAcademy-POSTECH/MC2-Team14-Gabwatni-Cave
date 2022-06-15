@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DeathView: View {
+struct CaveDeathView2: View {
     @State var textAnimation = false
     @EnvironmentObject var vm : CardViewModel2
     
@@ -19,12 +19,16 @@ struct DeathView: View {
     
     @State var count: Int = 0
     
+    @Binding var realDie: Bool
+    
     var body: some View {
         ZStack{
             Image("DeathView")
                 .ignoresSafeArea()
                 .onTapGesture {
-                    vm.flow = 3
+                    realDie = false
+                    vm.fakeDie = false
+                    vm.flow = 2
                 }
             
             VStack(alignment: .center) {
@@ -53,7 +57,14 @@ struct DeathView: View {
                 
                 
                 // TODO: 일단 다시하기 누르면 맨 처음으로 돌아가는 걸로 설정해놨습니다.
-
+//                Button {
+//                    vm.flow = 3
+//            } label: {
+//                    Text(restartText)
+//                        .font(.custom("Sam3KRFont", size: 24))
+//                        .foregroundColor(.red)
+//                        .opacity(textAnimation ? 1 : 0)
+//                }
                 
                 Spacer()
             }

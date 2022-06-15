@@ -10,6 +10,8 @@ import AVFoundation
 struct EntranceView_end: View {
     @EnvironmentObject var vm: CardViewModel2
     
+    @State var footPrintTapped = false
+    
     var mainflow: Int
     //@Binding var mainflow : Int
     
@@ -105,6 +107,7 @@ struct EntranceView_end: View {
                     }
                     if isEnd{
                         Button{
+                            footPrintTapped = true
                             playSoundEffect(sound: "walk", type: ".mp3")
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                                 vm.flow = 2
@@ -116,6 +119,7 @@ struct EntranceView_end: View {
                         }
                         .position(x: UIScreen.main.bounds.width/2
                                   , y: UIScreen.main.bounds.height/5 * 3)
+                        .disabled(footPrintTapped)
                         
                     }
                 }
