@@ -66,6 +66,9 @@ struct LightItemView: View {
                         .position(x: thisPositionX, y: thisPositionY)
                         .frame(width: thisFrameWidth, height: thisFrameHeight)
                         .onTapGesture {
+                            if imageName == "bat" {
+                                playSoundEffect(sound: "bat", type: ".mp3")
+                            }
                             isShowing.toggle()
                             showingImage = imageName
                             vm.itemDict[imageName] = true
