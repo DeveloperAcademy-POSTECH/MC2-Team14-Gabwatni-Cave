@@ -37,10 +37,7 @@ struct DeepDarkFakeDieView: View {
                 Image("dongdal")
                     .resizable()
                     .frame(width: 300, height: 300)
-                    .onTapGesture {
-                        darkTalk = false
-                        vm.fakeDie = false
-                    }
+                  
                 if vm.itemDict["arachnocampa"]! && vm.itemDict["dragonmillipede"]! {
                     textBox(name: "동달", text: inputString)
                         .onAppear {
