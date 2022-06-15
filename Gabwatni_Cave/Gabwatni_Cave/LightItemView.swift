@@ -20,7 +20,7 @@ struct LightItemView: View {
     private(set) var imageName: String
     private(set) var degreeNum: Double = 0.0
     
-    @Binding var showingImage: String
+    @State var showingImage: String
     
     let size = UIScreen.main.bounds
     
@@ -29,53 +29,55 @@ struct LightItemView: View {
         
         // 거리 <= 루트(상호작용 물체의 프레임/2) + 손전등 반지름(100)
         if distance <= sqrt(2) * (thisFrameWidth / 2.3) + 80 {
-                if imageName == "footprint"{
-                    Image(imageName)
-                        .shimmered(degreeNum: 15.0)
-                        .position(x: thisPositionX, y: thisPositionY)
-                        .frame(width: thisFrameWidth, height: thisFrameHeight)
-                        .onTapGesture {
-                            withAnimation(.easeIn) {
-                                //mainflow = 1
-
-                                playSoundEffect(sound: "walk", type: ".mp3")
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                                    vm.flow += 1
-                                                            }
+            if imageName == "footprint"{
+                Image(imageName)
+                    .shimmered(degreeNum: 15.0)
+                    .position(x: thisPositionX, y: thisPositionY)
+                    .frame(width: thisFrameWidth, height: thisFrameHeight)
+                    .onTapGesture {
+                        withAnimation(.easeIn) {
+                            //mainflow = 1
+                            
+                            playSoundEffect(sound: "walk", type: ".mp3")
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                                vm.flow += 1
                             }
                         }
-                } else if imageName == "fakefootprint" {
-                    Image(imageName)
-                        .shimmered(degreeNum: -20.0)
-                        .position(x: thisPositionX, y: thisPositionY)
-                        .frame(width: thisFrameWidth, height: thisFrameHeight)
-                        .onTapGesture {
-                            withAnimation(.easeIn) {
-                                //mainflow = 1
-                                playSoundEffect(sound: "walk", type: ".mp3")
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                                    vm.fakeDie = true
-                                                            }
+                    }
+            } else if imageName == "fakefootprint" {
+                Image(imageName)
+                    .shimmered(degreeNum: -20.0)
+                    .position(x: thisPositionX, y: thisPositionY)
+                    .frame(width: thisFrameWidth, height: thisFrameHeight)
+                    .onTapGesture {
+                        withAnimation(.easeIn) {
+                            playSoundEffect(sound: "walk", type: ".mp3")
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                                vm.fakeDie = true
                             }
-                                                    }
-                }
-                
-                else {
-                    Image(imageName)
-                        .shimmered(degreeNum: 30)
-                        .position(x: thisPositionX, y: thisPositionY)
-                        .frame(width: thisFrameWidth, height: thisFrameHeight)
-                        .onTapGesture {
-                            if imageName == "bat" {
-                                playSoundEffect(sound: "bat", type: ".mp3")
-                            }
-                            isShowing.toggle()
-                            showingImage = imageName
-                            vm.itemDict[imageName] = true
                         }
-                }
-                
+                    }
             }
+            
+            else {
+                Image(imageName)
+                    .shimmered(degreeNum: 30)
+                    .position(x: thisPositionX, y: thisPositionY)
+                    .frame(width: thisFrameWidth, height: thisFrameHeight)
+                    .onTapGesture {
+                        if imageName == "bat" {
+                            playSoundEffect(sound: "bat", type: ".mp3")
+                        }
+                        isShowing.toggle()
+                        if showingImage == "" {
+                            showingImage = imageName
+                        }
+                        vm.imageName = imageName
+                        vm.itemDict[showingImage] = true
+                    }
+            }
+            
+        }
         
     }
 }

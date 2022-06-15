@@ -20,7 +20,7 @@ struct Dongdalsays: View {
             ZStack{
                 Color.black
                     .ignoresSafeArea()
-                dongdalTextBox(StrArr: ["여기서 부터는 엄청 어두워 질거야!","아까 얻은 Flashlight를 켜줄게 !","진짜 어두워!!","떨어뜨리지 말고 잘 끌어서 써야해!!"," "], charArr: ["동달","동달","동달","동달"," "],state: $state)
+                dongdalTextBox(StrArr: ["여기서 부터는 엄청 어두워질걸세!","내가 아까 얻은 후레시를 켜주겠네.","조심함세...","후레시를 드래그하여 동굴의 어두운 부분을 비춰 볼 수 있다네!"," "], charArr: ["동달","동달","동달","동달"," "],state: $state)
                     
                 VStack{
                     Image("dongdal")
