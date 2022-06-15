@@ -54,12 +54,12 @@ struct TwilightView: View {
             }
             
             if vm.itemDict["bat"]! && vm.itemDict["salamander"]! {
-                LightItemView(thisPositionX: 180, thisPositionY: 380, thisFrameWidth: 150, thisFrameHeight: 100, isShowing: $presentView, imageName: "footprint", degreeNum: 50.0, showingImage: $showingImage)
+                LightItemView(thisPositionX: 180, thisPositionY: 380, thisFrameWidth: 150, thisFrameHeight: 100, isShowing: $presentView, imageName: "footprint", degreeNum: 50.0, showingImage: showingImage)
             }
             
-            LightItemView(thisPositionX: 200, thisPositionY: 100, thisFrameWidth: 100, thisFrameHeight: 250, isShowing: $presentView, imageName: "bat", degreeNum: 55.0, showingImage: $showingImage)
+            LightItemView(thisPositionX: 200, thisPositionY: 100, thisFrameWidth: 100, thisFrameHeight: 250, isShowing: $presentView, imageName: "bat", degreeNum: 55.0, showingImage: showingImage)
             
-            LightItemView(thisPositionX: -80, thisPositionY: 350, thisFrameWidth: 150, thisFrameHeight: 150, isShowing: $presentView, imageName: "salamander", degreeNum: 30.0, showingImage: $showingImage)
+            LightItemView(thisPositionX: -80, thisPositionY: 350, thisFrameWidth: 150, thisFrameHeight: 150, isShowing: $presentView, imageName: "salamander", degreeNum: 30.0, showingImage: showingImage)
             
             if presentView {
                 CardView(imageName: showingImage, cardState: $presentView)

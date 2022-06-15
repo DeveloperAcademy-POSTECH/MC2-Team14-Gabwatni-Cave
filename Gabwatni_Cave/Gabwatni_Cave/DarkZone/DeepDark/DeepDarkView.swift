@@ -43,15 +43,15 @@ struct DeepDarkView: View {
                 }
                 
                 if vm.itemDict["arachnocampa"]! && vm.itemDict["dragonmillipede"]!  {
-                    LightItemView(thisPositionX: 200, thisPositionY: 400, thisFrameWidth: 100, thisFrameHeight: 100, isShowing: $presentView, imageName: "footprint", degreeNum: 55.0, showingImage: $showingImage)
+                    LightItemView(thisPositionX: 200, thisPositionY: 400, thisFrameWidth: 100, thisFrameHeight: 100, isShowing: $presentView, imageName: "footprint", degreeNum: 55.0, showingImage: showingImage)
                 }
                 
                 
-                LightItemView(thisPositionX: 0, thisPositionY: 0, thisFrameWidth: 100, thisFrameHeight: 100, isShowing: $presentView, imageName: "fakefootprint", showingImage: $showingImage)
+                LightItemView(thisPositionX: 0, thisPositionY: 0, thisFrameWidth: 100, thisFrameHeight: 100, isShowing: $presentView, imageName: "fakefootprint", showingImage: showingImage)
                 
-                LightItemView(thisPositionX: -50, thisPositionY: 300, thisFrameWidth: 100, thisFrameHeight: 150, isShowing: $presentView, imageName: "arachnocampa", showingImage: $showingImage)
+                LightItemView(thisPositionX: -50, thisPositionY: 300, thisFrameWidth: 100, thisFrameHeight: 150, isShowing: $presentView, imageName: "arachnocampa", showingImage: showingImage)
                 
-                LightItemView(thisPositionX: 200, thisPositionY: -200, thisFrameWidth: 150, thisFrameHeight: 150, isShowing: $presentView, imageName: "dragonmillipede", degreeNum: 20.0, showingImage: $showingImage)
+                LightItemView(thisPositionX: 200, thisPositionY: -200, thisFrameWidth: 150, thisFrameHeight: 150, isShowing: $presentView, imageName: "dragonmillipede", degreeNum: 20.0, showingImage: showingImage)
                 
                 if presentView {
                     CardView(imageName: showingImage, cardState: $presentView)
