@@ -63,6 +63,9 @@ struct TwilightView: View {
             
             if presentView {
                 CardView(imageName: vm.imageName, cardState: $presentView)
+                    .onDisappear {
+                        vm.itemDict[vm.imageName] = true
+                    }
             }
             
             if twilightTalk {
