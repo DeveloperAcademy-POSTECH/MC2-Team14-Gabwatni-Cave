@@ -105,7 +105,11 @@ struct TwilightView: View {
                 }
             }
             .opacity(isFirst ? 1 : 0)
-            .animation(.easeIn, value: isFirst)
+            .animation(.easeIn(duration: 0.8), value: isFirst)
+        }
+        .onDisappear{
+            vm.dragOffset = CGSize.zero
+            vm.dragOffset2 = CGSize.zero
         }
     }
     

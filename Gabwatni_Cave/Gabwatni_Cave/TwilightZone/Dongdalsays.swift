@@ -15,11 +15,12 @@ struct Dongdalsays: View {
     var body: some View {
         if state {
             TwilightView(mainflow: 1)
-        }else{
+                .animation(.easeIn(duration: 0.8),value: state)
+        } else{
             ZStack{
                 Color.black
                     .ignoresSafeArea()
-                dongdalTextBox(StrArr: ["여기서 부터는 엄청 어두워 질거야!","아까 얻은 Flashlight를 사용하자!","진짜 어두워!!","잘 끌어다 써야돼!!"," "], charArr: ["동달","동달","동달","동달"," "],state: $state)
+                dongdalTextBox(StrArr: ["여기서 부터는 엄청 어두워 질거야!","아까 얻은 Flashlight를 켜줄게 !","진짜 어두워!!","떨어뜨리지 말고 잘 끌어서 써야해!!"," "], charArr: ["동달","동달","동달","동달"," "],state: $state)
                     
                 VStack{
                     Image("dongdal")
@@ -29,10 +30,8 @@ struct Dongdalsays: View {
                 }
                 .position(x: xPosition
                           , y: yPosition)
-                .onAppear{
-                    playSound(sound: "Enter_TwilightZoneBGM", type: ".mp3")
-                }
             }
+            
         }
         
         
@@ -110,7 +109,10 @@ struct dongdalTextBox: View {
                                 }
                                 else if stringNumber == StrArr.count-1{
                                     isClicked = false
-                                    state.toggle()
+                                    withAnimation(.easeIn(duration: 1.2)) {
+                                        state.toggle()
+                                    }
+                                    //state.toggle()
                                     print(1323)
                                 }
                                 isFinished.toggle()
