@@ -1,8 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "water.png",
-
+      "filename" : "real water.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
