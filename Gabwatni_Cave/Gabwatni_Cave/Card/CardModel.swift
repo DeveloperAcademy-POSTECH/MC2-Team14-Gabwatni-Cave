@@ -53,11 +53,14 @@ class CardViewModel: ObservableObject {
 
 final class CardViewModel2: ObservableObject {
 
-    @Published var flow: Int = 2
+    @Published var flow: Int = 4
     
     @Published var isSound: Bool = false
     
     @Published var fakeDie: Bool = false
+    @Published var isBossShowing: Bool = false
+    @Published var isBossTalk: Bool = false
+    
     
     @Published var imageName: String = ""
     @Published var imageTitle: String = ""
