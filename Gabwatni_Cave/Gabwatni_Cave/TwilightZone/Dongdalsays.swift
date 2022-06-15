@@ -26,7 +26,7 @@ struct Dongdalsays: View {
                     Image("dongdal")
                         .resizable()
                         .scaleEffect(1.0)
-                        .frame(width: UIScreen.main.bounds.height/3,height:   UIScreen.main.bounds.height/3,alignment: .center)
+                        .frame(width: UIScreen.main.bounds.height/20 * 9,height:   UIScreen.main.bounds.height/20 * 6,alignment: .center)
                 }
                 .position(x: xPosition
                           , y: yPosition)
