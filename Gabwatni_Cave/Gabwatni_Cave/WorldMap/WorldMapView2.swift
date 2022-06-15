@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct worldMapView2: View {
+struct WorldMapView2: View {
     @Environment(\.dismiss) private var dismiss
     //    @Binding var showSheet: Bool
     var image: String
@@ -47,8 +47,8 @@ struct worldMapView2: View {
     }
 }
 
-struct worldMapView2_Previews: PreviewProvider {
+struct WorldMapView2_Previews: PreviewProvider {
     static var previews: some View {
-        worldMapView2(image: "worldmap3", myPosition: "다음 모험을 떠나볼까...")
+        WorldMapView2(image: "worldmap3", myPosition: "다음 모험을 떠나볼까...")
     }
 }
