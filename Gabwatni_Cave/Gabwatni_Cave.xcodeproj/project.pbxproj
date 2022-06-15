@@ -19,7 +19,6 @@
 		32258CD42859B29E004EC422 /* mapGain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32258CD32859B29E004EC422 /* mapGain.wav */; };
 		32258CD62859B3A6004EC422 /* flashGain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32258CD52859B3A6004EC422 /* flashGain.wav */; };
 		32258CD82859BA0F004EC422 /* bat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32258CD72859BA0F004EC422 /* bat.mp3 */; };
-		3231169E2858E58A00C5160D /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3231169D2858E58A00C5160D /* start.mp3 */; };
 		3234D74D285878EE001654D4 /* BGM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234D74C285878EE001654D4 /* BGM.swift */; };
 		3234D75228587E07001654D4 /* RainEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234D75128587E07001654D4 /* RainEffect.swift */; };
 		3234D75628587E31001654D4 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3234D75428587E31001654D4 /* MyParticle.sks */; };
@@ -50,6 +49,7 @@
 		7810DA4028521C8000069CFB /* EntranceControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810DA3F28521C8000069CFB /* EntranceControl.swift */; };
 		7810DA4228521F2900069CFB /* EntranceView-stone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810DA4128521F2900069CFB /* EntranceView-stone.swift */; };
 		7810DA4428522C4D00069CFB /* EntranceView-info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810DA4328522C4D00069CFB /* EntranceView-info.swift */; };
+		781E4D442859CBD800296745 /* CaveDeathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781E4D432859CBD800296745 /* CaveDeathView.swift */; };
 		78259A442855998D0096AB51 /* EntranceView-start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78259A432855998D0096AB51 /* EntranceView-start.swift */; };
 		78259A462855D5C90096AB51 /* EntranceView-end.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78259A452855D5C90096AB51 /* EntranceView-end.swift */; };
 		78259A4C2856686F0096AB51 /* newTextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78259A4B2856686F0096AB51 /* newTextBox.swift */; };
@@ -106,7 +106,6 @@
 		32258CD32859B29E004EC422 /* mapGain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mapGain.wav; sourceTree = "<group>"; };
 		32258CD52859B3A6004EC422 /* flashGain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = flashGain.wav; sourceTree = "<group>"; };
 		32258CD72859BA0F004EC422 /* bat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bat.mp3; sourceTree = "<group>"; };
-		3231169D2858E58A00C5160D /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
 		3234D74C285878EE001654D4 /* BGM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGM.swift; sourceTree = "<group>"; };
 		3234D75128587E07001654D4 /* RainEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainEffect.swift; sourceTree = "<group>"; };
 		3234D75428587E31001654D4 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
@@ -136,6 +135,7 @@
 		7810DA3F28521C8000069CFB /* EntranceControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceControl.swift; sourceTree = "<group>"; };
 		7810DA4128521F2900069CFB /* EntranceView-stone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntranceView-stone.swift"; sourceTree = "<group>"; };
 		7810DA4328522C4D00069CFB /* EntranceView-info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntranceView-info.swift"; sourceTree = "<group>"; };
+		781E4D432859CBD800296745 /* CaveDeathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaveDeathView.swift; sourceTree = "<group>"; };
 		78259A432855998D0096AB51 /* EntranceView-start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntranceView-start.swift"; sourceTree = "<group>"; };
 		78259A452855D5C90096AB51 /* EntranceView-end.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntranceView-end.swift"; sourceTree = "<group>"; };
 		78259A4B2856686F0096AB51 /* newTextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newTextBox.swift; sourceTree = "<group>"; };
@@ -344,6 +344,7 @@
 		6E01FB4828520B2C00B98789 /* DeathView */ = {
 			isa = PBXGroup;
 			children = (
+				781E4D422859CBBD00296745 /* CaveDeath */,
 				6E01FB4928520B4A00B98789 /* DeathView.swift */,
 			);
 			path = DeathView;
@@ -377,6 +378,14 @@
 				7810DA3C2852189800069CFB /* Sam3KRFont.ttf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		781E4D422859CBBD00296745 /* CaveDeath */ = {
+			isa = PBXGroup;
+			children = (
+				781E4D432859CBD800296745 /* CaveDeathView.swift */,
+			);
+			path = CaveDeath;
 			sourceTree = "<group>";
 		};
 		7B9E61AF2852043200C931F4 /* DarkZone */ = {
@@ -601,6 +610,7 @@
 				6E01FB562852245000B98789 /* TestLightView.swift in Sources */,
 				32C4769628571A8B003D0BB4 /* DeepDarkControl.swift in Sources */,
 				CCF6C24B2852092D00C48E22 /* AncestorView.swift in Sources */,
+				781E4D442859CBD800296745 /* CaveDeathView.swift in Sources */,
 				8EF731AE2857247D00D9A61A /* IntroControl.swift in Sources */,
 				7BF24D57285862CF00227E2E /* Gabwatni_CaveApp.swift in Sources */,
 				7BF24D55285855A200227E2E /* ClearView.swift in Sources */,
