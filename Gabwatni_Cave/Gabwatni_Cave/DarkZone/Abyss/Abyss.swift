@@ -69,8 +69,6 @@ struct Abyss: View {
                 
                 if presentView {
                     CardView(imageName: "bat", cardState: $presentView)
-                        .padding(.top, 40)
-                    
                 }
                 
                 
@@ -109,9 +107,9 @@ struct Abyss: View {
                 //                }
                 //   }
                 QuizView(quizModel: QuizModel())
-                    .onAppear{
-                        if isBoss {playSound(sound: "Action_Hero", type: ".mp3")}
-                    }
+//                    .onAppear{
+//                        if isBoss {playSound(sound: "Action_Hero", type: ".mp3")}
+//                    }
                     .opacity(isBoss ? 1 : 0)
                 
                 
