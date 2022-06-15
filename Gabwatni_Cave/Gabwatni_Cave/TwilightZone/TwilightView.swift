@@ -107,6 +107,10 @@ struct TwilightView: View {
             .opacity(isFirst ? 1 : 0)
             .animation(.easeIn, value: isFirst)
         }
+        .onDisappear{
+            vm.dragOffset = CGSize.zero
+            vm.dragOffset2 = CGSize.zero
+        }
     }
     
     func talkOnTextBox (stringArray: [String], inputIndex: Int){

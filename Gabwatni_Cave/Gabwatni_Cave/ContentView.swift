@@ -32,10 +32,6 @@ struct ContentView: View {
         }
         else if vm.flow == 4 {
             Abyss()
-                .onAppear{
-                    vm.dragOffset = CGSize.zero
-                    vm.dragOffset2 = CGSize.zero
-                }
         }
     }
 }
