@@ -12,6 +12,8 @@ import AVFoundation
 struct AncestorView: View {
     @EnvironmentObject var vm: CardViewModel2
     
+    @State var footPrintTapped = false
+    
     var mainflow : Int
     //@Binding var mainflow : Int
     
@@ -194,6 +196,7 @@ struct AncestorView: View {
                         if count == 3 {
                             HStack{
                                 Button{
+                                    footPrintTapped = true
                                     withAnimation(.easeIn) {
                                         //mainflow = 1
                                         playSoundEffect(sound: "walk", type: ".mp3")
@@ -214,6 +217,7 @@ struct AncestorView: View {
                                 }
                             }
                             .position(x: 200, y: 330)
+                            .disabled(footPrintTapped)
                         }
                         
                         // 오브젝트를 발견했을 때 띄워주는 뷰
