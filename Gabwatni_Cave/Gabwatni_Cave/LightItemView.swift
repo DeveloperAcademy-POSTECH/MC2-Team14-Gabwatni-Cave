@@ -17,7 +17,7 @@ struct LightItemView: View {
     
     @Binding var isShowing: Bool
     
-    private(set) var imageName: String
+    @State var imageName: String
     private(set) var degreeNum: Double = 0.0
     
     @State var showingImage: String
@@ -40,7 +40,7 @@ struct LightItemView: View {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                                 if vm.flow == 2 {
                                     vm.flow = 3
-                                } else if vm.flow == 3 && vm.itemDict["water"]! {
+                                } else if vm.flow == 3 && vm.itemDict["dragonmillipede"]! {
                                     vm.flow = 4
                                 }
                             }
@@ -71,14 +71,11 @@ struct LightItemView: View {
                             playSoundEffect(sound: "bat", type: ".mp3")
                         }
                         isShowing.toggle()
-                        if showingImage != imageName {
-                            showingImage = imageName
+                        if showingImage != imageName && showingImage.count != 0 {
+                            print(showingImage)
+                            imageName = showingImage
                         }
                         vm.imageName = imageName
-                        //vm.itemDict[showingImage] = true
-                    }
-                    .onAppear {
-                        vm.itemDict[showingImage] = true
                     }
             }
             
