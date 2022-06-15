@@ -45,6 +45,7 @@ struct DeathView: View {
                 // TODO: 일단 다시하기 누르면 맨 처음으로 돌아가는 걸로 설정해놨습니다.
                 Button {
                     vm.flow = 3
+                    print("sdfs")
             } label: {
                     Text(restartText)
                         .font(.custom("Sam3KRFont", size: 24))
