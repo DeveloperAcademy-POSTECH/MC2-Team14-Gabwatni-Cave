@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DeathView: View {
+    @State var textAnimation = false
     @EnvironmentObject var vm : CardViewModel2
     
     private(set) var reasonText: String
@@ -48,6 +49,7 @@ struct DeathView: View {
                     Text(restartText)
                         .font(.custom("Sam3KRFont", size: 24))
                         .foregroundColor(.red)
+                        .opacity(textAnimation ? 1 : 0)
                 }
                 
                 Spacer()
@@ -55,6 +57,9 @@ struct DeathView: View {
         }
         .onAppear{
             playSound(sound: "start", type: ".mp3")
+            withAnimation(.spring().repeatForever()) {
+                textAnimation = true
+            }
         }
     }
 }

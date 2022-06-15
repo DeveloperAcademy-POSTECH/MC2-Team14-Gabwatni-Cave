@@ -40,31 +40,31 @@ struct ClearView: View {
                 Color.black.opacity(0.6)
                 VStack(spacing: 20){
                     HStack{Text("지금까지")
-                            .font(.title)
+                            .font(.custom("Sam3KRFont", size: 30))
                             .foregroundColor(.white)
                     }
                     HStack{Text("플레이 해주셔서 ")
-                            .font(.title)
+                            .font(.custom("Sam3KRFont", size: 30))
                             .foregroundColor(.white)
                     }
                     HStack{Text("감사합니다")
-                            .font(.title)
+                            .font(.custom("Sam3KRFont", size: 30))
                             .foregroundColor(.white)
                     }
                     HStack{Text("가봤니?-동굴편")
-                            .font(.title)
+                            .font(.custom("Sam3KRFont", size: 30))
                             .foregroundColor(.white)
                     }
                     HStack{Text("클리어를 축하드립니다.")
-                            .font(.title)
+                            .font(.custom("Sam3KRFont", size: 30))
                             .foregroundColor(.white)
                     }
                     HStack{Text("가봤니?-북한편으로")
-                            .font(.title)
+                            .font(.custom("Sam3KRFont", size: 30))
                             .foregroundColor(.white)
                     }
                     HStack{Text("돌아오겠습니다.")
-                            .font(.title)
+                            .font(.custom("Sam3KRFont", size: 30))
                             .foregroundColor(.white)
                     }
                 }

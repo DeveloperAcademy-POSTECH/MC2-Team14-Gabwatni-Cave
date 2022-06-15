@@ -33,6 +33,9 @@ struct ContentView: View {
         else if vm.flow == 4 {
             Abyss()
         }
+        else if vm.flow == 5 {
+            ClearView()
+        }
     }
 }
 
