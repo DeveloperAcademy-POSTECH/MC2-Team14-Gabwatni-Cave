@@ -231,6 +231,7 @@ struct AncestorView: View {
     
     private var AncestorShimmeringView: some View {
         Button {
+            playSoundEffect(sound: "mapGain", type: ".wav")
             withAnimation(.easeOut(duration: 2)) {
                 ancestorState = false
             }
@@ -274,6 +275,7 @@ struct AncestorView: View {
     
     private var flashShimmeringView: some View {
         Button {
+            playSoundEffect(sound: "flashGain", type: ".wav")
             withAnimation(.easeInOut) {
                 lightState = false
                 textboxState[2] = true
