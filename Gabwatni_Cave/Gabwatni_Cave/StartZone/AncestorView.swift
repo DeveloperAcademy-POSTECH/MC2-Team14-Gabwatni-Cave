@@ -35,9 +35,9 @@ struct AncestorView: View {
     @State private var textEnd: Bool = false
     @State private var inputString = ""
     @State private var stringArrayIndex = 0
-    let startStringArray : [String] = ["어지러워...여기가 어디지?", "혹시...할아버지의 할아버지의 할아버지 ?!","(묵념)", "손에 들고 계신건 뭐지 ?", "(조상님의 해골을 눌러보자)"," "]
+    let startStringArray : [String] = ["어지러워...여기가 어디지?", "저 해골은 할아버지의 할아버지의 할아버지 ?!","(잠시 묵념을 한다)", "손에 들고 계신건 뭐지 ?", "(해골을 눌러보자)"," "]
     let mapStringArray : [String] = ["엇...?", "이건 지도인가..?", "(지도를 획득했다.)", "엇 저기 반짝이는건 뭐지??", "(손전등을 눌러보자)"," "]
-    let flashStringArray : [String] = ["오잉???", "이건 Flashlight?", "(손전등을 획득했다.)", " "]
+    let flashStringArray : [String] = ["오잉???", "이건 Flashlight?", "(손전등을 획득했다.)","(발자국 버튼을 눌러 다음 장소로 이동하자)", " "]
     
     var body: some View {
         ZStack {
@@ -145,6 +145,11 @@ struct AncestorView: View {
                                 .onAppear {
                                     talkOnTextBox(stringArray: mapStringArray, inputIndex: stringArrayIndex)
                                 }
+                                .onDisappear {
+                                    withAnimation (.easeIn(duration: 1)){
+                                        lightState = true
+                                    }
+                                }
                             if textEnd {
                                 Button{
                                     talkOnTextBox(stringArray: mapStringArray, inputIndex: stringArrayIndex)
@@ -191,11 +196,12 @@ struct AncestorView: View {
                                 Button{
                                     withAnimation(.easeIn) {
                                         //mainflow = 1
-
                                         playSoundEffect(sound: "walk", type: ".mp3")
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                                            vm.flow = 1
-                                                                    }
+                                            withAnimation(.easeInOut(duration: 2)) {
+                                                vm.flow = 1
+                                            }
+                                        }
                                     }
                                 }label: {
                                     //Image("salamander")
@@ -254,11 +260,6 @@ struct AncestorView: View {
                 Image("skeletonMapX")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .onAppear {
-                        withAnimation (.easeIn(duration: 2).delay(2)){
-                            lightState = true
-                        }
-                    }
             }
         }
         .frame(width: 200, height: 200)
@@ -282,7 +283,7 @@ struct AncestorView: View {
             Image("flashlight")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 15)
+                .frame(width: 20)
                 .rotationEffect(.degrees(80))
                 .opacity(lightState ? 0.7 : 0)
                 .shimmering(active: lightState, duration: 2.0)
