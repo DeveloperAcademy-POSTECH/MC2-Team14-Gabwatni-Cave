@@ -171,7 +171,7 @@ struct ClearView: View {
                 
                 if isEnded{
                     Button{
-                        vm.flow = 6
+                        vm.flow = 7
                     }label: {
                         Text("-다음-")
                             .font(.custom("Sam3KRFont", size: 30))
