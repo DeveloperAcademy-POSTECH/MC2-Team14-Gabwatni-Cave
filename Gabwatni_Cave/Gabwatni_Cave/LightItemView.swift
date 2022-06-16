@@ -24,6 +24,9 @@ struct LightItemView: View {
     
     let size = UIScreen.main.bounds
     
+    @State private var animationAmount: CGFloat = 1
+    @State var isViewing: Bool = false
+    
     var body: some View {
         let distance = sqrt((pow(vm.dragOffset.width - thisPositionX, 2)) + pow(vm.dragOffset.height - thisPositionY, 2))
         
@@ -40,7 +43,7 @@ struct LightItemView: View {
                                 playSoundEffect(sound: "walk", type: ".mp3")
                                 vm.isSound = true
                             }
-                           
+                            
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                                 if vm.flow == 2 {
                                     vm.flow = 3
@@ -66,6 +69,56 @@ struct LightItemView: View {
                             }
                         }
                     }
+            }
+            
+            else if imageName == "circle"{
+                Circle()
+                    .inset(by: 0)
+                    .stroke(Color("bright"), lineWidth: 2)
+                    .opacity(isViewing ? 0 : 1)
+                    .overlay {
+                        Button {
+                            if vm.flow == 4 {
+                                if vm.isBossShowingBefore {
+                                    vm.isBossTalk = true
+                                }
+                                else {
+                                    vm.isBossShowingBefore = true
+                                    isShowing = true
+                                    if showingImage != imageName && showingImage.count != 0 {
+                                        print(showingImage)
+                                        imageName = showingImage
+                                    }
+                                    vm.imageName = imageName
+                                    isViewing.toggle()
+                                }
+                            }
+                            
+                            
+                        } label: {
+                            Circle()
+                                .stroke(Color.white, lineWidth: 2)
+                                .scaleEffect(animationAmount)
+                            //animationAmount가 1이면 불트명이 1이고, 2이면 불투명도가 0이다
+                                .opacity(Double(2 - animationAmount))
+                                .animation(Animation.easeInOut(duration: 1.2)
+                                    .repeatForever(autoreverses: false))
+                        }
+                        
+                        
+                        
+                        
+                    }
+                    .position(x: thisPositionX, y: thisPositionY)
+                    .frame(width: 20, height: 20, alignment: .center)
+                
+                    .onAppear {
+                        self.animationAmount = 2
+                    }
+                    .onDisappear {
+                        self.animationAmount = 1
+                    }
+                
             }
             
             else {

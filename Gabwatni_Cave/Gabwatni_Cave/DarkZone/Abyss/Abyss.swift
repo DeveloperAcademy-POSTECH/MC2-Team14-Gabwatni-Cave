@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct Abyss: View {
     @EnvironmentObject var vm: CardViewModel2
@@ -24,14 +25,12 @@ struct Abyss: View {
     
     @State private var isFirst: Bool = true
     
-    // 손전등 관련 변수들
-    //    @State var dragOffset = CGSize.zero
-    //    @State var dragOffset2 = CGSize.zero
+    let textArray: [String] = ["뭔가 좀 이상행 내머리도 이상행", " "]
+    let textArray2: [String] = ["아무리 찾아도 다음 정보가 없어.. 뭔가 이상해", " "]
+    @State private var inputString = ""
+    @State private var textEnd: Bool = false
     
     var body: some View {
-        //        let distance = sqrt((pow(dragOffset.width - 200, 2)) + pow(dragOffset.height - 300, 2))
-        
-        // 심연의 공포 뷰
         if abyssView {
             ZStack {
                 Image("abyss")
@@ -40,7 +39,7 @@ struct Abyss: View {
                     .scaledToFit()
                     .ignoresSafeArea()
                 
-                if !presentView || !abyssView {
+                if !vm.isBossTalk && (!presentView || !abyssView) {
                     LightView()
                         .onAppear{
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -61,61 +60,52 @@ struct Abyss: View {
                         }
                 }
                 
+                if !vm.isBossShowingBefore {
+                    LightItemView(thisPositionX: 50, thisPositionY: 300, thisFrameWidth: 30, thisFrameHeight: 30, isShowing: $presentView, imageName: "circle", showingImage: "water")
+                }
                 
-                LightItemView(thisPositionX: 50, thisPositionY: 300, thisFrameWidth: 30, thisFrameHeight: 30, isShowing: $presentView, imageName: "circle", showingImage: "water")
                 
-                LightItemView(thisPositionX: -75, thisPositionY: -200, thisFrameWidth: 30, thisFrameHeight: 30, isShowing: $presentView, imageName: "circle", showingImage: "cavecoral")
+                if vm.isBossShowingBefore {
+                    LightItemView(thisPositionX: -75, thisPositionY: -200, thisFrameWidth: 30, thisFrameHeight: 30, isShowing: $presentView, imageName: "circle", showingImage: "cavecoral")
+                }
                 
                 
-                if presentView {
-                    CardView(imageName: "bat", cardState: $presentView)
+                
+                //                LightItemView(thisPositionX: 50, thisPositionY: 300, thisFrameWidth: 30, thisFrameHeight: 30, isShowing: $presentView, imageName: "circle", showingImage: "water")
+                //
+                //                LightItemView(thisPositionX: -75, thisPositionY: -200, thisFrameWidth: 30, thisFrameHeight: 30, isShowing: $presentView, imageName: "circle", showingImage: "cavecoral")
+                
+                
+                if presentView && !vm.isBossTalk{
+                    CardView(imageName: vm.imageName, cardState: $presentView)
                         .onDisappear {
                             vm.itemDict[vm.imageName] = true
                         }
                 }
+                else if vm.isBossTalk {
+                    Rectangle()
+                        .foregroundColor(.black)
+                        .ignoresSafeArea()
+                    
+                    Image("choi byung-ho")
+                        .resizable()
+                        .frame(width: 300, height: 300)
+                        .offset(y: -80)
+                        .onTapGesture {
+                            vm.isBossTalk = false
+                        }
+                    
+                    textBox(name: "병호쿤", text: inputString)
+                        .onAppear {
+                            talkOnTextBox(stringArray: textArray2, inputIndex: 0)
+                        }
+                        .onDisappear {
+                            vm.itemDict["cavecoral"] = true
+                        }
+                }
                 
-                
-                //  Group{
-                //                LightItemView(thisPositionX: -50, thisPositionY: 300, thisFrameWidth: 100, thisFrameHeight: 150, isShowing: $presentView, imageName: "circle", showingImage: "cavecoral")
-                //                RadialGradient(
-                //                    gradient: Gradient(colors: [Color(0xFFFFFF, alpha: 0.1), Color(0x000000, alpha: 1)]),
-                //                    center: .center,
-                //                    startRadius: -50,
-                //                    endRadius: 150
-                //                )
-                //                .frame(width: 10000, height: 10000)
-                //                .offset(x: dragOffset.width , y: dragOffset.height)
-                //                .gesture(DragGesture()
-                //                    .onChanged { gesture in
-                //                        dragOffset = CGSize(width: gesture.translation.width + dragOffset2.width, height: gesture .translation.height + dragOffset2.height)
-                //
-                //                    }
-                //                         //함수
-                //                         //온체인지가 함수를 입력값으로 받는 메소드
-                //                    .onEnded { gesture in
-                //                        dragOffset = CGSize(width: gesture.translation.width + dragOffset2.width, height: gesture .translation.height + dragOffset2.height)
-                //                        dragOffset2 = dragOffset
-                //
-                //                        print(distance)
-                //                    })
-                //
-                //                if distance <= sqrt(2) * 30 + 100 {
-                //                    Image("dragonmillipede")
-                //                        .resizable()
-                //                        .position(x: 200, y: 300)
-                //                        .frame(width: 75, height: 150)
-                //                        .onTapGesture {
-                //                            abyssView = false
-                //                        }
-                //                }
-                //   }
                 QuizView(quizModel: QuizModel())
-//                    .onAppear{
-//                        if isBoss {playSound(sound: "Action_Hero", type: ".mp3")}
-//                    }
                     .opacity(isBoss ? 1 : 0)
-                
-                
                 
                 // 진입하면 나오는 view
                 ZStack {
@@ -141,19 +131,35 @@ struct Abyss: View {
                 .animation(.easeIn, value: isFirst)
             }
             
+        }
+    }
+    
+    func talkOnTextBox (stringArray: [String], inputIndex: Int){
+        inputString = ""
+        textEnd = false
+        let length = stringArray[inputIndex].count
+        var index = 0
+        var toggle = false
+        
+        Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
+            if inputIndex >= stringArray.count - 1 {timer.invalidate()}
+            AudioServicesPlaySystemSound(1104)
+            inputString += String(stringArray[inputIndex][stringArray[inputIndex].index(stringArray[inputIndex].startIndex, offsetBy: index)])
+            index+=1
+            
+            if index == length{
+                timer.invalidate()
+                textEnd.toggle()
+            }
+            
+            if toggle {
+                timer.invalidate()
+                inputString += stringArray[inputIndex].substring(from: index, to: length-1)
+                toggle.toggle()
+            }
             
         }
-        // 드래곤 밀리패드 누르면 퀴즈 뷰로 넘어감
-        //        else { QuizView(quizModel: QuizModel())
-        //                .onAppear{
-        //                    playSound(sound: "Action_Hero", type: ".mp3")
-        //                }
-        //        }
-    }
-}
-
-struct Abyss_Previews: PreviewProvider {
-    static var previews: some View {
-        Abyss()
+        
+        
     }
 }
