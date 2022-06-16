@@ -11,10 +11,10 @@ struct DeathView: View {
     @State var textAnimation = false
     @EnvironmentObject var vm : CardViewModel2
     
-    private(set) var reasonText: String
+    private(set) var reasonText: String = "가위 바위 보 져서"
     let deathText: String = "사망"
     
-    private(set) var tipText: String
+    private(set) var tipText: String = "다음엔 더 잘해보시길"
     let restartText: String = "터치해서 다시하기"
     
     @State var count: Int = 0

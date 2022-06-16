@@ -11,6 +11,7 @@ struct EntranceView_stone: View {
    @Binding var flow : Int
     @State var isViewing: Bool = false
     @State private var animationAmount: CGFloat = 1
+    @State var showSheet = false
     var body: some View {
         ZStack{
             Image("entrancecave")
@@ -46,6 +47,17 @@ struct EntranceView_stone: View {
                 }
                 Spacer()
             }
+            Image("mapIcon")
+                .resizable()
+                .frame(width: UIScreen.main.bounds.width/6, height: UIScreen.main.bounds.height/12)
+                .onTapGesture {
+                    playSoundEffect(sound: "mapGain", type: ".wav")
+                    showSheet.toggle()
+                }
+                .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap", myPosition: "현재 위치: 모험의 시작")})
+                .frame(maxWidth:.infinity, maxHeight: .infinity, alignment:.topTrailing)
+            
+            
         }.onAppear(){
             self.animationAmount = 2
         }

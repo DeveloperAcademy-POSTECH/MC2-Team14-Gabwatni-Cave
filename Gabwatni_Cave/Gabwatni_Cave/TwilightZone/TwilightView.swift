@@ -17,7 +17,7 @@ struct TwilightView: View {
     var zoneDescribe: String = "빛과 어둠이\n 만나는 곳"
     
     @State var isFirst: Bool = true
-    
+    @State var showSheet = false
     @State var presentView: Bool = false
     @State var showingImage: String = ""
     
@@ -54,7 +54,10 @@ struct TwilightView: View {
             }
             
             // 석주 넣어야 함
+
+
             if vm.itemDict["bat"]! && vm.itemDict["salamander"]! && vm.itemDict["pillar"]! {
+
                 LightItemView(thisPositionX: 180, thisPositionY: 380, thisFrameWidth: 150, thisFrameHeight: 100, isShowing: $presentView, imageName: "footprint", degreeNum: 50.0, showingImage: showingImage)
             }
             
@@ -103,6 +106,17 @@ struct TwilightView: View {
                         .font(.custom("Sam3KRFont", size: 38))
                         .foregroundColor(.white)
                 }
+                Image("mapIcon")
+                    .resizable()
+                    .frame(width: UIScreen.main.bounds.width/6, height: UIScreen.main.bounds.height/12)
+                    .onTapGesture {
+                        playSoundEffect(sound: "mapGain", type: ".wav")
+                        showSheet.toggle()
+                    }
+                    .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap", myPosition: "현재 위치: 빛과 어둠이 만나는 곳")})
+                    .frame(maxWidth:.infinity, maxHeight: .infinity, alignment:.topTrailing)
+                
+                
             }
             .onAppear{
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
