@@ -35,7 +35,7 @@ struct MiniMapView: View {
                 
                 Text(myPosition)
                     .foregroundColor(.white)
-                    .font(.custom("Sam3KRFont", size: 30))
+                    .font(.custom("Sam3KRFont", size: 20))
                 
                 
             }
