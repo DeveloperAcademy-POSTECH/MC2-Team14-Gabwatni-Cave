@@ -19,11 +19,12 @@ struct MiniMapView: View {
                 .foregroundColor(.black)
             
             VStack{
-                Text("뒤로가기")
-                    .foregroundColor(.white)
+                Image("xicon")
                     .onTapGesture {
                         dismiss()
                     }
+                    .frame(maxWidth:.infinity, alignment: .topTrailing)
+                    .padding()
                 ScrollView(.horizontal){
                     Image(image)
                         .resizable()
@@ -34,6 +35,7 @@ struct MiniMapView: View {
                 
                 Text(myPosition)
                     .foregroundColor(.white)
+                    .font(.custom("Sam3KRFont", size: 30))
                 
                 
             }
