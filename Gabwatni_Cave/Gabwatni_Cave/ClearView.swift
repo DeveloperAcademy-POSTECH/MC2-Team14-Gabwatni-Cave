@@ -14,7 +14,7 @@ struct ClearView: View {
     @EnvironmentObject var vm: CardViewModel2
     @State var isClicked = false
     @State var isEnded = false
-    @State var yposition :CGFloat = UIScreen.main.bounds.height + 1250
+    @State var yposition :CGFloat = UIScreen.main.bounds.height + 1300
     @State var textAnimation = false
     var body: some View {
         ZStack {
@@ -62,7 +62,7 @@ struct ClearView: View {
             Image("clear character")
                 .resizable()
                 .frame(width: size.height/40 * 3, height: size.height/20 * 2, alignment: .center)
-                .position(x: size.width/2, y: size.height/10 * 8)
+                .position(x: size.width/40 * 21, y: size.height/80 * 63)
             Color.black.opacity(isClicked ? 0.6 : 0)
                 .ignoresSafeArea()
             if isClicked{
@@ -88,7 +88,7 @@ struct ClearView: View {
                             .font(.custom("Sam3KRFont", size: 30))
                             .foregroundColor(.white)
                     }
-                    HStack{Text("가봤니?-심해편으로")
+                    HStack{Text("가봤니?-심해 로")
                             .font(.custom("Sam3KRFont", size: 30))
                             .foregroundColor(.white)
                     }
@@ -96,12 +96,8 @@ struct ClearView: View {
                             .font(.custom("Sam3KRFont", size: 30))
                             .foregroundColor(.white)
                     }
-                    HStack{Text("------특별 찬조출연------")
-                            .font(.custom("Sam3KRFont", size: 30))
-                            .foregroundColor(.white)
-                            .padding(.top,40)
-                    }
-                    VStack(spacing: 20){
+                    
+                    VStack(){
                        Image("bat")
                                 .resizable()
                                 .scaledToFit()
@@ -127,41 +123,57 @@ struct ClearView: View {
                                 .scaledToFit()
                                 .frame(width: size.height/2, height: size.height/3, alignment: .center)
                         }
-                        HStack{Text("------Directors------")
+                        Image("choi byung-ho")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: size.height/2, height: size.height/3, alignment: .center)
+                        HStack{Text("--------Credits--------")
                                 .font(.custom("Sam3KRFont", size: 30))
                                 .foregroundColor(.white)
                                 .padding(.top,40)
                         }
+                        
                     }
                     VStack(spacing : 20){
-                        HStack{Text("김아무개")
+                                                HStack{Text("Programming 쉰대렐라")
                                 .font(.custom("Sam3KRFont", size: 30))
                                 .foregroundColor(.white)
                         }
-                        HStack{Text("플레이 해주셔서 ")
+                        HStack{Text("빈센트 반 라우")
                                 .font(.custom("Sam3KRFont", size: 30))
                                 .foregroundColor(.white)
                         }
-                        HStack{Text("감사합니다")
+                        HStack{Text("회장님 이창형")
                                 .font(.custom("Sam3KRFont", size: 30))
                                 .foregroundColor(.white)
                         }
-                        HStack{Text("아무개씨")
+                        HStack{Text("마에스트로 도도")
                                 .font(.custom("Sam3KRFont", size: 30))
                                 .foregroundColor(.white)
                         }
-                        HStack{Text("정신차려")
+                        HStack{Text("상남자 스템")
                                 .font(.custom("Sam3KRFont", size: 30))
                                 .foregroundColor(.white)
                         }
-                        HStack{Text("가봤니?-심해편으로")
+                        HStack{Text("방망이 깎는 노인 칼리")
                                 .font(.custom("Sam3KRFont", size: 30))
                                 .foregroundColor(.white)
                         }
-                        HStack{Text("병호아ㅑ~~~~")
+                        HStack{Text("한성키보드오너 니버")
                                 .font(.custom("Sam3KRFont", size: 30))
                                 .foregroundColor(.white)
                         }
+                        .padding(.bottom,30)
+
+                        HStack{Text("Director")
+                                .font(.custom("Sam3KRFont", size: 40))
+                                .foregroundColor(.white)
+                        }
+                        HStack{Text("쉰대렐라")
+                                .font(.custom("Sam3KRFont", size: 50))
+                                .foregroundColor(.white)
+                        }
+
 
                     }
 
@@ -178,7 +190,7 @@ struct ClearView: View {
                             .foregroundColor(.white)
                             .opacity(textAnimation ? 1 : 0)
                     }
-                    .position(x: size.width/2, y: size.height/10 * 6)
+                    .position(x: size.width/2, y: size.height/10 * 8)
                     .onAppear(){
                         withAnimation(.spring().repeatForever()) {
                             textAnimation = true
