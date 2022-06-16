@@ -18,12 +18,14 @@ struct ClearView: View {
     @State var textAnimation = false
     var body: some View {
         ZStack {
-            
                 Image("end")
                     .resizable()
                     .frame(width: size.width, height: size.height, alignment: .center)
                     .scaledToFit()
                     .ignoresSafeArea()
+                    .onAppear{
+                        playSound(sound: "end", type: ".mp3")
+                    }
                 Text("클리어!")
                 .font(.custom("Sam3KRFont", size: 60))
                 .foregroundColor(.white)
