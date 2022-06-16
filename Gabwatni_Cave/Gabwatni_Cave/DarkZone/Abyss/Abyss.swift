@@ -10,7 +10,7 @@ import AVFoundation
 
 struct Abyss: View {
     @EnvironmentObject var vm: CardViewModel2
-    
+    @State var showSheet = false
     @State var abyssView = true
     
     @State var isBoss: Bool = false

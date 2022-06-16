@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct Gabwatni_CaveApp: App {
     @StateObject private var vm = CardViewModel2()
+    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {

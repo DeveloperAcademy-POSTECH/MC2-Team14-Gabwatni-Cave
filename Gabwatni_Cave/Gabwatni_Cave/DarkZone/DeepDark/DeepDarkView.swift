@@ -13,6 +13,7 @@ struct DeepDarkView: View {
     
     let size: CGRect = UIScreen.main.bounds
     
+    @State var showSheet = false
     @State var presentView: Bool = false
     @State var showingImage: String = ""
     
@@ -91,6 +92,7 @@ struct DeepDarkView: View {
                     }
                 }
             }
+        
     }
     
     func talkOnTextBox (stringArray: [String], inputIndex: Int){
