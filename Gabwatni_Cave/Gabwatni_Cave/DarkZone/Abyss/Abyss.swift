@@ -10,7 +10,7 @@ import AVFoundation
 
 struct Abyss: View {
     @EnvironmentObject var vm: CardViewModel2
-    
+    @State var showSheet = false
     @State var abyssView = true
     
     @State var isBoss: Bool = false
@@ -58,6 +58,17 @@ struct Abyss: View {
                                 }
                             }
                         }
+                    
+                    Image("mapIcon")
+                        .resizable()
+                        .shadow(color: .gray, radius: 2, x: 2, y: 2)
+                        .position(x: 180, y: -315)
+                        .frame(width: UIScreen.main.bounds.width/6, height: UIScreen.main.bounds.height/12)
+                        .onTapGesture {
+                            playSoundEffect(sound: "mapGain", type: ".wav")
+                            showSheet.toggle()
+                        }
+                        .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap", myPosition: "현재 위치: 심연의 공포")})
                 }
                 
                 if !vm.isBossShowingBefore {

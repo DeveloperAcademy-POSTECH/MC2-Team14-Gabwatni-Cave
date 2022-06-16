@@ -74,11 +74,15 @@ struct LightItemView: View {
             else if imageName == "circle"{
                 Circle()
                     .inset(by: 0)
-                    .stroke(Color("bright"), lineWidth: 2)
+                    .stroke(.white, lineWidth: 2)
                     .opacity(isViewing ? 0 : 1)
                     .overlay {
                         Button {
-                            if vm.flow == 4 {
+                            if vm.flow == 2 {
+                                vm.imageName = showingImage
+                                isShowing = true
+                            }
+                            else if vm.flow == 4 {
                                 if vm.isBossShowingBefore {
                                     vm.isBossTalk = true
                                 }
@@ -128,7 +132,7 @@ struct LightItemView: View {
                     .frame(width: thisFrameWidth, height: thisFrameHeight)
                     .onTapGesture {
                         if imageName == "bat" {
-                            playSoundEffect(sound: "bat", type: ".mp3")
+                            playSoundBat(sound: "bat", type: ".mp3")
                         }
                         isShowing.toggle()
                         if showingImage != imageName && showingImage.count != 0 {

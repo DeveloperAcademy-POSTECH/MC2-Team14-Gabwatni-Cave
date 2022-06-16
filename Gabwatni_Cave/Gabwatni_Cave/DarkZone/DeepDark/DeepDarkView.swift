@@ -13,6 +13,7 @@ struct DeepDarkView: View {
     
     let size: CGRect = UIScreen.main.bounds
     
+    @State var showSheet = false
     @State var presentView: Bool = false
     @State var showingImage: String = ""
     
@@ -38,6 +39,17 @@ struct DeepDarkView: View {
                 
                 if !vm.fakeDie && !presentView && !darkTalk {
                     LightView()
+                    
+                    Image("mapIcon")
+                        .resizable()
+                        .shadow(color: .gray, radius: 2, x: 2, y: 2)
+                        .position(x: 180, y: -315)
+                        .frame(width: UIScreen.main.bounds.width/6, height: UIScreen.main.bounds.height/12)
+                        .onTapGesture {
+                            playSoundEffect(sound: "mapGain", type: ".wav")
+                            showSheet.toggle()
+                        }
+                        .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap", myPosition: "현재 위치: 칠흑의 방")})
 
                 }
                 
@@ -79,7 +91,7 @@ struct DeepDarkView: View {
                     
                     Image("dongdal")
                         .resizable()
-                        .frame(width: 300, height: 300)
+                        .frame(width: UIScreen.main.bounds.height / 20 * 9, height: UIScreen.main.bounds.height / 20 * 6)
                         .offset(y: -80)
                     
                     textBox(name: "동달", text: inputString)
@@ -91,6 +103,7 @@ struct DeepDarkView: View {
                     }
                 }
             }
+        
     }
     
     func talkOnTextBox (stringArray: [String], inputIndex: Int){

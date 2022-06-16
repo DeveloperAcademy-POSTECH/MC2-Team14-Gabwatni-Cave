@@ -49,8 +49,8 @@ struct DeepDarkFakeDieView: View {
                 
                 Image("dongdal")
                     .resizable()
-                    .scaledToFit()
-                    .frame(width: 300, height: 300)
+                    
+                    .frame(width: UIScreen.main.bounds.height / 20 * 9, height: UIScreen.main.bounds.height / 20 * 6)
                     .offset(y: -80)
                   
                 if vm.itemDict["arachnocampa"]! && vm.itemDict["dragonmillipede"]! {
