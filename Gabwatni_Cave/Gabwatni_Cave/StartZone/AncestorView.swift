@@ -132,6 +132,7 @@ struct AncestorView: View {
                                     Text("다음")
                                         .font(.custom("Sam3KRFont", size: 20))
                                         .foregroundColor(.white)
+                                        
                                         .frame(width: UIScreen.main.bounds.size.width+300, height: UIScreen.main.bounds.size.height+600, alignment: .center)
                                 
                             }
@@ -156,6 +157,7 @@ struct AncestorView: View {
                                 Text("다음")
                                     .font(.custom("Sam3KRFont", size: 20))
                                     .foregroundColor(.white)
+                                    
                                     .frame(width: UIScreen.main.bounds.size.width+300, height: UIScreen.main.bounds.size.height+600, alignment: .center)
                                 
                             }
@@ -181,6 +183,7 @@ struct AncestorView: View {
                                 Text("다음")
                                     .font(.custom("Sam3KRFont", size: 20))
                                     .foregroundColor(.white)
+                                    
                                     .frame(width: UIScreen.main.bounds.size.width+300, height: UIScreen.main.bounds.size.height+600, alignment: .center)
                                 
                             }
