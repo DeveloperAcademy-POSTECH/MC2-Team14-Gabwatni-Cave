@@ -108,15 +108,6 @@ struct Abyss: View {
                 QuizView(quizModel: QuizModel())
                     .opacity(isBoss ? 1 : 0)
                 
-                Image("mapIcon")
-                    .resizable()
-                    .frame(width: UIScreen.main.bounds.width/6, height: UIScreen.main.bounds.height/12)
-                    .onTapGesture {
-                        playSoundEffect(sound: "mapGain", type: ".wav")
-                        showSheet.toggle()
-                    }
-                    .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap", myPosition: "현재 위치: 심연의 공포")})
-                    .frame(maxWidth:.infinity, maxHeight: .infinity, alignment:.topTrailing)
                 // 진입하면 나오는 view
                 ZStack {
                     Image("horror of the abyss")
