@@ -78,7 +78,11 @@ struct LightItemView: View {
                     .opacity(isViewing ? 0 : 1)
                     .overlay {
                         Button {
-                            if vm.flow == 4 {
+                            if vm.flow == 2 {
+                                vm.imageName = showingImage
+                                isShowing = true
+                            }
+                            else if vm.flow == 4 {
                                 if vm.isBossShowingBefore {
                                     vm.isBossTalk = true
                                 }

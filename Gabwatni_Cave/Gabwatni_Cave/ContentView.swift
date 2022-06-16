@@ -49,6 +49,8 @@ struct ContentView: View {
                 .onAppear {
                     vm.itemDict["water"] = false
                     vm.itemDict["cavecoral"] = false
+                    vm.isBossShowingBefore = false
+                    vm.isBossTalk = false
                 }
         }
         else if vm.flow == 5 {
