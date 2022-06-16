@@ -45,12 +45,14 @@ struct ContentView: View {
                 }
         }   
         else if vm.flow == 4 {
-            Abyss()
+            
+            Abyss(abyssView: true, presentView: false)
                 .onAppear {
                     vm.itemDict["water"] = false
                     vm.itemDict["cavecoral"] = false
                     vm.isBossShowingBefore = false
                     vm.isBossTalk = false
+                    print(vm.itemDict["water"]!)
                 }
         }
         else if vm.flow == 5 {

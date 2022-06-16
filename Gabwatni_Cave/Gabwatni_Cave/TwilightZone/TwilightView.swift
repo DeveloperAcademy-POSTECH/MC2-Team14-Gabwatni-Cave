@@ -57,7 +57,7 @@ struct TwilightView: View {
                     .opacity(0.9)
                     .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                            if vm.itemDict["bat"]! && vm.itemDict["salamander"]! && firstTalk {
+                            if vm.itemDict["bat"]! && vm.itemDict["salamander"]! && firstTalk && vm.itemDict["pillar"]! {
                                 twilightTalk = true
                                 firstTalk = false
                             }
