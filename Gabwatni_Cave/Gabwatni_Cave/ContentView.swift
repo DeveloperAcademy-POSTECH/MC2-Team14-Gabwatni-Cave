@@ -56,6 +56,9 @@ struct ContentView: View {
         else if vm.flow == 5 {
             ClearView()
         }
+        else {
+            DeathView()
+        }
     }
 }
 
