@@ -54,7 +54,7 @@ struct TwilightView: View {
             }
             
             // 석주 넣어야 함
-            if vm.itemDict["bat"]! && vm.itemDict["salamander"]! && vm.itemDict["pillar"]{
+            if vm.itemDict["bat"]! && vm.itemDict["salamander"]! && vm.itemDict["pillar"]! {
                 LightItemView(thisPositionX: 180, thisPositionY: 380, thisFrameWidth: 150, thisFrameHeight: 100, isShowing: $presentView, imageName: "footprint", degreeNum: 50.0, showingImage: showingImage)
             }
             
