@@ -39,6 +39,17 @@ struct DeepDarkView: View {
                 
                 if !vm.fakeDie && !presentView && !darkTalk {
                     LightView()
+                    
+                    Image("mapIcon")
+                        .resizable()
+                        .shadow(color: .gray, radius: 2, x: 2, y: 2)
+                        .position(x: 180, y: -315)
+                        .frame(width: UIScreen.main.bounds.width/6, height: UIScreen.main.bounds.height/12)
+                        .onTapGesture {
+                            playSoundEffect(sound: "mapGain", type: ".wav")
+                            showSheet.toggle()
+                        }
+                        .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap", myPosition: "현재 위치: 칠흑의 방")})
 
                 }
                 
