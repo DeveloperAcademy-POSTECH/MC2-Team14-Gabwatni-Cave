@@ -60,7 +60,8 @@ struct newTextBox: View {
                         Text(str)
                             .font(.custom("Sam3KRFont", size: 20))
                             .foregroundColor(.white)
-                            .frame(width: 250, height: 100, alignment: .center)
+                            .multilineTextAlignment(.leading)
+                            .frame(width: 250, height: 100, alignment: .leading)
                             .overlay(
                                     TextBox()
                                 )

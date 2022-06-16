@@ -11,8 +11,8 @@ import AVFoundation
 struct EntranceView: View {
     @State var str = ""
     @State var str2 = "어떻게 잡았지"
-    @State var StrArr : [String] = ["헉! 자네는 최가문의 후예...","드디어 나를 구하러 왔는가 소년이여...", "자네를 300년 동안 기다렸다네...","반갑소! 난 동달이라네!","혹시 저의 할아버지의 할아버지의 할아버지를 아시나요?", "아... 그는 나랑 같이 동굴을 탈출하려던 동료였다네...(아련)","자네도 나와 함께 동굴 탈출을 시도해보지 않겠나?","물론이죠! 가문의 이름을 걸고 탈출하겠습니다.","그렇다면 출발 전에 동굴에 대한 간단한 설명을 해주겠네...", "이 동굴은 석회동굴이라네...\n저런 종유석들이 있는게 특징이지.","오른쪽의 동그란 원을 눌러 한번 자세히 살펴보지 않겠나?", "카드를 누르면 다른 사진도 볼 수 있다네...", " " ]
-    @State var charArr : [String] = ["동달","동달", "동달","동달","최병호","동달","동달","최병호","동달","동달","동달","동달"," " ]
+    @State var StrArr : [String] = ["헉! 자네는 최가문의 후예...","드디어 나를 구하러 왔는가 소년이여...", "자네를 300년 동안 기다렸다네...","반갑소! 난 동달이라네!","혹시 저의 할아버지의 할아버지의 할아버지를 아시나요?", "아... 그는 나랑 같이 동굴을 탈출하려던 동료였다네...(아련)","자네도 나와 함께 동굴 탈출을 시도해보지 않겠나?","물론이죠! 가문의 이름을 걸고 탈출하겠습니다.","그렇다면 출발 전에 동굴에 대한 간단한 설명을 해주겠네...", "이 동굴은 석회동굴이라네..."," 저런 종유석들이 있는게 특징이지.","오른쪽의 동그란 원을 눌러 한번 자세히 살펴보지 않겠나?", "카드를 누르면 다른 사진도 볼 수 있다네...", " " ]
+    @State var charArr : [String] = ["동달","동달", "동달","동달","최병호","동달","동달","최병호","동달","동달","동달","동달","동달"," " ]
     @State var stringNumber = 0
     @State var toggle  = false
     @State var isClicked = false
@@ -21,6 +21,8 @@ struct EntranceView: View {
     @State var yPosition : CGFloat = UIScreen.main.bounds.height/3
     @State var showSheet = false
     
+    @State var texttoggel = true
+    @State var textAnimation = false
     @State var degree : Double = 0
     
     @Binding var flow : Int
@@ -49,11 +51,11 @@ struct EntranceView: View {
                             ges(strnum: stringNumber)
                             isClicked = true
                             AudioServicesPlaySystemSound(1311)
-                            if stringNumber < 12{
+                            if stringNumber < 13{
                                 stringNumber+=1
                                 
                             }
-                            else if stringNumber == 12{
+                            else if stringNumber == 13{
                                 flow = 1
                                 
                             }
@@ -68,6 +70,15 @@ struct EntranceView: View {
                     }
                     .position(x: xPosition
                               , y: yPosition)
+                    .disabled(isClicked)
+                    if !isClicked{
+                        Text("-달팽이를 터치해 주세요-")
+                            .font(.custom("Sam3KRFont", size: 20))
+                            .foregroundColor(.white)
+                            .opacity(textAnimation ? 1 : 0)
+                            .position(x: xPosition
+                                      , y: UIScreen.main.bounds.size.height/3 * 2)
+                    }
                     
                     if isClicked{
                         Text(!isClicked ? "동달" : charArr[stringNumber-1])
@@ -77,9 +88,10 @@ struct EntranceView: View {
                                       , y: UIScreen.main.bounds.height/10 * 7)
                         
                         Text(str)
+                            .multilineTextAlignment(.leading)
                             .font(.custom("Sam3KRFont", size: 20))
                             .foregroundColor(.white)
-                            .frame(width: 250, height: 100, alignment: .center)
+                            .frame(width: 250, height: 100, alignment: .leading)
                             .overlay(
                                 TextBox()
                             )
@@ -89,11 +101,11 @@ struct EntranceView: View {
                             Button{
                                 ges(strnum: stringNumber)
                                 isClicked = true
-                                if stringNumber < 12{
+                                if stringNumber < 13{
                                     stringNumber+=1
                                     
                                 }
-                                else if stringNumber == 12{
+                                else if stringNumber == 13{
                                     flow = 1
                                     
                                 }
@@ -103,6 +115,7 @@ struct EntranceView: View {
                             Text("다음")
                                 .font(.custom("Sam3KRFont", size: 20))
                                 .foregroundColor(.white)
+                                
                                 .frame(width: UIScreen.main.bounds.size.width+300, height: UIScreen.main.bounds.size.height+600, alignment: .center)
                             
                         }
@@ -116,7 +129,14 @@ struct EntranceView: View {
                 }
                 
             }
-            
+            .onAppear(){
+//                Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (timer) in
+//                    texttoggel.toggle()
+//                }
+                withAnimation(.spring().repeatForever()) {
+                    textAnimation = true
+                }
+            }
             
             Image("mapIcon")
                 .resizable()

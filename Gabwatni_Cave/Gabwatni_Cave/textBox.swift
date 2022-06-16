@@ -16,7 +16,8 @@ struct textBox: View {
                 .font(.custom("Sam3KRFont", size: 20))
                 .foregroundColor(.white)
     //                .background(Color.gray)
-                .frame(width: 250, height: 100, alignment: .center)
+                .multilineTextAlignment(.leading)
+                .frame(width: 250, height: 100, alignment: .leading)
     //                .border(Color.white)
     //                .padding(.top,100)
                 .overlay( // 뷰를 겹치게 하여 border 설정, 라운드 처리를 할 경우 overlay를 통해 border 처리를 해주어야 한다.
