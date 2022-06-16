@@ -9,6 +9,7 @@ import AVFoundation
 
 var audioPlayer: AVAudioPlayer?
 var audioPlayer2: AVAudioPlayer?
+var audioPlayer3: AVAudioPlayer?
 
 func playSound(sound: String, type: String) {
     if let path = Bundle.main.path(forResource: sound, ofType: type) {
@@ -23,6 +24,7 @@ func playSound(sound: String, type: String) {
         }
     }
 }
+
 func playSoundEffect(sound: String, type: String) {
     if let path = Bundle.main.path(forResource: sound, ofType: type) {
         do {
@@ -36,5 +38,20 @@ func playSoundEffect(sound: String, type: String) {
         }
     }
 }
+
+func playSoundBat(sound: String, type: String) {
+    if let path = Bundle.main.path(forResource: sound, ofType: type) {
+        do {
+            _ = try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: .default, options: .mixWithOthers)
+            
+            audioPlayer3 = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            audioPlayer3?.play()
+        } catch {
+            print("ERROR")
+        }
+    }
+}
+
+
 
 
