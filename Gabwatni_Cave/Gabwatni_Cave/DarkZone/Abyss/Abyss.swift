@@ -11,22 +11,25 @@ import AVFoundation
 struct Abyss: View {
     @EnvironmentObject var vm: CardViewModel2
     @State var showSheet = false
-    @State var abyssView = true
+    @State var abyssView: Bool
     
     @State var isBoss: Bool = false
     
+    @State var isTouchable: Bool = false
+    
     let size = UIScreen.main.bounds
     
-    private var zoneText: String = "Dark Zone"
-    private var zoneDescribe: String = "심연의 공포"
+    private(set) var zoneText: String = "Dark Zone"
+    private(set) var zoneDescribe: String = "심연의 공포"
     
-    @State var presentView: Bool = false
+    @State var presentView: Bool
     @State var showingImage: String = ""
     
     @State private var isFirst: Bool = true
     
     let textArray: [String] = ["뭔가 좀 이상해...내 머리도 이상해", " "]
     let textArray2: [String] = ["아무리 찾아도 다음 정보가 없어...\n왜 뭐가 나올것만 같지...?", " "]
+    
     @State private var inputString = ""
     @State private var textEnd: Bool = false
     
@@ -113,11 +116,15 @@ struct Abyss: View {
                         }
                         .onDisappear {
                             vm.itemDict["cavecoral"] = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                                isTouchable.toggle()
+                            }
                         }
                 }
                 
                 QuizView(quizModel: QuizModel())
                     .opacity(isBoss ? 1 : 0)
+                    .allowsHitTesting(isTouchable)
                 
                 // 진입하면 나오는 view
                 ZStack {
