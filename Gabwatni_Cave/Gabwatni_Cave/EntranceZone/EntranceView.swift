@@ -19,6 +19,7 @@ struct EntranceView: View {
     @State var isFinished = false
     @State var xPosition : CGFloat = UIScreen.main.bounds.width/2
     @State var yPosition : CGFloat = UIScreen.main.bounds.height/3
+    @State var showSheet = false
     
     @State var degree : Double = 0
     
@@ -29,7 +30,7 @@ struct EntranceView: View {
                 .resizable()
                 .ignoresSafeArea()
             Color.black.opacity(0.5)
-            .ignoresSafeArea()
+                .ignoresSafeArea()
             VStack{
                 GeometryReader{geo in
                     Button {
@@ -60,27 +61,27 @@ struct EntranceView: View {
                     } label: {
                         Image(!isClicked ? "동달" : charArr[stringNumber-1])
                             .resizable()
-//                            .scaleEffect(1.0)
+                        //                            .scaleEffect(1.0)
                             .frame(width: (!isClicked ? "동달" : charArr[stringNumber-1]) == "동달" ? UIScreen.main.bounds.height/20 * 9 : UIScreen.main.bounds.height/4, height: (!isClicked ? "동달" : charArr[stringNumber-1]) == "동달" ? UIScreen.main.bounds.height/20 * 6 : UIScreen.main.bounds.height/4*2, alignment: .center)
                             .rotationEffect(.degrees(degree))
                     }
                     .position(x: xPosition
                               , y: yPosition)
-                   
+                    
                     if isClicked{
                         Text(!isClicked ? "동달" : charArr[stringNumber-1])
-                                .font(.custom("Sam3KRFont", size: 20))
-                                .foregroundColor(.white)
-                                .position(x: UIScreen.main.bounds.width/5
-                                          , y: UIScreen.main.bounds.height/10 * 7)
+                            .font(.custom("Sam3KRFont", size: 20))
+                            .foregroundColor(.white)
+                            .position(x: UIScreen.main.bounds.width/5
+                                      , y: UIScreen.main.bounds.height/10 * 7)
                         
                         Text(str)
                             .font(.custom("Sam3KRFont", size: 20))
                             .foregroundColor(.white)
                             .frame(width: 250, height: 100, alignment: .center)
                             .overlay(
-                                    TextBox()
-                                )
+                                TextBox()
+                            )
                             .position(x: UIScreen.main.bounds.width/2
                                       , y: UIScreen.main.bounds.height/9 * 7)
                         if isFinished{
@@ -99,14 +100,14 @@ struct EntranceView: View {
                             }
                         label:{
                             Text("다음")
-                                    .font(.custom("Sam3KRFont", size: 20))
-                                    .foregroundColor(.white)
-                                    
+                                .font(.custom("Sam3KRFont", size: 20))
+                                .foregroundColor(.white)
+                            
                         }
                         .position(x: UIScreen.main.bounds.width/16 * 13
                                   , y: UIScreen.main.bounds.height/15 * 13)
                         }
-                       
+                        
                         
                     }
                     
@@ -115,7 +116,20 @@ struct EntranceView: View {
             }
             
             
+            Image("mapIcon")
+                .resizable()
+                .frame(width: UIScreen.main.bounds.width/6, height: UIScreen.main.bounds.height/12)
+                .onTapGesture {
+                    playSoundEffect(sound: "mapGain", type: ".wav")
+                    showSheet.toggle()
+                }
+                .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap", myPosition: "현재 위치: 모험의 시작")})
+                .frame(maxWidth:.infinity, maxHeight: .infinity, alignment:.topTrailing)
+            
+            
+            
         }
+        
     }
     
     
@@ -138,11 +152,12 @@ struct EntranceView: View {
                 str += StrArr[strnum].substring(from: index, to: length-1)
                 toggle.toggle()
             }
-
+            
         }
         
         
     }
+    
 }
 
 
@@ -153,7 +168,7 @@ struct TextBox: View {
             Image("textbox")
         }
     }
-
+    
 }
 
 extension String {
