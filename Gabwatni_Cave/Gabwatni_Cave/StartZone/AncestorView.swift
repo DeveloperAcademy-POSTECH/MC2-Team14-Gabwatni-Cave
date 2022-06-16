@@ -19,7 +19,7 @@ struct AncestorView: View {
     
     // 각 Object의 초기 위치, 화면이 이동하면서 위치도 함께 이동
     @State private var imageScrollLocation: CGPoint = CGPoint(x: 500, y: 400)
-    @State private var lightLocation: CGPoint = CGPoint(x: 400, y: 370)
+    @State private var lightLocation: CGPoint = CGPoint(x: 410, y: 370)
     @State private var ancestorLocation: CGPoint = CGPoint(x: 625, y: 450)
     
     // Object 관련
@@ -29,8 +29,7 @@ struct AncestorView: View {
     // @Binding var flow: Int
     @State private var flow = 0
     
-    // TextBox가 모두 사라질 때 count 1 증가, count모두 채워지면 다음방 버튼 활성화
-    @State private var count = 0
+    @State private var footprintState = false
     
     // TextBox 관련
     @State private var textboxState: [Bool] = [false, false, false] // [시작, 조상님, 손전등]
@@ -39,7 +38,7 @@ struct AncestorView: View {
     @State private var stringArrayIndex = 0
     let startStringArray : [String] = ["어지러워...여긴 어디지?", "혹시 저 해골은 할아버지의 할아버지의 할아버지?!","(잠시 묵념을 한다.)", "손에 들고 계신건 뭐지?", "(해골을 눌러보세요.)"," "]
     let mapStringArray : [String] = ["어라?", "이건 지도인가..?", "(지도를 획득했다.)", "저기 왼쪽에 반짝이는건 뭐지?", "(왼쪽의 손전등을 눌러보세요.)"," "]
-    let flashStringArray : [String] = ["오잉??", "이건 후레시!?", "(손전등을 획득했다.)","(발자국 버튼을 눌러 다음 장소로 이동하세요.)", " "]
+    let flashStringArray : [String] = ["오잉??", "이건 후레시!?", "(손전등을 획득했다.)","앞으로 좀 더 가볼까?","(발자국 버튼을 눌러 다음 장소로 이동하세요.)", " "]
     
     var body: some View {
         ZStack {
@@ -130,9 +129,9 @@ struct AncestorView: View {
                                     textEnd.toggle()
                                 }
                             label:{
-                                Text("다음")
-                                    .font(.custom("Sam3KRFont", size: 20))
-                                    .foregroundColor(.white)
+                                    Text("다음")
+                                        .font(.custom("Sam3KRFont", size: 20))
+                                        .foregroundColor(.white)
                                 
                             }
                             .position(x: UIScreen.main.bounds.width/16 * 13
@@ -146,11 +145,6 @@ struct AncestorView: View {
                             textBox(name: "최병호", text: inputString)
                                 .onAppear {
                                     talkOnTextBox(stringArray: mapStringArray, inputIndex: stringArrayIndex)
-                                }
-                                .onDisappear {
-                                    withAnimation (.easeIn(duration: 1)){
-                                        lightState = true
-                                    }
                                 }
                             if textEnd {
                                 Button{
@@ -181,6 +175,7 @@ struct AncestorView: View {
                                     textEnd.toggle()
                                 }
                             label:{
+                                
                                 Text("다음")
                                     .font(.custom("Sam3KRFont", size: 20))
                                     .foregroundColor(.white)
@@ -193,7 +188,7 @@ struct AncestorView: View {
                         }
                         
                         // 대화창 모두 종료 -> 다음 버튼 활성화 하기
-                        if count == 3 {
+                        if footprintState {
                             HStack{
                                 Button{
                                     footPrintTapped = true
@@ -232,7 +227,7 @@ struct AncestorView: View {
                     }
                 )
                 .onDisappear { // 다른 뷰에서 넘어올 때 위치 초기화
-                    lightLocation.x = 400
+                    lightLocation.x = 410
                     imageScrollLocation.x = 500
                     ancestorLocation.x = 625
                 }
@@ -243,12 +238,16 @@ struct AncestorView: View {
     private var AncestorShimmeringView: some View {
         Button {
             playSoundEffect(sound: "mapGain", type: ".wav")
+            //stringArrayIndex += 1
             withAnimation(.easeOut(duration: 2)) {
                 ancestorState = false
             }
             withAnimation(.easeInOut) {
+                textboxState[0] = false
+                stringArrayIndex = 0
                 textboxState[1] = true
             }
+            
         } label: {
             if ancestorState {
                 ZStack {
@@ -275,7 +274,8 @@ struct AncestorView: View {
                 ancestorLocation.x = 275
             }
         }
-        .disabled(!ancestorState || textboxState[0] == true)
+        //.disabled(!ancestorState || textboxState[0] == true)
+        .disabled(!ancestorState || stringArrayIndex <= 4)
     }
     
     
@@ -284,6 +284,9 @@ struct AncestorView: View {
             playSoundEffect(sound: "flashGain", type: ".wav")
             withAnimation(.easeInOut) {
                 lightState = false
+                textboxState[1] = false
+                stringArrayIndex = 0
+                //textEnd.toggle()
                 textboxState[2] = true
             }
         } label: {
@@ -292,16 +295,15 @@ struct AncestorView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 20)
                 .rotationEffect(.degrees(80))
-                .opacity(lightState ? 0.7 : 0)
+                .opacity(lightState ? 1 : 0)
                 .shimmering(active: lightState, duration: 2.0)
         }
         .position(lightLocation)
         .onAppear{
             withAnimation(.easeIn(duration: 3)) {
-                lightLocation.x = 50
+                lightLocation.x = 60
             }
         }
-        .disabled(!lightState || textboxState[1] == true)
     }
     
     
@@ -309,7 +311,7 @@ struct AncestorView: View {
         inputString = ""
         let length = stringArray[inputIndex].count
         var index = 0
-        var toggle = false
+//        var toggle = false
         
         Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
             if inputIndex >= stringArray.count - 1 {timer.invalidate()}
@@ -317,32 +319,36 @@ struct AncestorView: View {
             inputString += String(stringArray[inputIndex][stringArray[inputIndex].index(stringArray[inputIndex].startIndex, offsetBy: index)])
             index+=1
             
-            if index == length{
-                timer.invalidate()
-                textEnd.toggle()
-            }
             
-            if toggle {
-                timer.invalidate()
-                inputString += stringArray[inputIndex].substring(from: index, to: length-1)
-                toggle.toggle()
-            }
-            
+                if index == length {
+                    timer.invalidate()
+                    if stringArrayIndex == stringArray.count - 1 {
+                        textEnd = false
+                    } else {
+                        textEnd = true
+                    }
+                }
+                        
         }
         
         if stringArrayIndex < stringArray.count - 1 {
+            if stringArrayIndex == stringArray.count - 2 {
+                if stringArray == mapStringArray {
+                withAnimation(.easeIn(duration: 2)) {
+                    lightState = true
+                }
+                } else if stringArray == flashStringArray {
+                    withAnimation(.easeIn(duration: 2)) {
+                        footprintState = true
+                    }
+                }
+            }
             withAnimation(.easeIn(duration: 1)) {
                 stringArrayIndex+=1
             }
-        }
-        else if stringArrayIndex == stringArray.count - 1 {
-            // textEnd, 배열 인덱스, textbox 상태 초기화
-            textEnd.toggle()
-            stringArrayIndex = 0
-            textboxState = [false, false, false]
-            withAnimation(.easeIn(duration: 2)) {
-                count += 1
-            }
+            
+        } else if stringArrayIndex == stringArray.count - 1 {
+
         }
     }
 }

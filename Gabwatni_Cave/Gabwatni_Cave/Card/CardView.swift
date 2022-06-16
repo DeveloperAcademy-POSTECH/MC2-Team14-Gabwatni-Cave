@@ -87,7 +87,7 @@ struct CardView: View {
                 ZStack {
                     Rectangle()
                         .frame(width: 280, height: 362)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.black)
                     Image("\(vm.imageName)")
                         .resizable()
                         .scaledToFit()
@@ -134,7 +134,7 @@ struct CardView: View {
                 ZStack {
                     Rectangle()
                         .frame(width: 280, height: 362)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.black)
                     Image("real " + "\(vm.imageName)")
                         .resizable()
                         .opacity(0.9)
