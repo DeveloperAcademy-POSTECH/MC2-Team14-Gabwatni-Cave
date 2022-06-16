@@ -39,16 +39,6 @@ struct TwilightView: View {
                 .onTapGesture{
                     testRender.toggle()
                 }
-            Image("mapIcon")
-                .resizable()
-                .frame(width: UIScreen.main.bounds.width/6, height: UIScreen.main.bounds.height/12)
-                .onTapGesture {
-                    playSoundEffect(sound: "mapGain", type: ".wav")
-                    showSheet.toggle()
-                }
-                .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap", myPosition: "현재 위치: 빛과 어둠이 만나는 곳")})
-                .frame(maxWidth:.infinity, maxHeight: .infinity, alignment:.topTrailing)
-
             
             if !presentView && !twilightTalk  {
                 LightView()
