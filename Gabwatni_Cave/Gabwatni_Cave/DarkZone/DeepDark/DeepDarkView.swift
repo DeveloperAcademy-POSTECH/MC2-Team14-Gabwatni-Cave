@@ -79,7 +79,7 @@ struct DeepDarkView: View {
                     
                     Image("dongdal")
                         .resizable()
-                        .frame(width: 300, height: 300)
+                        .frame(width: UIScreen.main.bounds.height / 20 * 9, height: UIScreen.main.bounds.height / 20 * 6)
                         .offset(y: -80)
                     
                     textBox(name: "동달", text: inputString)

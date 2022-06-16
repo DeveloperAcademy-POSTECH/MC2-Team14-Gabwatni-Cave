@@ -21,7 +21,7 @@ struct ClearView: View {
             Button{
                 isClicked = true
                 Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true){(timer) in
-                    yposition -= 0.2
+                    yposition -= 0.7
                     
                     if yposition < -200{
                         isClicked = false
@@ -38,6 +38,7 @@ struct ClearView: View {
            
             if isClicked{
                 Color.black.opacity(0.6)
+                    .ignoresSafeArea()
                 VStack(spacing: 20){
                     HStack{Text("지금까지")
                             .font(.custom("Sam3KRFont", size: 30))
