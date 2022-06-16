@@ -10,8 +10,9 @@ import SwiftUI
 struct RandomGameView: View {
     @EnvironmentObject var vm: CardViewModel2
     
-    //@State var bossChoice = Int.random(in: 1...3)
-    @State var bossChoice = 2
+    
+    
+    @State var bossChoice = Int.random(in: 1...3)
     
     @State private var clearRandomGame = false
     @State private var myChoice = 0
@@ -19,22 +20,41 @@ struct RandomGameView: View {
     @State private var isEnded: Bool = false
     
     var texts: String {
-        var tempString: String = "게임을 시작하지...\n가위 바위 보!"
+        var tempString: String = ""
         
-        if myChoice == bossChoice {
+        if myChoice == 0 {
+            tempString = "게임을 시작하지...\n가위 바위 보!"
+        }
+        else if myChoice == bossChoice {
             tempString = "비겼군...\n다시 도전해라!"
         }
-        else if myChoice == 1 && myChoice == 3 {
-            isEnded = true
+        else if myChoice == 1 && bossChoice == 3 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                isEnded = true
+                withAnimation(.easeInOut(duration: 1.1)){
+                    vm.flow = 5
+                }
+                
+            }
             tempString = "이걸 이기네..."
         }
         else if myChoice == 2 && bossChoice == 1 {
-            isEnded = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                isEnded = true
+                withAnimation(.easeInOut(duration: 1.1)){
+                    vm.flow = 5
+                }
+                
+            }
             tempString = "내가 지다니..."
         }
         else if myChoice == 3 && bossChoice == 2 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 isEnded = true
+                withAnimation(.easeInOut(duration: 1.1)){
+                    vm.flow = 5
+                }
+                
             }
             tempString = "나를 이기다니..."
         }
@@ -69,19 +89,12 @@ struct RandomGameView: View {
                     
                     LottieView("boss")
                         .frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*0.5)
-                        .onTapGesture {
-                            if isEnded {
-                                withAnimation(.easeIn(duration: 0.8)){
-                                    vm.flow = 5
-                                }
-                                
-                            }
-                        }
                     
                     // 가위 바위 보 선택지
                     Group {
                         Button {
                             myChoice = 1
+                            bossChoice = Int.random(in: 1...3)
                         } label: {
                             ZStack {
                                 Image("textbox")
@@ -96,6 +109,7 @@ struct RandomGameView: View {
                         
                         Button {
                             myChoice = 2
+                            bossChoice = Int.random(in: 1...3)
                         } label: {
                             ZStack {
                                 Image("textbox")
@@ -109,6 +123,7 @@ struct RandomGameView: View {
                         
                         Button {
                             myChoice = 3
+                            bossChoice = Int.random(in: 1...3)
                         } label: {
                             ZStack {
                                 Image("textbox")
