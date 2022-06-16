@@ -115,7 +115,7 @@ struct Abyss: View {
                         playSoundEffect(sound: "mapGain", type: ".wav")
                         showSheet.toggle()
                     }
-                    .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap", myPosition: "현재 위치: 빛과 어둠이 만나는 곳")})
+                    .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap", myPosition: "현재 위치: 심연의 공포")})
                     .frame(maxWidth:.infinity, maxHeight: .infinity, alignment:.topTrailing)
                 // 진입하면 나오는 view
                 ZStack {
