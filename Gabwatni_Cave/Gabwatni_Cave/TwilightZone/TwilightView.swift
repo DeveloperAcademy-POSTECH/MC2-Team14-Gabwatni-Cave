@@ -28,7 +28,7 @@ struct TwilightView: View {
     @State var twilightTalk: Bool = false
     @State var firstTalk: Bool = true
     
-    let textArray: [String] = ["이제 정보는 모은거 같으니, 다음 존으로 가는 길을 찾아봐", " "]
+    let textArray: [String] = ["이제 정보는 모두 모은거 같으니, 다음 존으로 가는 길을 찾아보시게...", " "]
     @State private var inputString = ""
     @State private var textEnd: Bool = false
     

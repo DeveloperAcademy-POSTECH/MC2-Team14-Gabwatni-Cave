@@ -25,8 +25,8 @@ struct Abyss: View {
     
     @State private var isFirst: Bool = true
     
-    let textArray: [String] = ["뭔가 좀 이상행 내머리도 이상행", " "]
-    let textArray2: [String] = ["아무리 찾아도 다음 정보가 없어.. 뭔가 이상해", " "]
+    let textArray: [String] = ["뭔가 좀 이상해...내 머리도 이상해", " "]
+    let textArray2: [String] = ["아무리 찾아도 다음 정보가 없어...\n왜 뭐가 나올것만 같지...?", " "]
     @State private var inputString = ""
     @State private var textEnd: Bool = false
     
@@ -89,6 +89,7 @@ struct Abyss: View {
                     
                     Image("choi byung-ho")
                         .resizable()
+                        .scaledToFit()
                         .frame(width: 300, height: 300)
                         .offset(y: -80)
                         .onTapGesture {
