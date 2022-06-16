@@ -53,5 +53,19 @@ func playSoundBat(sound: String, type: String) {
 }
 
 
+func playSoundsnail(sound: String, type: String) {
+    if let path = Bundle.main.path(forResource: sound, ofType: type) {
+        do {
+            _ = try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: .default, options: .mixWithOthers)
+            
+            audioPlayer3 = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            audioPlayer3?.numberOfLoops = 1
+            audioPlayer3?.play()
+           
+        } catch {
+            print("ERROR")
+        }
+    }
+}
 
 
