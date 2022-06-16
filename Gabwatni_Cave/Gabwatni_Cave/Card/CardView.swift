@@ -25,6 +25,9 @@ struct CardView: View {
                     .opacity(alpha)
                     .ignoresSafeArea()
                     .offset(y: -40)
+                    .onTapGesture {
+                        cardState = false
+                    }
                 
                 ZStack {
                     CardFront
