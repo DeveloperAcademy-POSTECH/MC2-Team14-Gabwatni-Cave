@@ -10,11 +10,13 @@ import SwiftUI
 struct RandomGameView: View {
     @EnvironmentObject var vm: CardViewModel2
     
-    @State var bossChoice = Int.random(in: 1...3)
+    //@State var bossChoice = Int.random(in: 1...3)
+    @State var bossChoice = 2
     
     @State private var clearRandomGame = false
     @State private var myChoice = 0
     
+    @State private var isEnded: Bool = false
     var body: some View {
         // 기본 뷰
         if myChoice == 0 && clearRandomGame == false {
@@ -199,7 +201,7 @@ struct RandomGameView: View {
             }
         }
         // 보로 이겼을때 뷰
-        else if myChoice == 3 && bossChoice == 2 && clearRandomGame == false{
+        else if myChoice == 3 && bossChoice == 2 && clearRandomGame == false {
             ZStack {
                 // 배경
                 Rectangle()
@@ -215,25 +217,31 @@ struct RandomGameView: View {
                     LottieView("boss")
                         .frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*0.5)
                 }
-                .onAppear {
-                    playSound(sound: "end", type: ".mp3")
-                    withAnimation(.easeIn(duration: 2).delay(1)) {
-                        clearRandomGame = true
-                    }
+            }
+            .onAppear {
+                playSound(sound: "end", type: ".mp3")
+                withAnimation(.easeIn(duration: 2).delay(1)) {
+                    clearRandomGame = true
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                    isEnded.toggle()
                 }
             }
+            .opacity(isEnded ? 0 : 1)
         }
         // 이기고 나면 클리어 뷰로 이동
-        else if clearRandomGame == true {
-            var ler = sddf()
-        }
+//        else if clearRandomGame == true {
+//            var ler = sddf()
+//        }
         // 지면 사망뷰로 이동
-        else { DeathView(reasonText: "가위 바위 보 져서", tipText: "다음엔 더 잘해보시길") }
+        else {
+            DeathView(reasonText: "가위 바위 보 져서", tipText: "다음엔 더 잘해보시길")
+        }
     }
     
-    func sddf(){
-        vm.flow = 5
-    }
+//    func sddf(){
+//        vm.flow = 5
+//    }
 }
 
 struct RandomGameView_Previews: PreviewProvider {

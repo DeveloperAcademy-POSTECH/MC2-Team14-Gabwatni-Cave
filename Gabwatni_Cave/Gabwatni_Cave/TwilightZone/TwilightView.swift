@@ -53,13 +53,16 @@ struct TwilightView: View {
                     }
             }
             
-            if vm.itemDict["bat"]! && vm.itemDict["salamander"]! {
+            // 석주 넣어야 함
+            if vm.itemDict["bat"]! && vm.itemDict["salamander"]! && vm.itemDict["pillar"]{
                 LightItemView(thisPositionX: 180, thisPositionY: 380, thisFrameWidth: 150, thisFrameHeight: 100, isShowing: $presentView, imageName: "footprint", degreeNum: 50.0, showingImage: showingImage)
             }
             
-            LightItemView(thisPositionX: 200, thisPositionY: 100, thisFrameWidth: 100, thisFrameHeight: 250, isShowing: $presentView, imageName: "bat", degreeNum: 55.0, showingImage: showingImage)
+            LightItemView(thisPositionX: 120, thisPositionY: 140, thisFrameWidth: 30, thisFrameHeight: 30, isShowing: $presentView, imageName: "circle", degreeNum: 55.0, showingImage: "pillar")
             
-            LightItemView(thisPositionX: -80, thisPositionY: 350, thisFrameWidth: 150, thisFrameHeight: 150, isShowing: $presentView, imageName: "salamander", degreeNum: 30.0, showingImage: showingImage)
+            LightItemView(thisPositionX: 200, thisPositionY: -50, thisFrameWidth: 120, thisFrameHeight: 250, isShowing: $presentView, imageName: "bat", degreeNum: 55.0, showingImage: showingImage)
+            
+            LightItemView(thisPositionX: -55, thisPositionY: 350, thisFrameWidth: 130, thisFrameHeight: 250, isShowing: $presentView, imageName: "salamander", degreeNum: 30.0, showingImage: showingImage)
             
             if presentView {
                 CardView(imageName: vm.imageName, cardState: $presentView)
@@ -74,7 +77,7 @@ struct TwilightView: View {
                 
                 Image("dongdal")
                     .resizable()
-                    .frame(width: 300, height: 300)
+                    .frame(width: UIScreen.main.bounds.height / 20 * 9, height: UIScreen.main.bounds.height / 20 * 6)
                 
                 textBox(name: "동달", text: inputString)
                     .onAppear {
