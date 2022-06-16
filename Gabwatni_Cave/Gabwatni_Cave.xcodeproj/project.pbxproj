@@ -57,6 +57,7 @@
 		78259A4C2856686F0096AB51 /* newTextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78259A4B2856686F0096AB51 /* newTextBox.swift */; };
 		787554AF285327B500CF7F61 /* textBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787554AE285327B500CF7F61 /* textBox.swift */; };
 		78D62F072858BE7C001A3991 /* Dongdalsays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D62F062858BE7C001A3991 /* Dongdalsays.swift */; };
+		78D72F7C285B1E4800968A54 /* surprise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 78D72F7B285B1E4800968A54 /* surprise.mp3 */; };
 		7B9E61B1285204AB00C931F4 /* Abyss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E61B0285204AB00C931F4 /* Abyss.swift */; };
 		7B9E61B328520E1000C931F4 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E61B228520E1000C931F4 /* QuizView.swift */; };
 		7B9E61B728520E4900C931F4 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E61B628520E4900C931F4 /* Quiz.swift */; };
@@ -146,6 +147,7 @@
 		78259A4B2856686F0096AB51 /* newTextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newTextBox.swift; sourceTree = "<group>"; };
 		787554AE285327B500CF7F61 /* textBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textBox.swift; sourceTree = "<group>"; };
 		78D62F062858BE7C001A3991 /* Dongdalsays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dongdalsays.swift; sourceTree = "<group>"; };
+		78D72F7B285B1E4800968A54 /* surprise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = surprise.mp3; sourceTree = "<group>"; };
 		7B9E61B0285204AB00C931F4 /* Abyss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Abyss.swift; sourceTree = "<group>"; };
 		7B9E61B228520E1000C931F4 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		7B9E61B628520E4900C931F4 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				32258CDB285A086C004EC422 /* bossSound1.mp3 */,
 				32E738C42858D2D300EE034F /* walk.mp3 */,
 				3234D7692858B3EC001654D4 /* end.mp3 */,
+				78D72F7B285B1E4800968A54 /* surprise.mp3 */,
 				3234D7672858B34E001654D4 /* Enter_TwilightZoneBGM.mp3 */,
 				3234D7652858AF99001654D4 /* darkZoneBGM.mp3 */,
 				3234D7632858A23C001654D4 /* Action_Hero.mp3 */,
@@ -567,6 +570,7 @@
 				3234D75C28588706001654D4 /* rain.mp3 in Resources */,
 				3234D7682858B34E001654D4 /* Enter_TwilightZoneBGM.mp3 in Resources */,
 				3234D76A2858B3EC001654D4 /* end.mp3 in Resources */,
+				78D72F7C285B1E4800968A54 /* surprise.mp3 in Resources */,
 				3234D7662858AF99001654D4 /* darkZoneBGM.mp3 in Resources */,
 				CC0E3930285A1705007058BC /* start.mp3 in Resources */,
 				32E738C52858D2D300EE034F /* walk.mp3 in Resources */,

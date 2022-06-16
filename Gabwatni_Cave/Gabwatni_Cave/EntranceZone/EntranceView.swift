@@ -36,6 +36,7 @@ struct EntranceView: View {
                     Button {
                         
                         if !isClicked{
+                            playSoundsnail(sound: "surprise", type: "mp3")
                             Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true){(timer) in
                                 if degree == 360 {
                                     timer.invalidate()
