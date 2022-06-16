@@ -28,7 +28,7 @@ struct EntranceView_stone: View {
                     }label: {
                         Circle()
                             .inset(by: 0)
-                            .stroke(Color("bright"), lineWidth: 2)
+                            .stroke(.white, lineWidth: 2)
                             .frame(width: 20, height: 20, alignment: .center)
                             .opacity(isViewing ? 0 : 1)
                     }
