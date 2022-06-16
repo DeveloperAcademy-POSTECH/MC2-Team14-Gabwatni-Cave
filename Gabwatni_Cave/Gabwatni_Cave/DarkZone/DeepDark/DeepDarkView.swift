@@ -92,15 +92,7 @@ struct DeepDarkView: View {
                     }
                 }
             }
-        Image("mapIcon")
-            .resizable()
-            .frame(width: UIScreen.main.bounds.width/6, height: UIScreen.main.bounds.height/12)
-            .onTapGesture {
-                playSoundEffect(sound: "mapGain", type: ".wav")
-                showSheet.toggle()
-            }
-            .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap", myPosition: "현재 위치: 칠흑의 방")})
-            .frame(maxWidth:.infinity, maxHeight: .infinity, alignment:.topTrailing)
+        
     }
     
     func talkOnTextBox (stringArray: [String], inputIndex: Int){
