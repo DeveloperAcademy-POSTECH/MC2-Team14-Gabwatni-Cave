@@ -39,6 +39,18 @@ struct TwilightView: View {
                 .onTapGesture{
                     testRender.toggle()
                 }
+
+//            Image("mapIcon")
+//                .resizable()
+//                .frame(width: UIScreen.main.bounds.width/6, height: UIScreen.main.bounds.height/12)
+//                .onTapGesture {
+//                    playSoundEffect(sound: "mapGain", type: ".wav")
+//                    showSheet.toggle()
+//                }
+//                .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap", myPosition: "현재 위치: 빛과 어둠이 만나는 곳")})
+//                .frame(maxWidth:.infinity, maxHeight: .infinity, alignment:.topTrailing)
+
+
             
             if !presentView && !twilightTalk  {
                 LightView()
@@ -53,9 +65,21 @@ struct TwilightView: View {
                     }
             }
             
+            if !presentView {
+                Image("mapIcon")
+                    .resizable()
+                    .frame(width: UIScreen.main.bounds.width/6, height: UIScreen.main.bounds.height/12,alignment: .topTrailing)
+                    .onTapGesture {
+                        playSoundEffect(sound: "mapGain", type: ".wav")
+                        showSheet.toggle()
+                    }
+                    .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap", myPosition: "현재 위치: 빛과 어둠이 만나는 곳")})
+                   // .frame(alignment:.topTrailing)
+            }
+            
+            
+            
             // 석주 넣어야 함
-
-
             if vm.itemDict["bat"]! && vm.itemDict["salamander"]! && vm.itemDict["pillar"]! {
 
                 LightItemView(thisPositionX: 180, thisPositionY: 380, thisFrameWidth: 150, thisFrameHeight: 100, isShowing: $presentView, imageName: "footprint", degreeNum: 50.0, showingImage: showingImage)
