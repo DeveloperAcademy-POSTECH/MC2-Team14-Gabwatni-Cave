@@ -56,8 +56,13 @@ struct ContentView: View {
         else if vm.flow == 5 {
             ClearView()
         }
+
+        else if vm.flow == 7{
+            WorldMapView2(image: "worldmap3", myPosition: "다음 모험을 떠나볼까...")
+        }
         else {
             DeathView()
+
         }
     }
 }
