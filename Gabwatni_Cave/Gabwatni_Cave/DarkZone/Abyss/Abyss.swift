@@ -15,7 +15,7 @@ struct Abyss: View {
     
     @State var isBoss: Bool = false
     
-    @State var isTouchable: Bool = false
+    @State var isTouchable: Bool = true
     
     let size = UIScreen.main.bounds
     
@@ -33,6 +33,8 @@ struct Abyss: View {
     @State private var inputString = ""
     @State private var textEnd: Bool = false
     
+    @State private var isblurView: Bool = false
+    
     var body: some View {
         if abyssView {
             ZStack {
@@ -42,18 +44,19 @@ struct Abyss: View {
                     .scaledToFit()
                     .ignoresSafeArea()
                 
+            
                 if !vm.isBossTalk && (!presentView || !abyssView) {
                     LightView()
                         .onAppear{
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
                                 if vm.itemDict["water"]! && vm.itemDict["cavecoral"]! {
-                                    //
+                                    isTouchable = false
                                     playSoundEffect(sound: "bossSound1", type: ".mp3")
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 2){
-                                        withAnimation(.easeIn(duration: 1.5)){
-                                            
+                                        withAnimation(.easeIn(duration: 1.1)){
                                             isBoss = true
                                             playSound(sound: "Action_Hero", type: ".mp3")
+                                          
                                         }
                                     }
                                     
@@ -61,6 +64,7 @@ struct Abyss: View {
                                 }
                             }
                         }
+                        .allowsHitTesting(isTouchable)
                     
                     Image("mapIcon")
                         .resizable()
@@ -84,12 +88,6 @@ struct Abyss: View {
                 }
                 
                 
-                
-                //                LightItemView(thisPositionX: 50, thisPositionY: 300, thisFrameWidth: 30, thisFrameHeight: 30, isShowing: $presentView, imageName: "circle", showingImage: "water")
-                //
-                //                LightItemView(thisPositionX: -75, thisPositionY: -200, thisFrameWidth: 30, thisFrameHeight: 30, isShowing: $presentView, imageName: "circle", showingImage: "cavecoral")
-                
-                
                 if presentView && !vm.isBossTalk{
                     CardView(imageName: vm.imageName, cardState: $presentView)
                         .onDisappear {
@@ -97,33 +95,38 @@ struct Abyss: View {
                         }
                 }
                 else if vm.isBossTalk {
-                    Rectangle()
-                        .foregroundColor(.black)
-                        .ignoresSafeArea()
-                    
-                    Image("choi byung-ho")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 300, height: 300)
-                        .offset(y: -80)
-                        .onTapGesture {
-                            vm.isBossTalk = false
-                        }
-                    
-                    textBox(name: "병호쿤", text: inputString)
-                        .onAppear {
-                            talkOnTextBox(stringArray: textArray2, inputIndex: 0)
-                        }
-                        .onDisappear {
-                            vm.itemDict["cavecoral"] = true
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                                isTouchable.toggle()
+                    Group {
+                        Rectangle()
+                            .foregroundColor(.black)
+                            .ignoresSafeArea()
+                        
+                        Image("choi byung-ho")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 300, height: 300)
+                            .offset(y: -80)
+                            .onTapGesture {
+                                vm.isBossTalk = false
                             }
-                        }
+                        
+                        textBox(name: "최병호", text: inputString)
+                            .onAppear {
+                                talkOnTextBox(stringArray: textArray2, inputIndex: 0)
+                            }
+                            .onDisappear {
+                                vm.itemDict["cavecoral"] = true
+                            }
+                    }.onTapGesture {
+                        vm.isBossTalk = false
+                    }
+                    
                 }
                 
                 QuizView(quizModel: QuizModel())
                     .opacity(isBoss ? 1 : 0)
+                    .onChange(of: isBoss) { V in
+                        isTouchable = true
+                    }
                     .allowsHitTesting(isTouchable)
                 
                 // 진입하면 나오는 view
