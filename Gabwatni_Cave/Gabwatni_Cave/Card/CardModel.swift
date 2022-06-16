@@ -58,7 +58,7 @@ final class CardViewModel2: ObservableObject {
     @Published var isSound: Bool = false
     
     @Published var fakeDie: Bool = false
-    @Published var isBossShowing: Bool = false
+    @Published var isBossShowingBefore: Bool = false
     @Published var isBossTalk: Bool = false
     
     
