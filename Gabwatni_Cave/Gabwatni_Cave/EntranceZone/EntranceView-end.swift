@@ -72,7 +72,8 @@ struct EntranceView_end: View {
                         Text(str)
                             .font(.custom("Sam3KRFont", size: 20))
                             .foregroundColor(.white)
-                            .frame(width: 250, height: 100, alignment: .center)
+                            .frame(width: 250, height: 100, alignment: .leading)
+                            .multilineTextAlignment(.leading)
                             .overlay(
                                     TextBox()
                                 )
@@ -98,6 +99,7 @@ struct EntranceView_end: View {
                                     .font(.custom("Sam3KRFont", size: 20))
                                     .foregroundColor(.white)
                                     
+                                    .frame(width: UIScreen.main.bounds.size.width+300, height: UIScreen.main.bounds.size.height+600, alignment: .center)
                         }
                         .position(x: UIScreen.main.bounds.width/16 * 13
                                   , y: UIScreen.main.bounds.height/15 * 13)

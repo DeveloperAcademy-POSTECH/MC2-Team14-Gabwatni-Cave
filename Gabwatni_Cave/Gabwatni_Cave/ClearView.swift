@@ -36,10 +36,10 @@ struct ClearView: View {
                     isClicked = true
                 }
                
-                Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true){(timer) in
+                Timer.scheduledTimer(withTimeInterval: 0.005, repeats: true){(timer) in
                     yposition -= 0.7
                     print(yposition)
-                    if yposition < -750{
+                    if yposition < -650{
                         Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false){(timer) in
                             isEnded=true
                             
@@ -103,12 +103,12 @@ struct ClearView: View {
                        Image("bat")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: size.height/2, height: size.height/3, alignment: .center)
+                                .frame(width: size.height/36 * 12, height: size.height/36 * 8, alignment: .center)
                         
                         HStack{Image("salamander")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: size.height/2, height: size.height/3, alignment: .center)
+                                .frame(width: size.height/36 * 12, height: size.height/36 * 8, alignment: .center)
                         }
                         HStack{Image("skeletonMapX")
                                 .resizable()
@@ -145,11 +145,11 @@ struct ClearView: View {
                                 .font(.custom("Sam3KRFont", size: 30))
                                 .foregroundColor(.white)
                         }
-                        HStack{Text("회장님 이창형")
+                        HStack{Text("참뼈로 창브로")
                                 .font(.custom("Sam3KRFont", size: 30))
                                 .foregroundColor(.white)
                         }
-                        HStack{Text("마에스트로 도도")
+                        HStack{Text("김 도도")
                                 .font(.custom("Sam3KRFont", size: 30))
                                 .foregroundColor(.white)
                         }

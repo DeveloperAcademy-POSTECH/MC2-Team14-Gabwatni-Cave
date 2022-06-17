@@ -91,7 +91,8 @@ struct newTextBox2: View {
                         Text(str)
                             .font(.custom("Sam3KRFont", size: 20))
                             .foregroundColor(.white)
-                            .frame(width: 250, height: 100, alignment: .center)
+                            .multilineTextAlignment(.leading)
+                            .frame(width: 250, height: 100, alignment: .leading)
                             .overlay(
                                 TextBox()
                             )
@@ -116,6 +117,7 @@ struct newTextBox2: View {
                             Text("다음")
                                 .font(.custom("Sam3KRFont", size: 20))
                                 .foregroundColor(.white)
+                                .frame(width: UIScreen.main.bounds.size.width+300, height: UIScreen.main.bounds.size.height+600, alignment: .center)
                             
                         }
                         .position(x: UIScreen.main.bounds.width/16 * 13
