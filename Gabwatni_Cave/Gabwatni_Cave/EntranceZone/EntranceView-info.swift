@@ -20,12 +20,7 @@ struct EntranceView_info: View {
                     flow = 3
                 }
            
-            Text("카드를 터치해 뒤집어 보세요!")
-                .font(.custom("Sam3KRFont", size: 20))
-                .frame(width: 300, height: 50, alignment: .center)
-                .foregroundColor(.white)
-                .position(x: UIScreen.main.bounds.width/2
-                          , y: UIScreen.main.bounds.height/15 * 2)
+            
             
         }
     }
