@@ -16,6 +16,7 @@ struct ClearView: View {
     @State var isEnded = false
     @State var yposition :CGFloat = UIScreen.main.bounds.height + 1300
     @State var textAnimation = false
+    @State var interval:Double = 0.7
     var body: some View {
         ZStack {
                 Image("end")
@@ -37,8 +38,8 @@ struct ClearView: View {
                 }
                
                 Timer.scheduledTimer(withTimeInterval: 0.005, repeats: true){(timer) in
-                    yposition -= 0.7
-                    print(yposition)
+                    yposition -= interval
+//                    print(yposition)
                     if yposition < -650{
                         Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false){(timer) in
                             isEnded=true
@@ -67,6 +68,33 @@ struct ClearView: View {
                 .position(x: size.width/40 * 21, y: size.height/80 * 63)
             Color.black.opacity(isClicked ? 0.6 : 0)
                 .ignoresSafeArea()
+//                .gesture(
+//                    LongPressGesture(minimumDuration: 1)
+//                        .onEnded({ vla in
+//                            print("fd/(vla)")
+//                        })
+//                        .onChanged({ val in
+//                            print(val)
+//                            if val {
+//                                interval = 1.5
+//                            }
+//                            else {
+//                                interval = 0.7
+//                            }
+//                        })
+//
+//                )
+                .onTapGesture {
+                    if interval == 0.7{
+                        interval = 1.5
+                    }
+                    else {
+                        interval = 0.7
+                    }
+                }
+                
+                    
+                
             if isClicked{
                 
                 VStack(spacing: 20){
