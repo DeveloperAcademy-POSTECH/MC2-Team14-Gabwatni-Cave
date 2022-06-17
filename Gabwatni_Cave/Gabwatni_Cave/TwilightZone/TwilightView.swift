@@ -84,7 +84,7 @@ struct TwilightView: View {
                 LightItemView(thisPositionX: 180, thisPositionY: 380, thisFrameWidth: 150, thisFrameHeight: 100, isShowing: $presentView, imageName: "footprint", degreeNum: 50.0, showingImage: showingImage)
             }
             
-            LightItemView(thisPositionX: 120, thisPositionY: 140, thisFrameWidth: 30, thisFrameHeight: 30, isShowing: $presentView, imageName: "circle", degreeNum: 55.0, showingImage: "pillar")
+            LightItemView(thisPositionX: 120, thisPositionY: 140, thisFrameWidth: 50, thisFrameHeight: 50, isShowing: $presentView, imageName: "circle", degreeNum: 55.0, showingImage: "pillar")
             
             LightItemView(thisPositionX: 200, thisPositionY: -50, thisFrameWidth: 120, thisFrameHeight: 250, isShowing: $presentView, imageName: "bat", degreeNum: 55.0, showingImage: showingImage)
             

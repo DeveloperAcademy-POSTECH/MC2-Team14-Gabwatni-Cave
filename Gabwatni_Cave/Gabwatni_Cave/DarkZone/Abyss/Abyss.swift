@@ -56,6 +56,7 @@ struct Abyss: View {
                                         withAnimation(.easeIn(duration: 1.1)){
                                             isBoss = true
                                             playSound(sound: "Action_Hero", type: ".mp3")
+                                            isTouchable = true
                                           
                                         }
                                     }
@@ -79,12 +80,12 @@ struct Abyss: View {
                 }
                 
                 if !vm.isBossShowingBefore {
-                    LightItemView(thisPositionX: 50, thisPositionY: 300, thisFrameWidth: 30, thisFrameHeight: 30, isShowing: $presentView, imageName: "circle", showingImage: "water")
+                    LightItemView(thisPositionX: 50, thisPositionY: 300, thisFrameWidth: 50, thisFrameHeight: 50, isShowing: $presentView, imageName: "circle", showingImage: "water")
                 }
                 
                 
                 if vm.isBossShowingBefore {
-                    LightItemView(thisPositionX: -75, thisPositionY: -200, thisFrameWidth: 30, thisFrameHeight: 30, isShowing: $presentView, imageName: "circle", showingImage: "cavecoral")
+                    LightItemView(thisPositionX: -75, thisPositionY: -200, thisFrameWidth: 50, thisFrameHeight: 50, isShowing: $presentView, imageName: "circle", showingImage: "cavecoral")
                 }
                 
                 
@@ -124,10 +125,6 @@ struct Abyss: View {
                 
                 QuizView(quizModel: QuizModel())
                     .opacity(isBoss ? 1 : 0)
-                    .onChange(of: isBoss) { V in
-                        isTouchable = true
-                    }
-                    .allowsHitTesting(isTouchable)
                 
                 // 진입하면 나오는 view
                 ZStack {
