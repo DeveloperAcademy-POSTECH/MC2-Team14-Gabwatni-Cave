@@ -24,7 +24,7 @@ struct StartMap: View {
                 //                    }
                 
                 ScrollView(.horizontal){
-                    Image("worldmap2")
+                    Image("worldstart")
                         
                 }
             }

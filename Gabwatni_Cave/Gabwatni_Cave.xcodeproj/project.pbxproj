@@ -65,6 +65,7 @@
 		7BE8736728538F8E006AEE89 /* RandomGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8736628538F8E006AEE89 /* RandomGameView.swift */; };
 		7BF24D55285855A200227E2E /* ClearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF24D54285855A200227E2E /* ClearView.swift */; };
 		7BF24D57285862CF00227E2E /* Gabwatni_CaveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF24D56285862CF00227E2E /* Gabwatni_CaveApp.swift */; };
+		8EB4E9EE285C68BC00E9B401 /* closet.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8EB4E9ED285C68BC00E9B401 /* closet.wav */; };
 		8ECECAC42859F27900BAF8E0 /* WorldMapView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECECAC32859F27800BAF8E0 /* WorldMapView2.swift */; };
 		8EF731AA28570EB500D9A61A /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF731A928570EB500D9A61A /* StartView.swift */; };
 		8EF731AC28570F1800D9A61A /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF731AB28570F1800D9A61A /* CharacterView.swift */; };
@@ -155,6 +156,7 @@
 		7BE8736628538F8E006AEE89 /* RandomGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGameView.swift; sourceTree = "<group>"; };
 		7BF24D54285855A200227E2E /* ClearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearView.swift; sourceTree = "<group>"; };
 		7BF24D56285862CF00227E2E /* Gabwatni_CaveApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gabwatni_CaveApp.swift; sourceTree = "<group>"; };
+		8EB4E9ED285C68BC00E9B401 /* closet.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = closet.wav; sourceTree = "<group>"; };
 		8ECECAC32859F27800BAF8E0 /* WorldMapView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldMapView2.swift; sourceTree = "<group>"; };
 		8EF731A928570EB500D9A61A /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		8EF731AB28570F1800D9A61A /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				32258CD32859B29E004EC422 /* mapGain.wav */,
 				32258CDB285A086C004EC422 /* bossSound1.mp3 */,
 				32E738C42858D2D300EE034F /* walk.mp3 */,
+				8EB4E9ED285C68BC00E9B401 /* closet.wav */,
 				3234D7692858B3EC001654D4 /* end.mp3 */,
 				78D72F7B285B1E4800968A54 /* surprise.mp3 */,
 				3234D7672858B34E001654D4 /* Enter_TwilightZoneBGM.mp3 */,
@@ -568,6 +571,7 @@
 			files = (
 				32258CD62859B3A6004EC422 /* flashGain.wav in Resources */,
 				3234D75C28588706001654D4 /* rain.mp3 in Resources */,
+				8EB4E9EE285C68BC00E9B401 /* closet.wav in Resources */,
 				3234D7682858B34E001654D4 /* Enter_TwilightZoneBGM.mp3 in Resources */,
 				3234D76A2858B3EC001654D4 /* end.mp3 in Resources */,
 				78D72F7C285B1E4800968A54 /* surprise.mp3 in Resources */,
@@ -816,7 +820,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gabwatni_Cave/Preview Content\"";
-
 				DEVELOPMENT_TEAM = RLD2Z6D224;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -852,7 +855,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gabwatni_Cave/Preview Content\"";
-
 				DEVELOPMENT_TEAM = RLD2Z6D224;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
