@@ -24,6 +24,7 @@ struct DeepDarkControl: View {
                 .onAppear {
                     vm.itemDict["dragonmillipede"] = false
                     vm.itemDict["arachnocampa"] = false
+                    vm.itemDict["transparent snail"] = false
                 }
         }
         else {
