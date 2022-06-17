@@ -60,6 +60,7 @@ final class CardViewModel2: ObservableObject {
     @Published var fakeDie: Bool = false
     @Published var isBossShowingBefore: Bool = false
     @Published var isBossTalk: Bool = false
+    @Published var isTouchable: Bool = false
     
     
     @Published var imageName: String = ""

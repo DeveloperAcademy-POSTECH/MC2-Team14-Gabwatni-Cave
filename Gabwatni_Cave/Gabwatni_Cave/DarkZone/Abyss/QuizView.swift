@@ -14,6 +14,8 @@ struct QuizView: View {
     @State private var clearQuiz = false
     @State private var currentQuizIndex = 0
     
+    @EnvironmentObject var vm: CardViewModel2
+    
     var body: some View {
         // 퀴즈 - 살아있을 때
         if alive && !clearQuiz {
@@ -48,6 +50,7 @@ struct QuizView: View {
                         .font(.custom("Sam3KRFont", size: 22))
                         .minimumScaleFactor(0.6)
                         .padding(.top)
+                        .opacity(vm.isTouchable ? 1 : 0)
                     
                     // 보스
                     LottieView("boss")
@@ -80,6 +83,15 @@ struct QuizView: View {
                                     .font(.custom("Sam3KRFont", size: 20))
                             }
                         }
+                        .allowsHitTesting(vm.isTouchable)
+                        .opacity(vm.isTouchable ? 1 : 0)
+                        .onChange(of: vm.itemDict["cavecoral"]!, perform: { check in
+                            if check {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+                                    vm.isTouchable = true
+                                }
+                            }
+                        })
                     }
                 }
                 .foregroundColor(.white)
