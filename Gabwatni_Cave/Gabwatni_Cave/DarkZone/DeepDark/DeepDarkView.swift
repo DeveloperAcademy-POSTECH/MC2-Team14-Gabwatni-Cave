@@ -53,12 +53,14 @@ struct DeepDarkView: View {
 
                 }
                 
-                if vm.itemDict["arachnocampa"]! && vm.itemDict["dragonmillipede"]!  {
+                if vm.itemDict["arachnocampa"]! && vm.itemDict["dragonmillipede"]! && vm.itemDict["transparent snail"]!  {
                     LightItemView(thisPositionX: 180, thisPositionY: 380, thisFrameWidth: 100, thisFrameHeight: 100, isShowing: $presentView, imageName: "footprint", degreeNum: 55.0, showingImage: showingImage)
                 }
                 
                 
                 LightItemView(thisPositionX: 0, thisPositionY: 0, thisFrameWidth: 100, thisFrameHeight: 100, isShowing: $presentView, imageName: "fakefootprint", showingImage: showingImage)
+                
+                LightItemView(thisPositionX: -60, thisPositionY: -220, thisFrameWidth: 100, thisFrameHeight: 150, isShowing: $presentView, imageName: "transparent snail", showingImage: showingImage)
                 
                 LightItemView(thisPositionX: -50, thisPositionY: 300, thisFrameWidth: 100, thisFrameHeight: 150, isShowing: $presentView, imageName: "dragonmillipede", showingImage: showingImage)
                 
@@ -69,7 +71,7 @@ struct DeepDarkView: View {
                         .onDisappear {
                             vm.itemDict[vm.imageName] = true
                             
-                            if vm.itemDict["arachnocampa"]! && vm.itemDict["dragonmillipede"]! {
+                            if vm.itemDict["arachnocampa"]! && vm.itemDict["dragonmillipede"]! && vm.itemDict["transparent snail"]! {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) {
                                     darkTalk = true
                                 }
