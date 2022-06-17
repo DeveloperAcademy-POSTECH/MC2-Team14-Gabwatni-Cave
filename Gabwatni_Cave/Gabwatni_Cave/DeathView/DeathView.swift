@@ -19,11 +19,14 @@ struct DeathView: View {
     
     @State var count: Int = 0
     
+    @State var isTouchAble = false
+    
     var body: some View {
         ZStack{
             Image("DeathView")
                 .ignoresSafeArea()
                 .onTapGesture {
+                    vm.isTouchable = false
                     vm.flow = 3
                 }
             
@@ -63,6 +66,9 @@ struct DeathView: View {
             withAnimation(.spring().repeatForever()) {
                 textAnimation = true
             }
-        }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+                isTouchAble = true
+            }
+        }.allowsHitTesting(isTouchAble)
     }
 }
