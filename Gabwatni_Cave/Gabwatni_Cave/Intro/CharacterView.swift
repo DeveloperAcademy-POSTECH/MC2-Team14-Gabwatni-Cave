@@ -100,6 +100,10 @@ struct newTextBox2: View {
                                       , y: UIScreen.main.bounds.height/9 * 7)
                         if isFinished{
                             Button{
+                                if stringNumber == 10 {
+                                    print("fsdd")
+                                    playSoundsnail(sound: "closet", type: "wav")
+                                }
                                 ges(strnum: stringNumber)
                                 isClicked = true
                                 if stringNumber < StrArr.count-1{
@@ -155,7 +159,6 @@ struct newTextBox2: View {
         str = ""
         let length = StrArr[strnum].count
         var index = 0
-        
         Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
             if strnum >= StrArr.count - 1 {timer.invalidate()}
             AudioServicesPlaySystemSound(1104)

@@ -62,7 +62,7 @@ struct ClearView: View {
                     .shimmering()
             }
             .position(x: size.width/20 * 8, y: size.height/20 * 16)
-            Image("clear character")
+            Image("clearcharacterwhite")
                 .resizable()
                 .frame(width: size.height/40 * 3, height: size.height/20 * 2, alignment: .center)
                 .position(x: size.width/40 * 21, y: size.height/80 * 63)
