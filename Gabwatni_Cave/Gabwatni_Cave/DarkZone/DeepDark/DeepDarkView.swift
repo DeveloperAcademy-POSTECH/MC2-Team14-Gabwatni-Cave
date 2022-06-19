@@ -49,7 +49,7 @@ struct DeepDarkView: View {
                             playSoundEffect(sound: "mapGain", type: ".wav")
                             showSheet.toggle()
                         }
-                        .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap-4", myPosition: "현재 위치: 칠흑의 방")})
+                        .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap-5", myPosition: "현재 위치: 칠흑의 방")})
 
                 }
                 

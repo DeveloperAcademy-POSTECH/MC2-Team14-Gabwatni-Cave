@@ -94,7 +94,7 @@ struct RandomGameView: View {
                     Group {
                         Button {
                             myChoice = 1
-                            bossChoice = Int.random(in: 1...3)
+                            //bossChoice = Int.random(in: 1...3)
                         } label: {
                             ZStack {
                                 Image("textbox")
@@ -109,7 +109,7 @@ struct RandomGameView: View {
                         
                         Button {
                             myChoice = 2
-                            bossChoice = Int.random(in: 1...3)
+                           // bossChoice = Int.random(in: 1...3)
                         } label: {
                             ZStack {
                                 Image("textbox")
@@ -123,7 +123,7 @@ struct RandomGameView: View {
                         
                         Button {
                             myChoice = 3
-                            bossChoice = Int.random(in: 1...3)
+                          //  bossChoice = Int.random(in: 1...3)
                         } label: {
                             ZStack {
                                 Image("textbox")

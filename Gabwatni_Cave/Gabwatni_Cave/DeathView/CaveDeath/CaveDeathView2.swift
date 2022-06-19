@@ -28,7 +28,7 @@ struct CaveDeathView2: View {
                 .onTapGesture {
                     realDie = false
                     vm.fakeDie = false
-                    vm.flow = 3
+                    vm.flow = 1
                 }
             
             VStack(alignment: .center) {
