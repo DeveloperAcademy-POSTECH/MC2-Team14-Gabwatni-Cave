@@ -31,6 +31,11 @@
 		323DD3CA285863FC005986EF /* boss.json in Resources */ = {isa = PBXBuildFile; fileRef = 323DD3C9285863FC005986EF /* boss.json */; };
 		323DD3CC28586422005986EF /* bossView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323DD3CB28586422005986EF /* bossView.swift */; };
 		323DD3CF28586462005986EF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 323DD3CE28586462005986EF /* Lottie */; };
+		326E55A5285F54DF00D06A69 /* let's start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 326E55A1285F54DF00D06A69 /* let's start.mp3 */; };
+		326E55A6285F54DF00D06A69 /* let's go.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 326E55A2285F54DF00D06A69 /* let's go.mp3 */; };
+		326E55A7285F54DF00D06A69 /* bump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 326E55A3285F54DF00D06A69 /* bump.mp3 */; };
+		326E55A8285F54DF00D06A69 /* card view.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 326E55A4285F54DF00D06A69 /* card view.mp3 */; };
+		326E55AA285F5A7100D06A69 /* cardSlide8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 326E55A9285F5A7100D06A69 /* cardSlide8.mp3 */; };
 		32B8EB6A285206A9009C1DC4 /* DeepDarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B8EB69285206A9009C1DC4 /* DeepDarkView.swift */; };
 		32C476942857194F003D0BB4 /* DeepDarkView-start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C476932857194F003D0BB4 /* DeepDarkView-start.swift */; };
 		32C4769628571A8B003D0BB4 /* DeepDarkControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C4769528571A8B003D0BB4 /* DeepDarkControl.swift */; };
@@ -122,6 +127,11 @@
 		3234D7692858B3EC001654D4 /* end.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = end.mp3; sourceTree = "<group>"; };
 		323DD3C9285863FC005986EF /* boss.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = boss.json; sourceTree = "<group>"; };
 		323DD3CB28586422005986EF /* bossView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bossView.swift; sourceTree = "<group>"; };
+		326E55A1285F54DF00D06A69 /* let's start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "let's start.mp3"; sourceTree = "<group>"; };
+		326E55A2285F54DF00D06A69 /* let's go.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "let's go.mp3"; sourceTree = "<group>"; };
+		326E55A3285F54DF00D06A69 /* bump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bump.mp3; sourceTree = "<group>"; };
+		326E55A4285F54DF00D06A69 /* card view.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "card view.mp3"; sourceTree = "<group>"; };
+		326E55A9285F5A7100D06A69 /* cardSlide8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cardSlide8.mp3; sourceTree = "<group>"; };
 		32B8EB69285206A9009C1DC4 /* DeepDarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDarkView.swift; sourceTree = "<group>"; };
 		32C476932857194F003D0BB4 /* DeepDarkView-start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeepDarkView-start.swift"; sourceTree = "<group>"; };
 		32C4769528571A8B003D0BB4 /* DeepDarkControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDarkControl.swift; sourceTree = "<group>"; };
@@ -308,12 +318,17 @@
 				32258CD72859BA0F004EC422 /* bat.mp3 */,
 				32258CD52859B3A6004EC422 /* flashGain.wav */,
 				32258CD32859B29E004EC422 /* mapGain.wav */,
+				326E55A3285F54DF00D06A69 /* bump.mp3 */,
+				326E55A4285F54DF00D06A69 /* card view.mp3 */,
+				326E55A2285F54DF00D06A69 /* let's go.mp3 */,
+				326E55A1285F54DF00D06A69 /* let's start.mp3 */,
 				32258CDB285A086C004EC422 /* bossSound1.mp3 */,
 				32E738C42858D2D300EE034F /* walk.mp3 */,
 				8EB4E9ED285C68BC00E9B401 /* closet.wav */,
 				3234D7692858B3EC001654D4 /* end.mp3 */,
 				78D72F7B285B1E4800968A54 /* surprise.mp3 */,
 				3234D7672858B34E001654D4 /* Enter_TwilightZoneBGM.mp3 */,
+				326E55A9285F5A7100D06A69 /* cardSlide8.mp3 */,
 				3234D7652858AF99001654D4 /* darkZoneBGM.mp3 */,
 				3234D7632858A23C001654D4 /* Action_Hero.mp3 */,
 				3234D75B28588706001654D4 /* rain.mp3 */,
@@ -575,11 +590,16 @@
 				3234D7682858B34E001654D4 /* Enter_TwilightZoneBGM.mp3 in Resources */,
 				3234D76A2858B3EC001654D4 /* end.mp3 in Resources */,
 				78D72F7C285B1E4800968A54 /* surprise.mp3 in Resources */,
+				326E55A8285F54DF00D06A69 /* card view.mp3 in Resources */,
 				3234D7662858AF99001654D4 /* darkZoneBGM.mp3 in Resources */,
 				CC0E3930285A1705007058BC /* start.mp3 in Resources */,
+				326E55A7285F54DF00D06A69 /* bump.mp3 in Resources */,
 				32E738C52858D2D300EE034F /* walk.mp3 in Resources */,
 				323DD3CA285863FC005986EF /* boss.json in Resources */,
+				326E55A5285F54DF00D06A69 /* let's start.mp3 in Resources */,
+				326E55A6285F54DF00D06A69 /* let's go.mp3 in Resources */,
 				3234D75628587E31001654D4 /* MyParticle.sks in Resources */,
+				326E55AA285F5A7100D06A69 /* cardSlide8.mp3 in Resources */,
 				32258CD82859BA0F004EC422 /* bat.mp3 in Resources */,
 				321CF1B22850882A00F3B920 /* Preview Assets.xcassets in Resources */,
 				3234D7642858A23C001654D4 /* Action_Hero.mp3 in Resources */,

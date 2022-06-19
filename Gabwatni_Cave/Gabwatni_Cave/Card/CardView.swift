@@ -66,7 +66,9 @@ struct CardView: View {
                     CardBack
                 }
                 .onTapGesture {
+                    playSoundEffect2(sound: "cardSlide8", type: "mp3")
                     flipCard ()
+                    
                 }
                 
 //                .position(x: UIScreen.main.bounds.width/2

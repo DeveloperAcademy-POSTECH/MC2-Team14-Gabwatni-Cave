@@ -72,6 +72,9 @@ struct AncestorView: View {
                         .resizable()
                         .scaledToFill()
                         .frame(width: 450)
+                        .onAppear{
+                            playSoundEffect(sound: "let's go", type: "mp3")
+                        }
                 )
             
             Button{

@@ -52,6 +52,9 @@ struct CaveDeathView: View {
                                       , y: UIScreen.main.bounds.height/9 * 7)
                         if isFinished{
                             Button{
+                                if stringNumber == 3 {
+                                    playSoundEffect(sound: "bump", type: "mp3")
+                                }
                                 ges(strnum: stringNumber)
                                 isClicked = true
                                 if stringNumber < 15{

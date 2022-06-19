@@ -102,7 +102,11 @@ struct newTextBox2: View {
                             Button{
                                 if stringNumber == 10 {
                                     print("fsdd")
-                                    playSoundsnail(sound: "closet", type: "wav")
+                                    playSoundEffect(sound: "closet", type: "wav")
+                                }
+                                if stringNumber == 12 {
+                                    print("fsdd")
+                                    playSoundEffect(sound: "mapGain", type: "wav")
                                 }
                                 ges(strnum: stringNumber)
                                 isClicked = true
