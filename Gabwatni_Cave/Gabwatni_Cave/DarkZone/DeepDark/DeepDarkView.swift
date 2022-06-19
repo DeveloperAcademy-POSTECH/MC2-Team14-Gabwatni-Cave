@@ -49,7 +49,7 @@ struct DeepDarkView: View {
                             playSoundEffect(sound: "mapGain", type: ".wav")
                             showSheet.toggle()
                         }
-                        .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap", myPosition: "현재 위치: 칠흑의 방")})
+                        .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap-4", myPosition: "현재 위치: 칠흑의 방")})
 
                 }
                 
@@ -57,15 +57,19 @@ struct DeepDarkView: View {
                     LightItemView(thisPositionX: 180, thisPositionY: 380, thisFrameWidth: 100, thisFrameHeight: 100, isShowing: $presentView, imageName: "footprint", degreeNum: 55.0, showingImage: showingImage)
                 }
                 
+                Group{
+                    LightItemView(thisPositionX: 0, thisPositionY: 0, thisFrameWidth: 100, thisFrameHeight: 100, isShowing: $presentView, imageName: "fakefootprint", showingImage: showingImage)
+                    
+                    LightItemView(thisPositionX: -60, thisPositionY: -220, thisFrameWidth: 100, thisFrameHeight: 150, isShowing: $presentView, imageName: "transparent snail", showingImage: showingImage)
+                    
+                    LightItemView(thisPositionX: -50, thisPositionY: 300, thisFrameWidth: 100, thisFrameHeight: 150, isShowing: $presentView, imageName: "dragonmillipede", showingImage: showingImage)
+                    
+                    LightItemView(thisPositionX: 200, thisPositionY: -200, thisFrameWidth: 150, thisFrameHeight: 150, isShowing: $presentView, imageName: "arachnocampa", degreeNum: 20.0, showingImage: showingImage)
+                    
+                    LightItemView(thisPositionX: 200, thisPositionY: 100, thisFrameWidth: 100, thisFrameHeight: 100, isShowing: $presentView, imageName: "cheatbutton", degreeNum: 55.0, showingImage: showingImage)
+                }
                 
-                LightItemView(thisPositionX: 0, thisPositionY: 0, thisFrameWidth: 100, thisFrameHeight: 100, isShowing: $presentView, imageName: "fakefootprint", showingImage: showingImage)
-                
-                LightItemView(thisPositionX: -60, thisPositionY: -220, thisFrameWidth: 100, thisFrameHeight: 150, isShowing: $presentView, imageName: "transparent snail", showingImage: showingImage)
-                
-                LightItemView(thisPositionX: -50, thisPositionY: 300, thisFrameWidth: 100, thisFrameHeight: 150, isShowing: $presentView, imageName: "dragonmillipede", showingImage: showingImage)
-                
-                LightItemView(thisPositionX: 200, thisPositionY: -200, thisFrameWidth: 150, thisFrameHeight: 150, isShowing: $presentView, imageName: "arachnocampa", degreeNum: 20.0, showingImage: showingImage)
-                
+               
                 if presentView {
                     CardView(imageName: vm.imageName, cardState: $presentView)
                         .onDisappear {

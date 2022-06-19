@@ -76,7 +76,7 @@ struct Abyss: View {
                             playSoundEffect(sound: "mapGain", type: ".wav")
                             showSheet.toggle()
                         }
-                        .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap", myPosition: "현재 위치: 심연의 공포")})
+                        .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap-5", myPosition: "현재 위치: 심연의 공포")})
                 }
                 
                 if !vm.isBossShowingBefore {

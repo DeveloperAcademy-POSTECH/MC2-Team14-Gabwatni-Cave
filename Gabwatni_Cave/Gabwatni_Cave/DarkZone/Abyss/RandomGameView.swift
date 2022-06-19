@@ -10,7 +10,9 @@ import SwiftUI
 struct RandomGameView: View {
     @EnvironmentObject var vm: CardViewModel2
     
-    @State var bossChoice = Int.random(in: 1...3)
+    //@State var bossChoice = Int.random(in: 1...3)
+    
+    @State var bossChoice = 1
     
     @State private var clearRandomGame = false
     @State private var myChoice = 0

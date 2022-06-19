@@ -70,6 +70,21 @@ struct LightItemView: View {
                         }
                     }
             }
+            else if imageName == "cheatbutton" {
+                Image(imageName)
+                    .shimmered(degreeNum: 15.0)
+                    .position(x: thisPositionX, y: thisPositionY)
+                    .frame(width: thisFrameWidth, height: thisFrameHeight)
+                    .onTapGesture {
+                        withAnimation(.easeIn) {
+                            if !vm.isSound {
+                                playSoundEffect(sound: "walk", type: ".mp3")
+                                vm.isSound = true
+                            }
+                            vm.flow = 4
+                        }
+                    }
+            }
             
             else if imageName == "circle"{
                 Circle()

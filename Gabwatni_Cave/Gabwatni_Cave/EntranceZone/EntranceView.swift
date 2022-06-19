@@ -145,7 +145,7 @@ struct EntranceView: View {
                     playSoundEffect(sound: "mapGain", type: ".wav")
                     showSheet.toggle()
                 }
-                .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap", myPosition: "현재 위치: 모험의 시작")})
+                .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap-2", myPosition: "현재 위치: 모험의 시작")})
                 .position(x: 360, y: 15)
             
             

@@ -73,7 +73,7 @@ struct TwilightView: View {
                         playSoundEffect(sound: "mapGain", type: ".wav")
                         showSheet.toggle()
                     }
-                    .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap", myPosition: "현재 위치: 빛과 어둠이 만나는 곳")})
+                    .fullScreenCover(isPresented: $showSheet, content:{ MiniMapView(image: "minimap-3", myPosition: "현재 위치: 빛과 어둠이 만나는 곳")})
             }
             
             
