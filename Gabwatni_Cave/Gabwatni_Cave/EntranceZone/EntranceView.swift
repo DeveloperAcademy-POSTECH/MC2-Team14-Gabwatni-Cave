@@ -72,7 +72,7 @@ struct EntranceView: View {
                               , y: yPosition)
                     .disabled(isClicked)
                     if !isClicked{
-                        Text("-달팽이를 터치해 주세요-")
+                        Text("달팽이를 터치해 주세요")
                             .font(.custom("Sam3KRFont", size: 20))
                             .foregroundColor(.white)
                             .opacity(textAnimation ? 1 : 0)

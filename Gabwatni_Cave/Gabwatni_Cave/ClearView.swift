@@ -14,7 +14,7 @@ struct ClearView: View {
     @EnvironmentObject var vm: CardViewModel2
     @State var isClicked = false
     @State var isEnded = false
-    @State var yposition :CGFloat = UIScreen.main.bounds.height + 1300
+    @State var yposition :CGFloat = UIScreen.main.bounds.height + 1400
     @State var textAnimation = false
     @State var interval:Double = 0.7
     var body: some View {
@@ -40,7 +40,7 @@ struct ClearView: View {
                 Timer.scheduledTimer(withTimeInterval: 0.005, repeats: true){(timer) in
                     yposition -= interval
 //                    print(yposition)
-                    if yposition < -650{
+                    if yposition < -750{
                         Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false){(timer) in
                             isEnded=true
                             
@@ -138,6 +138,12 @@ struct ClearView: View {
                                 .scaledToFit()
                                 .frame(width: size.height/36 * 12, height: size.height/36 * 8, alignment: .center)
                         }
+                        HStack{Image("transparent snail")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: size.height/36 * 12, height: size.height/36 * 8, alignment: .center)
+                        }
+
                         HStack{Image("skeletonMapX")
                                 .resizable()
                                 .scaledToFit()
