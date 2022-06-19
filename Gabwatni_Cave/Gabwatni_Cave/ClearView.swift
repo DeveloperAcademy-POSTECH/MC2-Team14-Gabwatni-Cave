@@ -154,7 +154,7 @@ struct ClearView: View {
                                 .scaledToFit()
                                 .frame(width: size.height/2, height: size.height/3, alignment: .center)
                         }
-                        HStack{Image("soundsnail")
+                        HStack{Image("soundsnail2")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: size.height/2, height: size.height/3, alignment: .center)
