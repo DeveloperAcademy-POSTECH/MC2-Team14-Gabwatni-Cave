@@ -24,7 +24,7 @@ struct CaveDeathView: View {
     
     var body: some View {
         if !isEnd {
-            CaveDeathView2(reasonText: "동달의 말을 듣지 않아서", tipText: "말을 잘 들읍시다.", realDie: $realDie)
+            CaveDeathView2(reasonText: "동달의 말을 듣지 않아서", tipText: "동굴에는 좁은 틈이 많습니다.\n주의 합시다.", realDie: $realDie)
         }
         else {
         ZStack{
