@@ -75,10 +75,6 @@ struct newTextBox3: View {
                                   , y: UIScreen.main.bounds.height/9 * 7)
                     if isFinished{
                         Button{
-                            if stringNumber == 12 {
-                                print("fsdd")
-                                playSoundEffect(sound: "let's go", type: ".mp3")
-                            }
                             ges(strnum: stringNumber)
                             isClicked = true
                             if stringNumber < StrArr.count-1{

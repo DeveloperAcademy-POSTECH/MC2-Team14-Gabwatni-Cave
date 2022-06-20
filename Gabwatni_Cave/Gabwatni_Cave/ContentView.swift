@@ -16,12 +16,6 @@ struct ContentView: View {
         }
         else if vm.flow == 0 {
             AncestorView(mainflow: vm.flow)
-                .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 8) {
-                        print("3")
-                        playSound(sound: "let`s start", type: "mp3")
-                    }
-                }
                 .onDisappear {
                     vm.isSound = false
                 }

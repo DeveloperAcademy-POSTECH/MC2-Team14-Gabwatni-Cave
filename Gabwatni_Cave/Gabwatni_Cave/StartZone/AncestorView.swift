@@ -74,6 +74,9 @@ struct AncestorView: View {
                         .frame(width: 450)
                         .onAppear{
                             playSoundEffect(sound: "let's go", type: "mp3")
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
+                                playSoundEffect(sound: "let's start", type: "mp3")
+                            }
                         }
                 )
             

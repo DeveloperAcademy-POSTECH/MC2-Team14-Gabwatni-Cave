@@ -11,6 +11,7 @@ var audioPlayer: AVAudioPlayer?
 var audioPlayer2: AVAudioPlayer?
 var audioPlayer3: AVAudioPlayer?
 var audioPlayer4: AVAudioPlayer?
+var audioPlayer5: AVAudioPlayer?
 
 func playSound(sound: String, type: String) {
     if let path = Bundle.main.path(forResource: sound, ofType: type) {
@@ -82,4 +83,17 @@ func playSoundsnail(sound: String, type: String) {
     }
 }
 
+func playSoundEffect3(sound: String, type: String) {
+    if let path = Bundle.main.path(forResource: sound, ofType: type) {
+        do {
+            _ = try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: .default, options: .mixWithOthers)
+            
+            audioPlayer5 = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            audioPlayer5?.volume = 2.5
+            audioPlayer5?.play()
+        } catch {
+            print("ERROR")
+        }
+    }
+}
 
