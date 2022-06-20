@@ -77,7 +77,7 @@ struct newTextBox3: View {
                         Button{
                             if stringNumber == 12 {
                                 print("fsdd")
-                                playSoundEffect(sound: "let's start", type: ".mp3")
+                                playSoundEffect(sound: "let's go", type: ".mp3")
                             }
                             ges(strnum: stringNumber)
                             isClicked = true
