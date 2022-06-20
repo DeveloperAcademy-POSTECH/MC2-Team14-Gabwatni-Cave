@@ -53,7 +53,7 @@ class CardViewModel: ObservableObject {
 
 final class CardViewModel2: ObservableObject {
 
-    @Published var flow: Int = 2
+    @Published var flow: Int = -1
     
     @Published var isSound: Bool = false
     
@@ -86,8 +86,8 @@ final class CardViewModel2: ObservableObject {
         "transparent snail" : ["투명 달팽이","✦ 어두운 곳에 살기때문에 다른 달팽이보다 눈이 짧고 투명한 등껍질을 가짐|\r|\r|✦ 움직임이 거의 없고 흐르는 물을 타고 이동"],
         "salamander" : ["텍사스동굴도룡뇽","✦ 색소가 없는 피부 밑에 퇴화한 눈이 파묻힌게 특징|\r|\r|✦ 자신의 신체를 분해하여 양분을 공급받아 불로불사할 수 있음"],
         "cavecoral" : ["동굴 산호","✦ 바다의 산호와 모양이 비슷해 이런 이름이 붙음|\r|\r|✦ 동굴 팝콘이라고도 불리며 방해석과 아라고나이트로 이루어짐"],
-        "stalactite" : ["종유석","지하수의 탄산칼슘 성분이 천장에 맺혀 바닥쪽으로 성장해 가는 고드름 모양의 석회 기둥"],
-        "water" : ["동굴 물", "산성을 띄며 생명체들의 시체와 배설물로 인해 더러움"],
+        "stalactite" : ["종유석","✦ 지하수의 탄산칼슘 성분이 천장에 맺혀 바닥쪽으로 성장해 가는 고드름 모양의 석회 기둥"],
+        "water" : ["동굴 물", "✦ 산성을 띄며 생명체들의 시체와 배설물로 인해 더러움"],
         "pillar" : ["석주", "✦ 종유석과 석순이 자라나다 만난 기둥|\r|\r|✦ 물이 기둥 표면을 따라 흐르는 경우 지속적으로 기둥이 두꺼워짐"],
     ]
     
