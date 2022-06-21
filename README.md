@@ -4,8 +4,8 @@
 
 # :iphone: Project Title
 
-A brief description of what this project does and who it's for
-
+Our app is exploration game for people who can't travel easily.
+We want to solve some pratical constraints need to travel.
 
 ## :pushpin: Features
 
@@ -17,7 +17,7 @@ A brief description of what this project does and who it's for
 
 ## :people_hugging: Authors
 
-- [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/)
+- [@Hoyun Jung](https://github.com/stemmmm) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/)
 
 
 ## :framed_picture: Demo
