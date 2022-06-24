@@ -7,13 +7,6 @@
 여행을 쉽게 가지 못하는 사람들을 위한 1인칭 탐험 게임입니다.
 우리는 이 앱을 통해 여행을 가는데 필요한 제약들을 해결하고 싶었습니다.
 
-## :pushpin: Features
-
-- Light/dark mode toggle
-- Live previews
-- Fullscreen mode
-- Cross platform
-
 
 ## :people_hugging: Authors
 
