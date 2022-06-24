@@ -17,7 +17,7 @@ We want to solve some pratical constraints need to travel.
 
 ## :people_hugging: Authors
 
-- [@Hoyun Jung](https://github.com/stemmmm) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/)
+- [@Hoyun Jung](https://github.com/stemmmm) | [@Gyujae Jo](https://github.com/im-niber) | [@Dohan Kim](https://github.com/commitcomplete) | [@Changhyung Lee](https://github.com/LeeChangHyeong) | [@Dongkyu Kim](https://github.com/Dorodong96) | [@Hojeong jeon](https://github.com/lau0505)
 
 
 ## :framed_picture: Demo
@@ -36,11 +36,9 @@ Insert gif or link to demo
 
 
 ## :sparkles: Skills & Tech Stack
-SwiftUI
-
-## :books: Documentation
-
-[Documentation](https://linktodocumentation)
+* SwiftUI
+* Lottie (https://github.com/airbnb/lottie-ios)
+* Shimmering (https://github.com/markiv/SwiftUI-Shimmer)
 
 
 ## :lock_with_ink_pen: License
