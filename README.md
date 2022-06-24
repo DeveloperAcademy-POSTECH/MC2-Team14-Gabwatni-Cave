@@ -22,17 +22,12 @@ We want to solve some pratical constraints need to travel.
 
 ## :framed_picture: Demo
 
-Insert gif or link to demo
-
-
-## :fireworks: Screenshots
-
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
+![screen1](https://user-images.githubusercontent.com/45297745/175484047-8e5143ed-ae68-4a90-8832-1022567c587a.gif)
+![screen2](https://user-images.githubusercontent.com/45297745/175484057-1e903a3d-9d9e-49a8-b1d8-c18002829901.gif)
+![screen3](https://user-images.githubusercontent.com/45297745/175484063-62cab037-d2e6-4d8f-869f-1bc256f621af.gif)
+![screen4](https://user-images.githubusercontent.com/45297745/175484073-359d8906-313c-4036-8db9-3229b5f3648c.gif)
+![screen5](https://user-images.githubusercontent.com/45297745/175484079-e24a5c66-072a-4b85-be49-64aa5ed9ba69.gif)
+![screen6](https://user-images.githubusercontent.com/45297745/175484020-8306b570-de50-42be-b51f-dd16ff36364f.gif)
 
 
 ## :sparkles: Skills & Tech Stack
