@@ -1,5 +1,5 @@
 
-![Logo](https://dummyimage.com/1000x300/000/fff.png)
+![가봤니?_깃헙 리드미 이미지_1000x300](https://user-images.githubusercontent.com/103024956/202851004-fc5c7fc0-d6dc-4828-a37b-e4fdb8fa7c9c.png)
 
 
 # :iphone: Project Title
